@@ -3,7 +3,9 @@ name: Forecast on new AI tournament questions
 on:
   workflow_dispatch:
   schedule:
-    - cron: "3,23,43 * * * *" # every 20 min, offset off the hour. Make sure to skip already-forecasted questions!
+    - cron: "3,23,43 * * * *"
+    # GitHub drops many scheduled runs on forks; a second line raises the odds one fires.
+    - cron: "13,33,53 * * * *" # every 20 min, offset off the hour. Make sure to skip already-forecasted questions!
 
 permissions:
   contents: write
