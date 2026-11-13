@@ -709,23 +709,30 @@ if __name__ == "__main__":
     # uncomment and edit to pin specific models.
     template_bot = FallTemplateBot2026(
         research_reports_per_question=1,
-        predictions_per_research_report=5,
+        predictions_per_research_report=3,
         use_research_summary_to_forecast=False,
         publish_reports_to_metaculus=publish_to_metaculus,
         folder_to_save_reports_to=None,
         skip_previously_forecasted_questions=True,
         extra_metadata_in_explanation=True,
-        # llms={
-        #     "default": GeneralLlm(
-        #         model="openrouter/openai/gpt-4o",
-        #         temperature=0.3,
-        #         timeout=40,
-        #         allowed_tries=2,
-        #     ),
-        #     "summarizer": "openai/gpt-4o-mini",
-        #     "researcher": "asknews/news-summaries",
-        #     "parser": "openai/gpt-4o-mini",
-        # },
+        # Pinned to Claude models through the owner's Anthropic key. The cheap model
+        # does the summarising and reformatting; the stronger one does the forecasting.
+        llms={
+            "default": GeneralLlm(
+                model="anthropic/claude-sonnet-5-5",
+                temperature=0.3,
+                timeout=90,
+                allowed_tries=2,
+            ),
+            "summarizer": "anthropic/claude-haiku-5-5",
+            "researcher": GeneralLlm(
+                model="anthropic/claude-sonnet-5-5",
+                temperature=0.3,
+                timeout=90,
+                allowed_tries=2,
+            ),
+            "parser": "anthropic/claude-haiku-5-5",
+        },
     )
 
     # Per-mode tournament URL shown in the summary banner footer. These
