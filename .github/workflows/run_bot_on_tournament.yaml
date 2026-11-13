@@ -6,7 +6,7 @@ on:
     # Every 20 minutes, off the hour. Already-forecasted questions are skipped.
     # Note: GitHub only fires a schedule when the last person to change these lines has
     # access to this repo, so changes here must be committed under the owner's account.
-    - cron: "8,28,48 * * * *"
+    - cron: "9,29,49 * * * *"
 
 permissions:
   contents: write
