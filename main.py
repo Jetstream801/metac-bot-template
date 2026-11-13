@@ -22,6 +22,7 @@ from forecasting_tools import (
     ForecastBot,
     GeneralLlm,
     MetaculusClient,
+    MonetaryCostManager,
     MetaculusQuestion,
     MultipleChoiceQuestion,
     NumericDistribution,
@@ -40,6 +41,8 @@ from forecasting_tools import (
     clean_indents,
     structure_output,
 )
+
+import budget
 
 dotenv.load_dotenv()
 logger = logging.getLogger(__name__)
@@ -174,8 +177,11 @@ class FallTemplateBot2026(ForecastBot):
             f"""
             You are an assistant to a superforecaster.
             The superforecaster will give you a question they intend to forecast on.
-            To be a great assistant, you generate a concise but detailed rundown of the most relevant news, including if the question would resolve Yes or No based on current information.
-            You do not produce forecasts yourself.
+            Today's date is {datetime.now(timezone.utc).strftime("%Y-%m-%d")}.
+            Search the web for the most recent, relevant information, then write a concise but detailed rundown:
+            the current state of things (with dates and figures), anything scheduled before the question closes,
+            how often things like this have happened before, and how the question would resolve if nothing changed.
+            Say plainly when you could not find something. Do not produce a forecast yourself.
 
             Question:
             {question.question_text}
@@ -709,7 +715,7 @@ if __name__ == "__main__":
     # uncomment and edit to pin specific models.
     template_bot = FallTemplateBot2026(
         research_reports_per_question=1,
-        predictions_per_research_report=3,
+        predictions_per_research_report=2,
         use_research_summary_to_forecast=False,
         publish_reports_to_metaculus=publish_to_metaculus,
         folder_to_save_reports_to=None,
@@ -725,11 +731,14 @@ if __name__ == "__main__":
                 allowed_tries=2,
             ),
             "summarizer": "anthropic/claude-haiku-5-5",
+            # Research uses the cheap model with Anthropic's built-in web search.
             "researcher": GeneralLlm(
-                model="anthropic/claude-sonnet-5-5",
-                temperature=0.3,
-                timeout=90,
+                model="anthropic/claude-haiku-5-5",
+                temperature=0.2,
+                timeout=240,
                 allowed_tries=2,
+                max_tokens=2500,
+                tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 3}],
             ),
             "parser": "anthropic/claude-haiku-5-5",
         },
@@ -747,40 +756,56 @@ if __name__ == "__main__":
     # Dispatch on mode. Each branch produces a list of ForecastReport (or
     # exceptions, since return_exceptions=True) which then flows into the
     # summary printers below.
-    client = MetaculusClient()
-    if run_mode == "tournament":
-        seasonal_tournament_reports = asyncio.run(
-            template_bot.forecast_on_tournament(
-                client.CURRENT_AI_COMPETITION_ID, return_exceptions=True
-            )
+    # Spending limits (see budget.py): stop here if the season or daily allowance is used up.
+    ledger = budget.load()
+    run_allowance = budget.allowance(ledger)
+    if run_allowance <= 0:
+        print(
+            f"Spending limit reached (season ${ledger['spent']:.2f} of ${budget.SEASON_CAP:.2f}, "
+            f"today ${ledger['by_day'].get(budget.today(), 0.0):.2f} of ${budget.DAILY_CAP:.2f}). Not forecasting."
         )
-        minibench_reports = asyncio.run(
-            template_bot.forecast_on_tournament(
-                client.CURRENT_MINIBENCH_ID, return_exceptions=True
-            )
-        )
-        forecast_reports = seasonal_tournament_reports + minibench_reports
-    elif run_mode == "metaculus_cup":
-        # The Metaculus Cup may be uninitialized near the start of a season
-        # (Jan/May/Sep). MetaculusClient.ACX_2025_TOURNAMENT = 32564 and
-        # MetaculusClient.AI_2027_TOURNAMENT_ID = "ai-2027" are also valid
-        # targets here.
-        template_bot.skip_previously_forecasted_questions = False
-        forecast_reports = asyncio.run(
-            template_bot.forecast_on_tournament(
-                client.CURRENT_METACULUS_CUP_ID, return_exceptions=True
-            )
-        )
-    elif run_mode == "test_questions":
-        # The bot-testing-area tournament contains all question types and is
-        # the recommended target for smoke-testing your bot.
-        # https://www.metaculus.com/tournament/bot-testing-area/
-        template_bot.skip_previously_forecasted_questions = False
-        forecast_reports = asyncio.run(
-            template_bot.forecast_on_tournament(
-                "bot-testing-area", return_exceptions=True
-            )
-        )
+        raise SystemExit(0)
+    forecast_reports = []
+    cost_manager = MonetaryCostManager(run_allowance)
+    try:
+        with cost_manager:
+            client = MetaculusClient()
+            if run_mode == "tournament":
+                seasonal_tournament_reports = asyncio.run(
+                    template_bot.forecast_on_tournament(
+                        client.CURRENT_AI_COMPETITION_ID, return_exceptions=True
+                    )
+                )
+                minibench_reports = asyncio.run(
+                    template_bot.forecast_on_tournament(
+                        client.CURRENT_MINIBENCH_ID, return_exceptions=True
+                    )
+                )
+                forecast_reports = seasonal_tournament_reports + minibench_reports
+            elif run_mode == "metaculus_cup":
+                # The Metaculus Cup may be uninitialized near the start of a season
+                # (Jan/May/Sep). MetaculusClient.ACX_2025_TOURNAMENT = 32564 and
+                # MetaculusClient.AI_2027_TOURNAMENT_ID = "ai-2027" are also valid
+                # targets here.
+                template_bot.skip_previously_forecasted_questions = False
+                forecast_reports = asyncio.run(
+                    template_bot.forecast_on_tournament(
+                        client.CURRENT_METACULUS_CUP_ID, return_exceptions=True
+                    )
+                )
+            elif run_mode == "test_questions":
+                # The bot-testing-area tournament contains all question types and is
+                # the recommended target for smoke-testing your bot.
+                # https://www.metaculus.com/tournament/bot-testing-area/
+                template_bot.skip_previously_forecasted_questions = False
+                forecast_reports = asyncio.run(
+                    template_bot.forecast_on_tournament(
+                        "bot-testing-area", return_exceptions=True
+                    )
+                )
+    finally:
+        recorded = budget.record(ledger, cost_manager.current_usage)
+        print(f"Recorded ${recorded:.2f} for this run; season total ${ledger['spent']:.2f} of ${budget.SEASON_CAP:.2f}.")
 
     template_bot.log_report_summary(forecast_reports)
     print_run_summary_banner(
