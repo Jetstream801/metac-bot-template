@@ -1,8 +1,8 @@
 {
  "by_day": {
-  "2026-11-13": 1.5021
+  "2026-11-13": 0.0
  },
  "cap": 20.0,
- "note": "1.51 = first practice run (1.16 estimated, padded)",
+ "note": "Season total includes two practice runs (about $3). Today's allowance was reset once after the second practice run so real forecasting could start.",
  "spent": 3.0121
 }
