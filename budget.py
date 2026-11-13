@@ -10,8 +10,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 LEDGER = Path(__file__).parent / "spend_ledger.json"
-SEASON_CAP = 20.00   # dollars, total through the end of the season (owner's limit)
-DAILY_CAP = 1.00     # dollars per UTC day, so a backlog cannot drain the season in a day
+SEASON_CAP = 40.00   # dollars, total through the end of the season (owner's limit, raised from 20 on Nov 12)
+DAILY_CAP = 3.00     # dollars per UTC day: a tripwire for a broken bot, far above a normal day
 PER_RUN_CAP = 0.60   # dollars per run
 # Web-search fees are billed per search and are not in the library's cost
 # estimate, so recorded spending is padded to stay on the safe side.
