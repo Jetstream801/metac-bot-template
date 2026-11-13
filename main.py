@@ -767,6 +767,11 @@ if __name__ == "__main__":
     # Dispatch on mode. Each branch produces a list of ForecastReport (or
     # exceptions, since return_exceptions=True) which then flows into the
     # summary printers below.
+    if run_mode == "tournament":
+        import question_windows
+
+        question_windows.report()
+
     # Spending limits (see budget.py): stop here if the season or daily allowance is used up.
     ledger = budget.load()
     run_allowance = budget.allowance(ledger)
