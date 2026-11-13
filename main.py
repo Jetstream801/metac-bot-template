@@ -131,8 +131,19 @@ class FallTemplateBot2026(ForecastBot):
 
     ##################################### RESEARCH #####################################
 
+    # Set in the main block: (cost manager, dollars this run may spend). The library's
+    # own limit only logs when crossed, so the stop is enforced here, per question.
+    run_budget = None
+
     async def run_research(self, question: MetaculusQuestion) -> str:
         async with self._concurrency_limiter:
+            if self.run_budget is not None:
+                manager, allowed = self.run_budget
+                if manager.current_usage >= allowed:
+                    raise RuntimeError(
+                        f"Run spending limit reached (${manager.current_usage:.2f} of ${allowed:.2f}); "
+                        "skipping this question until a later run."
+                    )
             research = ""
             researcher = self.get_llm("researcher")
 
@@ -766,7 +777,9 @@ if __name__ == "__main__":
         )
         raise SystemExit(0)
     forecast_reports = []
-    cost_manager = MonetaryCostManager(run_allowance)
+    # The manager's own ceiling is set high; it is used here as the meter.
+    cost_manager = MonetaryCostManager(run_allowance * 3)
+    FallTemplateBot2026.run_budget = (cost_manager, run_allowance)
     try:
         with cost_manager:
             client = MetaculusClient()
