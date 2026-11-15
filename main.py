@@ -748,7 +748,7 @@ if __name__ == "__main__":
                 temperature=0.2,
                 timeout=240,
                 allowed_tries=2,
-                max_tokens=2500,
+                max_tokens=6000,  # 2500 was sometimes used up by searching before any answer was written
                 tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 3}],
             ),
             "parser": "anthropic/claude-haiku-5-5",
