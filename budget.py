@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 LEDGER = Path(__file__).parent / "spend_ledger.json"
-SEASON_CAP = 40.00   # dollars, total through the end of the season (owner's limit, raised from 20 on Nov 12)
+SEASON_CAP = 60.00   # dollars, total through the end of the season. Raised from 40 on Nov 16: the owner's Max plan includes $100/month of API credit that expires monthly, about $80 of it for this project (Metaculus ~$45/month, the Kalshi event screen the rest)
 DAILY_CAP = 3.00     # dollars per UTC day (owner's limit). On a busy MiniBench day this binds: it was hit by 07:35 UTC on Nov 16
 PER_RUN_CAP = 0.60   # dollars per run
 # Web-search fees are billed per search and are not in the library's cost
