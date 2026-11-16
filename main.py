@@ -174,6 +174,20 @@ class FallTemplateBot2026(ForecastBot):
                 research = ""
             else:
                 research = await self.get_llm("researcher", "llm").invoke(prompt)
+            # Guard (review of 2026-11-16): one question was forecast on 43 characters of
+            # research after the searches used up the reply. Try once more, briefly.
+            if isinstance(researcher, GeneralLlm) and len(str(research or "").strip()) < 400:
+                logger.warning(f"Research for {question.page_url} came back nearly empty; retrying once")
+                try:
+                    research = await researcher.invoke(
+                        prompt + "\n\nUse at most 2 searches, then write your findings in under 500 words. "
+                        "You must write the findings even if the searches found little."
+                    )
+                except Exception as exc:
+                    logger.warning(f"Research retry failed: {exc}")
+                if len(str(research or "").strip()) < 400:
+                    research = (str(research or "").strip() + "\n\n(Note: web research returned almost nothing for this "
+                                "question; rely on base rates and say so.)").strip()
             logger.info(f"Found Research for URL {question.page_url}:\n{research}")
             return research
 
@@ -726,7 +740,7 @@ if __name__ == "__main__":
     # uncomment and edit to pin specific models.
     template_bot = FallTemplateBot2026(
         research_reports_per_question=1,
-        predictions_per_research_report=1,  # was 2: the two forecasts came out nearly identical (review 2026-11-16), so the second mostly doubled the cost
+        predictions_per_research_report=1,  # was 2: the two forecasts came out nearly identical (2.75 points apart on average); saves about 9% a question
         use_research_summary_to_forecast=False,
         publish_reports_to_metaculus=publish_to_metaculus,
         folder_to_save_reports_to=None,
@@ -782,6 +796,7 @@ if __name__ == "__main__":
         )
         raise SystemExit(0)
     forecast_reports = []
+    minibench_usage = 0.0
     # The manager's own ceiling is set high; it is used here as the meter.
     cost_manager = MonetaryCostManager(run_allowance * 3)
     FallTemplateBot2026.run_budget = (cost_manager, run_allowance)
@@ -794,11 +809,21 @@ if __name__ == "__main__":
                         client.CURRENT_AI_COMPETITION_ID, return_exceptions=True
                     )
                 )
-                minibench_reports = asyncio.run(
-                    template_bot.forecast_on_tournament(
-                        client.CURRENT_MINIBENCH_ID, return_exceptions=True
+                # MiniBench only gets its paced daily share (see budget.py); the main
+                # tournament above always comes first.
+                main_usage = cost_manager.current_usage
+                mb_room = budget.minibench_room(ledger)
+                minibench_reports = []
+                if mb_room > 0:
+                    FallTemplateBot2026.run_budget = (cost_manager, min(run_allowance, main_usage + mb_room / budget.PADDING))
+                    minibench_reports = asyncio.run(
+                        template_bot.forecast_on_tournament(
+                            client.CURRENT_MINIBENCH_ID, return_exceptions=True
+                        )
                     )
-                )
+                else:
+                    print("MiniBench skipped this run: its paced share for today is used (see budget.py).")
+                minibench_usage = cost_manager.current_usage - main_usage
                 forecast_reports = seasonal_tournament_reports + minibench_reports
             elif run_mode == "metaculus_cup":
                 # The Metaculus Cup may be uninitialized near the start of a season
@@ -822,7 +847,7 @@ if __name__ == "__main__":
                     )
                 )
     finally:
-        recorded = budget.record(ledger, cost_manager.current_usage)
+        recorded = budget.record(ledger, cost_manager.current_usage, minibench_cost=minibench_usage)
         print(f"Recorded ${recorded:.2f} for this run; season total ${ledger['spent']:.2f} of ${budget.SEASON_CAP:.2f}.")
 
     template_bot.log_report_summary(forecast_reports)

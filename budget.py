@@ -11,11 +11,38 @@ from pathlib import Path
 
 LEDGER = Path(__file__).parent / "spend_ledger.json"
 SEASON_CAP = 40.00   # dollars, total through the end of the season (owner's limit, raised from 20 on Nov 12)
-DAILY_CAP = 3.00     # dollars per UTC day: a tripwire for a broken bot, far above a normal day
+DAILY_CAP = 3.00     # dollars per UTC day (owner's limit). On a busy MiniBench day this binds: it was hit by 07:35 UTC on Nov 16
 PER_RUN_CAP = 0.60   # dollars per run
 # Web-search fees are billed per search and are not in the library's cost
 # estimate, so recorded spending is padded to stay on the safe side.
 PADDING = 1.3
+
+# Pacing inside the owner's limits (review of 2026-11-16). MiniBench opens about two
+# questions an hour ($1,000 pool per fortnight); the main tournament opens one or two a
+# day ($50,000 pool). Left alone, MiniBench used the whole daily allowance by breakfast
+# and would have emptied the season budget by late November, leaving nothing for the main
+# tournament in December. So: money for the main tournament is set aside first, and
+# MiniBench gets an even daily share of what is left. MiniBench is kept at all because its
+# questions resolve within about two weeks, which is the feedback the bot is tuned on.
+SEASON_END = "2026-12-20"        # main-tournament questions stop opening a few weeks before Jan 1
+MAIN_RESERVE_PER_DAY = 0.45      # dollars a day kept back for main-tournament questions
+
+
+def days_left(now=None):
+    now = now or datetime.now(timezone.utc)
+    end = datetime.strptime(SEASON_END, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+    return max(1, (end.date() - now.date()).days + 1)
+
+
+def minibench_room(data, now=None):
+    """Dollars MiniBench may still spend today (0 means skip MiniBench this run)."""
+    n = days_left(now)
+    pool = SEASON_CAP - data["spent"] - MAIN_RESERVE_PER_DAY * n
+    per_day = max(0.0, pool) / n
+    used = data.get("minibench_by_day", {}).get(today(now), 0.0)
+    left_today = DAILY_CAP - data["by_day"].get(today(now), 0.0)
+    room = min(per_day - used, left_today)
+    return round(room, 4) if room >= 0.05 else 0.0
 
 
 def load(path=LEDGER):
@@ -40,9 +67,13 @@ def allowance(data, now=None):
     return round(room, 4) if room >= 0.05 else 0.0
 
 
-def record(data, estimated_cost, now=None, path=LEDGER):
+def record(data, estimated_cost, now=None, path=LEDGER, minibench_cost=0.0):
     cost = round(max(0.0, estimated_cost) * PADDING, 4)
     day = today(now)
+    mb = round(max(0.0, min(minibench_cost, estimated_cost)) * PADDING, 4)
+    if mb:
+        data.setdefault("minibench_by_day", {})
+        data["minibench_by_day"][day] = round(data["minibench_by_day"].get(day, 0.0) + mb, 4)
     data["spent"] = round(data["spent"] + cost, 4)
     data["by_day"][day] = round(data["by_day"].get(day, 0.0) + cost, 4)
     data["cap"] = SEASON_CAP
