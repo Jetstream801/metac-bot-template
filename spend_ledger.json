@@ -4,12 +4,12 @@
   "2026-11-14": 0.5358,
   "2026-11-15": 0.7399,
   "2026-11-16": 2.9735,
-  "2026-11-17": 1.0344
+  "2026-11-17": 1.132
  },
  "cap": 60.0,
  "minibench_by_day": {
-  "2026-11-17": 0.9062
+  "2026-11-17": 1.0038
  },
  "note": "Season total includes two practice runs (about $3). Today's allowance was reset once after the second practice run so real forecasting could start.",
- "spent": 8.9795
+ "spent": 9.0771
 }
