@@ -10,9 +10,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 LEDGER = Path(__file__).parent / "spend_ledger.json"
-SEASON_CAP = 60.00   # dollars, total through the end of the season. Raised from 40 on Nov 16: the owner's Max plan includes $100/month of API credit that expires monthly, about $80 of it for this project (Metaculus ~$45/month, the Kalshi event screen the rest)
-DAILY_CAP = 3.00     # dollars per UTC day (owner's limit). On a busy MiniBench day this binds: it was hit by 07:35 UTC on Nov 16
-PER_RUN_CAP = 0.60   # dollars per run
+# 2026-11-17 (owner): run at full throttle, forecast every question, and measure what that
+# costs. The caps below are now guards against a bug, not pacing. The Anthropic console showed
+# $3.83 really spent by this key through Nov 18 04:36 UTC (the old ledger said $9.80: it charged
+# about 2.6 times the real cost), and the ledger was corrected to that figure.
+# Expected at full throttle: about $0.045 a question, some 50 questions a day = $2 to $2.50 a day.
+SEASON_CAP = 90.00   # dollars, total through the end of the season (bug guard)
+DAILY_CAP = 5.00     # dollars per UTC day (bug guard: about twice a full day's expected cost)
+PER_RUN_CAP = 1.00   # dollars per run
 # No padding since 2026-11-17: the ledger now charges the measured cost of every call
 # (costs.py: tokens and web searches from the API's own usage figures, at list prices).
 # Before that, the 1.3 was applied to the library's cost meter, which (a) already
@@ -47,7 +52,7 @@ def minibench_room(data, now=None):
     per_day = max(0.0, pool) / n
     used = data.get("minibench_by_day", {}).get(today(now), 0.0)
     left_today = DAILY_CAP - data["by_day"].get(today(now), 0.0)
-    room = min(per_day - used, left_today)
+    room = left_today            # no pacing since 2026-11-17 (owner: full throttle); per_day is kept for the record
     return round(room, 4) if room >= 0.05 else 0.0
 
 

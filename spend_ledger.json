@@ -1,19 +1,19 @@
 {
  "by_day": {
-  "2026-11-13": 0.6838,
-  "2026-11-14": 0.5358,
-  "2026-11-15": 0.7399,
-  "2026-11-16": 2.9735,
-  "2026-11-17": 1.4673,
-  "2026-11-18": 0.3856
+  "2026-11-13": 0.2673,
+  "2026-11-14": 0.2094,
+  "2026-11-15": 0.2892,
+  "2026-11-16": 1.1623,
+  "2026-11-17": 0.5736,
+  "2026-11-18": 0.1507
  },
- "cap": 60.0,
+ "cap": 90.0,
  "minibench_by_day": {
-  "2026-11-17": 1.0038,
-  "2026-11-18": 0.1483
+  "2026-11-17": 0.3924,
+  "2026-11-18": 0.058
  },
- "note": "Season total includes two practice runs (about $3). Today's allowance was reset once after the second practice run so real forecasting could start.",
- "spent": 9.798,
+ "note": "Season total includes two practice runs (about $3). Today's allowance was reset once after the second practice run so real forecasting could start. 2026-11-18: corrected to the Anthropic console's real figure ($3.83; the old ledger over-charged about 2.6 times); earlier days scaled by the same factor.",
+ "spent": 3.83,
  "stage_questions": 0,
  "stage_since": "2026-11-18",
  "stages": {}
