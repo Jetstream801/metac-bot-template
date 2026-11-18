@@ -13,9 +13,15 @@ LEDGER = Path(__file__).parent / "spend_ledger.json"
 SEASON_CAP = 60.00   # dollars, total through the end of the season. Raised from 40 on Nov 16: the owner's Max plan includes $100/month of API credit that expires monthly, about $80 of it for this project (Metaculus ~$45/month, the Kalshi event screen the rest)
 DAILY_CAP = 3.00     # dollars per UTC day (owner's limit). On a busy MiniBench day this binds: it was hit by 07:35 UTC on Nov 16
 PER_RUN_CAP = 0.60   # dollars per run
-# Web-search fees are billed per search and are not in the library's cost
-# estimate, so recorded spending is padded to stay on the safe side.
-PADDING = 1.3
+# No padding since 2026-11-17: the ledger now charges the measured cost of every call
+# (costs.py: tokens and web searches from the API's own usage figures, at list prices).
+# Before that, the 1.3 was applied to the library's cost meter, which (a) already
+# included web-search fees, so the padding counted them a second time, and (b) added
+# every call twice, so the ledger charged about 2.6 times the real cost. Entries dated
+# before the change are in those inflated dollars.
+# The one thing still unmeasured is a call that times out on our side after Anthropic
+# has done billable work; costs.py charges each of those the stage's average call cost.
+PADDING = 1.0
 
 # Pacing inside the owner's limits (review of 2026-11-16). MiniBench opens about two
 # questions an hour ($1,000 pool per fortnight); the main tournament opens one or two a

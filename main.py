@@ -43,6 +43,13 @@ from forecasting_tools import (
 )
 
 import budget
+import costs
+import forecast_log
+
+# Every model call is recorded by stage (costs.py). The reformatting calls made by
+# structure_output are filed under "parse".
+costs.install(GeneralLlm)
+structure_output = costs.staged("parse", structure_output)
 
 dotenv.load_dotenv()
 logger = logging.getLogger(__name__)
@@ -134,62 +141,107 @@ class FallTemplateBot2026(ForecastBot):
     # Set in the main block: (cost manager, dollars this run may spend). The library's
     # own limit only logs when crossed, so the stop is enforced here, per question.
     run_budget = None
+    # question key -> rationales written for it this run (saved to forecast_log/)
+    rationales: dict[str, list] = {}
 
     async def run_research(self, question: MetaculusQuestion) -> str:
+        key = forecast_log.question_key(question)
+        costs._question.set(key)  # the forecast steps that follow run in this same task
         async with self._concurrency_limiter:
-            if self.run_budget is not None:
-                manager, allowed = self.run_budget
-                if manager.current_usage >= allowed:
-                    raise RuntimeError(
-                        f"Run spending limit reached (${manager.current_usage:.2f} of ${allowed:.2f}); "
-                        "skipping this question until a later run."
-                    )
-            research = ""
-            researcher = self.get_llm("researcher")
-
-            prompt = self._get_research_prompt(question, researcher)
-
-            if isinstance(researcher, GeneralLlm):
-                research = await researcher.invoke(prompt)
-            elif (
-                researcher == "asknews/news-summaries"
-                or researcher == "asknews/deep-research/low-depth"
-                or researcher == "asknews/deep-research/medium-depth"
-                or researcher == "asknews/deep-research/high-depth"
-            ):
-                research = await AskNewsSearcher().call_preconfigured_version(
-                    researcher, prompt
-                )
-            elif researcher.startswith("smart-searcher"):
-                model_name = researcher.removeprefix("smart-searcher/")
-                searcher = SmartSearcher(
-                    model=model_name,
-                    temperature=0,
-                    num_searches_to_run=2,
-                    num_sites_per_search=10,
-                    use_advanced_filters=False,
-                )
-                research = await searcher.invoke(prompt)
-            elif not researcher or researcher == "None" or researcher == "no_research":
+            with costs.stage("research"):
+                if self.run_budget is not None:
+                    manager, allowed = self.run_budget
+                    if manager.current_usage >= allowed:
+                        raise RuntimeError(
+                            f"Run spending limit reached (${manager.current_usage:.2f} of ${allowed:.2f}); "
+                            "skipping this question until a later run."
+                        )
+                # A question researched in an earlier run whose forecast step then failed:
+                # use that research again instead of paying for the searches twice.
+                earlier = forecast_log.reusable_research(forecast_log.read(key))
+                if earlier:
+                    logger.info(f"Reusing research from an earlier run for {question.page_url}")
+                    forecast_log.save_research(question, earlier, reused=True)
+                    return earlier
                 research = ""
-            else:
-                research = await self.get_llm("researcher", "llm").invoke(prompt)
-            # Guard (review of 2026-11-16): one question was forecast on 43 characters of
-            # research after the searches used up the reply. Try once more, briefly.
-            if isinstance(researcher, GeneralLlm) and len(str(research or "").strip()) < 400:
-                logger.warning(f"Research for {question.page_url} came back nearly empty; retrying once")
-                try:
-                    research = await researcher.invoke(
-                        prompt + "\n\nUse at most 2 searches, then write your findings in under 500 words. "
-                        "You must write the findings even if the searches found little."
+                retried = False
+                researcher = self.get_llm("researcher")
+
+                prompt = self._get_research_prompt(question, researcher)
+
+                if isinstance(researcher, GeneralLlm):
+                    research = await researcher.invoke(prompt)
+                elif (
+                    researcher == "asknews/news-summaries"
+                    or researcher == "asknews/deep-research/low-depth"
+                    or researcher == "asknews/deep-research/medium-depth"
+                    or researcher == "asknews/deep-research/high-depth"
+                ):
+                    research = await AskNewsSearcher().call_preconfigured_version(
+                        researcher, prompt
                     )
-                except Exception as exc:
-                    logger.warning(f"Research retry failed: {exc}")
-                if len(str(research or "").strip()) < 400:
-                    research = (str(research or "").strip() + "\n\n(Note: web research returned almost nothing for this "
-                                "question; rely on base rates and say so.)").strip()
-            logger.info(f"Found Research for URL {question.page_url}:\n{research}")
-            return research
+                elif researcher.startswith("smart-searcher"):
+                    model_name = researcher.removeprefix("smart-searcher/")
+                    searcher = SmartSearcher(
+                        model=model_name,
+                        temperature=0,
+                        num_searches_to_run=2,
+                        num_sites_per_search=10,
+                        use_advanced_filters=False,
+                    )
+                    research = await searcher.invoke(prompt)
+                elif not researcher or researcher == "None" or researcher == "no_research":
+                    research = ""
+                else:
+                    research = await self.get_llm("researcher", "llm").invoke(prompt)
+                # Guard (review of 2026-11-16): one question was forecast on 43 characters of
+                # research after the searches used up the reply. Try once more, briefly.
+                if isinstance(researcher, GeneralLlm) and len(str(research or "").strip()) < 400:
+                    logger.warning(f"Research for {question.page_url} came back nearly empty; retrying once")
+                    retried = True
+                    try:
+                        with costs.stage("research_retry"):
+                            research = await researcher.invoke(
+                                prompt + "\n\nUse at most 2 searches, then write your findings in under 500 words. "
+                                "You must write the findings even if the searches found little."
+                            )
+                    except Exception as exc:
+                        logger.warning(f"Research retry failed: {exc}")
+                    if len(str(research or "").strip()) < 400:
+                        research = (str(research or "").strip() + "\n\n(Note: web research returned almost nothing for this "
+                                    "question; rely on base rates and say so.)").strip()
+                logger.info(f"Found Research for URL {question.page_url}:\n{research}")
+                forecast_log.save_research(question, research, retried=retried)
+                return research
+
+    async def _run_individual_question(self, question: MetaculusQuestion):
+        report = await super()._run_individual_question(question)
+        # The forecast is published by now; keep our own copy for scoring later.
+        try:
+            forecast_log.save_forecast(
+                question, report.prediction, errors=report.errors,
+                rationales=self.rationales.get(forecast_log.question_key(question)),
+            )
+        except Exception as exc:  # record-keeping must never lose a forecast
+            logger.warning(f"Could not save the forecast record: {exc}")
+        return report
+
+    async def summarize_research(self, question: MetaculusQuestion, research: str) -> str:
+        with costs.stage("summarise"):
+            return await super().summarize_research(question, research)
+
+    async def _make_prediction(self, question: MetaculusQuestion, research: str):
+        with costs.stage("forecast"):
+            prediction = await super()._make_prediction(question, research)
+        try:
+            self.rationales.setdefault(str(costs._question.get()), []).append({
+                "question_id": getattr(question, "id_of_question", None),
+                "prediction": forecast_log.to_jsonable(prediction.prediction_value),
+                "reasoning": prediction.reasoning,
+            })
+        except Exception as exc:  # record-keeping must never lose a forecast
+            logger.warning(f"Could not keep the rationale: {exc}")
+        return prediction
 
     @staticmethod
     def _get_research_prompt(
@@ -797,9 +849,15 @@ if __name__ == "__main__":
         raise SystemExit(0)
     forecast_reports = []
     minibench_usage = 0.0
-    # The manager's own ceiling is set high; it is used here as the meter.
-    cost_manager = MonetaryCostManager(run_allowance * 3)
-    FallTemplateBot2026.run_budget = (cost_manager, run_allowance)
+    # The meter is costs.RECORDER: measured dollars from each call's usage figures. The
+    # library's own manager stays on because the library expects one, but it is not used
+    # for the limits: it adds every call twice (once directly, once from a late callback).
+    meter = costs.RECORDER
+    meter.season_stages = ledger.get("stages", {})
+    cost_manager = MonetaryCostManager(run_allowance * 6)
+    FallTemplateBot2026.run_budget = (meter, run_allowance)
+    if run_mode == "tournament":
+        forecast_log.DIR = forecast_log.Path(__file__).parent / "forecast_log"
     try:
         with cost_manager:
             client = MetaculusClient()
@@ -811,11 +869,11 @@ if __name__ == "__main__":
                 )
                 # MiniBench only gets its paced daily share (see budget.py); the main
                 # tournament above always comes first.
-                main_usage = cost_manager.current_usage
+                main_usage = meter.current_usage
                 mb_room = budget.minibench_room(ledger)
                 minibench_reports = []
                 if mb_room > 0:
-                    FallTemplateBot2026.run_budget = (cost_manager, min(run_allowance, main_usage + mb_room / budget.PADDING))
+                    FallTemplateBot2026.run_budget = (meter, min(run_allowance, main_usage + mb_room / budget.PADDING))
                     minibench_reports = asyncio.run(
                         template_bot.forecast_on_tournament(
                             client.CURRENT_MINIBENCH_ID, return_exceptions=True
@@ -823,7 +881,7 @@ if __name__ == "__main__":
                     )
                 else:
                     print("MiniBench skipped this run: its paced share for today is used (see budget.py).")
-                minibench_usage = cost_manager.current_usage - main_usage
+                minibench_usage = meter.current_usage - main_usage
                 forecast_reports = seasonal_tournament_reports + minibench_reports
             elif run_mode == "metaculus_cup":
                 # The Metaculus Cup may be uninitialized near the start of a season
@@ -847,8 +905,17 @@ if __name__ == "__main__":
                     )
                 )
     finally:
-        recorded = budget.record(ledger, cost_manager.current_usage, minibench_cost=minibench_usage)
+        costs.merge_season(ledger, meter)
+        recorded = budget.record(ledger, meter.current_usage, minibench_cost=minibench_usage)
         print(f"Recorded ${recorded:.2f} for this run; season total ${ledger['spent']:.2f} of ${budget.SEASON_CAP:.2f}.")
+        for key, stages in meter.by_question.items():
+            forecast_log.add_costs(key, stages)
+        print(costs.summary(meter.run_stages(), meter.question_count(), ledger["stages"],
+                            ledger["stage_questions"], ledger.get("stage_since", "")))
+        if meter.unpriced:
+            print(f"[cost] no price set in costs.py for {sorted(meter.unpriced)}; charged at the library's figure")
+        if meter.library_cost and abs(meter.current_usage - meter.library_cost) > 0.1 * meter.library_cost:
+            print(f"[cost] check prices in costs.py: measured ${meter.current_usage:.4f}, library's figure ${meter.library_cost:.4f}")
 
     template_bot.log_report_summary(forecast_reports)
     print_run_summary_banner(
