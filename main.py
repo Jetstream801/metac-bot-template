@@ -54,6 +54,31 @@ structure_output = costs.staged("parse", structure_output)
 dotenv.load_dotenv()
 logger = logging.getLogger(__name__)
 
+# Web searches one research call may run. This is a CEILING (the search tool's max_uses), not a
+# target: at $0.01 each the searches were about 60% of a question's cost when all three were
+# always used (measured 2026-11-18: 9 searches on 3 questions), so the prompt now tells the model
+# to stop as soon as it can write the rundown. Do not set it below 3.
+RESEARCH_MAX_SEARCHES = 3
+# Facts checked against Anthropic's docs on 2026-11-18 (web search tool; prompt caching):
+# - The search tool has no parameter that limits how much page text comes back (only max_uses,
+#   allowed_/blocked_domains, user_location). Every result is read again by each later search step
+#   of the same call, so tokens grow with the square of the searches: fewer searches is the trim.
+# - Prompt caching is not used. The fixed part of the research prompt is about 150 tokens (the
+#   minimum that can be cached is 512 for these models) and every forecast prompt is used once.
+#   Turning caching on would also make the API write each search result to the cache at 1.25 times
+#   the input price; that pays back only from the second search of a call on.
+
+
+def research_tools(max_searches: int = RESEARCH_MAX_SEARCHES) -> list[dict]:
+    """The researcher's tools: Anthropic's built-in web search, at most max_searches a call."""
+    return [{"type": "web_search_20250305", "name": "web_search", "max_uses": max(3, int(max_searches))}]
+
+
+def searches_so_far(key: str) -> int | None:
+    """Web searches the research call for this question ran, or None when no call was measured."""
+    record = costs.RECORDER.question_stages(key).get("research")
+    return record["searches"] if record and record["calls"] else None
+
 
 class FallTemplateBot2026(ForecastBot):
     """
@@ -196,22 +221,34 @@ class FallTemplateBot2026(ForecastBot):
                     research = await self.get_llm("researcher", "llm").invoke(prompt)
                 # Guard (review of 2026-11-16): one question was forecast on 43 characters of
                 # research after the searches used up the reply. Try once more, briefly.
-                if isinstance(researcher, GeneralLlm) and len(str(research or "").strip()) < 400:
-                    logger.warning(f"Research for {question.page_url} came back nearly empty; retrying once")
+                # Second guard (2026-11-18, with the adaptive search count): the first search is
+                # not optional. A write-up made with no search at all is the model's memory, not
+                # research, so that is tried once more too.
+                short = len(str(research or "").strip()) < 400
+                unsearched = bool(getattr(researcher, "litellm_kwargs", {}).get("tools")) and searches_so_far(key) == 0
+                if isinstance(researcher, GeneralLlm) and (short or unsearched):
+                    logger.warning(f"Research for {question.page_url} came back "
+                                   f"{'nearly empty' if short else 'without any web search'}; retrying once")
                     retried = True
                     try:
                         with costs.stage("research_retry"):
-                            research = await researcher.invoke(
-                                prompt + "\n\nUse at most 2 searches, then write your findings in under 500 words. "
+                            again = await researcher.invoke(
+                                prompt + ("\n\nYour last answer was written without any web search. Run at least one search now. "
+                                          if unsearched and not short else "\n\n")
+                                + "Use at most 2 searches, then write your findings in under 500 words. "
                                 "You must write the findings even if the searches found little."
                             )
+                        # A full first write-up is not thrown away for a thinner second one.
+                        if short or len(str(again or "").strip()) >= 400:
+                            research = again
                     except Exception as exc:
                         logger.warning(f"Research retry failed: {exc}")
                     if len(str(research or "").strip()) < 400:
                         research = (str(research or "").strip() + "\n\n(Note: web research returned almost nothing for this "
                                     "question; rely on base rates and say so.)").strip()
                 logger.info(f"Found Research for URL {question.page_url}:\n{research}")
-                forecast_log.save_research(question, research, retried=retried)
+                forecast_log.save_research(question, research, retried=retried,
+                                           searches=costs.RECORDER.research_searches().get(key))
                 return research
 
     async def _run_individual_question(self, question: MetaculusQuestion):
@@ -259,6 +296,12 @@ class FallTemplateBot2026(ForecastBot):
             the current state of things (with dates and figures), anything scheduled before the question closes,
             how often things like this have happened before, and how the question would resolve if nothing changed.
             Say plainly when you could not find something. Do not produce a forecast yourself.
+
+            Searching: you may run at most {RESEARCH_MAX_SEARCHES} web searches, and each one costs money.
+            Always run the first search. After each search, check what you have against the four points above.
+            Search again only to fill a specific gap that matters for the forecast (a missing current figure,
+            an unconfirmed date, no base rate), with a different query aimed at that gap. Never search again for
+            something you already have. As soon as you can write the rundown, stop searching and write it.
 
             Question:
             {question.question_text}
@@ -815,7 +858,7 @@ if __name__ == "__main__":
                 timeout=240,
                 allowed_tries=2,
                 max_tokens=6000,  # 2500 was sometimes used up by searching before any answer was written
-                tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 3}],
+                tools=research_tools(),  # up to RESEARCH_MAX_SEARCHES searches; the prompt says when to stop
             ),
             "parser": "anthropic/claude-haiku-5-5",
         },
@@ -911,7 +954,8 @@ if __name__ == "__main__":
         for key, stages in meter.by_question.items():
             forecast_log.add_costs(key, stages)
         print(costs.summary(meter.run_stages(), meter.question_count(), ledger["stages"],
-                            ledger["stage_questions"], ledger.get("stage_since", "")))
+                            ledger["stage_questions"], ledger.get("stage_since", ""),
+                            run_searches=meter.research_searches(), season_searches=ledger.get("research_search_hist")))
         if meter.unpriced:
             print(f"[cost] no price set in costs.py for {sorted(meter.unpriced)}; charged at the library's figure")
         if meter.library_cost and abs(meter.current_usage - meter.library_cost) > 0.1 * meter.library_cost:

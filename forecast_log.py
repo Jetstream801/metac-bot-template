@@ -97,7 +97,7 @@ def write(key, record, directory=None):
         return False
 
 
-def save_research(question, research, retried=False, reused=False, directory=None, now=None):
+def save_research(question, research, retried=False, reused=False, directory=None, now=None, searches=None):
     """Called as soon as research exists, so it survives a failure in the forecast step."""
     key = question_key(question)
     record = read(key, directory) or {}
@@ -107,6 +107,8 @@ def save_research(question, research, retried=False, reused=False, directory=Non
         record["research"] = research
         record["research_time"] = _iso(_now(now))
         record["research_retried"] = bool(retried)
+        if searches is not None:      # web searches this research ran (the ceiling is 3; fewer is the saving)
+            record["research_searches"] = int(searches)
     record["research_reused"] = bool(reused) or record.get("research_reused", False)
     return write(key, record, directory)
 

@@ -151,6 +151,17 @@ class Recorder:
                 add_into(totals.setdefault(stage, empty_stage()), record)
         return totals
 
+    def research_searches(self):
+        """{question key: web searches its research ran this run (first call plus any retry)}, for
+        the questions that were researched this run. This is what the adaptive search count is
+        measured by: it was a fixed 3 a question until 2026-11-18."""
+        out = {}
+        for key, stages in self.by_question.items():
+            calls = [stages[s] for s in ("research", "research_retry") if s in stages and stages[s]["calls"]]
+            if calls and key != "None":
+                out[key] = sum(r["searches"] for r in calls)
+        return out
+
     def question_count(self):
         return len([q for q in self.by_question if q != "None"])
 
@@ -218,12 +229,25 @@ def merge_season(ledger, recorder, now=None):
     season = ledger.setdefault("stages", {})
     for stage_name, record in recorder.run_stages().items():
         add_into(season.setdefault(stage_name, empty_stage()), record)
+    hist = ledger.setdefault("research_search_hist", {})   # searches used -> researched questions
+    for used in recorder.research_searches().values():
+        hist[str(used)] = hist.get(str(used), 0) + 1
     ledger["stage_questions"] = ledger.get("stage_questions", 0) + recorder.question_count()
     ledger.setdefault("stage_since", (now or datetime.now(timezone.utc)).strftime("%Y-%m-%d"))
     return ledger
 
 
-def summary(run_stages, run_questions, season_stages, season_questions, since=""):
+def searches_line(hist):
+    """'1.67 a question (1: 1, 2: 2)' for {searches used: questions}; 'n/a' when empty."""
+    hist = {int(k): int(v) for k, v in (hist or {}).items() if int(v) > 0}
+    n = sum(hist.values())
+    if not n:
+        return "n/a"
+    mean = sum(k * v for k, v in hist.items()) / n
+    return f"{mean:.2f} a question ({', '.join(f'{k}: {hist[k]}' for k in sorted(hist))})"
+
+
+def summary(run_stages, run_questions, season_stages, season_questions, since="", run_searches=None, season_searches=None):
     """Short per-stage table: this run and season-to-date."""
     run_total = sum(r["cost"] for r in run_stages.values())
     season_total = sum(r["cost"] for r in season_stages.values())
@@ -244,6 +268,12 @@ def summary(run_stages, run_questions, season_stages, season_questions, since=""
         f"season{' since ' + since if since else ''}: {season_questions} question(s), ${season_total:.2f}, "
         f"{_per(season_total, season_questions)} a question"
     )
+    if run_searches or season_searches:
+        run_hist = {}
+        for used in (run_searches or {}).values():
+            run_hist[used] = run_hist.get(used, 0) + 1
+        lines.append(f"[cost] web searches per researched question (ceiling 3; always 3 before 2026-11-18): run {searches_line(run_hist)} | "
+                     f"since adaptive search: {searches_line(season_searches)}")
     timeouts = sum(s.get("timeouts", 0) for s in season_stages.values())
     if timeouts:
         lines.append(f"[cost] {timeouts} timed-out call(s) this season charged at the stage average (unmeasured)")
