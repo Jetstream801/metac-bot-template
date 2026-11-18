@@ -13,5 +13,8 @@
   "2026-11-18": 0.1483
  },
  "note": "Season total includes two practice runs (about $3). Today's allowance was reset once after the second practice run so real forecasting could start.",
- "spent": 9.798
+ "spent": 9.798,
+ "stage_questions": 0,
+ "stage_since": "2026-11-18",
+ "stages": {}
 }
