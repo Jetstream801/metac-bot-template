@@ -5,7 +5,7 @@
   "2026-11-15": 0.2892,
   "2026-11-16": 1.1623,
   "2026-11-17": 0.5736,
-  "2026-11-18": 0.1507
+  "2026-11-18": 0.1985
  },
  "cap": 90.0,
  "minibench_by_day": {
@@ -13,8 +13,49 @@
   "2026-11-18": 0.058
  },
  "note": "Season total includes two practice runs (about $3). Today's allowance was reset once after the second practice run so real forecasting could start. 2026-11-18: corrected to the Anthropic console's real figure ($3.83; the old ledger over-charged about 2.6 times); earlier days scaled by the same factor.",
- "spent": 3.83,
- "stage_questions": 0,
+ "spent": 3.8778,
+ "stage_questions": 1,
  "stage_since": "2026-11-18",
- "stages": {}
+ "stages": {
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.01035,
+   "in": 2160,
+   "out": 603,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.000607,
+   "in": 3674,
+   "out": 478,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.035991,
+   "in": 42531,
+   "out": 3476,
+   "searches": 3,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000869,
+   "in": 1661,
+   "out": 1405,
+   "searches": 0,
+   "timeouts": 0
+  }
+ }
 }

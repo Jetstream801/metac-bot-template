@@ -1,0 +1,121 @@
+{
+ "accessed_at": "2026-11-18T06:07:01.251190+00:00",
+ "close_time": "2026-11-18T09:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.047817,
+ "cost_by_stage": {
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.01035,
+   "in": 2160,
+   "out": 603,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.000607,
+   "in": 3674,
+   "out": 478,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.035991,
+   "in": 42531,
+   "out": 3476,
+   "searches": 3,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000869,
+   "in": 1661,
+   "out": 1405,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-18T09:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-18T06:07:39.867010+00:00",
+ "num_forecasters": 113,
+ "open_time": "2026-11-18T06:00:00+00:00",
+ "post_id": 46482,
+ "prediction": {
+  "predicted_options": [
+   {
+    "option_name": "\u22649",
+    "probability": 0.3799999999999999
+   },
+   {
+    "option_name": "10 or 11",
+    "probability": 0.33000000000000007
+   },
+   {
+    "option_name": "12 or 13",
+    "probability": 0.18000000000000002
+   },
+   {
+    "option_name": "14 or 15",
+    "probability": 0.08000000000000002
+   },
+   {
+    "option_name": ">15",
+    "probability": 0.030000000000000002
+   }
+  ]
+ },
+ "question_id": 46738,
+ "rationales": [
+  {
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "\u22649",
+      "probability": 0.3799999999999999
+     },
+     {
+      "option_name": "10 or 11",
+      "probability": 0.33000000000000007
+     },
+     {
+      "option_name": "12 or 13",
+      "probability": 0.18000000000000002
+     },
+     {
+      "option_name": "14 or 15",
+      "probability": 0.08000000000000002
+     },
+     {
+      "option_name": ">15",
+      "probability": 0.030000000000000002
+     }
+    ]
+   },
+   "question_id": 46738,
+   "reasoning": "(a) About 6 weeks remain until Jan 1, 2027. Metaculus checks the tracker on or after that date.\n\n(b) The status quo is the June 2026 snapshot, which shows 9 Clear (one aggregator says 10). That falls in \"\u22649\", with \"10 or 11\" close behind.\n\n(c) An unexpected outcome would be FLI doing a large update in late 2026. It could reclassify Germany, Ireland, Poland, Finland and others as Clear after their laws passed and took effect. That would push the count to 12 or more.\n\nThe research is shaky. The sources disagree by one state, and the live FLI page was never opened. My own recollection is that the tracker's counts were low through 2025, so a figure of 9\u201310 by mid-2026 is plausible.\n\nSeveral laws have been adopted since the June snapshot: Ireland on 21 July, Germany on 29 July, and Poland on 3 July. If FLI had updated afterward, it would likely have added these. Some of them, such as Ireland, may already have been counted as Clear in June. The tracker is updated irregularly, so a further update before Jan 1 is possible but uncertain.\n\nThe \"Clear\" figure may also be stale or sit at the boundary. If the true count is 10 and the research missed it, the answer moves to \"10 or 11\". The \"\u22649\" and \"10 or 11\" options share most of the probability. Growth from pending laws (Cyprus, Czechia, Austria, Spain) adds some upside, and the tracker could also be reclassified downward.\n\nI put about 38% on \u22649, 33% on 10 or 11, 18% on 12 or 13, 8% on 14 or 15, and 3% on >15.\n\nOption_A: 0.38\nOption_B: 0.33\nOption_C: 0.18\nOption_D: 0.08\nOption_E: 0.03"
+  }
+ ],
+ "research": "**Bottom line:** I could not open the live FLI tracker page. Every count below comes from secondary sites that quote it, and they disagree by one state. The most consistent reading is **9 \"Clear\" states** in the June 2026 snapshot, with 10 reported by one site.\n\n**Current state (as of 18 Nov 2026)**\n\n- **Latest FLI snapshot found: 17 June 2026.** One aggregator reports it as 10 Clear, 11 Partial, 6 Unclear, though its header line is garbled. Table (FLI snapshot)June 17, 2026 Compiled August 6, 2026 Member states **27 Clear 10 Partial 11 Unclear** 6.\n- **Other sites report 9 Clear.** One says the tracker as of June, put it at nine fully designated, twelve partial and six with no public designation at all: Austria, Belgium, Bulgaria, Croatia, Estonia and Greece. A second states that as of mid-2026 only 9 Member States had both authorities clearly designated, 12 were partial and 6 unclear. The FLI overview page's own summary line (12 partial, 6 unclear) also implies 9 Clear (27 \u2212 12 \u2212 6), though that text may be from an older snapshot.\n- **Clear states named in the June snapshot:** Cyprus, Malta, Denmark, Finland, Hungary, Ireland and Italy appear as Clear in the aggregator's table. Germany is not visible in the excerpts I found, so I could not confirm its status.\n- **Partial examples:** Latvia, Spain, Portugal and Romania were shown as Partial in the same snapshot.\n\n**Developments since the June snapshot (from non-FLI sources, unverified against FLI)**\n\n- **Ireland:** The Regulation of Artificial Intelligence Act 2026 was signed into law on 21 July 2026 and establishes the AI Office of Ireland.\n- **Germany:** One source says KI-MIG ... adopted by the Bundestag in Feb 2026, entered into force 29 July 2026.\n- **Finland:** Act 1377/2025, in force 1 January 2026.\n- **Poland:** One source lists an Act of 3 July 2026 on AI systems.\n- **Pending:** Cyprus: draft AI Law of 2026 (consultation 16 August to 16 September 2026), not adopted. Czechia's draft is still with the government. Austria was pending formal designation, confirmed by RTR itself as of 17 August 2026.\n- **Regulatory deadline context:** The enforcement powers of the AI Office and the national competent authorities of the Member States apply from 2 August 2026, per the Commission. Article 70 required designations by 2 August 2025.\n\n**Scheduled before 1 Jan 2027**\n\n- No FLI update date was found. The June 17 snapshot is the latest I could identify.\n- Pending items that could move states to Clear include Cyprus's draft law, Czechia's draft, Austria's designation, Spain's national AI bill (Council of Ministers May 2026), and Ireland's AI Office build-out.\n- One Commission-based listing is dated 7 September 2026. Another tracker dated 7 Sep 2026 counts 14 with a designated lead authority. These are different methodologies, so they are not directly comparable to FLI's Clear category.\n\n**Base rates / historical pace**\n\n- One snapshot from May 2025 showed 3 states with clear designation, 10 partial, 14 unclear.\n- Mid-2026 snapshots show roughly 9\u201310 Clear. That is about 6\u20137 additional Clear states in roughly 13 months, or about one every two months, though the snapshots may not use identical criteria.\n- Changes tend to come in clusters tied to national laws passing, and the tracker is updated irregularly.\n\n**Resolution if nothing changes**\n\n- If the June 2026 snapshot is still current on 1 Jan 2027, the answer is most likely **9**. The 10 figure from the aggregator would apply if its table is the correct reading.\n- Several pending national laws (Cyprus, Austria, Czechia, Spain) could plausibly convert to Clear before then. Whether FLI updates its page in time is uncertain.\n\n**What I could not find**\n\n- The live FLI page's current Clear count and its exact criteria for \"Clear\" versus \"Partial.\" I inferred the criteria from aggregator descriptions only.\n- Whether FLI has updated since 17 June 2026.\n- An explicit FLI status for Germany, France, the Netherlands and others.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_time": "2026-11-18T06:07:18.228900+00:00",
+ "scheduled_resolution_time": "2027-01-01T00:00:00+00:00",
+ "status": "forecast",
+ "title": "How many EU member states will the AI Act National Implementation tracker classify as having clear market surveillance and notifying authorities on January 1, 2027?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "MultipleChoiceQuestion",
+ "url": "https://www.metaculus.com/questions/46482"
+}
