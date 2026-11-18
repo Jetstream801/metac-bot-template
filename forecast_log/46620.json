@@ -1,0 +1,76 @@
+{
+ "accessed_at": "2026-11-18T18:49:23.667942+00:00",
+ "close_time": "2026-11-18T21:43:57+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.039095,
+ "cost_by_stage": {
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.013272,
+   "in": 3251,
+   "out": 677,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.00045,
+   "in": 3314,
+   "out": 237,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024768,
+   "in": 38285,
+   "out": 1880,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000605,
+   "in": 1291,
+   "out": 951,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-18T21:43:57+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-18T18:49:56.659033+00:00",
+ "num_forecasters": 96,
+ "open_time": "2026-11-18T18:43:57+00:00",
+ "post_id": 46620,
+ "prediction": 0.4,
+ "question_id": 46880,
+ "rationales": [
+  {
+   "prediction": 0.4,
+   "question_id": 46880,
+   "reasoning": "(a) Time left: 10 days, from 18 Nov to 28 Nov 2026 at 23:59 PY time.\n\n(b) Status quo: no BCP or FGD statement gives a specific calendar day for the start of CDA payments, so the question resolves No. Official language so far has been vague (\"later stage,\" \"communicated soon\").\n\n(c) No scenario: CDA verification drags on. The BCP and FGD focus on the balance de exclusi\u00f3n and the 75-wage top-up. They say CDA holders will be paid \"after validation\" or \"by 2 December\" without tying that date to a CDA start. Media report on digital CDA credits, but no official notice gives a dated start. The question closes with no qualifying statement.\n\n(d) Yes scenario: the 15-day extension to 2 December was granted at the Equipo Interventor's request, which suggests the remaining payments, CDA among them, are being scheduled. The BCP could announce a payment calendar such as \"CDA holders with validated titles will be paid starting Monday 23 November.\" The validation platform opened on 12 November, so a first CDA batch before 2 December is plausible. The BCP has also announced dated schedules before, such as the 5, 6 and 11 November tranches. Maciel's remarks about digital CDA credited \"immediately\" show the FGD is already paying some CDA. An official statement like \"from today, digital CDA are being paid\" would plausibly count as stating the day payments began.\n\nWeighing these: the extension to 2 December means the remaining payments, probably including CDA, must occur by then. Reaching that deadline likely requires announcements, and Paraguayan officials communicate frequently by press release and social media, often with specific days. Against that, the criteria are strict. They require a specific calendar day tied to CDA, and statements like \"this week\" or \"from Monday\" may be ambiguous. Resolvers might also count a dated announcement such as \"CDA payments begin Nov 24.\" The assistant found no dated CDA statement yet, and the vagueness so far is notable. I put the chance at roughly 40%.\n\nProbability: 40%"
+  }
+ ],
+ "research": "**Rundown: BCP/FGD statements on a CDA payment start date (ueno bank S.A.), as of 18 Nov 2026**\n\n**Current state**\n- ueno bank was placed in resolution on 2 November. The FGD's first-stage anticipo ran from 5 November, and the legal deadline for that anticipo was 11 November. In total, 1,812,348 people received G. 3.99 billion, equivalent to USD 644 million, according to Pedro Acosta, a member of the BCP board.\n- CDA holders were excluded from the first groups. The BCP said CDA are not included in the first two groups of payments, and information on the following stages will be communicated soon through official channels.\n- On CDA specifically, FGD president Jos\u00e9 Maciel said on 10 November: \"We are not yet paying those who have CDA, because that implies greater verification.\" He also said the FGD had paid 1,738,804 accounts, 93.1% of those covered. On 11 November, the FGD did not give a date.\n- Conflicting signal: on 14\u201315 November, Maciel reportedly said that for holders of digital CDA, the credit was made \"immediately\", while the rest must complete a physical verification of the instrument. This is a media report of his remarks, and I did not find an official BCP notice that sets a CDA payment day.\n- Latest development (18 November, RDN): the BCP board granted 15 additional calendar days at the request of the Equipo Interventor, which moves the deadline for the remaining guarantee payments to 2 December. The article describes this as the BCP's deadline for FGD payments. My search snippet did not show whether it mentions CDA specifically.\n- Separately, the BCP says the balance-of-exclusion and transfer of assets and liabilities to another institution are the next steps. Acosta said the assets and liabilities will be organized into lots offered by tender to other financial entities. The 75-minimum-wage group must wait for the outcome of that balance.\n\n**Scheduled before 28 November**\n- The 2 December deadline for the remaining FGD payments falls just after the question closes. A CDA-specific date could be announced before then, but I found no scheduled announcement.\n- The BCP has said it will communicate later stages through official channels, with no date given.\n\n**Base rate**\n- I did not find any precedent for how often the BCP or FGD gives a calendar day for a second-stage class. The pattern in this case is repeated vague wording (\"later stage,\" \"next few days,\" \"not today\") and a few specific dates tied to legal deadlines (5, 6, 11 November, and now 2 December). The first-stage specific dates were set by the legal deadline, not by a separate class-specific schedule.\n\n**Resolution if nothing changes**\n- Under the criteria, a statement that CDA payments happen \"in a later stage\" or \"in the coming days\" does not count. Absent a specific calendar day from the BCP, the Equipo Interventor or the FGD by 28 November, the question resolves No.\n- Two points could complicate resolution. First, the reported \"immediate\" credit for digital CDA holders was given as a media quote, not as an official dated notice. Second, the 2 December deadline is a general FGD deadline and not a CDA start date, so it probably does not count unless a source ties it explicitly to CDA payments.\n\n**Not found:** any official BCP or FGD notice with a calendar day for CDA payments; any CDA-specific schedule in the BCP's published FGD payments page (I did not open it); any historical base rate for Paraguayan interventions.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_time": "2026-11-18T18:49:34.575394+00:00",
+ "scheduled_resolution_time": "2026-11-29T03:00:00+00:00",
+ "status": "forecast",
+ "title": "Will the Banco Central del Paraguay announce a payment start date for ueno bank CDA holders by 28 November 2026?",
+ "tournaments": [
+  "minibench"
+ ],
+ "type": "BinaryQuestion",
+ "url": "https://www.metaculus.com/questions/46620"
+}
