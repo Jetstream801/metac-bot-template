@@ -1,0 +1,147 @@
+{
+ "accessed_at": "2026-11-18T11:28:00.872227+00:00",
+ "close_time": "2026-11-18T14:19:14+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.051264,
+ "cost_by_stage": {
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.013416,
+   "in": 3028,
+   "out": 736,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.0007,
+   "in": 4692,
+   "out": 461,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.036375,
+   "in": 51464,
+   "out": 2458,
+   "searches": 3,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000773,
+   "in": 1228,
+   "out": 1300,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-18T14:19:14+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-18T11:28:37.246390+00:00",
+ "num_forecasters": 105,
+ "open_time": "2026-11-18T11:19:14+00:00",
+ "post_id": 46618,
+ "prediction": {
+  "cdf_size": 6,
+  "declared_percentiles": [
+   {
+    "percentile": 0.0,
+    "value": 1.5
+   },
+   {
+    "percentile": 0.6943000396,
+    "value": 2.5
+   },
+   {
+    "percentile": 0.84465,
+    "value": 3.5
+   },
+   {
+    "percentile": 0.90599,
+    "value": 4.5
+   },
+   {
+    "percentile": 0.92777,
+    "value": 5.5
+   },
+   {
+    "percentile": 0.94955,
+    "value": 6.5
+   }
+  ],
+  "is_date": false,
+  "lower_bound": 1.5,
+  "open_lower_bound": false,
+  "open_upper_bound": true,
+  "standardize_cdf": true,
+  "strict_validation": true,
+  "upper_bound": 6.5,
+  "zero_point": null
+ },
+ "question_id": 46878,
+ "rationales": [
+  {
+   "prediction": {
+    "cdf_size": 6,
+    "declared_percentiles": [
+     {
+      "percentile": 0.1,
+      "value": 1.9999991
+     },
+     {
+      "percentile": 0.2,
+      "value": 1.9999992
+     },
+     {
+      "percentile": 0.4,
+      "value": 1.9999994
+     },
+     {
+      "percentile": 0.6,
+      "value": 1.9999996
+     },
+     {
+      "percentile": 0.8,
+      "value": 3.0
+     },
+     {
+      "percentile": 0.9,
+      "value": 4.0
+     }
+    ],
+    "is_date": false,
+    "lower_bound": 1.5,
+    "open_lower_bound": false,
+    "open_upper_bound": true,
+    "standardize_cdf": true,
+    "strict_validation": true,
+    "upper_bound": 6.5,
+    "zero_point": null
+   },
+   "question_id": 46878,
+   "reasoning": "(a) Time left: 10 days, from 18 November to 28 November 2026. The Met Office table is only confirmed through 13 November, so 13\u201318 November is an unverified gap.\n\n(b) If nothing changed, the count stays at 2. Chloe has not been named as of the latest evidence.\n\n(c) If the current trend continued, the pace is 2 storms in roughly 2.5 months of the season, which is slow. Austen and Boelo were named two days apart in October, then nothing for about 4 weeks. A third name in a 10-day window in late November is plausible. Historically, about 40\u201350% of years have a new west-group name in a given 10-day late-November window. Examples include Debi, Bert, Conall, Arwen and Barra in 2021, and 2025 had Claudia on 12 November. The Met Office outlook describes unsettled, windy conditions at the start of the 26 November\u201310 December period, which raises the chance somewhat. Met \u00c9ireann's speculative window for Chloe is 16\u201329 November. Chloe could also have been named between 13 and 18 November, which I could not check.\n\nRough probabilities:\n- Count stays at 2: about 55%.\n- Count reaches 3: about 33%.\n- Count reaches 4: about 9%.\n- Count reaches 5 or more: about 3%.\n\n(d) Experts and markets: I found no market. The Met Office outlook points to unsettled weather but does not mention a named storm. The question creator's guess of \"not higher than 6\" is a loose upper bound.\n\n(e) Low scenario: a blocked or colder, drier pattern settles over the UK for the rest of November, or only moderate lows arrive that don't reach amber-warning level. The count stays at 2.\n\n(f) High scenario: an active Atlantic jet brings a run of deep lows from 18 to 28 November, as in November 2023 and 2024. Chloe, Dano and Evelyn are all named, giving 5.\n\nGiven the cumulative distribution, the median is 2, with the 60th percentile near 2 and the 80th at 3.\n\n\"\nPercentile 10: 2\nPercentile 20: 2\nPercentile 40: 2\nPercentile 60: 2\nPercentile 80: 3\nPercentile 90: 4\n\""
+  }
+ ],
+ "research": "**Bottom line:** I found no source reporting a third west-group name, so the count appears to still be 2. My latest direct evidence is from about 5\u20139 November, so I could not confirm the Met Office table's status for 9\u201318 November.\n\n**Current state**\n- Two names are used. Storm Austen was named on October 20 and Boelo on October 22.\n- Chloe is next. Storm Chloe is the next available name on the 2026/27 storm list used by the UK, Ireland, and the Netherlands.\n- Chloe had not been named in the sources I found. A Met Office statement reported by Britbrief (around 5 November) said \"Chloe is simply the next name on the 2026/27 storm-name list, following Storms Austen and Boelo\". A Floodradar tracker (about 9 days old) said No Met Office warning in force names Storm Chloe just now.\n- The Met Office's naming rule is that storms are named... when they have the potential to cause medium or high impacts in the UK, Ireland or the Netherlands, typically when an amber or red warning is expected during the event.\n- Other groups' storms do not count. Several storms named this season, including Storm Charles was officially named on 9 November 2026 by IPMA. Those do not advance the west-group count.\n\n**Scheduled or expected before 28 November**\n- No scheduled naming event exists; naming depends on forecast impacts.\n- Met \u00c9ireann's early-November outlook gave a window for Chloe: between Monday, November 16, and Sunday, November 29, for Storm Chloe to rock the country with high winds and heavy rain. It also said Met \u00c9ireann has not yet pinpointed an exact date that the storm will hit, with the extended forecast merely offering speculation.\n- The Met Office's late-November outlook, as reported by Britbrief, mentioned colder conditions later in November, with no mention of a named storm.\n\n**Base rates**\n- Autumn has produced named storms quickly this season: Austen and Boelo came two days apart in October.\n- Earlier seasons show late-November naming is common. Storm Arwen was named by the Met Office on 25 November 2021. It was named by the Met \u00c9ireann and Sigrid by Free University of Berlin on 21 November 2024 (Storm Bert).\n- The 2025/26 season was less active. Sources disagree on the count: the Met Office-group tally is four named by the Met Office/Met \u00c9ireann/KNMI group, while Met \u00c9ireann lists five named storms affecting the area, including Dave in April.\n- I did not find a systematic rate of how often a new name is assigned within a 10-day window. Treat the historical examples as anecdotes.\n\n**Resolution if nothing changes**\n- If no third name is announced by 28 November, the answer is **2**, matching the count the question gives for 13 November.\n- A Chloe naming on or before 28 November would make the answer 3. Only a Met Office or Met \u00c9ireann announcement dated on or before that day counts.\n\n**Gaps**\n- I could not access the Met Office UK Storm Centre table or the Met \u00c9ireann storm-names page directly. My information comes from news articles and cached snippets.\n- I found no reporting from 9\u201318 November on whether Chloe was named or whether a storm was forecast to meet the amber-warning threshold. Check the Met Office table before forecasting.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_time": "2026-11-18T11:28:14.463548+00:00",
+ "scheduled_resolution_time": "2026-11-28T23:59:00+00:00",
+ "status": "forecast",
+ "title": "How many storms will the UK\u2013Ireland\u2013Netherlands storm-naming group have named by the end of 28 November 2026?",
+ "tournaments": [
+  "minibench"
+ ],
+ "type": "DiscreteQuestion",
+ "url": "https://www.metaculus.com/questions/46618"
+}
