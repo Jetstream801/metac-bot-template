@@ -13,6 +13,7 @@
   "2026-11-18": 0.1609
  },
  "note": "Season total includes two practice runs (about $3). Today's allowance was reset once after the second practice run so real forecasting could start. 2026-11-18: corrected to the Anthropic console's real figure ($3.83; the old ledger over-charged about 2.6 times); earlier days scaled by the same factor.",
+ "research_search_hist": {},
  "spent": 4.0278,
  "stage_questions": 4,
  "stage_since": "2026-11-18",
