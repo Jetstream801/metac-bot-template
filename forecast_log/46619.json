@@ -1,0 +1,927 @@
+{
+ "accessed_at": "2026-11-18T12:45:38.493613+00:00",
+ "close_time": "2026-11-18T15:34:49+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.051616,
+ "cost_by_stage": {
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.015462,
+   "in": 3771,
+   "out": 792,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.00074,
+   "in": 4838,
+   "out": 513,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.034761,
+   "in": 29152,
+   "out": 3691,
+   "searches": 3,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000653,
+   "in": 1661,
+   "out": 974,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-18T15:34:49+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-18T12:46:18.366076+00:00",
+ "num_forecasters": 124,
+ "open_time": "2026-11-18T12:34:49+00:00",
+ "post_id": 46619,
+ "prediction": {
+  "cdf_size": 201,
+  "declared_percentiles": [
+   {
+    "percentile": 0.0504,
+    "value": 6.5
+   },
+   {
+    "percentile": 0.0517124444,
+    "value": 6.5115
+   },
+   {
+    "percentile": 0.0530248889,
+    "value": 6.523
+   },
+   {
+    "percentile": 0.0543373333,
+    "value": 6.5345
+   },
+   {
+    "percentile": 0.0556497778,
+    "value": 6.546
+   },
+   {
+    "percentile": 0.0569622222,
+    "value": 6.5575
+   },
+   {
+    "percentile": 0.0582746667,
+    "value": 6.569
+   },
+   {
+    "percentile": 0.0595871111,
+    "value": 6.5805
+   },
+   {
+    "percentile": 0.0608995556,
+    "value": 6.592
+   },
+   {
+    "percentile": 0.062212,
+    "value": 6.6035
+   },
+   {
+    "percentile": 0.0635244444,
+    "value": 6.615
+   },
+   {
+    "percentile": 0.0648368889,
+    "value": 6.6265
+   },
+   {
+    "percentile": 0.0661493333,
+    "value": 6.638
+   },
+   {
+    "percentile": 0.0674617778,
+    "value": 6.6495
+   },
+   {
+    "percentile": 0.0687742222,
+    "value": 6.6610000000000005
+   },
+   {
+    "percentile": 0.0700866667,
+    "value": 6.6725
+   },
+   {
+    "percentile": 0.0713991111,
+    "value": 6.684
+   },
+   {
+    "percentile": 0.0727115556,
+    "value": 6.6955
+   },
+   {
+    "percentile": 0.074024,
+    "value": 6.707
+   },
+   {
+    "percentile": 0.0753364444,
+    "value": 6.7185
+   },
+   {
+    "percentile": 0.0766488889,
+    "value": 6.73
+   },
+   {
+    "percentile": 0.0779613333,
+    "value": 6.7415
+   },
+   {
+    "percentile": 0.0792737778,
+    "value": 6.753
+   },
+   {
+    "percentile": 0.0805862222,
+    "value": 6.7645
+   },
+   {
+    "percentile": 0.0818986667,
+    "value": 6.776
+   },
+   {
+    "percentile": 0.0832111111,
+    "value": 6.7875
+   },
+   {
+    "percentile": 0.0845235556,
+    "value": 6.799
+   },
+   {
+    "percentile": 0.085836,
+    "value": 6.8105
+   },
+   {
+    "percentile": 0.0871484444,
+    "value": 6.822
+   },
+   {
+    "percentile": 0.0884608889,
+    "value": 6.8335
+   },
+   {
+    "percentile": 0.0897733333,
+    "value": 6.845
+   },
+   {
+    "percentile": 0.0910857778,
+    "value": 6.8565000000000005
+   },
+   {
+    "percentile": 0.0923982222,
+    "value": 6.868
+   },
+   {
+    "percentile": 0.0937106667,
+    "value": 6.8795
+   },
+   {
+    "percentile": 0.0950231111,
+    "value": 6.891
+   },
+   {
+    "percentile": 0.0963355556,
+    "value": 6.9025
+   },
+   {
+    "percentile": 0.097648,
+    "value": 6.914
+   },
+   {
+    "percentile": 0.0989604444,
+    "value": 6.9255
+   },
+   {
+    "percentile": 0.1002728889,
+    "value": 6.937
+   },
+   {
+    "percentile": 0.1015853333,
+    "value": 6.9485
+   },
+   {
+    "percentile": 0.105752,
+    "value": 6.96
+   },
+   {
+    "percentile": 0.1103468,
+    "value": 6.9715
+   },
+   {
+    "percentile": 0.1149416,
+    "value": 6.9830000000000005
+   },
+   {
+    "percentile": 0.1195364,
+    "value": 6.9945
+   },
+   {
+    "percentile": 0.1241312,
+    "value": 7.006
+   },
+   {
+    "percentile": 0.128726,
+    "value": 7.0175
+   },
+   {
+    "percentile": 0.1333208,
+    "value": 7.029
+   },
+   {
+    "percentile": 0.1379156,
+    "value": 7.0405
+   },
+   {
+    "percentile": 0.1425104,
+    "value": 7.0520000000000005
+   },
+   {
+    "percentile": 0.1471052,
+    "value": 7.0635
+   },
+   {
+    "percentile": 0.1517,
+    "value": 7.075
+   },
+   {
+    "percentile": 0.1562948,
+    "value": 7.0865
+   },
+   {
+    "percentile": 0.1608896,
+    "value": 7.098
+   },
+   {
+    "percentile": 0.1654844,
+    "value": 7.109500000000001
+   },
+   {
+    "percentile": 0.1700792,
+    "value": 7.121
+   },
+   {
+    "percentile": 0.174674,
+    "value": 7.1325
+   },
+   {
+    "percentile": 0.1792688,
+    "value": 7.144
+   },
+   {
+    "percentile": 0.1838636,
+    "value": 7.1555
+   },
+   {
+    "percentile": 0.1884584,
+    "value": 7.167
+   },
+   {
+    "percentile": 0.1930532,
+    "value": 7.1785000000000005
+   },
+   {
+    "percentile": 0.197648,
+    "value": 7.19
+   },
+   {
+    "percentile": 0.202638,
+    "value": 7.2015
+   },
+   {
+    "percentile": 0.2102626667,
+    "value": 7.213
+   },
+   {
+    "percentile": 0.2178873333,
+    "value": 7.2245
+   },
+   {
+    "percentile": 0.225512,
+    "value": 7.236000000000001
+   },
+   {
+    "percentile": 0.2331366667,
+    "value": 7.2475000000000005
+   },
+   {
+    "percentile": 0.2407613333,
+    "value": 7.259
+   },
+   {
+    "percentile": 0.248386,
+    "value": 7.2705
+   },
+   {
+    "percentile": 0.2560106667,
+    "value": 7.282
+   },
+   {
+    "percentile": 0.2636353333,
+    "value": 7.2935
+   },
+   {
+    "percentile": 0.27126,
+    "value": 7.305
+   },
+   {
+    "percentile": 0.2788846667,
+    "value": 7.3165000000000004
+   },
+   {
+    "percentile": 0.2865093333,
+    "value": 7.328
+   },
+   {
+    "percentile": 0.294134,
+    "value": 7.3395
+   },
+   {
+    "percentile": 0.3017586667,
+    "value": 7.351
+   },
+   {
+    "percentile": 0.3093833333,
+    "value": 7.362500000000001
+   },
+   {
+    "percentile": 0.317008,
+    "value": 7.3740000000000006
+   },
+   {
+    "percentile": 0.3246326667,
+    "value": 7.3855
+   },
+   {
+    "percentile": 0.3322573333,
+    "value": 7.397
+   },
+   {
+    "percentile": 0.339882,
+    "value": 7.4085
+   },
+   {
+    "percentile": 0.3475066667,
+    "value": 7.42
+   },
+   {
+    "percentile": 0.3551313333,
+    "value": 7.431500000000001
+   },
+   {
+    "percentile": 0.362756,
+    "value": 7.4430000000000005
+   },
+   {
+    "percentile": 0.3703806667,
+    "value": 7.4545
+   },
+   {
+    "percentile": 0.3780053333,
+    "value": 7.466
+   },
+   {
+    "percentile": 0.38563,
+    "value": 7.4775
+   },
+   {
+    "percentile": 0.3932546667,
+    "value": 7.489000000000001
+   },
+   {
+    "percentile": 0.4009452,
+    "value": 7.500500000000001
+   },
+   {
+    "percentile": 0.4100848,
+    "value": 7.5120000000000005
+   },
+   {
+    "percentile": 0.4192244,
+    "value": 7.5235
+   },
+   {
+    "percentile": 0.428364,
+    "value": 7.535
+   },
+   {
+    "percentile": 0.4375036,
+    "value": 7.5465
+   },
+   {
+    "percentile": 0.4466432,
+    "value": 7.558
+   },
+   {
+    "percentile": 0.4557828,
+    "value": 7.569500000000001
+   },
+   {
+    "percentile": 0.4649224,
+    "value": 7.581
+   },
+   {
+    "percentile": 0.474062,
+    "value": 7.5925
+   },
+   {
+    "percentile": 0.4832016,
+    "value": 7.604
+   },
+   {
+    "percentile": 0.4923412,
+    "value": 7.615500000000001
+   },
+   {
+    "percentile": 0.5014808,
+    "value": 7.627000000000001
+   },
+   {
+    "percentile": 0.5106204,
+    "value": 7.6385000000000005
+   },
+   {
+    "percentile": 0.51976,
+    "value": 7.65
+   },
+   {
+    "percentile": 0.5288996,
+    "value": 7.6615
+   },
+   {
+    "percentile": 0.5380392,
+    "value": 7.673
+   },
+   {
+    "percentile": 0.5471788,
+    "value": 7.6845
+   },
+   {
+    "percentile": 0.5563184,
+    "value": 7.696000000000001
+   },
+   {
+    "percentile": 0.565458,
+    "value": 7.7075000000000005
+   },
+   {
+    "percentile": 0.5745976,
+    "value": 7.719
+   },
+   {
+    "percentile": 0.5837372,
+    "value": 7.7305
+   },
+   {
+    "percentile": 0.5928768,
+    "value": 7.742000000000001
+   },
+   {
+    "percentile": 0.6015553333,
+    "value": 7.753500000000001
+   },
+   {
+    "percentile": 0.60918,
+    "value": 7.765000000000001
+   },
+   {
+    "percentile": 0.6168046667,
+    "value": 7.7765
+   },
+   {
+    "percentile": 0.6244293333,
+    "value": 7.788
+   },
+   {
+    "percentile": 0.632054,
+    "value": 7.7995
+   },
+   {
+    "percentile": 0.6396786667,
+    "value": 7.811
+   },
+   {
+    "percentile": 0.6473033333,
+    "value": 7.8225
+   },
+   {
+    "percentile": 0.654928,
+    "value": 7.8340000000000005
+   },
+   {
+    "percentile": 0.6625526667,
+    "value": 7.8455
+   },
+   {
+    "percentile": 0.6701773333,
+    "value": 7.857
+   },
+   {
+    "percentile": 0.677802,
+    "value": 7.8685
+   },
+   {
+    "percentile": 0.6854266667,
+    "value": 7.880000000000001
+   },
+   {
+    "percentile": 0.6930513333,
+    "value": 7.891500000000001
+   },
+   {
+    "percentile": 0.700676,
+    "value": 7.9030000000000005
+   },
+   {
+    "percentile": 0.7083006667,
+    "value": 7.9145
+   },
+   {
+    "percentile": 0.7159253333,
+    "value": 7.926
+   },
+   {
+    "percentile": 0.72355,
+    "value": 7.9375
+   },
+   {
+    "percentile": 0.7311746667,
+    "value": 7.949000000000001
+   },
+   {
+    "percentile": 0.7387993333,
+    "value": 7.960500000000001
+   },
+   {
+    "percentile": 0.746424,
+    "value": 7.972
+   },
+   {
+    "percentile": 0.7540486667,
+    "value": 7.9835
+   },
+   {
+    "percentile": 0.7616733333,
+    "value": 7.995000000000001
+   },
+   {
+    "percentile": 0.769298,
+    "value": 8.0065
+   },
+   {
+    "percentile": 0.7769226667,
+    "value": 8.018
+   },
+   {
+    "percentile": 0.7845473333,
+    "value": 8.0295
+   },
+   {
+    "percentile": 0.792172,
+    "value": 8.041
+   },
+   {
+    "percentile": 0.799138,
+    "value": 8.0525
+   },
+   {
+    "percentile": 0.8037328,
+    "value": 8.064
+   },
+   {
+    "percentile": 0.8083276,
+    "value": 8.0755
+   },
+   {
+    "percentile": 0.8129224,
+    "value": 8.087
+   },
+   {
+    "percentile": 0.8175172,
+    "value": 8.098500000000001
+   },
+   {
+    "percentile": 0.822112,
+    "value": 8.11
+   },
+   {
+    "percentile": 0.8267068,
+    "value": 8.121500000000001
+   },
+   {
+    "percentile": 0.8313016,
+    "value": 8.133000000000001
+   },
+   {
+    "percentile": 0.8358964,
+    "value": 8.1445
+   },
+   {
+    "percentile": 0.8404912,
+    "value": 8.156
+   },
+   {
+    "percentile": 0.845086,
+    "value": 8.1675
+   },
+   {
+    "percentile": 0.8496808,
+    "value": 8.179
+   },
+   {
+    "percentile": 0.8542756,
+    "value": 8.1905
+   },
+   {
+    "percentile": 0.8588704,
+    "value": 8.202
+   },
+   {
+    "percentile": 0.8634652,
+    "value": 8.2135
+   },
+   {
+    "percentile": 0.86806,
+    "value": 8.225000000000001
+   },
+   {
+    "percentile": 0.8726548,
+    "value": 8.236500000000001
+   },
+   {
+    "percentile": 0.8772496,
+    "value": 8.248000000000001
+   },
+   {
+    "percentile": 0.8818444,
+    "value": 8.259500000000001
+   },
+   {
+    "percentile": 0.8864392,
+    "value": 8.271
+   },
+   {
+    "percentile": 0.891034,
+    "value": 8.2825
+   },
+   {
+    "percentile": 0.8956288,
+    "value": 8.294
+   },
+   {
+    "percentile": 0.8985934,
+    "value": 8.3055
+   },
+   {
+    "percentile": 0.8997796,
+    "value": 8.317
+   },
+   {
+    "percentile": 0.9009658,
+    "value": 8.3285
+   },
+   {
+    "percentile": 0.902152,
+    "value": 8.34
+   },
+   {
+    "percentile": 0.9033382,
+    "value": 8.351500000000001
+   },
+   {
+    "percentile": 0.9045244,
+    "value": 8.363000000000001
+   },
+   {
+    "percentile": 0.9057106,
+    "value": 8.374500000000001
+   },
+   {
+    "percentile": 0.9068968,
+    "value": 8.386000000000001
+   },
+   {
+    "percentile": 0.908083,
+    "value": 8.3975
+   },
+   {
+    "percentile": 0.9092692,
+    "value": 8.409
+   },
+   {
+    "percentile": 0.9104554,
+    "value": 8.4205
+   },
+   {
+    "percentile": 0.9116416,
+    "value": 8.432
+   },
+   {
+    "percentile": 0.9128278,
+    "value": 8.4435
+   },
+   {
+    "percentile": 0.914014,
+    "value": 8.455
+   },
+   {
+    "percentile": 0.9152002,
+    "value": 8.4665
+   },
+   {
+    "percentile": 0.9163864,
+    "value": 8.478000000000002
+   },
+   {
+    "percentile": 0.9175726,
+    "value": 8.4895
+   },
+   {
+    "percentile": 0.9187588,
+    "value": 8.501000000000001
+   },
+   {
+    "percentile": 0.919945,
+    "value": 8.512500000000001
+   },
+   {
+    "percentile": 0.9211312,
+    "value": 8.524000000000001
+   },
+   {
+    "percentile": 0.9223174,
+    "value": 8.5355
+   },
+   {
+    "percentile": 0.9235036,
+    "value": 8.547
+   },
+   {
+    "percentile": 0.9246898,
+    "value": 8.5585
+   },
+   {
+    "percentile": 0.925876,
+    "value": 8.57
+   },
+   {
+    "percentile": 0.9270622,
+    "value": 8.5815
+   },
+   {
+    "percentile": 0.9282484,
+    "value": 8.593
+   },
+   {
+    "percentile": 0.9294346,
+    "value": 8.604500000000002
+   },
+   {
+    "percentile": 0.9306208,
+    "value": 8.616
+   },
+   {
+    "percentile": 0.931807,
+    "value": 8.627500000000001
+   },
+   {
+    "percentile": 0.9329932,
+    "value": 8.639000000000001
+   },
+   {
+    "percentile": 0.9341794,
+    "value": 8.650500000000001
+   },
+   {
+    "percentile": 0.9353656,
+    "value": 8.662
+   },
+   {
+    "percentile": 0.9365518,
+    "value": 8.6735
+   },
+   {
+    "percentile": 0.937738,
+    "value": 8.685
+   },
+   {
+    "percentile": 0.9389242,
+    "value": 8.6965
+   },
+   {
+    "percentile": 0.9401104,
+    "value": 8.708
+   },
+   {
+    "percentile": 0.9412966,
+    "value": 8.7195
+   },
+   {
+    "percentile": 0.9424828,
+    "value": 8.731000000000002
+   },
+   {
+    "percentile": 0.943669,
+    "value": 8.7425
+   },
+   {
+    "percentile": 0.9448552,
+    "value": 8.754000000000001
+   },
+   {
+    "percentile": 0.9460414,
+    "value": 8.765500000000001
+   },
+   {
+    "percentile": 0.9472276,
+    "value": 8.777000000000001
+   },
+   {
+    "percentile": 0.9484138,
+    "value": 8.7885
+   },
+   {
+    "percentile": 0.9496,
+    "value": 8.8
+   }
+  ],
+  "is_date": false,
+  "lower_bound": 6.5,
+  "open_lower_bound": true,
+  "open_upper_bound": true,
+  "standardize_cdf": true,
+  "strict_validation": true,
+  "upper_bound": 8.8,
+  "zero_point": null
+ },
+ "question_id": 46879,
+ "rationales": [
+  {
+   "prediction": {
+    "cdf_size": 201,
+    "declared_percentiles": [
+     {
+      "percentile": 0.1,
+      "value": 6.95
+     },
+     {
+      "percentile": 0.2,
+      "value": 7.2
+     },
+     {
+      "percentile": 0.4,
+      "value": 7.5
+     },
+     {
+      "percentile": 0.6,
+      "value": 7.75
+     },
+     {
+      "percentile": 0.8,
+      "value": 8.05
+     },
+     {
+      "percentile": 0.9,
+      "value": 8.3
+     }
+    ],
+    "is_date": false,
+    "lower_bound": 6.5,
+    "open_lower_bound": true,
+    "open_upper_bound": true,
+    "standardize_cdf": true,
+    "strict_validation": true,
+    "upper_bound": 8.8,
+    "zero_point": null
+   },
+   "question_id": 46879,
+   "reasoning": "(a) About 8-9 days until the window opens (Nov 26-27), and the data is known by Nov 28 or shortly after.\n\n(b) If nothing changed, the observed maximum would equal the predicted high of 6.84 ft on Nov 26, or about 6.9 ft allowing for the 6-minute peak. Nov 27's predicted high is 6.5 ft.\n\n(c) If the current trend continued, residuals of about 0.8 to 1.4 ft would put the maximum at roughly 7.7 to 8.2 ft. The Nov 13 residual was about 1 ft. The October residual was 12-17 inches. Late November residuals may fade as the Kelvin wave passes and the El Ni\u00f1o's sea-level anomaly persists. A typical El Ni\u00f1o anomaly of 0.5-1.0 ft is plausible, plus a possible storm surge. The Nov 25 high of 6.96 ft is outside the window.\n\n(d) The City of Newport Beach and NWS expect elevated levels and possible flooding. The Newport Beach warning of 12 inches above the October record of 8.4 ft looks exaggerated. NWS quoted total water levels about 1.3-1.4 ft above normal.\n\n(e) Low scenario: the residual collapses to around 0.2-0.4 ft because the Kelvin wave passes, the sea surface cools, and the weather is calm with a high-pressure system. The maximum would be about 7.0-7.2 ft. Missing data would lead to annulment, but that is not a numeric outcome.\n\n(f) High scenario: a large storm with strong swell and low pressure coincides with the Nov 26 morning high. A residual of 1.5 ft or more would push the maximum to 8.4-8.7 ft, above the October record.\n\nMy central estimate is a residual of about 0.8 ft on top of 6.84 ft, giving roughly 7.65 ft. The 6-minute maximum also includes wave-induced noise, which adds a little. Scripps Pier is sheltered somewhat, but it records swell effects. The window maximum could also fall at a different time than the predicted high, though the Nov 26 high is the larger of the two.\n\nPercentiles:\n\nPercentile 10: 6.95\nPercentile 20: 7.2\nPercentile 40: 7.5\nPercentile 60: 7.75\nPercentile 80: 8.05\nPercentile 90: 8.3"
+  }
+ ],
+ "research": "**Bottom line:** I could not retrieve La Jolla's live observations or a La Jolla-specific prediction for the high tides on November 26-27. The best proxy I found is San Diego-area predictions, which put the November 26 morning high near 7 ft, with a storm-driven surf and minor-flooding setup in the days before.\n\n**Station reference values (NOAA, MLLW)**\n- The station's highest observed water level is 7.81 ft (Highest Observed Tide), dated 11/25/2015 15:42. NOAA's station page lists the same peak as 2.49 ft (ref MHHW), which is consistent with MHHW of 5.32 ft.\n- Other datums: HAT 7.20 ft, and the lowest observed tide is -2.87 ft from 1933.\n- The station's page also lists a Met Site Elevation: 30.5 ft, which is not relevant to water level.\n\n**Current conditions (as of Nov 16-17, 2026)**\n- Powerful swells from storms in the North Pacific battered the California coast from November 14 to 16, 2026, and closed piers from Ventura to San Diego.\n- The NWS San Diego discussion issued Nov 17 says high surf will lead to periods of minor coastal flooding during high tides. It also says coastal flooding is expected at times through the week.\n- A High Surf Advisory for the Orange and San Diego county coasts runs until 04:00 PT Wednesday, November 18.\n- 10News reports that surf is expected to build again Thursday as the next storm moves in. It also says King Tides next week could bring a greater threat of coastal flooding.\n- The Watchers describes the season as a strong El Ni\u00f1o.\n\n**Predicted tides for November 26-27**\n- The San Diego Quarantine Station (not La Jolla) calendar lists Thursday, November 26: Low 2:58a 2.2 ft. High 9:15a 7.0 ft. High 11:21p 3.8 ft. High 10:06a 6.7 ft. The 9:15 and 10:06 times match the question's stated predicted highs, but the heights come from a different station.\n- A San Diego Bay monthly table gives a maximum tide of 7.45 ft for November 2026. This is also not La Jolla.\n- Tidewindow's La Jolla (Scripps Pier) page shows NOAA 9410230 predictions and lists Nov 26, 2026, -1.4 ft at 4:46 PM as a low. I could not find the La Jolla predicted high heights for Nov 26-27 in the results, so the 7.0 ft figure is an approximation only.\n- NOAA's outlook is cited as predicts above-normal high tides from November 22 to 27 and from December 22 to 26, 2026. I did not find NOAA's own document for this, so treat it as secondhand.\n\n**Scheduled events before the window closes**\n- High Surf Advisory expiring Nov 18 (above).\n- The next storm, expected to build surf around Thursday Nov 19 (per 10News).\n- The \"above-normal high tides\" period starting Nov 22 (per the Watchers, secondhand).\n- Nothing else scheduled that I found.\n\n**Historical frequency**\n- The record high (7.81 ft, Nov 25, 2015) occurred during a storm-and-high-tide event, and the 2023 event in Ventura was similarly coinciding with the latest arrival of exceptionally high tides known as king tides. These are anecdotes. I did not find a systematic count of how often the observed maximum exceeds the predicted high in San Diego-area windows.\n\n**Data-availability risk**\n- I did not find any notice of an outage at station 9410230. A third-party page showed Water Level (Tide): N/A at crawl time, which is not conclusive and may simply reflect a stale page.\n\n**Resolution if nothing changes**\n- The question resolves to the highest 6-minute observed value in the window, which is at least the astronomical high-tide peak plus any surge or wave setup. Storm-driven water levels usually push the observed maximum above the predicted peak, but I did not find quantified surge magnitudes for this station.\n- Annulment applies only if valid observations are missing within an hour of either predicted high. I found no evidence of missing data, but I could not check NOAA's live feed.\n\n**What I could not verify:** NOAA's live observed data, La Jolla-specific predicted high heights for Nov 26-27, NOAA's own statement about the above-normal tides, and any historical statistics on observed-versus-predicted departures at this station.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_time": "2026-11-18T12:45:56.119891+00:00",
+ "scheduled_resolution_time": "2026-11-28T18:00:00+00:00",
+ "status": "forecast",
+ "title": "What will be the highest observed water level (ft above MLLW) at NOAA's La Jolla, CA tide gauge (station 9410230) on November 26-27, 2026?",
+ "tournaments": [
+  "minibench"
+ ],
+ "type": "NumericQuestion",
+ "url": "https://www.metaculus.com/questions/46619"
+}
