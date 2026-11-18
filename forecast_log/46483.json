@@ -1,0 +1,75 @@
+{
+ "accessed_at": "2026-11-18T09:10:11.494347+00:00",
+ "close_time": "2026-11-18T12:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.047121,
+ "cost_by_stage": {
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.009584,
+   "in": 2052,
+   "out": 548,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.000382,
+   "in": 3056,
+   "out": 152,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.036456,
+   "in": 50380,
+   "out": 2836,
+   "searches": 3,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000699,
+   "in": 1374,
+   "out": 1124,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-18T12:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-18T09:10:47.286914+00:00",
+ "num_forecasters": 186,
+ "open_time": "2026-11-18T09:00:00+00:00",
+ "post_id": 46483,
+ "prediction": 0.2,
+ "question_id": 46739,
+ "rationales": [
+  {
+   "prediction": 0.2,
+   "question_id": 46739,
+   "reasoning": "(a) About 6 weeks until the window closes (Dec 31, 2026); the window opens Dec 15, about 4 weeks from now.\n\n(b) Status quo: No. The average is around 37\u201338%, and the record low is about 36.3%, so a new low would need a drop of roughly 1+ point and would have to be set within Dec 15\u201331 specifically.\n\n(c) No scenario: The average hovers at 37\u201338% through the holidays. Alternatively, it dips to a low in late November or early December and then partly recovers. A low set before Dec 15 raises the bar for the window. Polling usually thins out around the holidays, which adds stability.\n\n(d) Yes scenario: Bad news (Iran war escalation, high fuel prices, economic data) drives the average down. Because Silver's average moves slowly, a decline that began in November could carry it past 36.3% during Dec 15\u201331. It would also need to be at its lowest point yet inside the window.\n\nThe data is somewhat confusing. The question background says the low was 36.3% and the current value is 37.4%. The research notes show the average at about 37.3\u201337.8% in mid-November, with the tracker \"back on the downswing\". The gap to the low is about 1 point. Over 4\u20136 weeks, the average's standard deviation is about 1\u20131.5 points. The probability that the minimum within a 2-week window falls below the prior min, including any lows set before Dec 15, is perhaps 20\u201325%. Polls like YouGov at 32% and Reuters at 32% suggest ongoing weakness, but the Silver average already reflects that. Mean reversion after the midterms is also plausible. I'll go with about 20%.\n\nProbability: 20%"
+  }
+ ],
+ "research": "**Bottom line:** As of November 16\u201318, 2026, Silver's average sits about 1 point above its reported all-time low, and the resolution depends on that low's exact value, which I could not pin down.\n\n**Current state (Silver Bulletin)**\n- The tracker page, updated November 16, 2026, says approval has rebounded slightly to 38 percent and is back on the downswing. It shows 37 percent of Americans approve of the job he's doing, while 60 percent disapprove. These are rounded figures; the CSV's exact value is what resolves the question.\n- Earlier readings: Nate Silver's Silver Bulletin placed him at 37.6 percent approval as of November 12. A separate table shows 37.3% approve and 59.7% disapprove for November 12, so the two sources differ slightly.\n- The all-time low is unclear. Newsweek reported that Nate Silver's polling average put Trump's approval at 37.8 percent on November 9, slightly above its recorded low of 36.3 percent. HNGN repeats the 36.3% figure as the tracker's all-time low. I could not find the date of that low. The question's example (38.29, May 21) is inconsistent with a 36.3 low, so the 36.3 figure may be a different series, a different date, or a misreport. Check the CSV for the true minimum before forecasting.\n- Net-approval context: a Silver Bulletin net reading of minus 22.4 was described as its lowest point across either of his White House terms at a September 2026 update. Silver's post-midterm net figures are roughly -22, so the net series and approval series may have different low points.\n\n**Other polls (for context, not the resolution source)**\n- Economist/YouGov (Nov 9\u201311): 32 percent approve and 63 percent disapprove, described as down four percentage points from the previous week and below his previous second-term low of 33%, recorded in August.\n- Reuters/Ipsos: stuck at 32% across four consecutive Reuters/Ipsos polls, following a record low of 31% in mid-October.\n- CNN (October): a record low of 32%.\n- Drivers cited: The war with Iran and the subsequent rise in the cost of living in the United States, driven by higher fuel prices, have been cited as major factors.\n\n**Scheduled events before the window closes**\n- I found no specific scheduled event for December 15\u201331, 2026 that is known to move approval. The midterms have already happened (the articles describe them as past), so no electoral catalyst is listed.\n- Weekly or daily polls (YouGov, Reuters/Ipsos, and others) will continue to feed the Silver average. I did not find their December release calendar.\n\n**How often new lows have happened**\n- The tracker has set new lows repeatedly in 2026: a term low in September, an August low in YouGov's series, and a late-May low in Crystal Ball's net-approval analysis. Crystal Ball reported a second-term low point of about -20 in mid-to-late May.\n- Lows have clustered in periods of bad news and low gas prices. Polling has been flat-to-down since the midterms, but the Silver average has rebounded from its November 9 level in the most recent reading.\n\n**If nothing changed**\n- The average would drift in the 36\u201339% range and stay close to its current level. A Yes would require the Silver approval figure to fall below the prior minimum (possibly 36.3%, or a different value once the CSV is checked) at some point between December 15 and December 31, 2026.\n- Under the status quo, with the average near 37% and no obvious catalyst, the default outcome is No, though the margin is small enough that a few weeks of bad polling could cross it.\n\n**What I could not find:** the exact date and value of Silver's all-time approval low, the CSV's current data, and any specific December 2026 scheduled events.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_time": "2026-11-18T09:10:26.969506+00:00",
+ "scheduled_resolution_time": "2027-01-01T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Will Donald Trump's approval rating reach a new low in the second half of December 2026?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "BinaryQuestion",
+ "url": "https://www.metaculus.com/questions/46483"
+}
