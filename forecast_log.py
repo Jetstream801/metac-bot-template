@@ -97,7 +97,7 @@ def write(key, record, directory=None):
         return False
 
 
-def save_research(question, research, retried=False, reused=False, directory=None, now=None, searches=None):
+def save_research(question, research, retried=False, reused=False, directory=None, now=None, searches=None, second=None):
     """Called as soon as research exists, so it survives a failure in the forecast step."""
     key = question_key(question)
     record = read(key, directory) or {}
@@ -109,6 +109,8 @@ def save_research(question, research, retried=False, reused=False, directory=Non
         record["research_retried"] = bool(retried)
         if searches is not None:      # web searches this research ran (the ceiling is 3; fewer is the saving)
             record["research_searches"] = int(searches)
+        if second is not None:        # whether the second research pass added a section (quality.py)
+            record["research_second"] = bool(second)
     record["research_reused"] = bool(reused) or record.get("research_reused", False)
     return write(key, record, directory)
 
@@ -132,8 +134,9 @@ def reusable_research(record, now=None, max_hours=RESEARCH_REUSE_HOURS):
     return text if 0 <= age_hours <= max_hours else None
 
 
-def save_forecast(question, prediction, rationales=None, errors=None, directory=None, now=None):
-    """Called once the forecast has been made and published."""
+def save_forecast(question, prediction, rationales=None, errors=None, directory=None, now=None, extra=None):
+    """Called once the forecast has been made and published. extra: more fields to keep (the
+    published CDF, the quality settings and tier, check flags: see main.py and evaluate.py)."""
     key = question_key(question)
     record = read(key, directory) or question_fields(question)
     record.update({
@@ -143,6 +146,7 @@ def save_forecast(question, prediction, rationales=None, errors=None, directory=
         "rationales": to_jsonable(rationales or []),
         "errors": to_jsonable(errors or []),
     })
+    record.update(to_jsonable(extra or {}))
     return write(key, record, directory)
 
 

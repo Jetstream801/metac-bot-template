@@ -20,13 +20,17 @@ PRICES = {
         "long": {"in": 0.50, "out": 2.50, "cache_write": 0.625, "cache_read": 0.05},
     },
     "claude-sonnet-5-5": {"in": 2.00, "out": 10.00, "cache_write": 2.50, "cache_read": 0.10},
+    # The stronger ensemble member (quality.py). Price checked on the same page 2026-11-18.
+    "claude-opus-5-5": {"in": 4.00, "out": 20.00, "cache_write": 5.00, "cache_read": 0.20},
 }
 WEB_SEARCH_PER_1000 = 10.00  # dollars per 1,000 searches; failed searches are not billed
 
-STAGES = ("research", "research_retry", "summarise", "forecast", "parse", "other")
+# research2: second research pass. strong: forecasts by the stronger model. control: the one
+# old-style forecast kept for comparison. check: the shadow sanity check. (See quality.py.)
+STAGES = ("research", "research_retry", "research2", "summarise", "forecast", "strong", "control", "parse", "check", "other")
 # Charged for a call that timed out on our side (see Recorder.add_timeout) when the stage
 # has no measured call yet to take an average from.
-TIMEOUT_FALLBACK = {"research": 0.04, "research_retry": 0.03, "forecast": 0.01}
+TIMEOUT_FALLBACK = {"research": 0.04, "research_retry": 0.03, "research2": 0.03, "forecast": 0.01, "strong": 0.04, "control": 0.01}
 TIMEOUT_FALLBACK_OTHER = 0.001
 
 _stage = contextvars.ContextVar("cost_stage", default="other")

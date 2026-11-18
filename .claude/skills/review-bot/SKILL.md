@@ -33,6 +33,21 @@ request per post.
 
 Read the summary first, then `review.json` for per-question detail.
 
+## 1b. Score the quality levers
+
+`evaluate.py` reads `forecast_log/` (every ensemble member's own forecast, the published
+aggregate, and a "control" forecast made the old way) and scores each lever on the questions
+that have resolved, in peer-score points per question, with a `keep` / `drop` /
+`needs N more resolutions` line for each. Read-only, no model calls.
+
+```bash
+uv run python evaluate.py --fetch --summary quality.md
+```
+
+Put its lever table in the review as it stands. Act on a `keep` or `drop` only; `needs N more`
+means leave the setting alone (settings are in `quality.py`, the reasoning in `docs/quality.md`).
+The worst-scoring list it prints is a good starting point for step 2.
+
 ## 2. Pick questions to investigate
 
 Around ten, fewer once findings repeat. Most of the budget goes on the worst scores. Also:

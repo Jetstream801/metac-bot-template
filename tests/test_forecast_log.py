@@ -86,7 +86,7 @@ class ForecastLogTests(unittest.TestCase):
 
 class BudgetTests(unittest.TestCase):
     def test_caps_unchanged(self):
-        self.assertEqual((budget.SEASON_CAP, budget.DAILY_CAP), (90.00, 5.00))
+        self.assertEqual((budget.SEASON_CAP, budget.DAILY_CAP), (90.00, 8.00))
 
     def test_ledger_charges_measured_cost_and_keeps_stage_totals(self):
         path = tempfile.mktemp()

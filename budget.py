@@ -16,7 +16,12 @@ LEDGER = Path(__file__).parent / "spend_ledger.json"
 # about 2.6 times the real cost), and the ledger was corrected to that figure.
 # Expected at full throttle: about $0.045 a question, some 50 questions a day = $2 to $2.50 a day.
 SEASON_CAP = 90.00   # dollars, total through the end of the season (bug guard)
-DAILY_CAP = 5.00     # dollars per UTC day (bug guard: about twice a full day's expected cost)
+# 2026-11-18: raised from $5 to $8 with the quality levers (quality.py; docs/quality.md). A question now
+# costs about $0.14, and the busiest day seen (2026-11-16, about 40 questions) would cost about $5.60 at the
+# full tier; at $5 the guard itself would have skipped questions,
+# and a skipped question is the most expensive mistake there is. The month's total is held by the pacing
+# in quality.tier (about $45), not by this cap.
+DAILY_CAP = 8.00     # dollars per UTC day (bug guard)
 PER_RUN_CAP = 1.00   # dollars per run
 # No padding since 2026-11-17: the ledger now charges the measured cost of every call
 # (costs.py: tokens and web searches from the API's own usage figures, at list prices).

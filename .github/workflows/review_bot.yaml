@@ -34,6 +34,16 @@ jobs:
           version: "0.13.1"
       - name: Install dependencies
         run: uv sync --locked --group integrations
+      # What each quality lever (ensemble, second research pass, stronger model, cap) gained or lost
+      # per question, from forecast_log/ and Metaculus's resolutions and community predictions, with a
+      # keep / drop / needs-N-more line for each. Read-only. See evaluate.py and docs/quality.md.
+      - name: Score the quality levers
+        continue-on-error: true
+        run: |
+          uv run python evaluate.py --fetch --summary quality.md
+          cat quality.md >> $GITHUB_STEP_SUMMARY
+        env:
+          METACULUS_TOKEN: ${{ secrets.METACULUS_TOKEN }}
       - name: Review forecasts
         run: |
           uv run bot-review review \
@@ -51,4 +61,5 @@ jobs:
           path: |
             review.json
             review.md
+            quality.md
           retention-days: 90

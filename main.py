@@ -1,5 +1,6 @@
 import argparse
 import asyncio
+import contextvars
 import logging
 from datetime import datetime, timezone
 from typing import Literal
@@ -35,6 +36,7 @@ from forecasting_tools import (
     PredictionTypes,
     PredictionAffirmed,
     BinaryPrediction,
+    PredictedOption,
     PredictedOptionList,
     ReasonedPrediction,
     SmartSearcher,
@@ -45,6 +47,7 @@ from forecasting_tools import (
 import budget
 import costs
 import forecast_log
+import quality
 
 # Every model call is recorded by stage (costs.py). The reformatting calls made by
 # structure_output are filed under "parse".
@@ -53,6 +56,10 @@ structure_output = costs.staged("parse", structure_output)
 
 dotenv.load_dotenv()
 logger = logging.getLogger(__name__)
+
+# Which ensemble member (quality.plan) the forecast being made right now belongs to.
+_member = contextvars.ContextVar("ensemble_member", default=None)
+CONTROL = {"name": "control", "model": "usual", "stage": "control", "role": "control", "persona": ""}
 
 # Web searches one research call may run. This is a CEILING (the search tool's max_uses), not a
 # target: at $0.01 each the searches were about 60% of a question's cost when all three were
@@ -140,7 +147,7 @@ class FallTemplateBot2026(ForecastBot):
     # OR
     summarizer = await self.get_llm("summarizer", "llm").invoke(prompt)
     # OR
-    reasoning = await self.get_llm("default", "llm").invoke(prompt)
+    reasoning = await self._invoke_forecaster(prompt)
     ```
 
     If you end up having trouble with rate limits and want to try a more sophisticated rate limiter try:
@@ -168,6 +175,13 @@ class FallTemplateBot2026(ForecastBot):
     run_budget = None
     # question key -> rationales written for it this run (saved to forecast_log/)
     rationales: dict[str, list] = {}
+    # Quality levers (quality.py; docs/quality.md). The main block sets these from the month's
+    # spending; the defaults here are the plain one-forecast bot, which is what the tests build.
+    plan = quality.plan("base")
+    strong_llm = None          # the stronger model, for the members whose spec says "strong"
+    second_researcher = None   # the model (with web search) for the second research pass
+    checker = None             # the cheap model for the shadow sanity check
+    _member_index: dict[str, int] = {}
 
     async def run_research(self, question: MetaculusQuestion) -> str:
         key = forecast_log.question_key(question)
@@ -246,18 +260,77 @@ class FallTemplateBot2026(ForecastBot):
                     if len(str(research or "").strip()) < 400:
                         research = (str(research or "").strip() + "\n\n(Note: web research returned almost nothing for this "
                                     "question; rely on base rates and say so.)").strip()
+                second = await self._second_research(question, research)
+                if second:
+                    research = research + quality.SECOND_MARK + second
                 logger.info(f"Found Research for URL {question.page_url}:\n{research}")
                 forecast_log.save_research(question, research, retried=retried,
-                                           searches=costs.RECORDER.research_searches().get(key))
+                                           searches=costs.RECORDER.research_searches().get(key),
+                                           second=bool(second) if self.plan["second_research"] else None)
                 return research
+
+    async def _second_research(self, question: MetaculusQuestion, first: str) -> str:
+        """The second research pass (quality.SECOND_RESEARCH): the base rate, the primary source
+        and the strongest case against what the first pass implies. '' when off or when it fails:
+        a question is never lost to this step."""
+        if not self.plan["second_research"] or self.second_researcher is None:
+            return ""
+        try:
+            with costs.stage("research2"):
+                text = await self.second_researcher.invoke(self._get_second_research_prompt(question, first))
+            text = str(text or "").strip()
+            return text if len(text) >= 200 else ""
+        except Exception as exc:
+            logger.warning(f"Second research pass failed for {question.page_url}: {exc}")
+            return ""
+
+    @staticmethod
+    def _get_second_research_prompt(question: MetaculusQuestion, first: str) -> str:
+        return clean_indents(
+            f"""
+            You are the second research assistant to a superforecaster. Today's date is {datetime.now(timezone.utc).strftime("%Y-%m-%d")}.
+            A first assistant already wrote the rundown below. Do not repeat it. Your job is what it is missing:
+            1. The base rate: how often has this kind of thing happened over a comparable period before? Give counts and years.
+               If the question is a number, give its recent history and how far it usually moves over the time left.
+            2. The primary source the question resolves on (the page, dataset or official body named in the criteria):
+               its latest value or statement and its date, if the first rundown did not have it first-hand.
+            3. The strongest evidence AGAINST the outcome the first rundown points to.
+            Also say so plainly if anything suggests the question has in effect already been decided.
+
+            You may run at most 2 web searches, each aimed at one of the gaps above with a query the first assistant
+            would not have used. Then write under 350 words, with dates and figures. Say plainly what you could not find.
+            Do not produce a forecast yourself.
+
+            Question:
+            {question.question_text}
+
+            Resolution criteria:
+            {question.resolution_criteria}
+
+            {question.fine_print}
+
+            The first rundown:
+            {first}
+            """
+        )
 
     async def _run_individual_question(self, question: MetaculusQuestion):
         report = await super()._run_individual_question(question)
         # The forecast is published by now; keep our own copy for scoring later.
         try:
+            key = forecast_log.question_key(question)
+            extra = {"quality": {"tier": self.plan["tier"], "settings": quality.settings(),
+                                 "members": [m["name"] for m in self.plan["members"]],
+                                 "control": self.plan["control"], "flags": []}}
+            if hasattr(report.prediction, "get_cdf"):
+                cdf = [round(p.percentile, 6) for p in report.prediction.get_cdf()]
+                extra["prediction_cdf"] = cdf
+                extra["quality"]["flags"] = quality.numeric_flags(
+                    cdf, getattr(question, "open_lower_bound", False), getattr(question, "open_upper_bound", False))
+            extra["quality"]["check"] = await self._shadow_check(question, report.prediction, key)
             forecast_log.save_forecast(
                 question, report.prediction, errors=report.errors,
-                rationales=self.rationales.get(forecast_log.question_key(question)),
+                rationales=self.rationales.get(key), extra=extra,
             )
         except Exception as exc:  # record-keeping must never lose a forecast
             logger.warning(f"Could not save the forecast record: {exc}")
@@ -267,18 +340,141 @@ class FallTemplateBot2026(ForecastBot):
         with costs.stage("summarise"):
             return await super().summarize_research(question, research)
 
-    async def _make_prediction(self, question: MetaculusQuestion, research: str):
-        with costs.stage("forecast"):
-            prediction = await super()._make_prediction(question, research)
+    async def _shadow_check(self, question: MetaculusQuestion, prediction, key: str) -> list | None:
+        """The shadow sanity check (quality.SHADOW_CHECK): a cheap model reads the question, the
+        research and the published forecast and flags date, unit, bound and criteria problems and
+        "already resolved". The flags are only logged; evaluate.py reports whether flagged
+        forecasts score worse, which is the evidence needed before a flag may change a forecast.
+        None when off or failed."""
+        if not quality.SHADOW_CHECK or self.checker is None or self.plan["tier"] == "base":
+            return None
         try:
-            self.rationales.setdefault(str(costs._question.get()), []).append({
+            record = forecast_log.read(key) or {}
+            reasons = [r.get("reasoning") or "" for r in self.rationales.get(key, []) if r.get("role") != "control"]
+            prompt = clean_indents(
+                f"""
+                Check a forecast for mistakes of fact and reading, not of judgement. Today is {datetime.now(timezone.utc).strftime("%Y-%m-%d")}.
+
+                Question: {question.question_text}
+                Resolution criteria (read them literally): {question.resolution_criteria}
+                {question.fine_print}
+                Options or bounds: {getattr(question, "options", None) or (getattr(question, "lower_bound", None), getattr(question, "upper_bound", None), getattr(question, "unit_of_measure", None))}
+
+                Research the forecast was made from:
+                {str(record.get("research") or "")[:7000]}
+
+                The forecast: {str(forecast_log.to_jsonable(prediction) if not hasattr(prediction, "declared_percentiles") else [(round(p.percentile, 3), p.value) for p in prediction.declared_percentiles][:: max(1, len(prediction.declared_percentiles) // 12)])[:1500]}
+
+                One forecaster's reasoning:
+                {(reasons[0] if reasons else "")[:3500]}
+
+                Reply with one line for each real problem, in exactly this form, or the single word OK:
+                FLAG ALREADY_RESOLVED: the research shows the outcome is already decided and the forecast does not reflect it
+                FLAG DATE: a date or deadline was misread (wrong window, wrong year, time left miscounted)
+                FLAG UNITS: the forecast is in the wrong units or scale
+                FLAG BOUNDS: probability sits on values the criteria or the bounds make impossible
+                FLAG CRITERIA: the reasoning answers a different question from the one the criteria ask
+                FLAG IMPOSSIBLE_OPTION: an option that can no longer happen has substantial probability
+                After the colon, say what is wrong in one sentence. Flag only what the text above shows.
+                """
+            )
+            with costs.stage("check", key):
+                reply = await self.checker.invoke(prompt)
+            return quality.parse_check(reply)
+        except Exception as exc:  # a failed check must never lose a forecast
+            logger.warning(f"Shadow check failed for {question.page_url}: {exc}")
+            return None
+
+    async def _make_prediction(self, question: MetaculusQuestion, research: str):
+        """One ensemble member's forecast. The library calls this once per member (as many times
+        as quality.plan has members); each call takes the next member's spec. The first call also
+        makes the control forecast (old style: first research only), which is logged, not used."""
+        if _member.get() is not None:      # a sub-question of a conditional: same member
+            return await self._member_prediction(question, research, _member.get())
+        key = str(costs._question.get())
+        index = self._member_index[key] = self._member_index.get(key, -1) + 1
+        members = self.plan["members"]
+        tasks = [self._member_prediction(question, research, members[index % len(members)])]
+        if index == 0 and self.plan["control"] and quality.SECOND_MARK in research:
+            tasks.append(self._member_prediction(question, research.split(quality.SECOND_MARK)[0], CONTROL))
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+        if len(results) > 1 and isinstance(results[1], BaseException):
+            logger.warning(f"Control forecast failed for {question.page_url}: {results[1]}")
+        if isinstance(results[0], BaseException):
+            raise results[0]
+        return results[0]
+
+    async def _member_prediction(self, question: MetaculusQuestion, research: str, spec: dict):
+        token = _member.set(spec)
+        try:
+            try:
+                with costs.stage(spec["stage"]):
+                    prediction = await ForecastBot._make_prediction(self, question, research)
+            except Exception as exc:
+                if spec["model"] != "strong":
+                    raise
+                # The stronger model failed (outage, refusal, a parameter it rejects): this member
+                # forecasts with the usual model instead, so the ensemble keeps its size.
+                logger.warning(f"Strong model failed for {question.page_url} ({exc}); using the usual model for this member")
+                spec = {**spec, "name": spec["name"] + "_fallback", "model": "usual", "stage": "forecast"}
+                _member.set(spec)
+                with costs.stage("forecast"):
+                    prediction = await ForecastBot._make_prediction(self, question, research)
+        finally:
+            _member.reset(token)
+        try:
+            value = prediction.prediction_value
+            entry = {
                 "question_id": getattr(question, "id_of_question", None),
-                "prediction": forecast_log.to_jsonable(prediction.prediction_value),
+                "prediction": forecast_log.to_jsonable(value),
                 "reasoning": prediction.reasoning,
-            })
+                "member": spec["name"], "role": spec["role"],
+                "model": str(getattr(self._forecaster(spec), "model", "")),
+                "research": "both" if quality.SECOND_MARK in research else "first",
+            }
+            if hasattr(value, "get_cdf"):
+                entry["cdf"] = [round(p.percentile, 6) for p in value.get_cdf()]
+            self.rationales.setdefault(str(costs._question.get()), []).append(entry)
         except Exception as exc:  # record-keeping must never lose a forecast
             logger.warning(f"Could not keep the rationale: {exc}")
         return prediction
+
+    def _forecaster(self, spec: dict | None = None) -> GeneralLlm:
+        spec = spec if spec is not None else _member.get()
+        if spec and spec.get("model") == "strong" and self.strong_llm is not None:
+            return self.strong_llm
+        return self.get_llm("default", "llm")
+
+    async def _invoke_forecaster(self, prompt: str) -> str:
+        """The forecasting call for the current member: its model, and its persona when
+        quality.PERSONAS is on (off: no evidence that personas help)."""
+        spec = _member.get() or {}
+        if spec.get("persona"):
+            prompt = prompt + "\n\n" + spec["persona"]
+        return await self._forecaster(spec).invoke(prompt)
+
+    async def _aggregate_predictions(self, predictions, question: MetaculusQuestion):
+        """Combine the members (quality.py): binary in log-odds with the extremes dropped, then
+        capped; multiple choice as the mean with a floor; numeric as a mixture of the members'
+        distributions. Anything else, or any failure here, falls back to the library's way."""
+        try:
+            if predictions and all(isinstance(p, (int, float)) for p in predictions):
+                return quality.cap(quality.extremise(quality.aggregate_binary(predictions)))
+            if predictions and all(isinstance(p, PredictedOptionList) for p in predictions):
+                members = [{o.option_name: o.probability for o in p.predicted_options} for p in predictions]
+                if all(set(m) == set(members[0]) for m in members):
+                    return PredictedOptionList(predicted_options=[
+                        PredictedOption(option_name=name, probability=p)
+                        for name, p in quality.aggregate_options(members).items()])
+            if (len(predictions) > 1 and quality.NUMERIC_AGGREGATE == "mixture"
+                    and all(isinstance(p, NumericDistribution) for p in predictions)):
+                cdfs = [p.get_cdf() for p in predictions]
+                ys = quality.aggregate_cdfs([[c.percentile for c in cdf] for cdf in cdfs], "mixture")
+                return NumericDistribution.from_question(
+                    [Percentile(value=c.value, percentile=y) for c, y in zip(cdfs[0], ys)], question)
+        except Exception as exc:
+            logger.warning(f"Custom aggregation failed for {question.page_url} ({exc}); using the library's")
+        return await super()._aggregate_predictions(predictions, question)
 
     @staticmethod
     def _get_research_prompt(
@@ -361,7 +557,7 @@ class FallTemplateBot2026(ForecastBot):
         question: BinaryQuestion,
         prompt: str,
     ) -> ReasonedPrediction[float]:
-        reasoning = await self.get_llm("default", "llm").invoke(prompt)
+        reasoning = await self._invoke_forecaster(prompt)
         logger.info(f"Reasoning for URL {question.page_url}: {reasoning}")
         parsing_instructions = clean_indents(
             f"""
@@ -443,7 +639,7 @@ class FallTemplateBot2026(ForecastBot):
             {self._create_resolved_question_parsing_message()}
             """
         )
-        reasoning = await self.get_llm("default", "llm").invoke(prompt)
+        reasoning = await self._invoke_forecaster(prompt)
         logger.info(f"Reasoning for URL {question.page_url}: {reasoning}")
         predicted_option_list: PredictedOptionList = await structure_output(
             text_to_structure=reasoning,
@@ -519,14 +715,60 @@ class FallTemplateBot2026(ForecastBot):
             "
             """
         )
+        outcomes = self._discrete_outcomes(question)
+        if outcomes:
+            try:
+                return await self._discrete_prompt_to_forecast(question, prompt, outcomes)
+            except Exception as exc:
+                logger.warning(f"Outcome-probability answer failed for {question.page_url} ({exc}); asking for percentiles instead")
         return await self._numeric_prompt_to_forecast(question, prompt)
+
+    @staticmethod
+    def _discrete_outcomes(question: NumericQuestion) -> list | None:
+        """The outcomes of a discrete question, or None when it is not one (or the lever is off)."""
+        if not quality.DISCRETE_OUTCOME_PROBABILITIES or getattr(question, "question_type", "") != "discrete":
+            return None
+        size = getattr(question, "cdf_size", None)
+        if not size or not 3 <= size <= 41:
+            return None
+        return quality.discrete_outcomes(question.lower_bound, question.upper_bound, size,
+                                         question.open_lower_bound, question.open_upper_bound)
+
+    async def _discrete_prompt_to_forecast(self, question: NumericQuestion, prompt: str, outcomes: list):
+        """A discrete question answered as one probability per outcome (quality.py).
+
+        Why: six percentiles cannot say "55% on 2, 33% on 3". On question 46618 the forecaster's
+        reasoning said exactly that and the percentile answer (2, 2, 2, 2, 3, 4) was published as
+        69% on 2 and 15% on 3. Here the stated probabilities are what gets published."""
+        labels = [label for label, _ in outcomes]
+        marker = "The last thing you write is your final answer as:"
+        if marker not in prompt:
+            raise ValueError("numeric prompt has no final-answer block to replace")
+        lines = "\n".join(f"Outcome {label}: XX%" for label in labels)
+        prompt = prompt.split(marker)[0] + (
+            "This question has only these possible outcomes: " + ", ".join(labels) + ".\n"
+            "The last thing you write is the probability of each outcome, one per line, exactly in this form, "
+            "adding up to 100% (leave a little on every outcome that is still possible):\n" + lines + "\n"
+        )
+        reasoning = await self._invoke_forecaster(prompt)
+        logger.info(f"Reasoning for URL {question.page_url}: {reasoning}")
+        probabilities = quality.parse_outcome_probabilities(reasoning, labels)
+        if probabilities is None:
+            raise ValueError("could not read a probability for every outcome")
+        points = quality.outcome_cdf_points(probabilities, [kind for _, kind in outcomes],
+                                            question.lower_bound, question.upper_bound)
+        prediction = NumericDistribution.from_question(
+            [Percentile(value=value, percentile=p) for value, p in points], question)
+        prediction.get_cdf()      # raises here, not at publishing, if the distribution is not valid
+        logger.info(f"Forecasted URL {question.page_url} with outcome probabilities: {dict(zip(labels, probabilities))}.")
+        return ReasonedPrediction(prediction_value=prediction, reasoning=reasoning)
 
     async def _numeric_prompt_to_forecast(
         self,
         question: NumericQuestion,
         prompt: str,
     ) -> ReasonedPrediction[NumericDistribution]:
-        reasoning = await self.get_llm("default", "llm").invoke(prompt)
+        reasoning = await self._invoke_forecaster(prompt)
         logger.info(f"Reasoning for URL {question.page_url}: {reasoning}")
         parsing_instructions = clean_indents(
             f"""
@@ -622,7 +864,7 @@ class FallTemplateBot2026(ForecastBot):
         question: DateQuestion,
         prompt: str,
     ) -> ReasonedPrediction[NumericDistribution]:
-        reasoning = await self.get_llm("default", "llm").invoke(prompt)
+        reasoning = await self._invoke_forecaster(prompt)
         logger.info(f"Reasoning for URL {question.page_url}: {reasoning}")
         parsing_instructions = clean_indents(
             f"""
@@ -835,7 +1077,7 @@ if __name__ == "__main__":
     # uncomment and edit to pin specific models.
     template_bot = FallTemplateBot2026(
         research_reports_per_question=1,
-        predictions_per_research_report=1,  # was 2: the two forecasts came out nearly identical (2.75 points apart on average); saves about 9% a question
+        predictions_per_research_report=1,  # set below from quality.plan: one forecast per ensemble member
         use_research_summary_to_forecast=False,
         publish_reports_to_metaculus=publish_to_metaculus,
         folder_to_save_reports_to=None,
@@ -890,6 +1132,26 @@ if __name__ == "__main__":
             f"today ${ledger['by_day'].get(budget.today(), 0.0):.2f} of ${budget.DAILY_CAP:.2f}). Not forecasting."
         )
         raise SystemExit(0)
+    # Quality tier for this run (quality.py): how much of each question's extras this month's
+    # credit can still afford. No question is skipped for pacing; only the extras are dropped.
+    now_utc = datetime.now(timezone.utc)
+    spent_this_month = quality.month_spent(ledger["by_day"], now_utc)
+    plan = quality.plan(quality.tier(spent_this_month, now_utc))
+    FallTemplateBot2026.plan = plan
+    template_bot.predictions_per_research_report = len(plan["members"])
+    if any(m["model"] == "strong" for m in plan["members"]):
+        # No temperature: the stronger model always thinks before answering and sets its own.
+        FallTemplateBot2026.strong_llm = GeneralLlm(model=quality.STRONG_MODEL, timeout=180, allowed_tries=2, max_tokens=8000)
+    if plan["second_research"]:
+        FallTemplateBot2026.second_researcher = GeneralLlm(
+            model="anthropic/claude-haiku-5-5", temperature=0.2, timeout=180, allowed_tries=1,
+            max_tokens=6000, tools=research_tools())   # the prompt allows 2 searches; the tool ceiling stays 3
+    if quality.SHADOW_CHECK:
+        FallTemplateBot2026.checker = GeneralLlm(model="anthropic/claude-haiku-5-5", temperature=0, timeout=60,
+                                                 allowed_tries=1, max_tokens=1500)
+    print(f"[quality] tier {plan['tier']} (this month ${spent_this_month:.2f} of ${quality.MONTHLY_CREDIT:.2f}): "
+          f"members {', '.join(m['name'] for m in plan['members'])}; second research {'on' if plan['second_research'] else 'off'}; "
+          f"control {'on' if plan['control'] else 'off'}; expected about ${quality.EXPECTED_COST[plan['tier']]:.3f} a question")
     forecast_reports = []
     minibench_usage = 0.0
     # The meter is costs.RECORDER: measured dollars from each call's usage figures. The
