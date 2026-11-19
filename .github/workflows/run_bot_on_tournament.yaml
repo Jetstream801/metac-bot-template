@@ -48,6 +48,9 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ASKNEWS_CLIENT_ID: ${{ secrets.ASKNEWS_CLIENT_ID }}
           ASKNEWS_SECRET: ${{ secrets.ASKNEWS_SECRET }}
+          # Off-switch for the spare-credit boost (quality.py): set the repository variable
+          # QUALITY_SPARE_BOOST to 0 to turn it off. Unset means on.
+          QUALITY_SPARE_BOOST: ${{ vars.QUALITY_SPARE_BOOST }}
       - name: Save the spending ledger
         if: always()
         run: |

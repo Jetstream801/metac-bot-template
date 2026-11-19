@@ -9,6 +9,7 @@ model, never published). So on every question we can ask what each lever changed
   stronger model         strong_1  vs  the usual-model members (average score)
   strong in the ensemble aggregate of all members  vs  aggregate of the usual-model members
   everything together    published  vs  control
+  spare-credit boost     aggregate of the members plus the extra strong forecasts  vs  the members only
   aggregation method     the setting in quality.py  vs  the alternative (re-computed here, free)
   cap / floor            published  vs  the same aggregate without the cap
 
@@ -100,7 +101,7 @@ def configurations(record):
     if kind is None:
         return {}
     out = {"published": canonical(kind, record.get("prediction"), record.get("prediction_cdf"))}
-    members = {}
+    members, boost = {}, {}
     for entry in record.get("rationales") or []:
         name = entry.get("member")
         if not name or entry.get("question_id") not in (None, record.get("question_id")):
@@ -110,6 +111,8 @@ def configurations(record):
             continue
         if entry.get("role") == "control":
             out["control"] = forecast
+        elif entry.get("role") == "boost":       # spare-credit extras: scored as their own lever
+            boost[name] = forecast
         else:
             members[name] = forecast
     out.update(members)
@@ -124,6 +127,14 @@ def configurations(record):
             out["agg_all_alt"] = aggregate(kind, everyone, alt)
         if kind != "numeric":
             out["agg_all_uncapped"] = aggregate(kind, everyone, own, capped=False)
+    if boost and everyone:
+        # What was published when the extras ran (members + extras), next to agg_all, which is
+        # what the same question would have got without them. Same research, same moment.
+        out.update(boost)
+        out["agg_boost"] = aggregate(kind, everyone + list(boost.values()),
+                                     {"binary": "trimmed_logodds", "numeric": "mixture"}.get(kind))
+        if len(everyone) == 1:
+            out["agg_all"] = aggregate(kind, everyone)
     if len(usual) > 1:
         out["agg_usual"] = aggregate(kind, usual, {"binary": "trimmed_logodds", "numeric": "mixture"}.get(kind))
     elif len(usual) == 1:
@@ -295,6 +306,9 @@ LEVERS = (
     ("ensemble (usual model)", "agg_usual", "usual_1", ("forecast-extra",)),
     ("stronger model, alone", "@strong", "@usual", ("strong",)),
     ("stronger model in the ensemble", "agg_all", "agg_usual", ("strong",)),
+    # Unused monthly credit spent on extra strong-model forecasts (quality.SPARE_BOOST). Only the
+    # questions that got the extras count; B is the same question's ensemble without them.
+    ("spare-credit boost (extra strong forecasts)", "agg_boost", "agg_all", ("boost",)),
     ("aggregation method (ours vs median)", "agg_all", "agg_all_alt", ()),
     ("cap and floor", "agg_all", "agg_all_uncapped", ()),
 )
@@ -331,6 +345,8 @@ def lever_cost(records, stages):
     for record in records:
         by_stage = record.get("cost_by_stage") or {}
         if not (record.get("quality") or {}).get("members"):
+            continue
+        if "boost" in stages and "boost" not in by_stage:     # the boost is averaged over boosted questions only
             continue
         total = 0.0
         for stage in stages:

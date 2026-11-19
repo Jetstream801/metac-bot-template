@@ -30,10 +30,9 @@ questions, and adds a harness that prints keep / drop / needs-N-more for each le
 - Out-of-bounds numeric forecasts are rejected by the API rather than scored
   ([spring results](https://www.lesswrong.com/posts/wZBbDqzfBjYG58CxK/futureeval-spring-results-pros-beat-bots-but-the-gap-is)).
 
-Not read: the participation page (https://www.metaculus.com/futureeval/participate/) and the
-resources page (https://www.metaculus.com/notebooks/38928/ai-benchmark-resources/) could not be
-opened from the build sandbox. Prize-eligibility details must be checked there (see the January
-list).
+The resources page (https://www.metaculus.com/notebooks/38928/ai-benchmark-resources/) was read on
+2026-11-19 and confirms the first point in the organisers' own words (quotes under "Where the
+unused credit goes"). Prize-eligibility details were only skimmed (see the January list).
 
 ## What the organisers' analyses say matters, strongest first
 
@@ -96,7 +95,8 @@ correlates only weakly with score).
 | Free checks on numeric forecasts (too narrow, mass outside bounds) | ON, log only | free | Same. |
 | Personas / different prompts per member (`PERSONAS`) | OFF | free | A prompt change with no evidence; the sources say prompts matter little. |
 | Extremising or recalibration (`EXTREMISE`) | OFF | free | Contested outside, and it must be fitted to our own resolutions. Revisit at 50+ resolved binaries. |
-| Re-forecasting open questions | not built | - | The rules make it worthless: 3-hour window, spot score at close. |
+| Re-forecasting open questions | not built | - | The rules make it worthless: 3-hour window, spot score at close. Re-checked 2026-11-19, see "Where the unused credit goes". |
+| Spare-credit boost: two more Opus forecasts in the ensemble while the month is under half its pace (`SPARE_BOOST`, `BOOST_STRONG_MEMBERS`, `BOOST_BELOW`) | ON | about $0.07, boosted questions only | See "Where the unused credit goes". |
 | Prompt caching for the ensemble | not built | would save about $0.01 | Could not be tested without paid calls. A candidate once the levers are settled. |
 
 ### Cost and the monthly arithmetic
@@ -126,6 +126,72 @@ credit changes.
 busiest day seen (16 Nov, about 40 questions) would cost about $5.60 at the full tier, and a guard
 that skips questions is the costliest failure. `PER_RUN_CAP` ($1) and `SEASON_CAP` ($90) are
 unchanged.
+
+## Where the unused credit goes (added 2026-11-19)
+
+**The fact.** In the first ten days the bot spent $4.35, about $0.30 to $0.60 a day, against a
+pace of $1.50 a day: few questions open (2 to 4 a day so far, not the 8 to 12 assumed above).
+
+**Could re-forecasting already-answered questions use it? No.** Checked against the organisers'
+resources page (https://www.metaculus.com/notebooks/38928/ai-benchmark-resources/, read
+2026-11-19 through a page-reading tool that returns short quotes) and the Scores FAQ:
+
+- "MiniBench and the seasonal FutureEval Bot Tournament are scored by spot peer score."
+- "Since it's a spot score, only the last forecast made before the question closes counts."
+- "Questions from either series launch at random hours and will be open for 3 hours each."
+- "Bot makers should only submit one forecast per question in these bot-only tournaments"
+- "Similarly, a bot maker cannot decide that they don't like their bot's forecast and rerun the
+  bot on that question." (Competition Rules, under "no human in the loop")
+- Scores FAQ: "For a spot score, only the prediction at a specified time is considered." and
+  "Unless otherwise indicated, spot scores are evaluated at the same time the Community
+  Prediction is revealed."
+
+Our own log agrees: on all 7 logged questions `close_time` is exactly 3 hours after `open_time`
+and `cp_reveal_time` equals `close_time`. A question that has closed cannot take a forecast, and
+nothing after the close is scored, so there is no "still-open, already-answered" question whose
+update could earn a point. Inside the 3 hours a second forecast is possible in principle, but the
+organisers ask for one forecast a question, and three hours of extra news is worth little on
+questions that resolve in ten days or more. Forecasting late in the window on purpose was
+rejected for the same reason plus a real cost: a late run that fails or is delayed by GitHub
+misses the question, and a missed question is the costliest mistake there is.
+
+**So the credit can only buy a better single forecast.** Of the levers with outside evidence
+(table above), the base model is the strongest and aggregation is second; Metaculus's own best
+bots aggregate five forecasts. The boost therefore adds two more Opus forecasts to the question's
+ensemble (2 Sonnet + 3 Opus instead of 2 Sonnet + 1 Opus). They read the same research at the same
+moment and are combined as ordinary members; with five, the binary rule drops the highest and
+lowest and averages the middle three. The expected gain is modest (the sources say ensemble gains
+flatten quickly), which is why it is two forecasts and not ten, and why it ships with its own
+keep/drop line.
+
+**The rules that keep it inside the pace and the guards** (all in `quality.py`):
+
+- Only at the full tier, and only while this month's spending is at or under half
+  (`BOOST_BELOW`) of the straight line from $0 to $45. On 19 Nov that is $14.25 against $3 to $4
+  spent. As spending approaches the pace the extras stop by themselves; the tier rule above is
+  unchanged.
+- New questions come first: a question gets extras only while the run has used at most a quarter
+  (`BOOST_RUN_SHARE`) of what the run may spend ($1, or less when the daily or season guard has
+  less left). In practice the first two questions of a run. `DAILY_CAP`, `PER_RUN_CAP` and
+  `SEASON_CAP` are untouched and still apply to every dollar, extras included.
+- An extra that fails is dropped, not replaced; the question is published from the usual three.
+- Off-switch: repository variable `QUALITY_SPARE_BOOST=0` (the tournament workflow passes it), or
+  `SPARE_BOOST = False` in `quality.py`.
+
+**Cost.** About $0.07 a boosted question (estimate: two Opus calls at the $0.035 measured for
+`strong`; the log's `boost` stage will show the truth). At 2 to 4 questions a day that is $0.15 to
+$0.30 a day, $4 to $9 a month. This is a small part of the unused credit on purpose: nothing with
+evidence behind it would use the rest, and credit left unspent costs nothing.
+
+**How it is judged.** Each extra is logged with role `boost`; `quality.boost` in the question's
+log lists the extras that ran. `evaluate.py` re-computes, for every boosted question, the ensemble
+with the extras (`agg_boost`) and without (`agg_all`), and the lever table has the line
+"spare-credit boost (extra strong forecasts)": gain in peer points per question, the measured
+cost, and keep / drop / needs-N-more. The comparison is exact and paired: same question, same
+research, same members; the only difference is the extras. The control forecast is unchanged.
+
+One thing to know: the comment published with the forecast shows the reasoning of the usual three
+members; the extras' reasoning is in `forecast_log/` only.
 
 ## How results are measured
 
