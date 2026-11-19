@@ -1,0 +1,290 @@
+{
+ "accessed_at": "2026-11-19T18:08:22.288398+00:00",
+ "close_time": "2026-11-19T21:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.144027,
+ "cost_by_stage": {
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001035,
+   "in": 3630,
+   "out": 1344,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.017478,
+   "in": 2144,
+   "out": 1319,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.039522,
+   "in": 5966,
+   "out": 2759,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 8,
+   "cost": 0.003436,
+   "in": 15050,
+   "out": 3861,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024925,
+   "in": 33052,
+   "out": 3239,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024488,
+   "in": 25766,
+   "out": 3822,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.032112,
+   "in": 2983,
+   "out": 1009,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001031,
+   "in": 2379,
+   "out": 1586,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-19T21:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-19T18:09:34.838594+00:00",
+ "num_forecasters": 139,
+ "open_time": "2026-11-19T18:00:00+00:00",
+ "post_id": 46622,
+ "prediction": {
+  "predicted_options": [
+   {
+    "option_name": "1,615 million or less",
+    "probability": 0.023333333333333334
+   },
+   {
+    "option_name": ">1,615 mil. & <1,670 mil.",
+    "probability": 0.21333333333333335
+   },
+   {
+    "option_name": "\u22651,670 mil. & \u22641,725 mil.",
+    "probability": 0.4866666666666667
+   },
+   {
+    "option_name": ">1,725 mil. & \u22641,785 mil.",
+    "probability": 0.22
+   },
+   {
+    "option_name": ">1,785 mil.",
+    "probability": 0.05666666666666667
+   }
+  ]
+ },
+ "quality": {
+  "check": [],
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46882,
+ "rationales": [
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "1,615 million or less",
+      "probability": 0.01
+     },
+     {
+      "option_name": ">1,615 mil. & <1,670 mil.",
+      "probability": 0.27
+     },
+     {
+      "option_name": "\u22651,670 mil. & \u22641,725 mil.",
+      "probability": 0.5399999999999999
+     },
+     {
+      "option_name": ">1,725 mil. & \u22641,785 mil.",
+      "probability": 0.16
+     },
+     {
+      "option_name": ">1,785 mil.",
+      "probability": 0.02
+     }
+    ]
+   },
+   "question_id": 46882,
+   "reasoning": "**(a) Time left:** The result is known when Snowflake reports Q3 FY2027 on December 2, 2026, about 13 days from now.\n\n**(b) Status quo outcome:** Product revenue guidance is $1,588\u20131,593M. Professional services and other revenue has run about $55\u201357M a quarter. Total revenue at exactly the guided level would therefore be about $1.645B, which falls in the \">1,615 & <1,670\" bucket.\n\nSnowflake guides conservatively, though. Q2 product revenue beat the top of guidance by about 5%. Earlier beats were smaller, around 2.5\u20134%. Applying a beat of about 3\u20134% to the top of guidance gives product revenue of about $1.64\u20131.66B. Adding services of about $57M gives total revenue of roughly $1.69\u20131.72B. That lands in the \"\u22651,670 & \u22641,725\" bucket, which I treat as the central case.\n\n**(c) Unexpected outcome:** Consumption could accelerate again, with AI workloads and Observe contributing more, so the beat reaches 5% or more. Total revenue would then exceed $1.725B. Alternatively, consumption could slow, or a large customer could optimize its usage. The beat would then be only 1\u20132%, and total revenue would land at about $1.65\u20131.67B, in the lower bucket. A fall to $1.615B or below is very unlikely.\n\nMy estimate is centered around $1.69\u20131.70B. I put the most weight on the 1,670\u20131,725 bucket and leave meaningful probability on the buckets on either side.\n\nOption_A: 0.01\nOption_B: 0.27\nOption_C: 0.54\nOption_D: 0.16\nOption_E: 0.02",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "1,615 million or less",
+      "probability": 0.02
+     },
+     {
+      "option_name": ">1,615 mil. & <1,670 mil.",
+      "probability": 0.13
+     },
+     {
+      "option_name": "\u22651,670 mil. & \u22641,725 mil.",
+      "probability": 0.5499999999999999
+     },
+     {
+      "option_name": ">1,725 mil. & \u22641,785 mil.",
+      "probability": 0.27
+     },
+     {
+      "option_name": ">1,785 mil.",
+      "probability": 0.03
+     }
+    ]
+   },
+   "question_id": 46882,
+   "reasoning": "**(a) Time left:** The Q3 FY2027 results are due on December 2, 2026, about 13 days from today (November 19).\n\n**(b) Status quo outcome:** Product revenue guidance is $1,588\u20131,593M, and professional services and other revenue has run about $55\u201357M a quarter. That puts total revenue near $1.645\u20131.65B if Snowflake only hits guidance. Snowflake guides conservatively, though, and has beaten the top of its product guide in every recent quarter. Q2 was a beat of about 5%, and Q1 also beat by a wide margin.\n\n**Beat scenarios (my own arithmetic):**\n- A typical beat of 2\u20134% gives product revenue of about $1,625\u20131,655M. Adding about $58M of services gives total revenue of roughly $1,683\u20131,713M, which falls in the $1,670\u20131,725M bin.\n- A 5% beat, like Q2's, gives product revenue of about $1,672M. Adding services gives about $1,730M, which falls in the $1,725\u20131,785M bin.\n- Landing below $1,670M requires a beat under about 1.2%. That would be unusual for Snowflake, but the Datadog usage read-through leaves some risk.\n\n**(c) Unexpected outcome:** Usage slows sharply, or large customers optimize consumption as Datadog's largest customer did. Product revenue then lands near guidance, with total revenue around $1.65B. In the other direction, AI-driven consumption and the Observe acquisition could push product revenue past $1.68B, so total revenue would exceed $1.74B.\n\nOption_A: 0.02\nOption_B: 0.13\nOption_C: 0.55\nOption_D: 0.27\nOption_E: 0.03",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "1,615 million or less",
+      "probability": 0.03
+     },
+     {
+      "option_name": ">1,615 mil. & <1,670 mil.",
+      "probability": 0.3
+     },
+     {
+      "option_name": "\u22651,670 mil. & \u22641,725 mil.",
+      "probability": 0.45999999999999996
+     },
+     {
+      "option_name": ">1,725 mil. & \u22641,785 mil.",
+      "probability": 0.16
+     },
+     {
+      "option_name": ">1,785 mil.",
+      "probability": 0.05
+     }
+    ]
+   },
+   "question_id": 46882,
+   "reasoning": "**(a) Time left:** The Q3 FY2027 results are due after the market close on December 2, 2026. That is about 13 days from today, November 19.\n\n**(b) Status quo outcome:**\n- Product revenue guidance is $1,588\u20131,593M.\n- Professional services revenue has run at about $55\u201357M per quarter.\n- Adding the two gives an \"on-guide\" total of about $1,645M, in the second bucket.\n\nSnowflake almost never prints at its guide, though:\n- It has historically beaten the top of its product guide by roughly 2\u20133%.\n- In Q2 it beat the top of the range by about 5%, partly helped by the Observe acquisition.\n- A 1\u20133% product beat gives product revenue of about $1,605\u20131,640M. Total revenue would then be about $1,660\u20131,700M, straddling the boundary between the second and third buckets.\n- The Q3 guide already assumes 37\u201338% growth, matching Q2's actual 37%. That leaves less cushion than the Q2 guide had, so a repeat of the 5% beat is less likely.\n- My median estimate for total revenue is about $1,680\u20131,690M.\n\n**(c) Unexpected scenarios:**\n- **Low print:** Large customers optimize their usage, as Datadog saw. Product revenue lands near or below the guide, around $1,580M, and the total falls below $1,640M. The stock's 26% drawdown hints at some market worry about this.\n- **High print:** AI-driven consumption accelerates and Observe contributes more than expected. A 5\u20137% product beat would push the total above $1,725M.\n\nFinal probabilities:\n\nOption_A: 3%\nOption_B: 30%\nOption_C: 46%\nOption_D: 16%\nOption_E: 5%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "1,615 million or less",
+      "probability": 0.020000000000000004
+     },
+     {
+      "option_name": ">1,615 mil. & <1,670 mil.",
+      "probability": 0.21000000000000002
+     },
+     {
+      "option_name": "\u22651,670 mil. & \u22641,725 mil.",
+      "probability": 0.44999999999999996
+     },
+     {
+      "option_name": ">1,725 mil. & \u22641,785 mil.",
+      "probability": 0.23000000000000004
+     },
+     {
+      "option_name": ">1,785 mil.",
+      "probability": 0.09000000000000001
+     }
+    ]
+   },
+   "question_id": 46882,
+   "reasoning": "**(a) Time left:** The result is known on December 2, 2026, about 13 days from today (November 19).\n\n**(b) Status quo outcome:** Snowflake guides only product revenue, at $1,588\u20131,593M for Q3. Adding professional services of roughly $55\u201360M gives about $1,645\u20131,653M of total revenue if the company merely hits its guide. That would fall in option B.\n\nSnowflake has beaten the top of its product guide in each recent quarter:\n- Q2 beat by about 5%.\n- Q1 also beat by a wide margin.\n- Q3 FY2026 beat by about 2.5%.\n\nThe Q3 guide implies only about 6.4% sequential product growth. Q2 grew about 11.8% sequentially, though that may include some Observe acquisition effect.\n\nBeat scenarios for total revenue:\n\n| Product beat vs. guide | Product revenue | Total revenue (with ~$57\u201358M services) |\n|---|---|---|\n| ~2\u20133% | ~$1,625\u20131,640M | ~$1,682\u20131,698M |\n| ~4% | ~$1,655M | ~$1,712M |\n| ~5% | ~$1,670M | ~$1,728M |\n\nMy central estimate is about $1,695\u20131,705M, which sits in option C.\n\n**(c) Unexpected outcome scenario:** One downside scenario is a usage slowdown, as at Datadog, where a large customer cut usage. Product revenue would then come in only about 1% above guide, at roughly $1,605M. Total revenue would be about $1,662M, in option B. A further miss is very unlikely. An upside scenario is that AI-driven consumption keeps accelerating and the beat stays near 5\u20136%. Total revenue would then be $1,730\u20131,760M or higher, in option D or E.\n\nOption C gets the most weight, with B and D as the main alternatives.\n\nOption_A: 0.02\nOption_B: 0.21\nOption_C: 0.45\nOption_D: 0.23\nOption_E: 0.09",
+   "research": "both",
+   "role": "member"
+  }
+ ],
+ "research": "**Rundown: Snowflake Q3 FY2027 total GAAP revenue (first release, expected Dec. 2, 2026)**\n\n**Current state**\n\n- **Latest actual (Q2 FY2027, quarter ended July 31, 2026, reported Sept. 2, 2026):** Product revenue was $1,491.9M, up 37% year over year, and total revenue was $1,546.8M, up about 35%. Product revenue of $1.49 billion in the second quarter, representing 37% year-over-year growth. Total revenue was $1.55 billion, beating the $1.48 billion consensus estimate compiled by LSEG.\n- **Q1 FY2027 (ended April 30, 2026, reported May 27, 2026):** Product revenue was $1,334.3M and total revenue was $1,391.0M, with the gap being professional services and other revenue of about $56.6M. Product revenue of $1.33 billion in the first quarter, representing 34% year-over-year growth.\n- **Q3 guidance (only product revenue is guided):** For the third quarter of fiscal 2027, the company expects product revenue of $1,588 million to $1,593 million, representing 37% to 38% year-over-year growth. Snowflake does not appear to guide total GAAP revenue. Its non-GAAP operating margin guidance is 15.5%.\n- **Full-year guidance:** Product revenue guidance for FY2027 was raised to $6.07B (36% growth), up from previous guidance of $5,840 million, or 31% year-over-year growth.\n- **Arithmetic, not a forecast:** Professional services revenue was about $55M in Q2 (total $1,546.8M minus product $1,491.9M) and about $57M in Q1. Adding roughly $55\u201357M to the Q3 product guidance range implies total revenue of about $1.64\u20131.65B. This is my own calculation, and I did not find a company-issued total revenue guide to confirm it.\n- **Consensus:** One aggregator lists a Q3 revenue estimate of $1.65B, with no source or date given. I could not corroborate it against another consensus source.\n\n**Scheduled before the question closes**\n\n- Snowflake will release its financial results for the third quarter of fiscal year 2027, which ended October 31, 2026, following the close of the U.S. markets on Wednesday, December 2, 2026. The conference call is at 2 p.m. Pacific.\n- Snowflake's CEO is also scheduled to present at the Barclays Global Technology Conference on December 9, which falls after the release.\n- The question's Dec. 2 release date is therefore confirmed by the company's own announcement, and no date risk appears to exist.\n\n**Track record (base rate)**\n\n- Only the last two quarters were verified in my searches. Both beat consensus on total revenue: Q1 was $1.39B versus a $1.32B estimate, and Q2 was $1.55B versus $1.48B (per MarketBeat's earnings history).\n- Q2 product revenue of $1,491.9M came in well above the $1,415\u20131,420M guidance given with Q1 results, a beat of roughly 5% over the top of the range.\n- Full-year product guidance was raised at both Q1 and Q2. Q2 management attributed the raise partly to AI-related consumption and noted that about one point of growth is expected to come from the Observe acquisition.\n- I could not find Snowflake's earlier guidance-versus-actual history (FY2025\u2013FY2026) in my searches, so the beat pattern rests on two data points.\n\n**How it resolves if nothing changes**\n\n- The question resolves on the GAAP total revenue line in the Dec. 2 release, not the product revenue line. Product revenue is guided at $1,588\u20131,593M, while total revenue will be higher by the professional services amount.\n- If Snowflake continues its recent pattern of landing above the top of its product guidance, the total revenue print would likely be above the roughly $1.64\u20131.65B implied figure. That is an observation about recent history, not a forecast.\n- Gaps: I did not find a company total revenue guidance figure, a verified total revenue consensus, or any post-Nov. 2 estimate revisions. I also did not verify the professional services figure for Q3 beyond the two prior quarters.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Not decided.** The Q3 release has not happened. The company has confirmed it will report after the close on December 2, 2026 with the conference call set for 2 p.m.\n\n**1. Base rate (small sample)**\n- The last two quarters both beat. Snowflake has beaten the top of its guide by more than 5% two quarters running.\n- Q3 FY2026 (Oct 2025) product revenue beat expectations by 2.5%.\n- Q4 FY2026 (Dec 2025) beat revenue estimates and still fell 11% on a weak fourth-quarter outlook.\n- That makes four straight quarters with a reported revenue or product beat, from sources I could not check against the filings. I found nothing for FY2025 or earlier, so the base rate is roughly 4 for 4 over about a year.\n- Product growth has risen for three straight quarters, after ending the prior fiscal year at 30% growth.\n\n**2. Primary source**\n- The resolution source is the December 2 release. The latest figures are from the Q2 release on September 2, 2026, which reported revenue of $1.55 billion in the second quarter, representing 35% year-over-year growth, with product revenue of $1.49 billion.\n- Q1 total revenue was $1.39 billion.\n- Full-year product guidance is $6.07 billion, representing 36% year-over-year growth.\n- Snowflake does not appear to guide total revenue, so the total line depends on the product guide plus professional services.\n\n**3. Strongest evidence against a high print**\n- **Correction to the first rundown:** The \"$1.65B\" Q3 consensus is unsourced. The only $1.65B figure I found is the January-quarter (Q4) product revenue implied by full-year guidance, below the October quarter's 37% to 38% guide. It is not a Q3 total-revenue consensus.\n- **Usage read-through:** Datadog grew third-quarter revenue 35%, yet it guided fourth-quarter revenue flat after its largest customer cut usage. Snowflake is also 26% below its September high, with no bad news from the company since.\n- **Thin cushion:** Q3 product guidance of 37\u201338% growth is already close to Q2's 37% actual. A beat of Q2's size would need further acceleration.\n\n**Could not find:** a company total-revenue guide; a verified Q3 total-revenue consensus; FY2025 guidance-versus-actual history; the Q3 professional services figure; and post-November 2 estimate revisions.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-19T18:08:57.293510+00:00",
+ "scheduled_resolution_time": "2026-12-02T00:00:00+00:00",
+ "status": "forecast",
+ "title": "What will the first reported revenues after October 2026 be for Snowflake?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "MultipleChoiceQuestion",
+ "url": "https://www.metaculus.com/questions/46622"
+}
