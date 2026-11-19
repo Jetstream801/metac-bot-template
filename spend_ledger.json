@@ -6,7 +6,7 @@
   "2026-11-16": 1.1623,
   "2026-11-17": 0.5736,
   "2026-11-18": 0.3876,
-  "2026-11-19": 0.0
+  "2026-11-19": 0.1408
  },
  "cap": 90.0,
  "minibench_by_day": {
@@ -15,49 +15,89 @@
  },
  "note": "Season total includes two practice runs (about $3). Today's allowance was reset once after the second practice run so real forecasting could start. 2026-11-18: corrected to the Anthropic console's real figure ($3.83; the old ledger over-charged about 2.6 times); earlier days scaled by the same factor.",
  "research_search_hist": {
-  "2": 1
+  "2": 2
  },
- "spent": 4.0669,
- "stage_questions": 5,
+ "spent": 4.2077,
+ "stage_questions": 6,
  "stage_since": "2026-11-18",
  "stages": {
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001141,
+   "in": 3913,
+   "out": 1500,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.01291,
+   "in": 2080,
+   "out": 875,
+   "searches": 0,
+   "timeouts": 0
+  },
   "forecast": {
    "cache_read": 0,
    "cache_write": 0,
-   "calls": 5,
-   "cost": 0.062084,
-   "in": 14262,
-   "out": 3356,
+   "calls": 7,
+   "cost": 0.091252,
+   "in": 20206,
+   "out": 5084,
    "searches": 0,
    "timeouts": 0
   },
   "parse": {
    "cache_read": 0,
    "cache_write": 0,
-   "calls": 10,
-   "cost": 0.002879,
-   "in": 19574,
-   "out": 1841,
+   "calls": 18,
+   "cost": 0.00671,
+   "in": 37198,
+   "out": 5976,
    "searches": 0,
    "timeouts": 0
   },
   "research": {
    "cache_read": 0,
    "cache_write": 0,
-   "calls": 5,
-   "cost": 0.168351,
-   "in": 211812,
-   "out": 14341,
-   "searches": 14,
+   "calls": 6,
+   "cost": 0.193281,
+   "in": 247680,
+   "out": 17028,
+   "searches": 16,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024726,
+   "in": 25794,
+   "out": 4293,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.043308,
+   "in": 2972,
+   "out": 1571,
+   "searches": 0,
    "timeouts": 0
   },
   "summarise": {
    "cache_read": 0,
    "cache_write": 0,
-   "calls": 5,
-   "cost": 0.003599,
-   "in": 7215,
-   "out": 5754,
+   "calls": 6,
+   "cost": 0.004389,
+   "in": 9484,
+   "out": 6881,
    "searches": 0,
    "timeouts": 0
   }

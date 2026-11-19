@@ -1,0 +1,390 @@
+{
+ "accessed_at": "2026-11-19T09:00:34.326986+00:00",
+ "close_time": "2026-11-19T12:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.140804,
+ "cost_by_stage": {
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001141,
+   "in": 3913,
+   "out": 1500,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.01291,
+   "in": 2080,
+   "out": 875,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.029168,
+   "in": 5944,
+   "out": 1728,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 8,
+   "cost": 0.003831,
+   "in": 17624,
+   "out": 4135,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.02493,
+   "in": 35868,
+   "out": 2687,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024726,
+   "in": 25794,
+   "out": 4293,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.043308,
+   "in": 2972,
+   "out": 1571,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.00079,
+   "in": 2269,
+   "out": 1127,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-19T12:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-19T09:01:50.694232+00:00",
+ "num_forecasters": 0,
+ "open_time": "2026-11-19T09:00:00+00:00",
+ "post_id": 46621,
+ "prediction": {
+  "predicted_options": [
+   {
+    "option_name": "Ben\u2019imana",
+    "probability": 0.12666666666666662
+   },
+   {
+    "option_name": "Chronicles from the Siege",
+    "probability": 0.1433333333333333
+   },
+   {
+    "option_name": "House of the Wind",
+    "probability": 0.06666666666666665
+   },
+   {
+    "option_name": "A Day in the Life of Jo",
+    "probability": 0.08666666666666666
+   },
+   {
+    "option_name": "Congo Boy",
+    "probability": 0.0733333333333333
+   },
+   {
+    "option_name": "Sad Girlz",
+    "probability": 0.06333333333333332
+   },
+   {
+    "option_name": "The World Before",
+    "probability": 0.06333333333333332
+   },
+   {
+    "option_name": "Our Share of Sand",
+    "probability": 0.0733333333333333
+   },
+   {
+    "option_name": "Marie Madeleine",
+    "probability": 0.06666666666666665
+   },
+   {
+    "option_name": "Other outcome",
+    "probability": 0.2366666666666668
+   }
+  ]
+ },
+ "quality": {
+  "check": null,
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46881,
+ "rationales": [
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Ben\u2019imana",
+      "probability": 0.1
+     },
+     {
+      "option_name": "Chronicles from the Siege",
+      "probability": 0.13
+     },
+     {
+      "option_name": "House of the Wind",
+      "probability": 0.07
+     },
+     {
+      "option_name": "A Day in the Life of Jo",
+      "probability": 0.09
+     },
+     {
+      "option_name": "Congo Boy",
+      "probability": 0.06
+     },
+     {
+      "option_name": "Sad Girlz",
+      "probability": 0.07
+     },
+     {
+      "option_name": "The World Before",
+      "probability": 0.07
+     },
+     {
+      "option_name": "Our Share of Sand",
+      "probability": 0.08
+     },
+     {
+      "option_name": "Marie Madeleine",
+      "probability": 0.07
+     },
+     {
+      "option_name": "Other outcome",
+      "probability": 0.26
+     }
+    ]
+   },
+   "question_id": 46881,
+   "reasoning": "(a) The festival closes on 28 November 2026, so the winner will be known in about 9 days.\n\n(b) There is no real status quo outcome, because nothing has been decided yet. The nearest default is that the prize goes to one of the roughly 13\u201314 competition films, and the question lists 9 of them. The \"Other\" bucket covers Alkebulan, Furies, Cairo Shadows, Waves of Silence and Eklipse, plus any unlisted films and a shared prize.\n\n(c) An unexpected outcome would be a film outside the listed options winning, for example a world premiere such as Cairo Shadows or Waves of Silence. A jury led by Marion Cotillard and including Kaouther Ben Hania might favor an Arab or African film that no one has singled out.\n\n**Assessment of the listed films:**\n- Ben'imana won the Cam\u00e9ra d'Or at Cannes. Festival juries often avoid giving a top prize to a film that has already won big elsewhere, but it is a strong film and could win anyway.\n- Chronicles from the Siege won Best First Feature at the Berlinale. It is Palestinian, and Kaouther Ben Hania on the jury could favor it.\n- A Day in the Life of Jo: Chapter Phaedra is an arthouse film by Jacqueline Lentzou, who is well regarded.\n- Congo Boy is a smaller film.\n- House of the Wind, Sad Girlz, The World Before, Our Share of Sand and Marie Madeleine are unknown to me. Some of them are probably in the competition, and Sad Girlz is likely an Indian or similar debut.\n\nWith about 13 films in competition and 9 of them listed, \"Other\" covers roughly 4\u20135 films plus ties. That gives it about 0.30. Each listed film gets roughly 0.05\u20130.12, and I give the best-known festival films slightly more.\n\nBen'imana: 0.10\nChronicles from the Siege: 0.13\nHouse of the Wind: 0.07\nA Day in the Life of Jo: 0.09\nCongo Boy: 0.06\nSad Girlz: 0.07\nThe World Before: 0.07\nOur Share of Sand: 0.08\nMarie Madeleine: 0.07\nOther outcome: 0.26",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Ben\u2019imana",
+      "probability": 0.14
+     },
+     {
+      "option_name": "Chronicles from the Siege",
+      "probability": 0.15
+     },
+     {
+      "option_name": "House of the Wind",
+      "probability": 0.07
+     },
+     {
+      "option_name": "A Day in the Life of Jo",
+      "probability": 0.09
+     },
+     {
+      "option_name": "Congo Boy",
+      "probability": 0.08
+     },
+     {
+      "option_name": "Sad Girlz",
+      "probability": 0.06
+     },
+     {
+      "option_name": "The World Before",
+      "probability": 0.07
+     },
+     {
+      "option_name": "Our Share of Sand",
+      "probability": 0.08
+     },
+     {
+      "option_name": "Marie Madeleine",
+      "probability": 0.06
+     },
+     {
+      "option_name": "Other outcome",
+      "probability": 0.19999999999999996
+     }
+    ]
+   },
+   "question_id": 46881,
+   "reasoning": "(a) The festival runs November 20\u201328, and the winner is announced at the closing ceremony on November 28. That is about 9 days from today (November 19).\n\n(b) No winner exists yet, so there is no status quo outcome in the strict sense. The closest proxy is the usual profile of a Marrakech winner: a first or second feature with festival buzz, often from Africa, the Arab world, or Europe, and often directed by a woman. Ben'imana and Chronicles from the Siege both fit, since each carries a major prize from Cannes or Berlin.\n\n(c) A surprise would be a film from outside the named options winning, such as Alkebulan, Furies, Cairo Shadows, Waves of Silence, or Eklipse. A jury led by Marion Cotillard might also favor an auteur-driven film like A Day in the Life of Jo, or a title such as Sad Girlz or House of the Wind. The options list has 9 named films, and the question names 5 more as \"other\", which makes 14 films in total. Ten of the named options and listed others are, by count, a field of 14.\n\nReasoning on probabilities:\n- Ben'imana won the Cam\u00e9ra d'Or, which signals strong critical acclaim. Festivals sometimes avoid giving their top prize to a film that has already won big, but Marrakech has done the opposite before.\n- Chronicles from the Siege won Best First Feature at the Berlinale. It is a Palestinian film with high political resonance, which suits juries.\n- Of the unlisted films, Alkebulan has Moroccan involvement, and Cairo Shadows and Furies are plausible. Together the five \"other\" films hold about 25\u201330%, since the question lists them as examples of \"Other outcome\".\n- Among the options I know little about, House of the Wind, Sad Girlz, The World Before, Our Share of Sand, and Marie Madeleine each get a modest share. Our Share of Sand and The World Before may be strong arthouse titles.\n- Congo Boy is an interesting African debut.\n- A Day in the Life of Jo is a Locarno/Venice-style arthouse title with decent odds.\n\nOption_A: Ben\u2019imana: 0.14\nOption_B: Chronicles from the Siege: 0.15\nOption_C: House of the Wind: 0.07\nOption_D: A Day in the Life of Jo: 0.09\nOption_E: Congo Boy: 0.08\nOption_F: Sad Girlz: 0.06\nOption_G: The World Before: 0.07\nOption_H: Our Share of Sand: 0.08\nOption_I: Marie Madeleine: 0.06\nOption_J: Other outcome: 0.20",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Ben\u2019imana",
+      "probability": 0.10999999999999997
+     },
+     {
+      "option_name": "Chronicles from the Siege",
+      "probability": 0.12999999999999998
+     },
+     {
+      "option_name": "House of the Wind",
+      "probability": 0.06999999999999999
+     },
+     {
+      "option_name": "A Day in the Life of Jo",
+      "probability": 0.08999999999999998
+     },
+     {
+      "option_name": "Congo Boy",
+      "probability": 0.07999999999999999
+     },
+     {
+      "option_name": "Sad Girlz",
+      "probability": 0.059999999999999984
+     },
+     {
+      "option_name": "The World Before",
+      "probability": 0.059999999999999984
+     },
+     {
+      "option_name": "Our Share of Sand",
+      "probability": 0.06999999999999999
+     },
+     {
+      "option_name": "Marie Madeleine",
+      "probability": 0.06999999999999999
+     },
+     {
+      "option_name": "Other outcome",
+      "probability": 0.26000000000000034
+     }
+    ]
+   },
+   "question_id": 46881,
+   "reasoning": "(a) The winner will be known on 28 November 2026, nine days from now.\n\n(b) There is no real status quo outcome, because no winner exists yet. The closest thing is a prior built from the competition field.\n\n(c) An unexpected outcome would be a film outside the listed options winning. Examples are Alkebulan, Cairo Shadows, Furies, Waves of Silence, or a film I know nothing about. A tie would also resolve Other.\n\nEvidence on the field:\n- The competition has 13 or 14 films. Named in the options are Ben'imana, Chronicles from the Siege, House of the Wind, A Day in the Life of Jo, Congo Boy, Sad Girlz, The World Before, Our Share of Sand, and Marie Madeleine. That is 9 films.\n- The named \"Other\" films are Alkebulan, Furies, Cairo Shadows, Waves of Silence, and Eklipse. That is 5 films, which gives 14 in total.\n- Other is therefore about 5 of 14 films, or roughly 30\u201335% before any adjustment.\n\nAssessing the options:\n- Ben'imana won the Cam\u00e9ra d'Or at Cannes, which signals quality. Marrakech juries sometimes pick films with prior acclaim, but they also like to discover new work.\n- Chronicles from the Siege won Best First Feature at Berlin. It is a Palestinian film, and juries often favor political relevance. Kaouther Ben Hania is on the jury and has a Palestine-related profile (The Voice of Hind Rajab), which helps it.\n- A Day in the Life of Jo is by Lentzou, an arthouse director with a Cannes ACID or Locarno profile. A jury with Vicky Krieps and Andrew Haigh might like it.\n- Congo Boy is a Central African Republic film. It is a plausible winner, since the festival likes African cinema, as with Promised Sky.\n- House of the Wind, Sad Girlz, The World Before, Our Share of Sand, and Marie Madeleine are unknown to me.\n  - Sad Girlz is probably a Cannes-related debut.\n  - Our Share of Sand is possibly a Moroccan or Arabic film.\n  - Marie Madeleine is probably French.\n\nProbabilities:\n\nBen'imana: 0.11\nChronicles from the Siege: 0.13\nHouse of the Wind: 0.07\nA Day in the Life of Jo: 0.09\nCongo Boy: 0.08\nSad Girlz: 0.06\nThe World Before: 0.06\nOur Share of Sand: 0.07\nMarie Madeleine: 0.07\nOther outcome: 0.26\n\nOption_A: 0.11\nOption_B: 0.13\nOption_C: 0.07\nOption_D: 0.09\nOption_E: 0.08\nOption_F: 0.06\nOption_G: 0.06\nOption_H: 0.07\nOption_I: 0.07\nOption_J: 0.26",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Ben\u2019imana",
+      "probability": 0.16999999999999998
+     },
+     {
+      "option_name": "Chronicles from the Siege",
+      "probability": 0.16999999999999998
+     },
+     {
+      "option_name": "House of the Wind",
+      "probability": 0.059999999999999984
+     },
+     {
+      "option_name": "A Day in the Life of Jo",
+      "probability": 0.07999999999999999
+     },
+     {
+      "option_name": "Congo Boy",
+      "probability": 0.07999999999999999
+     },
+     {
+      "option_name": "Sad Girlz",
+      "probability": 0.059999999999999984
+     },
+     {
+      "option_name": "The World Before",
+      "probability": 0.059999999999999984
+     },
+     {
+      "option_name": "Our Share of Sand",
+      "probability": 0.06999999999999999
+     },
+     {
+      "option_name": "Marie Madeleine",
+      "probability": 0.059999999999999984
+     },
+     {
+      "option_name": "Other outcome",
+      "probability": 0.19000000000000028
+     }
+    ]
+   },
+   "question_id": 46881,
+   "reasoning": "**(a) Time left:** About 9 days. The jury, headed by Marion Cotillard, announces the \u00c9toile d'Or at the closing ceremony on Saturday, November 28, 2026.\n\n**(b) Status quo outcome:** No winner exists yet, so there is no true status quo. The best stand-in is the festival's track record. Recent winners are Promised Sky (2025), Happy Holidays (2024) and The Mother of All Lies (2023). These are acclaimed first or second features, often from Arab or African filmmakers, and often ones that already won prizes at major festivals.\n\n**A note on the research summary:** It reverses the question's option structure. The question's named options are Ben'imana, Chronicles from the Siege, House of the Wind, A Day in the Life of Jo, Congo Boy, Sad Girlz, The World Before, Our Share of Sand and Marie Madeleine. Alkebulan, Furies, Cairo Shadows, Waves of Silence and Eklipse are the films that resolve as \"Other.\" That makes 9 named films plus 5 \"Other\" films, 14 in total, with one reportedly withdrawn.\n\n**(c) Unexpected-outcome scenario:** The jury passes over the festival-circuit favourites and picks a world premiere. The likeliest candidates are the Moroccan-Hungarian-Qatari *Alkebulan* or *Waves of Silence*, the migrant-shipwreck drama shot in Morocco. Either would resolve \"Other.\" A tie between films, or a withdrawal affecting a named option, would also push toward \"Other.\"\n\n**Rationale:**\n- **Leading candidates:** *Ben'imana* (Cam\u00e9ra d'Or at Cannes) and *Chronicles from the Siege* (Best First Feature at the Berlinale) arrive with the strongest credentials.\n- **Jury fit for Chronicles from the Siege:** The jury includes Kaouther Ben Hania. Marrakech also recently honoured a Palestinian film (Happy Holidays, 2024). Both suggest a jury receptive to this film.\n- **Jury fit for Ben'imana:** It matches the African-led, female-directed profile of the 2025 winner. Ramata-Toulaye Sy is also on the jury.\n- **Other named films:** *A Day in the Life of Jo* (Jacqueline Lentzou, an established arthouse voice) and *Congo Boy* deserve moderate weight. The remaining named films are lesser-known to me, so each gets a near-uniform share.\n- **\"Other\":** It covers five films, including Moroccan-linked world premieres the festival may favour, plus tie scenarios. It therefore gets the largest single share.\n\nOption_A: 0.17\nOption_B: 0.17\nOption_C: 0.06\nOption_D: 0.08\nOption_E: 0.08\nOption_F: 0.06\nOption_G: 0.06\nOption_H: 0.07\nOption_I: 0.06\nOption_J: 0.19",
+   "research": "both",
+   "role": "member"
+  }
+ ],
+ "research": "**Rundown: 2026 Marrakech International Film Festival \u00c9toile d'Or**\n\n**Current state (as of 19 Nov 2026)**\n- The 23rd edition runs from November 20 to 28 at the Palais des Congr\u00e8s, Cin\u00e9ma Le Colis\u00e9e and Mus\u00e9e Yves Saint Laurent Marrakech. No winner has been announced yet.\n- The jury will watch and evaluate the 14 films in the Official Competition before choosing the film that deserves the \u00c9toile d'Or, then it will announce its decision during the festival's closing ceremony on Saturday, November 28.\n- The jury is headed by Marion Cotillard. I could not confirm the names of the other jury members. One report says the jury has 9 figures from the international film industry, but I found only Cotillard and Franco-Senegalese director and screenwriter Ramata-Toulaye Sy by name.\n- Competition films I could confirm from the results:\n  - *Alkebulan* (Morocco/Hungary/Qatar), a world premiere.\n  - *Ben'imana* (Rwanda/Gabon/France/Norway), which won the Cam\u00e9ra d'Or at Cannes.\n  - *Cairo Shadows* (France/Belgium/Tunisia/Egypt), a world premiere.\n  - *Waves of Silence*, a world premiere by Farzad Samsami and a feature debut shot in Morocco and concerned with migrant shipwrecks.\n  - *Furies* (Lebanon), by Rami Kodeih.\n  - *A Day in the Life of Jo: Chapter Phaedra* by Jacqueline Lentzou, a coming-of-age story that pushes the boundaries of realism.\n  - *In Chronicles from the Siege* (Palestine), which won Best First Feature at the Berlinale.\n  - *Congo Boy* by Rafiki Fariala (Central African Republic), per a French-language report.\n- I could not find *Eklipse* in any result, so I cannot confirm it is in the 14-film lineup.\n- The full 14-film list is not in my results, so I cannot confirm the remaining titles.\n- The prize is reported as worth USD 50,000 according to the 2026 rules. That figure comes from a single source.\n\n**Scheduled before close**\n- Opening film: Jesse Eisenberg's *The Debut*, which will be among 76 films from 39 countries screened at the festival.\n- Closing ceremony and winner announcement: Saturday, 28 November 2026.\n\n**Base rate**\n- Recent winners: Erige Sehiri's Promised Sky (2025), Scandar Copti's Happy Holidays (2024), and Asmae El Moudir's The Mother of all Lies (2023).\n- *Promised Sky* beat 12 other feature films in 2025. The winner came from an African-led project and was a female-directed debut-era feature.\n- The festival is a competition for first and second features, so winners are typically early-career films. I did not find winners from earlier years, so I cannot establish a longer base rate.\n\n**Resolution if nothing changes**\n- The \u00c9toile d'Or should be announced on 28 November, within the window.\n- If the winner is one of the five named options (*Alkebulan*, *Furies*, *Cairo Shadows*, *Waves of Silence*, *Eklipse*), the question resolves to that film. *A Day in the Life of Jo: Chapter Phaedra* is also referenced in the question's options.\n- Any other film resolves \"Other\". This includes *Ben'imana*, *In Chronicles from the Siege*, *Congo Boy*, and *The Debut*-adjacent titles, because they are not in the named list.\n- \"Other\" also applies if the prize is shared or if no winner is named before 1 January 2027.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Base rate (counts from what I could verify)**\n- I found 16 winners across the 25 editions from 2001 to 2025. The 2001\u20132003 winners come from Wikipedia's list, Inch'Allah Dimanche, Go and Gori vatra. AlloCin\u00e9 lists 2006 to 2014 and 2016, with no winner repeated (The Donor (2016) is the last in its list). Recent winners are 2023, 2024 and 2025.\n- 2004\u201305, 2015 and 2017\u20132022 are missing from my results, so the rate is incomplete.\n- In 2023 the jury awarded the \u00c9toile d'Or to a Moroccan film for the first time in the Festival's history.\n- None of the five named options has any prior record.\n\n**Primary source**\n- The official site (marrakech-festival.com) returned only its 2023 page. I found no 2026 official winner statement or live competition page.\n- The jury was announced on 12 November. Besides Marion Cotillard, it includes Claes Bang, Vicky Krieps, Emma Mackey, Gilles Lellouche, Kaouther Ben Hania, Andrew Haigh, Ramata-Toulaye Sy and Sa\u00efd Hamich Benlarbi.\n- The winner is due at the closing ceremony on 28 November. Nothing I found suggests a decision has been made.\n\n**Strongest evidence against the rundown's framing**\n- **Competition size is disputed.** The rundown says 14 films. A report dated today says one film has withdrawn from the Official Competition and will not be replaced, so it will have 13 films. Deadline, two days ago, still says 14. I could not identify the withdrawn film. If it is one of the named options, the option set is wrong.\n- **Eklipse remains unconfirmed.** I found it in no result, so it may be the withdrawn film or may never have been in competition.\n- **Alkebulan is confirmed.** It is the second feature by Yassine Marco Marroccu and is in competition.\n- **\"Other\" is large.** Ben'imana, In Chronicles from the Siege and Congo Boy are confirmed competitors and fall under Other. The unconfirmed remainder adds more.\n- **Shared prize.** One unreliable source (Grokipedia) says the $50,000 prize is shared equally between the director and producer. That is not a split between films, but a true tie would resolve Other.\n\n**Not found:** the full 13/14-film list; Eklipse's status; the withdrawn film's identity; any official 2026 prize rules; winners for 2004\u201305, 2015 and 2017\u20132022; and any first-hand 2026 statement from the festival.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-19T09:01:08.731734+00:00",
+ "scheduled_resolution_time": "2026-11-29T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Which film will win the \u00c9toile d\u2019Or at the 2026 Marrakech International Film Festival?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "MultipleChoiceQuestion",
+ "url": "https://www.metaculus.com/questions/46621"
+}
