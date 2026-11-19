@@ -182,6 +182,10 @@ class FallTemplateBot2026(ForecastBot):
     second_researcher = None   # the model (with web search) for the second research pass
     checker = None             # the cheap model for the shadow sanity check
     _member_index: dict[str, int] = {}
+    # Spare-credit boost (quality.boost_members): extra strong-model forecasters added to a
+    # question's ensemble when the month's pace has left credit over. Empty = off.
+    boost: list[dict] = []
+    _boost_values: dict[str, list] = {}   # question key -> the extras' forecasts, until aggregated
 
     async def run_research(self, question: MetaculusQuestion) -> str:
         key = forecast_log.question_key(question)
@@ -321,6 +325,9 @@ class FallTemplateBot2026(ForecastBot):
             key = forecast_log.question_key(question)
             extra = {"quality": {"tier": self.plan["tier"], "settings": quality.settings(),
                                  "members": [m["name"] for m in self.plan["members"]],
+                                 # the spare-credit extras that forecast this question (evaluate.py
+                                 # compares the ensemble with and without them)
+                                 "boost": [r["member"] for r in self.rationales.get(key, []) if r.get("role") == "boost"],
                                  "control": self.plan["control"], "flags": []}}
             if hasattr(report.prediction, "get_cdf"):
                 cdf = [round(p.percentile, 6) for p in report.prediction.get_cdf()]
@@ -396,13 +403,62 @@ class FallTemplateBot2026(ForecastBot):
         members = self.plan["members"]
         tasks = [self._member_prediction(question, research, members[index % len(members)])]
         if index == 0 and self.plan["control"] and quality.SECOND_MARK in research:
-            tasks.append(self._member_prediction(question, research.split(quality.SECOND_MARK)[0], CONTROL))
+            tasks.append(self._control_prediction(question, research.split(quality.SECOND_MARK)[0]))
+        if index == 0 and self._boost_now(question):
+            tasks += [self._boost_prediction(question, research, spec) for spec in self.boost]
         results = await asyncio.gather(*tasks, return_exceptions=True)
-        if len(results) > 1 and isinstance(results[1], BaseException):
-            logger.warning(f"Control forecast failed for {question.page_url}: {results[1]}")
         if isinstance(results[0], BaseException):
             raise results[0]
         return results[0]
+
+    async def _control_prediction(self, question: MetaculusQuestion, research: str) -> None:
+        """The control forecast: logged by _member_prediction, never used, never fatal."""
+        try:
+            await self._member_prediction(question, research, CONTROL)
+        except Exception as exc:
+            logger.warning(f"Control forecast failed for {question.page_url}: {exc}")
+
+    def _boost_now(self, question: MetaculusQuestion) -> bool:
+        """Does this question get the spare-credit extras? Only when the month's pace left credit
+        over (self.boost is set by the main block), the run has used little of what it may spend
+        (new questions come first), and the question is a plain one (not a conditional)."""
+        if not self.boost or isinstance(question, ConditionalQuestion):
+            return False
+        if self.run_budget is None:
+            return True
+        manager, allowed = self.run_budget
+        return quality.boost_fits_run(manager.current_usage, allowed)
+
+    async def _boost_prediction(self, question: MetaculusQuestion, research: str, spec: dict) -> None:
+        """One extra strong-model forecast. It is kept aside and joins the ensemble when the
+        members are combined (_aggregate_predictions). If it fails, the question is simply
+        forecast by the usual ensemble: an extra can never lose or delay a forecast."""
+        try:
+            prediction = await self._member_prediction(question, research, spec)
+            self._boost_values.setdefault(forecast_log.question_key(question), []).append(prediction.prediction_value)
+        except Exception as exc:
+            logger.warning(f"Boost forecast {spec['name']} failed for {question.page_url}: {exc}")
+
+    def _with_boost(self, predictions, question: MetaculusQuestion):
+        """The members' forecasts plus this question's extras, when the extras are the same kind
+        of forecast as the members' (same options, same numeric grid). Otherwise just the members."""
+        extras = self._boost_values.pop(forecast_log.question_key(question), [])
+        try:
+            first = predictions[0]
+            if isinstance(first, (int, float)):
+                fits = lambda e: isinstance(e, (int, float))
+            elif isinstance(first, PredictedOptionList):
+                names = {o.option_name for o in first.predicted_options}
+                fits = lambda e: isinstance(e, PredictedOptionList) and {o.option_name for o in e.predicted_options} == names
+            elif isinstance(first, NumericDistribution):
+                size = len(first.get_cdf())
+                fits = lambda e: isinstance(e, NumericDistribution) and len(e.get_cdf()) == size
+            else:
+                return predictions
+            return list(predictions) + [e for e in extras if fits(e)]
+        except Exception as exc:
+            logger.warning(f"Could not add the boost forecasts for {question.page_url}: {exc}")
+            return predictions
 
     async def _member_prediction(self, question: MetaculusQuestion, research: str, spec: dict):
         token = _member.set(spec)
@@ -411,7 +467,7 @@ class FallTemplateBot2026(ForecastBot):
                 with costs.stage(spec["stage"]):
                     prediction = await ForecastBot._make_prediction(self, question, research)
             except Exception as exc:
-                if spec["model"] != "strong":
+                if spec["model"] != "strong" or spec["role"] == "boost":   # an extra is dropped, not replaced
                     raise
                 # The stronger model failed (outage, refusal, a parameter it rejects): this member
                 # forecasts with the usual model instead, so the ensemble keeps its size.
@@ -456,7 +512,9 @@ class FallTemplateBot2026(ForecastBot):
     async def _aggregate_predictions(self, predictions, question: MetaculusQuestion):
         """Combine the members (quality.py): binary in log-odds with the extremes dropped, then
         capped; multiple choice as the mean with a floor; numeric as a mixture of the members'
-        distributions. Anything else, or any failure here, falls back to the library's way."""
+        distributions. Anything else, or any failure here, falls back to the library's way.
+        The spare-credit extras (if this question has any) are combined as ordinary members."""
+        predictions = self._with_boost(predictions, question)
         try:
             if predictions and all(isinstance(p, (int, float)) for p in predictions):
                 return quality.cap(quality.extremise(quality.aggregate_binary(predictions)))
@@ -1139,7 +1197,10 @@ if __name__ == "__main__":
     plan = quality.plan(quality.tier(spent_this_month, now_utc))
     FallTemplateBot2026.plan = plan
     template_bot.predictions_per_research_report = len(plan["members"])
-    if any(m["model"] == "strong" for m in plan["members"]):
+    # Credit the pace has left over buys extra strong-model forecasts per question (quality.py).
+    boost = quality.boost_members(spent_this_month, now_utc, plan["tier"])
+    FallTemplateBot2026.boost = boost
+    if boost or any(m["model"] == "strong" for m in plan["members"]):
         # No temperature: the stronger model always thinks before answering and sets its own.
         FallTemplateBot2026.strong_llm = GeneralLlm(model=quality.STRONG_MODEL, timeout=180, allowed_tries=2, max_tokens=8000)
     if plan["second_research"]:
@@ -1152,6 +1213,10 @@ if __name__ == "__main__":
     print(f"[quality] tier {plan['tier']} (this month ${spent_this_month:.2f} of ${quality.MONTHLY_CREDIT:.2f}): "
           f"members {', '.join(m['name'] for m in plan['members'])}; second research {'on' if plan['second_research'] else 'off'}; "
           f"control {'on' if plan['control'] else 'off'}; expected about ${quality.EXPECTED_COST[plan['tier']]:.3f} a question")
+    print(f"[quality] spare-credit boost: {len(boost)} extra strong forecast(s) a question"
+          + (f" (about ${len(boost) * quality.EXPECTED_BOOST_MEMBER_COST:.3f} more; first questions of the run only)" if boost else
+             f" (off: switch {'on' if quality.SPARE_BOOST else 'off'}, tier {plan['tier']}, month ${spent_this_month:.2f} "
+             f"against {quality.BOOST_BELOW:.0%} of the pace line ${quality.pace_line(now_utc):.2f})"))
     forecast_reports = []
     minibench_usage = 0.0
     # The meter is costs.RECORDER: measured dollars from each call's usage figures. The

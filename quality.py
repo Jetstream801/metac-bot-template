@@ -55,6 +55,20 @@ PERSONAS = _env("PERSONAS", False)
 EXTREMISE = _env("EXTREMISE", 1.0)                      # 1.0 = no change (exponent on the odds)
 # The API credit this bot may use in a calendar month (it expires monthly).
 MONTHLY_CREDIT = _env("MONTHLY_CREDIT", 45.0)
+# ON: spend credit the pace has left over on extra forecasts from the stronger model, on the same
+# question, inside the same 3-hour window (docs/quality.md, "Where the unused credit goes").
+# Re-forecasting old questions was the other candidate and is NOT built: the tournament scores only
+# the forecast standing when a question closes, 3 hours after it opens, and asks for one forecast
+# a question. Off-switch: QUALITY_SPARE_BOOST=0 (or set False here).
+SPARE_BOOST = _env("SPARE_BOOST", True)
+BOOST_STRONG_MEMBERS = _env("BOOST_STRONG_MEMBERS", 2)   # extra strong-model forecasts a question
+# The extras run only while this month's spending is under this share of the pacing line, so they
+# can only ever use credit the pace has left over, never push the month over it.
+BOOST_BELOW = _env("BOOST_BELOW", 0.5)
+# ...and only while the run has used at most this share of what it may spend, so on a busy run the
+# money goes to covering every open question first.
+BOOST_RUN_SHARE = _env("BOOST_RUN_SHARE", 0.25)
+EXPECTED_BOOST_MEMBER_COST = 0.035                       # dollars for one strong-model forecast
 
 SECOND_MARK = "\n\n---\n## Second research pass (base rate, primary source, the case against)\n"
 PERSONA_LINES = (
@@ -75,6 +89,7 @@ def settings():
         "binary_min": BINARY_MIN, "binary_max": BINARY_MAX, "option_floor": OPTION_FLOOR,
         "discrete_outcome_probabilities": DISCRETE_OUTCOME_PROBABILITIES, "shadow_check": SHADOW_CHECK,
         "personas": PERSONAS, "extremise": EXTREMISE,
+        "spare_boost": SPARE_BOOST, "boost_strong_members": BOOST_STRONG_MEMBERS,
     }
 
 
@@ -100,9 +115,37 @@ def tier(spent_this_month, now, credit=None):
     credit = MONTHLY_CREDIT if credit is None else credit
     if credit <= 0 or spent_this_month >= credit:
         return "base"
-    n = days_in_month(now)
-    line = credit * min(n, now.day + 2) / n
+    line = pace_line(now, credit, slack_days=2)
     return "full" if spent_this_month <= line else "lean"
+
+
+def pace_line(now, credit=None, slack_days=0):
+    """Dollars the month may have used by today on the straight line from $0 to the credit."""
+    credit = MONTHLY_CREDIT if credit is None else credit
+    n = days_in_month(now)
+    return credit * min(n, now.day + slack_days) / n
+
+
+def boost_members(spent_this_month, now, tier_name, credit=None):
+    """The extra strong-model forecasters this run may add to each question, or [] for none.
+
+    They are added only at the full tier (so new questions already get everything else), only
+    when a strong model is set, and only while the month's spending is under BOOST_BELOW of the
+    pacing line: that is the measure of "the pace has left credit over". As spending catches up
+    with the line the extras stop by themselves, well before the tier would drop to lean."""
+    if not SPARE_BOOST or BOOST_STRONG_MEMBERS <= 0 or not STRONG_MODEL or tier_name != "full":
+        return []
+    if spent_this_month > BOOST_BELOW * pace_line(now, credit):
+        return []
+    return [{"name": f"boost_{i + 1}", "model": "strong", "stage": "boost", "role": "boost", "persona": ""}
+            for i in range(int(BOOST_STRONG_MEMBERS))]
+
+
+def boost_fits_run(run_used, run_allowed):
+    """May this question get its extras, given what the run has used of what it may spend?
+    Extras go to the first questions of a run only; a run with many open questions keeps its
+    allowance for covering all of them."""
+    return run_allowed > 0 and run_used <= BOOST_RUN_SHARE * run_allowed
 
 
 def plan(tier_name="full"):
