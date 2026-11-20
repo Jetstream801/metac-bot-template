@@ -1,0 +1,454 @@
+{
+ "accessed_at": "2026-11-20T15:13:01.730189+00:00",
+ "close_time": "2026-11-20T18:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.237548,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.08106,
+   "in": 5740,
+   "out": 2905,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001118,
+   "in": 3680,
+   "out": 1500,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.018526,
+   "in": 1938,
+   "out": 1465,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.03925,
+   "in": 5740,
+   "out": 2777,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.005012,
+   "in": 23986,
+   "out": 5228,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.025037,
+   "in": 33640,
+   "out": 3346,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024729,
+   "in": 28826,
+   "out": 3693,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.04168,
+   "in": 2870,
+   "out": 1510,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001136,
+   "in": 2439,
+   "out": 1784,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-20T18:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-20T15:14:18.828688+00:00",
+ "num_forecasters": 213,
+ "open_time": "2026-11-20T15:00:00+00:00",
+ "post_id": 46625,
+ "prediction": {
+  "predicted_options": [
+   {
+    "option_name": "10 or less",
+    "probability": 0.022
+   },
+   {
+    "option_name": "11",
+    "probability": 0.036
+   },
+   {
+    "option_name": "12",
+    "probability": 0.07400000000000001
+   },
+   {
+    "option_name": "13",
+    "probability": 0.14200000000000002
+   },
+   {
+    "option_name": "14",
+    "probability": 0.22999999999999998
+   },
+   {
+    "option_name": "15",
+    "probability": 0.238
+   },
+   {
+    "option_name": "16",
+    "probability": 0.162
+   },
+   {
+    "option_name": "17 or more",
+    "probability": 0.096
+   }
+  ]
+ },
+ "quality": {
+  "boost": [
+   "boost_1",
+   "boost_2"
+  ],
+  "check": null,
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46885,
+ "rationales": [
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "10 or less",
+      "probability": 0.04
+     },
+     {
+      "option_name": "11",
+      "probability": 0.08
+     },
+     {
+      "option_name": "12",
+      "probability": 0.13
+     },
+     {
+      "option_name": "13",
+      "probability": 0.18
+     },
+     {
+      "option_name": "14",
+      "probability": 0.19000000000000006
+     },
+     {
+      "option_name": "15",
+      "probability": 0.16
+     },
+     {
+      "option_name": "16",
+      "probability": 0.12
+     },
+     {
+      "option_name": "17 or more",
+      "probability": 0.1
+     }
+    ]
+   },
+   "question_id": 46885,
+   "reasoning": "**(a) Time left:** About 4 weeks. The outcome is known after the close on Dec 18, 2026.\n\n**(b) Status quo:** The research assistant's best baseline is about 13 companies. The count is 11 S&P 500 names plus SpaceX and Anthropic. However, that figure relies on unverified reports, and I could not confirm the CompaniesMarketCap reading directly. The mid-2026 articles cite about 16 members, while the April 2026 Yahoo piece cites 13.\n\nMy own count of near-certain members is 10: Nvidia, Apple, Microsoft, Alphabet, Amazon, Meta, Broadcom, TSMC, Tesla and Saudi Aramco. Berkshire, Lilly, Walmart, Samsung and Micron sit right around $1T. SK Hynix, AMD and JPMorgan are also near the threshold.\n\nAdding the likely IPO names (SpaceX, Anthropic) and some of the borderline group gives a central estimate of 13\u201315.\n\n**(c) Unexpected outcome:** A broad market selloff, for example an AI-driven correction, could push most of the borderline group below $1T. Chip names like Micron, Samsung and SK Hynix are the most exposed, and Anthropic's post-IPO volatility adds risk. The count could then fall to 10\u201311. Conversely, a rally could lift all five borderline names plus SK Hynix and AMD over the line, giving 16\u201317 or more. Those names sit within a few percent of $1T, so one close can move the count by several. Differences in how CompaniesMarketCap treats dual listings and foreign companies add further noise.\n\nOption_A (10 or less): 0.04\nOption_B (11): 0.08\nOption_C (12): 0.13\nOption_D (13): 0.18\nOption_E (14): 0.19\nOption_F (15): 0.16\nOption_G (16): 0.12\nOption_H (17 or more): 0.10",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "10 or less",
+      "probability": 0.010000000000000002
+     },
+     {
+      "option_name": "11",
+      "probability": 0.030000000000000002
+     },
+     {
+      "option_name": "12",
+      "probability": 0.07000000000000002
+     },
+     {
+      "option_name": "13",
+      "probability": 0.13000000000000003
+     },
+     {
+      "option_name": "14",
+      "probability": 0.24000000000000002
+     },
+     {
+      "option_name": "15",
+      "probability": 0.2599999999999998
+     },
+     {
+      "option_name": "16",
+      "probability": 0.18000000000000002
+     },
+     {
+      "option_name": "17 or more",
+      "probability": 0.08000000000000002
+     }
+    ]
+   },
+   "question_id": 46885,
+   "reasoning": "**(a) Time left:** About four weeks. The outcome is known at the 4:00 PM ET close on Dec 18, 2026.\n\n**(b) Status quo outcome:** The most direct reading is the itrillion page, which uses the Nov 11 CompaniesMarketCap close. It lists 14 members: Apple, Nvidia, Microsoft, Alphabet, Amazon, TSMC, SpaceX, Saudi Aramco, Broadcom, Meta, Tesla, Eli Lilly, Berkshire Hathaway and Samsung. A Nov 17\u201320 ranking puts Walmart (~$1.016T) and Samsung (~$1.012T) just above the line. That would make about 15 with Walmart added. Micron (~$0.88T) and AMD (~$0.88T) are below $1T. So the status quo is roughly 14\u201315.\n\n**(c) Unexpected-outcome scenario:**\n- **Anthropic.** The research is conflicting. If Anthropic is genuinely listed and valued above $1T, the count rises by one, to 15\u201316. If the IPO claim is wrong, it adds nothing. I treat the claim with some skepticism.\n- **Market drop.** A broad sell-off of 5\u201310% would push Walmart, Samsung, Berkshire and Lilly below the line. The count could then fall to 11\u201312.\n- **Market rally.** A rally could lift Micron and AMD back over $1T, taking the count to 16\u201317.\n- **Data quirks.** CompaniesMarketCap's treatment of dual-class shares, or a differing share count, could shift a name either way.\n\n**Reasoning:** Several names sit within about 5% of the threshold, so the count can easily move by one or two in four weeks. I put the mode at 14\u201315 and keep meaningful weight on 13 and 16.\n\nOption_A: 1\nOption_B: 3\nOption_C: 7\nOption_D: 13\nOption_E: 24\nOption_F: 26\nOption_G: 18\nOption_H: 8",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "10 or less",
+      "probability": 0.029999999999999992
+     },
+     {
+      "option_name": "11",
+      "probability": 0.04999999999999999
+     },
+     {
+      "option_name": "12",
+      "probability": 0.07999999999999999
+     },
+     {
+      "option_name": "13",
+      "probability": 0.12999999999999998
+     },
+     {
+      "option_name": "14",
+      "probability": 0.19999999999999996
+     },
+     {
+      "option_name": "15",
+      "probability": 0.2300000000000002
+     },
+     {
+      "option_name": "16",
+      "probability": 0.17999999999999997
+     },
+     {
+      "option_name": "17 or more",
+      "probability": 0.09999999999999998
+     }
+    ]
+   },
+   "question_id": 46885,
+   "reasoning": "**(a) Time left:** 28 days, until the close on Dec 18, 2026.\n\n**(b) Status quo:** The most reliable reading is the itrillion page, which uses CompaniesMarketCap data for the Nov 11 close. It lists 14 members: Apple, Nvidia, Microsoft, Alphabet, Amazon, TSMC, SpaceX, Saudi Aramco, Broadcom, Meta, Tesla, Eli Lilly, Berkshire Hathaway and Samsung. Walmart (about $1.016T) and Samsung (about $1.012T) were only just over the line in the Nov 17\u201320 ranking, which puts the count at about 15. Micron (about $0.88T) and AMD (about $0.88T) sit below it. The first rundown's \"13\" leaves out TSMC and Aramco, so I treat it as too low.\n\nAnthropic is the main uncertainty. One source reports a $1.75T post-IPO close, while another treats it as a hypothetical $1.41T entrant. I could not confirm that it is listed. If it is listed and shows up on CompaniesMarketCap, the count is about 16.\n\n**(c) Unexpected outcome:** A tech or AI selloff of 10\u201315% before Dec 18 could push Samsung, Walmart, Berkshire, Lilly and possibly Meta or Tesla below $1T. That would cut the count to 11\u201312. A rally combined with Anthropic being listed and Micron and AMD re-crossing $1T could lift it to 17 or more.\n\n**Reasoning:** The baseline is about 14\u201316, with Walmart and Samsung near the line and Anthropic uncertain. The sources disagree on the count and on market caps, and several names sit within 5% of $1T, so I spread probability across the neighboring options. I centre it on 14\u201316, since the evidence points to roughly 15.\n\nOption_A: 0.03\nOption_B: 0.05\nOption_C: 0.08\nOption_D: 0.13\nOption_E: 0.20\nOption_F: 0.23\nOption_G: 0.18\nOption_H: 0.10",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "10 or less",
+      "probability": 0.03
+     },
+     {
+      "option_name": "11",
+      "probability": 0.04
+     },
+     {
+      "option_name": "12",
+      "probability": 0.08
+     },
+     {
+      "option_name": "13",
+      "probability": 0.16
+     },
+     {
+      "option_name": "14",
+      "probability": 0.22999999999999998
+     },
+     {
+      "option_name": "15",
+      "probability": 0.22
+     },
+     {
+      "option_name": "16",
+      "probability": 0.14
+     },
+     {
+      "option_name": "17 or more",
+      "probability": 0.1
+     }
+    ]
+   },
+   "question_id": 46885,
+   "reasoning": "**(a) Time remaining:** About four weeks. The question resolves at the US market close on Friday, December 18, 2026.\n\n**(b) Status quo:** About 14\u201315 companies.\n\nThe most direct reading I have is an itrillion page that says it uses CompaniesMarketCap data from the Nov 11 close. It lists 14 members: Apple, Nvidia, Microsoft, Alphabet, Amazon, TSMC, SpaceX, Saudi Aramco, Broadcom, Meta, Tesla, Eli Lilly, Berkshire Hathaway and Samsung.\n\nTwo things have happened since then:\n- **Anthropic** listed on Nov 19, at about $1.4\u20131.75T. If CompaniesMarketCap carries it, that adds one.\n- **Walmart** (about $1.016T) and **Samsung** (about $1.012T) are both barely above the line.\n\nSo the status quo is roughly 15, or 14 if Walmart is excluded or Anthropic is not yet listed.\n\n**Solid core:** About 12 names are well clear of $1T: the 11 large ones (Apple through Tesla) plus Anthropic.\n\n**Swing names and my rough odds of each being above $1T on Dec 18:**\n- Eli Lilly: ~70%\n- Berkshire Hathaway: ~65%\n- Samsung: ~55%\n- Walmart: ~50%\n- Micron: ~25% (about $880B now)\n- AMD: ~20% (about $876B now)\n\nThat gives an expected count of roughly 14.5\u201315.\n\nThese swings are correlated with the overall market. A broad selloff could knock out four or five names together, and a rally could pull in several at once.\n\n**(c) Unexpected scenarios:**\n- **Downside:** A sharp AI or tech correction of 10\u201315% in late November and December. This would push Lilly, Berkshire, Samsung and Walmart below $1T. Anthropic might fall after its IPO or not yet be listed on CompaniesMarketCap. Tesla could also slip. The count would drop to 11\u201312.\n- **Upside:** A strong year-end rally lifts Micron, AMD and possibly SK Hynix or JPMorgan over the line, giving 17 or more.\n\nOption_A: 0.03\nOption_B: 0.04\nOption_C: 0.08\nOption_D: 0.16\nOption_E: 0.23\nOption_F: 0.22\nOption_G: 0.14\nOption_H: 0.10",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "10 or less",
+      "probability": 0.02
+     },
+     {
+      "option_name": "11",
+      "probability": 0.03
+     },
+     {
+      "option_name": "12",
+      "probability": 0.07
+     },
+     {
+      "option_name": "13",
+      "probability": 0.14
+     },
+     {
+      "option_name": "14",
+      "probability": 0.24
+     },
+     {
+      "option_name": "15",
+      "probability": 0.25
+     },
+     {
+      "option_name": "16",
+      "probability": 0.16
+     },
+     {
+      "option_name": "17 or more",
+      "probability": 0.09
+     }
+    ]
+   },
+   "question_id": 46885,
+   "reasoning": "**(a) Time left:** About four weeks. The question resolves at the 4:00 PM ET close on Friday, December 18, 2026, which is 28 days after today (Nov 20).\n\n**(b) Status quo outcome:** About 15. The latest list sourced from CompaniesMarketCap (Nov 11 close) has 14 members:\n- Apple, Nvidia, Microsoft, Alphabet, Amazon, TSMC, SpaceX, Saudi Aramco, Broadcom, Meta, Tesla, Eli Lilly, Berkshire Hathaway and Samsung.\n\nSince then, two changes point upward:\n- Walmart appears just above the line at about $1.016T in a Nov 17\u201320 ranking.\n- Anthropic's IPO (Nov 19) values it at roughly $1.4\u20131.75T. If that listing is real, it is comfortably above $1T, though the two sources disagree on its value.\n\nThat makes the current count roughly 15\u201316, with several names sitting right at the threshold.\n\n**(c) Unexpected scenario:** A broad risk-off move or a tech sell-off of 5\u201310% in December.\n- This would knock out all the borderline names (Berkshire, Lilly, Samsung, Walmart), each sitting at about $1.0\u20131.1T.\n- The count would drop to about 12: 11 solid names plus Anthropic.\n- If Anthropic's post-IPO price also slumped, or CompaniesMarketCap did not list it, the count could fall to 11.\n- In the other direction, a strong year-end rally could push Micron and AMD (about $0.88T each) back over the line, giving 17 or more.\n\n**Rationale:**\n- **Solid core:** 11 names are clearly above $1T. Anthropic is probably a 12th, given a cushion of about $400\u2013750B even after an IPO-day pullback.\n- **Borderline group:** Berkshire, Lilly, Samsung and Walmart each have roughly a 55\u201365% chance of finishing above $1T. Their moves are correlated with the overall market, which widens the spread of outcomes.\n- **Long shots:** Micron and AMD need a gain of about 13%. Each has roughly a 10\u201315% chance.\n- **Overall:** The expected count is about 14.5\u201315. Correlated market moves call for a wider distribution than treating each name independently would give.\n\nOption_A: 0.02\nOption_B: 0.03\nOption_C: 0.07\nOption_D: 0.14\nOption_E: 0.24\nOption_F: 0.25\nOption_G: 0.16\nOption_H: 0.09",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "10 or less",
+      "probability": 0.02
+     },
+     {
+      "option_name": "11",
+      "probability": 0.03
+     },
+     {
+      "option_name": "12",
+      "probability": 0.07
+     },
+     {
+      "option_name": "13",
+      "probability": 0.15
+     },
+     {
+      "option_name": "14",
+      "probability": 0.24
+     },
+     {
+      "option_name": "15",
+      "probability": 0.23
+     },
+     {
+      "option_name": "16",
+      "probability": 0.15
+     },
+     {
+      "option_name": "17 or more",
+      "probability": 0.11
+     }
+    ]
+   },
+   "question_id": 46885,
+   "reasoning": "**(a) Time left:** About 4 weeks. Today is Nov 20, 2026, and the question resolves at the 4:00 PM ET close on Dec 18, 2026.\n\n**(b) Status quo outcome:** About 14\u201315.\n\nThe best reading of the resolution source is an itrillion page citing CompaniesMarketCap at the Nov 11 close. It lists 14 members: Apple, Nvidia, Microsoft, Alphabet, Amazon, TSMC, SpaceX, Saudi Aramco, Broadcom, Meta, Tesla, Eli Lilly, Berkshire Hathaway and Samsung.\n\nA Nov 17\u201320 ranking also puts Walmart just above the line at about $1.016T. That would make 15.\n\nAnthropic's IPO is reported at a $1.75T close, but this is unverified. If it is listed and tracked by CompaniesMarketCap, it adds one more, for about 15\u201316.\n\n**(c) Unexpected-outcome scenario:**\n- **Low side:** An AI or tech sell-off in late November or December pushes the borderline names below $1T. Those are Lilly, Berkshire, Samsung and Walmart, which sit roughly 0\u201310% above the line. Anthropic either drops out or is not counted. The total falls to 11\u201312.\n- **High side:** A year-end rally lifts Micron and AMD (around $880B, about 13% below the line) and possibly SK Hynix back over $1T. All the borderline names stay above. The total reaches 17 or more.\n\n**Rationale:**\n- **Solid core of 11:** Apple, Nvidia, Microsoft, Alphabet, Amazon, TSMC, SpaceX, Aramco, Broadcom, Meta and Tesla are all well above $1T.\n- **Anthropic:** If the $1.75T figure is real, it is a likely 12th member. However, the second research pass found conflicting figures and could not confirm the listing, so I give it about a 70% chance of counting.\n- **Four borderline names:** Lilly, Berkshire, Samsung and Walmart each have roughly a 55\u201375% chance of being above $1T on Dec 18.\n- **Longer shots:** Micron and AMD each have roughly a 15\u201320% chance.\n- **Expected count:** These estimates give an expected count of about 14.5\u201315. With four weeks of volatility and several names clustered near the line, I spread meaningful probability across 13\u201316 and leave some on the tails.\n\nOption_A: 2\nOption_B: 3\nOption_C: 7\nOption_D: 15\nOption_E: 24\nOption_F: 23\nOption_G: 15\nOption_H: 11",
+   "research": "both",
+   "role": "boost"
+  }
+ ],
+ "research": "**Rundown: trillion-dollar companies, as of Nov 20, 2026 (resolves Dec 18, 2026, per CompaniesMarketCap)**\n\n**Current state**\n\n- **No single authoritative count.** Sources disagree, and I could not access CompaniesMarketCap itself, so I have no direct reading from the resolution source.\n- **Latest count I found: about 13.** A Nov 19\u201320 live blog says the number of public companies that have reached the trillion-dollar club in the S&P 500 is 11, and does not count SpaceX and Anthropic, which also have joined the trillion-dollar club, even though they are not in the S&P 500 index yet. That gives 13 if you include both.\n- **Anthropic is near the line.** Its IPO raised $81 billion on November 19, 2026. Shares opened at $111.50, pushing the valuation to $2.01 trillion before closing at $97.17, or $1.75 trillion.\n- **Largest names (early Nov 2026, sources differ):** Apple at about $5.0\u20135.1T, Nvidia at $3.5\u20134.8T (the spread reflects different dates and sources), and Microsoft at about $3.7\u20133.9T. Amazon ranks fifth in the world with a market value of $2.85 trillion as of early November, according to Investopedia.\n- **Names near $1T (the swing group):**\n  - Walmart: $1.0 trillion, according to a Motley Fool list.\n  - Samsung: Samsung (~$1.0T), per itrillion's FAQ; Investing.com lists it at 1.039T.\n  - AMD: AMD has since slipped back below $1T.\n  - SK Hynix: Motley Fool lists it at $576.70 billion (the exact figure is hard to read from the snippet), and its earlier list showed $1.0T.\n  - Micron: Micron Technology (NASDAQ:MU) \u2014 Market capitalisation ~US$1.06tn, per an earlier article.\n- **Sources with higher counts:** One mid-2026 article says stocks valued at over US$1tn now boasts 16 members. Another says roughly 16 companies appear to carry a market cap of at least $1 trillion as of mid-2026 and adds that the count is fuzzy and shifts week to week.\n- **Source with a lower count:** In April 2026, Yahoo Finance posted that the $1 Trillion Club has 13 members.\n\n**Scheduled events before Dec 18**\n\n- I did not find a confirmed list of scheduled events for this window, such as index rebalances, earnings dates, or IPO lock-up expiries. I did not search for them.\n- From general calendar knowledge (not sourced): Dec 18, 2026 is a Friday and the third Friday of December, which is typically a quarterly index-rebalance and options-expiry date. Verify this before relying on it.\n\n**Base rates and churn**\n\n- Membership has grown quickly. Apple was the first to hit $1T in 2018. It was the first US company to reach a $1 trillion market cap, crossing the threshold in August 2018.\n- Recent entries and exits show that changes happen often:\n  - SpaceX listed and joined in June 2026.\n  - AMD joined in September 2026, then fell back below $1T.\n  - Samsung and Micron joined in May 2026.\n  - Anthropic joined on Nov 19, 2026.\n- Names within about 5% of $1T can cross back and forth between sessions, so the count can move by one or two within a few weeks.\n\n**Resolution if nothing changes**\n\n- The count is the number of companies with market cap above $1T on CompaniesMarketCap at the Dec 18 close. Market-cap figures vary across sources (share counts, dual-class shares, and timing), so the exact resolution-source reading could differ from the figures above.\n- The most defensible current baseline is about 13 (11 S&P 500 names plus SpaceX and Anthropic). Several other names sit within roughly 5% of $1T. Whether they count depends on the source and the day's close.\n- Gaps: I could not confirm the current CompaniesMarketCap count, the exact Dec 18 market-cap figures, or any scheduled catalysts before the close.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Bottom line:** Nothing suggests the question is already decided. Dec 18 is four weeks away. The first rundown's \"about 13\" baseline looks too low, and its Anthropic figures conflict with another source.\n\n**1. Base rate (counts by year)**\n- Apple was the first publicly traded company to reach a $1 trillion market cap on August 2, 2018.\n- One summary gives five companies by 2020, seven by 2021 and 2022, eight by 2023, eleven by 2024, twelve by 2025, then 17 in 2026. That 17 is an outlier; other sources in 2026 range from 13 to 16.\n- Since May 2026, entries have included Samsung and Micron (May), SpaceX (June), and AMD (September). AMD has since slipped below $1T during autumn 2026. My arithmetic: about six entries and one exit in roughly six months, so a net change of one or two in a four-week window is common but not guaranteed.\n\n**2. Primary source**\nI could not access CompaniesMarketCap directly. The closest first-hand reading is an itrillion page that says its figures come from CompaniesMarketCap, November 11, 2026 close and lists fourteen members. Its names are Apple, Nvidia, Microsoft, Alphabet, Amazon, TSMC, SpaceX, Saudi Aramco, Broadcom, Meta, Tesla, Eli Lilly, Berkshire Hathaway and Samsung.\n\n**3. Strongest evidence against the rundown's 13**\n- The 13 omits TSMC and Saudi Aramco, both clearly above $1T. The 11 \"S&P 500\" names plus SpaceX and Anthropic leave them out, but the question counts all public companies.\n- A Nov 17\u201320 ranking lists Walmart at $1,016.2B and Samsung at $1,012.3B, both just above the line. It lists Micron at $880.6B and AMD at $875.9B, both below. Excluding Anthropic, that gives about 15 names. [Source: Yahoo ranking, Nov 2026]\n- Anthropic is the main swing item. The first rundown cites a $1.75T post-IPO close. The same ranking treats Anthropic as a hypothetical entrant at $1.41T, making it one of 16 companies worth at least $1 trillion. I could not verify which is right, or whether Anthropic is publicly listed at all. If it is not listed, it should not count.\n\n**Could not find:** a direct CompaniesMarketCap reading after Nov 11; confirmed Dec 18 market caps; scheduled catalysts before the close; and independent confirmation of the Anthropic IPO terms. My search budget did not allow checking whether Dec 18 is an index rebalance date.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-20T15:13:36.726015+00:00",
+ "scheduled_resolution_time": "2026-12-19T00:00:00+00:00",
+ "status": "forecast",
+ "title": "How many trillion dollar companies will there be on December 18, 2026?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "MultipleChoiceQuestion",
+ "url": "https://www.metaculus.com/questions/46625"
+}
