@@ -1,0 +1,209 @@
+{
+ "accessed_at": "2026-11-20T09:06:44.027102+00:00",
+ "close_time": "2026-11-20T12:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.178371,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.056916,
+   "in": 5234,
+   "out": 1799,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000765,
+   "in": 3032,
+   "out": 924,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.009294,
+   "in": 1827,
+   "out": 564,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.019598,
+   "in": 5234,
+   "out": 913,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.002333,
+   "in": 19042,
+   "out": 859,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024307,
+   "in": 32051,
+   "out": 2203,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.037089,
+   "in": 55071,
+   "out": 3163,
+   "searches": 3,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.027268,
+   "in": 2617,
+   "out": 840,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000801,
+   "in": 2046,
+   "out": 1193,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-20T12:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-20T09:07:45.984335+00:00",
+ "num_forecasters": 123,
+ "open_time": "2026-11-20T09:00:00+00:00",
+ "post_id": 46624,
+ "prediction": 0.2597423313586707,
+ "quality": {
+  "boost": [
+   "boost_1",
+   "boost_2"
+  ],
+  "check": [],
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46884,
+ "rationales": [
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.3,
+   "question_id": 46884,
+   "reasoning": "(a) About 24 days remain until the question closes on 14 December 2026. The parties' own target date of 12 December falls two days earlier.\n\n(b) The status quo is No. No HoT has been signed, and the valuation gap is described as several billion euros. The target has already slipped twice, and the government is in a budget crisis.\n\n(c) No scenario: the valuation and liability disagreements, and possibly the Tractebel demand, remain unresolved by 12 December. The parties announce a further extension or a breakdown, or they say only that an agreement in principle is close. The government crisis delays the cabinet decision. An extension alone does not count.\n\n(d) Yes scenario: the \"maximum one additional month\" language acts as a hard deadline, and both sides want a deal. Engie wants to finish and the government wants control of nuclear policy. They compromise on valuation, perhaps covering only part of the assets, and sign the HoT around 12 December. Both sides announce it formally in a joint statement.\n\nConsiderations: the \"maximum\" wording and the incentives to close raise the chance of a deal. Against that, two slips already, a large reported gap, and the government crisis weigh on it. Even if the parties settle before the deadline, a formal HoT might be called an agreement in principle and so fail the criteria. Deadlines like this often slip again. I estimate roughly 30%.\n\nProbability: 30%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.27,
+   "question_id": 46884,
+   "reasoning": "(a) About 24 days remain until the question closes on 14 December 2026. The target signing date is 12 December, which is 22 days away.\n\n(b) The status quo outcome is No. No HoT has been signed. Valuation gaps of several billion euros remain, the Belgian government is in a budget crisis, and the target has already slipped twice (1 October to 4 November to 12 December). An extension alone does not count as Yes.\n\n(c) No scenario: valuation and liability disagreements persist, and so does the dispute over Tractebel. Around 12 December the parties announce another extension, or talks stall. The budget crisis consumes government bandwidth, so no formal HoT is signed before 14 December.\n\n(d) Yes scenario: the \"maximum one additional month\" language acts as a hard deadline. Engie has an interest in closing, and the government wants to finish before year-end. Both sides compromise on valuation, for example by covering only part of the assets or by capping liabilities. A joint press release announces a signed HoT on or just before 12 December.\n\nWeighing these: the stated outer limit creates real pressure, and the parties have closed deals before. Even so, the reported gap is large, two deadlines have already slipped, and governments rarely close complex valuation disputes on schedule. The question also requires a formally signed HoT, not an agreement in principle. A further extension is more likely than a signing, though a partial deal is possible.\n\nProbability: 27%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.33,
+   "question_id": 46884,
+   "reasoning": "(a) Time left: about 24 days from Nov 20 to the Dec 14 close. The target date for the HoT is Dec 12.\n\n(b) Status quo: no HoT is signed by Dec 14. The target date has already slipped twice, significant valuation differences remain, and an extension alone does not count. The status quo is therefore No.\n\n(c) No scenario: the valuation and long-term liability gaps are still unresolved by Dec 12. The parties announce a third extension into 2027, or talks stall. Belgium's budget constraints and Engie's insistence on a fair valuation make this plausible. The earlier \"maximum one additional month\" language does not bind them, since they can simply set a new date.\n\n(d) Yes scenario: political pressure builds to meet the deadline, with the government wanting to show progress before year-end. The parties narrow the valuation gap, perhaps by covering only part of the assets, and sign a HoT around Dec 10-12. The announcement would be of a signed HoT or protocol, not merely an agreement in principle.\n\nReasoning: both sides have strong incentives, and a letter of intent is already in place. The deadline is a hard-ish \"maximum\" and has been publicly committed to, which raises the chance of a deal or a collapse of talks. But targets have already slipped twice, valuation gaps were called significant as of Nov 4-16, and the question window extends only two days past the target. If the talks drag on, an extension to 2027 is likely. Even if a deal is reached in principle, formal signing may not be announced in time. The wording also allows partial agreements and various labels, which helps Yes slightly. The resolution date of Dec 14 leaves little buffer. I estimate about 33%.\n\nProbability: 33%",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.24,
+   "question_id": 46884,
+   "reasoning": "**(a) Time left:** About 3.5 weeks. The current target date for the Heads of Terms (HoT) is 12 December, and the question closes on 14 December 2026 CET.\n\n**(b) Status quo outcome:** No. No HoT has been signed. The target has slipped twice, from 1 October to 4 November and then to 12 December. The most recent statements say there are still \"significant differences,\" especially on valuation.\n\n**(c) No scenario:** The valuation gap, reported as several billion euros, does not close. Other sticking points also remain: long-term liabilities, and Engie's reported demand that the State take over Tractebel. The Belgian government's budget crisis takes up political attention. Around 12 December the parties either announce another extension, despite the \"maximum one additional month\" wording, or let the exclusivity lapse. Alternatively, they announce only an \"agreement in principle\" without a formal HoT, which does not count.\n\n**(d) Yes scenario:** The self-imposed hard limit forces both sides to compromise. Engie wants to exit Belgian nuclear exposure, and the Arizona coalition is committed to taking over and extending nuclear capacity. The parties sign a HoT, possibly covering only part of the assets, by 12 December and announce it in a joint statement.\n\n**Rationale:**\n- **Against a deal:** Deadlines that have slipped repeatedly, with a large unresolved valuation gap and no reported progress, usually slip again. The \"maximum\" wording raises pressure but does not guarantee a deal. Parties often reframe a missed deadline as a new extension. The government's budget crisis further reduces the chance of a fast signing.\n- **For a deal:** Both sides have strong strategic reasons to agree, and these parties have closed comparable deals before. However, those earlier deals typically took months longer than first reported.\n- **Resolution bar:** A formalised HoT is required, which excludes reports of an agreement in principle and lowers the chance of a Yes.\n\nWeighing these, I put the probability at roughly one in four.\n\nProbability: 24%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.24,
+   "question_id": 46884,
+   "reasoning": "**(a) Time left:** About 24 days. The HoT target is 12 December 2026, and the question closes on 14 December CET.\n\n**(b) Status quo:** No. No Heads of Terms has been signed. The latest joint statement (4 November) says significant differences remain, especially on valuation. Under the resolution rules, an extension or a \"deal is close\" statement does not count.\n\n**(c) No scenario:** The valuation gap persists. Reports put it at several billion euros, along with disputes over long-term liabilities and over Engie's push to include Tractebel. The Belgian government is also distracted by its budget crisis. Around 12 December the parties announce either another extension or that talks have lapsed. Alternatively, they announce an \"agreement in principle\" without a formally signed HoT.\n\n**(d) Yes scenario:** The \"maximum one additional month\" wording works as a real hard stop and forces compromise. Engie wants to exit nuclear risk, and the State wants control of the reactors. A last-minute package is reached, perhaps narrower in scope or with Tractebel excluded. The parties sign and announce an HoT or protocol of agreement on or just before 12 December.\n\n**Rationale:**\n\nThe case for No:\n- The status quo strongly favours No.\n- This target has slipped twice, each time close to the deadline.\n- The latest information (16 and 18 November) shows a large unresolved valuation gap and no sign of convergence.\n- The Belgian government is in a budget crisis, which reduces its bandwidth and may limit its ability to commit billions.\n- Even a positive outcome could be framed as an informal \"agreement in principle,\" which would not qualify.\n\nThe case for Yes:\n- The \"maximum one additional month\" language is a stronger commitment than the earlier extensions.\n- Both sides have strategic reasons to close.\n- These parties have closed complex nuclear deals before, though usually later than their initial targets.\n\nLarge M&A deadlines framed as \"final\" do sometimes produce signings. Weighing the slips, the size of the gap and the political turmoil, I put the chance of a signing before 14 December at roughly one in four.\n\nProbability: 24%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.27,
+   "question_id": 46884,
+   "reasoning": "**(a) Time left:** About 24 days. The target date is 12 December 2026, and the question closes on 14 December CET. The outcome should be clear by the 12 December announcement, or by its absence.\n\n**(b) Status quo outcome:** No. No Heads of Terms has been signed. The latest official statement (4 November) says significant differences remain, particularly on valuation. A further extension, a lapse, or silence all resolve No.\n\n**(c) No scenario:** The valuation gap of reportedly several billion euros stays unresolved. There is also friction over Engie's push for the State to take over Tractebel and over long-term liabilities. Meanwhile the Belgian government is absorbed by its budget crisis. Around 12 December the parties either announce another extension despite the \"maximum one additional month\" language, or say the exclusive talks have ended. Another possible No: the parties announce only an \"agreement in principle,\" with no formal HoT signed before 14 December.\n\n**(d) Yes scenario:** The self-imposed hard limit forces both sides to compromise. Engie wants to exit nuclear and has an incentive to sign. The government wants a political win amid the budget turmoil. A HoT or protocol of agreement is signed and announced in a joint statement on or just before 12 December, with the harder issues such as Tractebel and liability details left for the final negotiations.\n\n**Rationale:**\n- **Against a deal:**\n  - The target has already slipped twice, each time close to the deadline.\n  - The last official word stresses \"significant differences,\" including on valuation.\n  - The 18 November report puts the gap at several billion euros.\n  - No board vote, cabinet decision or other signing event has been scheduled.\n  - The government's budget crisis reduces its capacity to approve a politically sensitive multi-billion transaction.\n- **For a deal:**\n  - The \"maximum one additional month\" framing creates genuine pressure.\n  - These parties have a track record of eventually closing deals (2023 waste-cost cap, the Doel 4/Tihange 3 partnership).\n  - A HoT is a non-final document that can leave open items for later, which makes signing easier than a definitive agreement.\n- **Timing:** Even if a deal eventually happens, a further slip into 2027 looks more likely than signing within three weeks.\n\nWeighting the status quo, I estimate roughly a 25\u201330% chance of a formal HoT by the deadline.\n\nProbability: 27%",
+   "research": "both",
+   "role": "boost"
+  }
+ ],
+ "research": "**Rundown: Belgian State\u2013Engie nuclear Heads of Terms (deadline Dec 12, question closes Dec 14, 2026 CET)**\n\n**Current state (as of Nov 20, 2026)**\n- The parties signed a letter of intent on 29 April 2026 that opens exclusive negotiations for the State to acquire Engie's and Electrabel's Belgian nuclear activities. The letter of intent does not oblige the parties to conclude a Heads of Terms (HoT), which would set the main terms of the transaction and serve as the basis for the final negotiations.\n- The HoT target has moved twice. It was first set for 1 October, then postponed to 4 November, and on 4 November the parties moved it to 12 December. The joint statement said significant differences remain, particularly regarding the valuation of the transaction.\n- The 4 November statement also said \"The parties have therefore given themselves a maximum period of one additional month.\" That is the stated outer limit of the current extension.\n- A report from 16 November says disagreements over asset valuations and long-term financial liabilities remain unresolved. Engie repeated the information in its nine-month results on 5 November.\n- I found no reports of talks, offers, or valuation figures after the 6 November extension announcement. I also did not find a deal price; the 30 September Engie release does not give a price for the proposed acquisition of its nuclear activities.\n\n**Scheduled before close**\n- The only scheduled milestone is the 12 December target date for concluding the HoT. The question closes two days later, on 14 December CET, so there is a short buffer.\n- I did not find any other scheduled event, such as a board vote, cabinet decision, or parliamentary step, tied to signing.\n\n**Base rate and precedent**\n- This specific HoT target has slipped twice, and each slip was announced close to the prior deadline. I found no broader base rate for how often such targets are met.\n- Belgium and Engie have concluded comparable deals before. A 2023 agreement fixed ENGIE's payment for future nuclear-waste treatment costs at \u20ac15 billion across its Belgian nuclear facilities. A later agreement established a 50-50 partnership between ENGIE and the Belgian government for Doel 4 and Tihange 3. These show the parties can reach deals, but I did not find data on their timelines relative to target dates.\n\n**Resolution if nothing changes**\n- Nothing in the current record yields a Yes. A qualifying HoT must be formally agreed before 14 December. An extension alone does not count, and a statement that a deal is close does not count either.\n- Based on the current wording, the default path is that the parties either sign a HoT by 12 December or announce another extension or a lapse. The parties have already used the \"maximum one additional month\" language, so a further extension would be a new decision, not a continuation of the current one.\n- Ambiguity to check: some outlets describe the HoT as an agreement in principle. The question excludes unformalised agreements in principle, so the test will be whether a signed HoT document is announced, not merely a reported agreement in principle.\n\n**Gaps**\n- No current valuation figures, offers, or positions from either side beyond the statement that the gap is significant.\n- No confirmed information on whether a signed HoT would be published in full or only summarised.\n- No base rate for similar Belgian or European nuclear asset-transfer HoT deadlines.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Bottom line:** I found nothing that decides the question already. The latest official statement is the 4 November joint release, which set 12 December as the target. Nothing newer from either side was found.\n\n**1. Base rate**\n- The HoT target has moved twice in about five weeks: from 1 October to 4 November, then to 12 December. The first deadline for finalising the so-called Heads of Terms had already been postponed at the end of September.\n- Earlier Belgian\u2013Engie nuclear deals took months from preliminary to final form. A tentative deal was reported in July 2022, and the Belgian government announced on Monday it has signed an agreement with French energy company Engie in January 2023, about six months later. A further final agreement followed in March 2025.\n- I found no count of how often comparable HoT or target dates are met, so I cannot give a rate.\n\n**2. Primary source**\n- The question resolves on the joint statements of the Belgian State, ENGIE S.A. and Electrabel. The latest one I could verify is the 4 November release, reposted on 6 November. It says \"significant differences of opinion remain, including over the valuation of the transaction\".\n- The first rundown's 16 November report is older than a 18 November La Libre piece. That piece reports that several billion euros separate what Engie is willing to pay and what the government is asking. It is based on unnamed sources and I could not verify it.\n\n**3. Strongest evidence against the No default**\n- The 4 November release set a \"maximum period of one additional month\". La Libre reads this as a hard limit, and says that Engie would have an interest in signing an agreement with the government.\n- The same La Libre piece reports Engie reportedly wants the State to take over all of Tractebel, its engineering arm, which the Arizona coalition would refuse. This is a source of pressure for a deal and also a possible obstacle.\n- Belgian precedents show these parties do close deals, so a late signing is plausible.\n\n**Evidence supporting No**\n- Valuation remains unresolved, and the Belga report notes the Belgian government is in crisis since several days, due to failure to agree on a budget.\n- Nothing scheduled, such as a board vote or cabinet decision, has been reported for before 12 December.\n\n**Not found**\n- Offers, valuation figures from either side, and any post-18 November news.\n- Any stated legal or publication requirement for a signed HoT.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-20T09:07:14.056769+00:00",
+ "scheduled_resolution_time": "2026-12-14T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Will the Belgian State and Engie conclude an agreement for Belgium's acquisition of Engie's nuclear activities before December 14, 2026?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "BinaryQuestion",
+ "url": "https://www.metaculus.com/questions/46624"
+}
