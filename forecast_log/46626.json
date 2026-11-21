@@ -1,0 +1,370 @@
+{
+ "accessed_at": "2026-11-21T12:00:49.735633+00:00",
+ "close_time": "2026-11-21T15:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.215702,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.068568,
+   "in": 5252,
+   "out": 2378,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001078,
+   "in": 3278,
+   "out": 1500,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.017962,
+   "in": 1741,
+   "out": 1448,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.039594,
+   "in": 5252,
+   "out": 2909,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.004518,
+   "in": 22542,
+   "out": 4530,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024524,
+   "in": 32593,
+   "out": 2530,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024855,
+   "in": 24996,
+   "out": 4711,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.033824,
+   "in": 2626,
+   "out": 1166,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000779,
+   "in": 2170,
+   "out": 1123,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-21T15:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-21T12:02:11.927063+00:00",
+ "num_forecasters": 0,
+ "open_time": "2026-11-21T12:00:00+00:00",
+ "post_id": 46626,
+ "prediction": {
+  "predicted_options": [
+   {
+    "option_name": "140 or fewer",
+    "probability": 0.196
+   },
+   {
+    "option_name": "141-144",
+    "probability": 0.22200000000000003
+   },
+   {
+    "option_name": "145-148",
+    "probability": 0.2899999999999999
+   },
+   {
+    "option_name": "149-154",
+    "probability": 0.164
+   },
+   {
+    "option_name": "155 or more",
+    "probability": 0.128
+   }
+  ]
+ },
+ "quality": {
+  "boost": [
+   "boost_2",
+   "boost_1"
+  ],
+  "check": null,
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46886,
+ "rationales": [
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "140 or fewer",
+      "probability": 0.22
+     },
+     {
+      "option_name": "141-144",
+      "probability": 0.25
+     },
+     {
+      "option_name": "145-148",
+      "probability": 0.28
+     },
+     {
+      "option_name": "149-154",
+      "probability": 0.13
+     },
+     {
+      "option_name": "155 or more",
+      "probability": 0.12
+     }
+    ]
+   },
+   "question_id": 46886,
+   "reasoning": "**(a) Time left:** The censure debate is provisionally scheduled for December 7\u201310, with the vote on December 11. That is about 20 days from today. The question closes December 23, and the session must end by December 22, so there is little slack if the schedule slips again.\n\n**(b) Status quo outcome:** The vote happens around December 11 and the motion against Anutin gets roughly the motion's own backing. It was signed by 145 MPs. The opposition holds 207 seats, but Kla Tham's 58 did not join, which leaves about 149 seats behind the motion. Thai censure tallies have usually tracked the opposition's seat count, minus a few absences:\n- March 2025: about 162 votes, slightly below the opposition's total.\n- 2021 and 2022: about 206\u2013208 votes, matching the opposition's seats.\n\nApplied to a base of about 145\u2013149 MPs, that pattern points to a tally of about 141\u2013148.\n\n**(c) Unexpected scenarios:**\n- **Low count:** The vote is postponed past December 22, or never held. Both resolve as \"140 or fewer.\" Alternatively, absences, defections or quiet deals with the government push the count below 141.\n- **High count:** Kla Tham breaks with the government despite the talk of a deal with Anutin and votes for the motion, pushing the tally to 155 or more. A few coalition defectors or rebels from small parties could also push the count into 149\u2013154.\n\n**Rationale:** The central mass sits around 141\u2013148. The low bucket gets extra weight for two reasons: missed votes are common, and a delayed vote resolves there. The upper buckets keep moderate weight because Kla Tham's position is uncertain.\n\nOption_A: 0.22\nOption_B: 0.25\nOption_C: 0.28\nOption_D: 0.13\nOption_E: 0.12",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "140 or fewer",
+      "probability": 0.2
+     },
+     {
+      "option_name": "141-144",
+      "probability": 0.22
+     },
+     {
+      "option_name": "145-148",
+      "probability": 0.2799999999999999
+     },
+     {
+      "option_name": "149-154",
+      "probability": 0.18
+     },
+     {
+      "option_name": "155 or more",
+      "probability": 0.12
+     }
+    ]
+   },
+   "question_id": 46886,
+   "reasoning": "**(a) Time left:** The vote is provisionally set for December 11, 2026, about 20 days from today. The question closes December 23, and parliament's session ends December 22, so there are roughly 12 days of slack if the vote slips.\n\n**(b) Status quo outcome:** The vote happens around December 11 and Anutin survives easily, since the coalition holds about 292 of 499 seats. The tally against him should land near the number of opposition MPs who backed the motion, which is 145 signatories. Reuters puts the opposition at 207 seats. If that figure includes Kla Tham's 58 MPs, the opposition without Kla Tham is about 149. In past Thai censure votes, the opposition's tally came in slightly below its seat count; in 2021\u201322, about 206\u2013208 votes against 208 seats. That points to roughly 142\u2013149 votes, centred on 145\u2013148.\n\n**(c) Unexpected scenarios:**\n- **Low count (140 or fewer):**\n  - The vote slips past December 22, for example through scheduling conflicts, a dissolution or a reshuffle. That resolves as 140 or fewer.\n  - Signatories defect or stay absent, possibly as part of a Kla Tham\u2013Anutin deal that also pulls in some opposition MPs.\n- **High count (155 or more):** Kla Tham breaks with Anutin and some or all of its 58 MPs vote for the motion against the PM, even though the party did not sign it. Some coalition dissidents could add to this.\n\n**Rationale:**\n- Signatures set a rough anchor, but floor counts usually fall a few votes below the full bloc because of absences and abstentions.\n- The vote against the PM tends to draw the opposition's maximum turnout.\n- Uncertainty about whether 207 includes Kla Tham widens the range on both sides.\n- I put about 7\u20138% on no vote taking place before the cutoff.\n- I spread the remaining probability around 143\u2013149, with tails for a Kla Tham swing upward or erosion downward.\n\nOption_A: 0.20\nOption_B: 0.22\nOption_C: 0.28\nOption_D: 0.18\nOption_E: 0.12",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "140 or fewer",
+      "probability": 0.25
+     },
+     {
+      "option_name": "141-144",
+      "probability": 0.22
+     },
+     {
+      "option_name": "145-148",
+      "probability": 0.25
+     },
+     {
+      "option_name": "149-154",
+      "probability": 0.15
+     },
+     {
+      "option_name": "155 or more",
+      "probability": 0.13
+     }
+    ]
+   },
+   "question_id": 46886,
+   "reasoning": "**(a) Time left:** The vote is provisionally set for December 11, 2026, about 20 days from now. The hard deadline is the session close on December 22, one day before the question's December 23 cutoff.\n\n**(b) Status quo outcome:** The censure debate runs December 7\u201310 and the vote follows on December 11. The 145 MPs who signed the motion vote roughly along party lines for it, give or take a few absences and defections. That puts the tally against Anutin around 140\u2013148.\n\n**(c) Unexpected-outcome scenarios:**\n- **High count:** Kla Tham (58 MPs) is not in the coalition. If a deal with Anutin collapses and it votes for the motion, or some of its MPs do, the count could exceed 155.\n- **Low count (two routes):**\n  - The debate slips again and no vote is held before December 23, which resolves as \"140 or fewer.\"\n  - Opposition MPs walk out or boycott, as in 2020, when the motion drew only 49 votes.\n\n**Rationale:**\n- **Opposition bloc size.** Reuters puts the opposition at 207 seats. 207 minus Kla Tham's 58 leaves about 149, which is close to the 145 signatures. So the bloc backing the motion is probably about 145\u2013150 MPs.\n- **Turnout pattern.** Thai censure tallies usually come in a few votes below the opposition's seat total because of absences and abstentions. In 2025, an opposition of roughly 170 delivered 162 votes. In 2021\u201322, a 208-seat opposition delivered 206\u2013208.\n- **Central estimate.** That points to roughly 140\u2013148, which straddles the first three bins.\n- **Scheduling risk.** A missed vote resolves low. The schedule has already slipped once, but the session-end constraint makes a further miss unlikely, around 5\u20138%.\n- **Kla Tham.** Its MPs voting for the motion would push the count above 155. Reports of meetings and speculation about a deal with Anutin make a pro-motion vote less likely, though not negligible.\n- **Crossovers.** Coalition MPs rarely cross over, but a few occasionally do.\n\nOption_A: 0.25\nOption_B: 0.22\nOption_C: 0.25\nOption_D: 0.15\nOption_E: 0.13",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "140 or fewer",
+      "probability": 0.18000000000000002
+     },
+     {
+      "option_name": "141-144",
+      "probability": 0.22000000000000003
+     },
+     {
+      "option_name": "145-148",
+      "probability": 0.30999999999999994
+     },
+     {
+      "option_name": "149-154",
+      "probability": 0.19000000000000003
+     },
+     {
+      "option_name": "155 or more",
+      "probability": 0.10000000000000002
+     }
+    ]
+   },
+   "question_id": 46886,
+   "reasoning": "(a) About 3 weeks remain. The vote is scheduled for Dec 11, and the session closes Dec 22, so the count should be known by roughly Dec 11\u201322.\n\n(b) If nothing changes, the debate runs Dec 7\u201310 and the vote is held on Dec 11. Anutin survives comfortably, and the \"no confidence\" tally is roughly the non-Kla Tham opposition. That is about 149 seats (207 minus Kla Tham's 58, if the 207 includes Kla Tham). The motion had 145 signatories. Absences and the occasional defector move the count a few votes either way.\n\n(c) Unexpected outcomes could come from several directions:\n- **Low:** the vote slips past Dec 23 or the session ends without a vote, which resolves to \"140 or fewer\". Heavy absences or abstentions among opposition MPs could do the same. The 2020 vote, at 49, shows tallies can fall far below the signature count.\n- **High:** Kla Tham members or other non-coalition MPs vote against Anutin, or a few coalition MPs defect. The March 2025 tally of 162 exceeded the core opposition's seat count, so this has precedent.\n\nBecause the count should track the opposition's roughly 145\u2013149 seats, I centre the distribution on 141\u2013148. I keep a fat upper tail and a no-vote or absence tail on the low side.\n\nOption_A: 0.18\nOption_B: 0.22\nOption_C: 0.31\nOption_D: 0.19\nOption_E: 0.10",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "140 or fewer",
+      "probability": 0.15
+     },
+     {
+      "option_name": "141-144",
+      "probability": 0.15
+     },
+     {
+      "option_name": "145-148",
+      "probability": 0.29999999999999993
+     },
+     {
+      "option_name": "149-154",
+      "probability": 0.26
+     },
+     {
+      "option_name": "155 or more",
+      "probability": 0.14
+     }
+    ]
+   },
+   "question_id": 46886,
+   "reasoning": "**(a) Time left:** About 20 days until the outcome is known. The vote is scheduled for Dec 11, and the question closes Dec 23.\n\n**(b) Status quo:** The censure debate runs Dec 7\u201310 and the vote is held Dec 11. Anutin survives easily, with the coalition holding about 292 of 499 seats. The opposition votes no confidence in roughly the number of MPs who signed the motion.\n\n**Reasoning on the count:**\n- 145 MPs signed the motion.\n- The reported opposition total of 207 includes Kla Tham's 58 MPs, who did not sign. That leaves about 149 opposition MPs outside Kla Tham.\n- In past Thai censure debates, opposition attendance and discipline were high, and no-confidence votes came close to the opposition's full seat count.\n- That points to a tally of about 143\u2013152 if only the signing parties vote against.\n- Some of the 149 may be absent or abstain, which pushes the count down toward 140\u2013145.\n- Some non-signers may also vote against, which pushes it up.\n- Kla Tham is the main upside risk. It could vote against, which would push the count toward 200, but it seems more likely to abstain or vote to keep Anutin.\n- A further delay past Dec 23 is unlikely, but it would resolve the question as \"140 or fewer.\"\n\n**(c) Unexpected outcome:** Kla Tham or other small parties join the opposition and the count goes above 155. Alternatively, there is high absenteeism, defections or a scheduling slip, and the count falls to 140 or fewer.\n\nOption_A: 0.15\nOption_B: 0.15\nOption_C: 0.30\nOption_D: 0.26\nOption_E: 0.14",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "140 or fewer",
+      "probability": 0.13
+     },
+     {
+      "option_name": "141-144",
+      "probability": 0.2
+     },
+     {
+      "option_name": "145-148",
+      "probability": 0.32999999999999996
+     },
+     {
+      "option_name": "149-154",
+      "probability": 0.17
+     },
+     {
+      "option_name": "155 or more",
+      "probability": 0.17
+     }
+    ]
+   },
+   "question_id": 46886,
+   "reasoning": "**(a) Time left:** The vote is scheduled for Dec 11, about 20 days from now. The session must close by Dec 22, and the question window ends Dec 23. The outcome should be known in roughly three weeks.\n\n**(b) Status quo:** The debate is held around Dec 7\u201311. Anutin survives easily, since the coalition holds about 292 of 499 seats. The opposition votes against him in numbers close to the 145 MPs who signed the motion. Kla Tham's 58 MPs stay out of the motion and do not vote against him.\n\n**(c) Unexpected outcome:**\n- **High count:** Kla Tham, or a large part of it, votes against Anutin, pushing the tally well above 155. Some coalition defectors or independents could also join.\n- **Low count:** Absences or illness among opposition MPs, or a walkout, pull the tally to 140 or below.\n- **Low count (no vote):** The vote slips past Dec 23 or is not held, which resolves to \"140 or fewer.\" This looks unlikely given the Dec 22 session deadline, but the timetable has already slipped once.\n\n**Reasoning:**\n- **Opposition size:** The opposition has 207 seats. Excluding Kla Tham's 58 leaves about 149 MPs, which is consistent with 145 signatories.\n- **Historical turnout:** In 2021 and 2022, the votes against the PM almost matched the opposition's seat total (206\u2013208 against about 208 seats). In March 2025, the 162 votes against were also close to the opposition's size. The 2020 figure of 49 was an outlier.\n- **Most likely range:** Full turnout of signers would put the count at about 143\u2013149, so 141\u2013148 is the central range. Some absences are likely, and a few non-signing opposition MPs could add votes, so I spread probability across 141\u2013154.\n- **Upside tail:** Kla Tham is a free agent that did not join the motion. There is speculation about a deal between it and Anutin, so I treat a large Kla Tham vote against him as a minority scenario, about 15\u201318%.\n\nOption_A: 0.13\nOption_B: 0.2\nOption_C: 0.33\nOption_D: 0.17\nOption_E: 0.17",
+   "research": "both",
+   "role": "member"
+  }
+ ],
+ "research": "**Rundown: Anutin no-confidence vote (question closes Dec 23, 2026)**\n\n**Current state (as of Nov 21, 2026)**\n- The opposition filed the motion on October 8, 2026. It targets Anutin and 17 other ministers, and a total of 145 MPs signed the motion. The motion is brought under Section 151 of the Constitution, and it seeks votes against individual ministers. So the PM's tally is one of 18 separate votes, and the question's \"first such vote\" should be the PM's vote.\n- Allegations include fraud in the upper house election process, corruption in local government examinations and mismanagement of the economy and recent floods.\n- Seat arithmetic: Anutin's coalition, which came to power after Bhumjaithai's big election win in February, currently has 292 seats in the 499-member house, compared to the opposition's 207. ACLED puts the coalition at over 290 seats in the 500-member House of Representatives. Reuters' figure is the more precise one. I could not confirm whether the 207 opposition figure includes the Kla Tham party, which has 58 lawmakers and is not in Anutin's coalition, did not join the motion.\n- Survival threshold: to bring down the premier or a minister, the support of more than half of house members is needed.\n- On Nov 14, Anutin said he would answer the allegations with facts and the government's record, and said winning the vote alone would not be enough. He also noted that his trip for ASEAN and APEC meetings ran November 14\u201319.\n\n**Scheduled before the question closes**\n- Government and opposition whips agreed a timetable: a censure debate from December 7-10, 2026, with a vote scheduled for December 11. Debate runs from 8am until 3am the following day.\n- Reporting on the schedule is somewhat inconsistent. Earlier Reuters coverage described the schedule as a December 7 to 11 schedule for its first censure debate in parliament, and one source said the whips had asked the Cabinet to confirm the schedule and consider holding the debate at an earlier date. I found no later report confirming the final dates after November 14. I could not verify whether the Dec 11 vote is locked in.\n- The timetable has already slipped once. It was postponed until December after Anutin cited a packed schedule of ASEAN, APEC and ACMECS summits. The original sessions were proposed for 27 to 30 October.\n- Any vote on Dec 11 falls before the Dec 23 cutoff, so the date has about 12 days of slack.\n\n**Base rate**\n- The opposition can file a no-confidence motion once per year. This is Thailand's first censure debate under this government, as Reuters described it.\n- I did not find a historical base rate for how many Thai censure votes have occurred or how many votes sitting Thai PMs have received. The other sources I found covered Pakistan, India and Spain, which are not comparable.\n\n**How the question resolves if nothing changes**\n- If the vote is held Dec 11 as scheduled, the question resolves to the number of House members voting for the motion against Anutin. The motion's 145 signatures are not the same as votes, and I found no reporting on expected vote counts.\n- If no vote is held before Dec 23, the question resolves to 140 or fewer.\n- The 140 threshold sits close to the 145 signatories, so whether MPs who signed follow through on the floor matters for the count. Any shift in the Kla Tham party's position or a cabinet reshuffle would also matter. I did not find reporting on either.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Base rate (Thai PM censure votes, from the sources I found)**\n- Prayut Chan-o-cha faced at least four censure votes between 2019 and 2022. In July 2022 he got 256 votes in favor and 206 against with nine abstentions.\n- In February 2020, Gen Prayut won 272 vs 49 votes from 323 MPs in attendance. That is the only count I found below 140.\n- In September 2021, Prayuth received 264 votes in favour and 208 against.\n- In March 2025, the no-confidence motion was voted down by 319 to 162, with seven abstaining.\n- So across five votes, the motion's tally was 49, 206, 208, 206 and 162. Four of five were above 140. The 2021 and 2022 counts tracked the opposition's seat total, which one 2022 report put at 208.\n\n**Primary source**\nI did not reach the House of Representatives' official vote record, so I cannot give its latest value. The most recent schedule source I found is Reuters, dated Nov 3, which said the government agreed to a December 7 to 11 schedule for its first censure debate in parliament. A Nation report describes the whips' arrangement as provisional and says the Cabinet was asked to confirm the schedule and consider holding the debate at an earlier date. I found no later confirmation.\n\n**Strongest evidence against a high count**\n- The opposition's 207 seats (Reuters) are below the 208 that backed the 2021\u20132022 motions, and Kla Tham's 58 lawmakers are not part of the motion. The motion's 145 signatures are the upper reference for the floor count.\n- Bangkok Post reports that Anutin met Kla Tham's leader and that the meetings and photographs have fuelled speculation about a possible deal, although they do not confirm that an agreement has been reached. A deal would not change the opposition's count directly, but it would signal weaker opposition momentum.\n- The 2020 result (49 votes) shows the tally can fall far below the signature count.\n\n**Has it been decided already?**\nNo vote has occurred. The one hard constraint I found is that the debate must be completed before parliament closes its current session on Dec 22. Earlier, Bangkok Post reported that Anutin had said the Cabinet would be available from Dec 6. That makes the Dec 11 date a provisional one.\n\n**What I could not find**\n- The official House vote record or any live tally.\n- Any reporting after Nov 14 confirming the Dec 7\u201311 dates.\n- Expected vote counts for Anutin specifically.\n- Kla Tham's final position on the motion.\n- Thai censure counts before 2019.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-21T12:01:27.027999+00:00",
+ "scheduled_resolution_time": "2026-12-23T00:00:00+00:00",
+ "status": "forecast",
+ "title": "How many votes of no confidence will Thai PM Anutin Charnvirakul receive?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "MultipleChoiceQuestion",
+ "url": "https://www.metaculus.com/questions/46626"
+}
