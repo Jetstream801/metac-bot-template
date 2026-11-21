@@ -1,0 +1,342 @@
+{
+ "accessed_at": "2026-11-21T21:10:28.408858+00:00",
+ "close_time": "2026-11-22T00:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.188197,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.068468,
+   "in": 5952,
+   "out": 2233,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000895,
+   "in": 3537,
+   "out": 1082,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.008924,
+   "in": 2097,
+   "out": 473,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.023464,
+   "in": 5952,
+   "out": 1156,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.004525,
+   "in": 21998,
+   "out": 4653,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024863,
+   "in": 34886,
+   "out": 2748,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024146,
+   "in": 24193,
+   "out": 3454,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.032264,
+   "in": 2976,
+   "out": 1018,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000648,
+   "in": 2294,
+   "out": 837,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-22T00:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-21T21:11:37.420530+00:00",
+ "num_forecasters": 197,
+ "open_time": "2026-11-21T21:00:00+00:00",
+ "post_id": 46627,
+ "prediction": {
+  "predicted_options": [
+   {
+    "option_name": "High",
+    "probability": 0.12999999999999998
+   },
+   {
+    "option_name": "Medium",
+    "probability": 0.362
+   },
+   {
+    "option_name": "Low",
+    "probability": 0.44599999999999995
+   },
+   {
+    "option_name": "Other",
+    "probability": 0.062
+   }
+  ]
+ },
+ "quality": {
+  "boost": [
+   "boost_2",
+   "boost_1"
+  ],
+  "check": [],
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46887,
+ "rationales": [
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "High",
+      "probability": 0.18
+     },
+     {
+      "option_name": "Medium",
+      "probability": 0.36
+     },
+     {
+      "option_name": "Low",
+      "probability": 0.3999999999999999
+     },
+     {
+      "option_name": "Other",
+      "probability": 0.06
+     }
+    ]
+   },
+   "question_id": 46887,
+   "reasoning": "(a) About 6 weeks remain until the question resolves (Nov 21, 2026 to Jan 1, 2027 or shortly after).\n\n(b) The status quo is LOW, based on the September 2026 national category. The October category is unconfirmed.\n\n(c) A surprise would be a typical winter rotavirus rise. Rotavirus season usually starts in December\u2013January in the South, so concentrations could climb enough by early January to reach MEDIUM or even HIGH. The categories are tertiles over the last 365 days, and that window includes the April peak. The cutoffs are therefore fairly high, but a rise could still cross the medium threshold. The 21-day trend may also shift. A second route to a surprise is the dashboard showing \"Not Calculated\" or \"Not Detected\" at the national level (Other), or a methodology change.\n\nTiming and seasonality matter here. Rotavirus rises from roughly December to March, and the peak was in April 2026. By January 1 the national level is often only starting to rise. The 365-day tertiles include the winter-spring high period, so the Low cutoff may be moderately high. The October note that concentrations are \"slowly starting to increase in the South\" suggests an upturn is beginning. In 2026, August was MEDIUM and September LOW, so the categories fluctuate near the Low/Medium boundary. Given that volatility and a seasonal upturn, Medium is quite plausible by Jan 1. Late December data may also be sparse, but the dashboard will still show some category.\n\nI put Low at about 40%, Medium at 36%, High at 18%, and Other at 6%.\n\nOption_A: 0.18\nOption_B: 0.36\nOption_C: 0.40\nOption_D: 0.06",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "High",
+      "probability": 0.11
+     },
+     {
+      "option_name": "Medium",
+      "probability": 0.38
+     },
+     {
+      "option_name": "Low",
+      "probability": 0.44999999999999996
+     },
+     {
+      "option_name": "Other",
+      "probability": 0.06
+     }
+    ]
+   },
+   "question_id": 46887,
+   "reasoning": "(a) About 6 weeks (41 days) remain until January 1, 2027. The check may come slightly later than that.\n\n(b) The status quo is LOW, based on the September 2026 update. October's category is unconfirmed, and the October update noted that rotavirus concentrations were slowly rising in the South.\n\n(c) Rotavirus is seasonal. In the US, activity usually rises in late winter and peaks in spring (March to May), so it normally starts rising from December onward. A faster or earlier rise could push the national level to MEDIUM by January 1, and HIGH is possible but less likely. The categories are tertiles over the last 365 days, which include the April peak. That makes HIGH harder to reach in early January, since the high tertile is set by the spring peak values. MEDIUM is plausible, though, because August was already MEDIUM when the trend was flat. A scenario for \"Other\" is a data gap, the category not being calculated, or a methodology change. This is a small risk.\n\nSeasonality favors a rise. Winter values are typically lower than spring peaks but higher than the early-fall trough. With the trough in fall and slow growth beginning, early January could plausibly be around the Low/Medium boundary. I put LOW at about 45%, MEDIUM at about 38%, HIGH at about 11%, and Other at about 6%.\n\nOption_A: 0.11\nOption_B: 0.38\nOption_C: 0.45\nOption_D: 0.06",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "High",
+      "probability": 0.15
+     },
+     {
+      "option_name": "Medium",
+      "probability": 0.38
+     },
+     {
+      "option_name": "Low",
+      "probability": 0.3999999999999999
+     },
+     {
+      "option_name": "Other",
+      "probability": 0.07
+     }
+    ]
+   },
+   "question_id": 46887,
+   "reasoning": "(a) About 6 weeks remain, from Nov 21, 2026 to Jan 1, 2027. The question resolves when Metaculus checks on or after that date.\n\n(b) The status quo is Low, based on the September 2026 national category. I could not confirm the October category.\n\n(c) Rotavirus is seasonal and usually starts rising in December\u2013January, so concentrations could climb into Medium or High by early January. The 365-day tertiles still include the April 2026 peak, which keeps the thresholds high. The tertile cutoffs are probably around 12k copies/g for the Low/Medium boundary and 50k+ for the Medium/High boundary, based on the June and July medians. A January reading could reach Medium if the winter rise starts on time. The rise is often later and slower, with the peak in March\u2013April. Last year's peak was in April, so early January is usually still early in the season. Early January is also affected by holiday sampling and lab delays. Other is a small chance, for example if the national category is not calculated or the categorization changes.\n\nThe September Low reading and the August Medium reading show the category fluctuates near the Low/Medium boundary. The Low/Medium boundary is therefore fairly likely to be crossed in either direction. Seasonally, concentrations in January should be higher than in September. In the 2023\u201324 data, onset occurred in the South in December, so by January levels were probably rising. Even so, whether levels exceed the lower tertile (a relatively low bar) is uncertain. I estimate Medium at about 38% and Low at about 40%. High is about 15% and Other about 7%.\n\nOption_A: 0.15\nOption_B: 0.38\nOption_C: 0.40\nOption_D: 0.07\n\nOption_A: 0.15\nOption_B: 0.38\nOption_C: 0.40\nOption_D: 0.07",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "High",
+      "probability": 0.12
+     },
+     {
+      "option_name": "Medium",
+      "probability": 0.37
+     },
+     {
+      "option_name": "Low",
+      "probability": 0.45999999999999996
+     },
+     {
+      "option_name": "Other",
+      "probability": 0.05
+     }
+    ]
+   },
+   "question_id": 46887,
+   "reasoning": "**(a) Time left:** About 6 weeks. The question resolves on the first dashboard check on or after January 1, 2027. The value displayed then will probably reflect samples from mid-to-late December, and holiday reporting delays are possible.\n\n**(b) Status quo:** LOW. September 2026 was LOW with no trend. I could not confirm a national category for October, but the October update describes concentrations as remaining low through summer and fall. The levels are computed as tertiles over the past 365 days. That window still includes the April 2026 peak, which keeps the cutoffs high. Concentrations would have to rise substantially to leave the lower third.\n\n**(c) Unexpected scenario:** The winter season starts early, beginning with the rise already noted in the South in October. Seasonal onset in the South started around December 10 in 2023. If national concentrations climb through December, they could reach the middle tertile (MEDIUM). An unusually early, strong season could even reach HIGH. Alternatively, a dashboard or methodology change could display \"Not Calculated\" nationally, which resolves as Other.\n\n**Rationale:**\n- **Against LOW:** Seasonality points upward going into January. The categories have already been unstable: they moved from LOW in July to MEDIUM in August to LOW in September. That suggests concentrations sit near the LOW/MEDIUM boundary, so a modest seasonal rise could flip the category.\n- **Against HIGH:** The upper tertile mostly corresponds to the February\u2013May peak period, so reaching it by late December would need an unusually early and sharp season.\n- **Other:** The national rotavirus category has been calculated since March 2026, so \"Not Calculated\" is a small but real risk.\n\nOverall, LOW is modestly favored over MEDIUM.\n\nOption_A: 0.12\nOption_B: 0.37\nOption_C: 0.46\nOption_D: 0.05",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "High",
+      "probability": 0.09
+     },
+     {
+      "option_name": "Medium",
+      "probability": 0.36
+     },
+     {
+      "option_name": "Low",
+      "probability": 0.49
+     },
+     {
+      "option_name": "Other",
+      "probability": 0.06
+     }
+    ]
+   },
+   "question_id": 46887,
+   "reasoning": "**(a) Time left:** About 6 weeks. Today is 2026-11-21, and the question resolves when Metaculus checks the dashboard on or after January 1, 2027. The displayed category will mostly reflect samples from mid-to-late December 2026, possibly affected by holiday reporting delays.\n\n**(b) Status quo outcome:** Low. The last confirmed national category is LOW (September 2026 update, no trend). The October update gave no explicit category but described concentrations as still low, with only a slow rise starting in the South.\n\n**(c) Unexpected-outcome scenario:** The 2026\u201327 rotavirus season starts early and strongly in the South in December, then spreads to the Midwest. The aggregated national concentration climbs past the middle tertile of the past 365 days, giving Medium, or in an unusually sharp early surge, High. A different surprise: a dashboard or methodology change, or a data gap over the holidays, makes the national view show \"Not Calculated\", which resolves as Other.\n\n**Rationale:**\n- **Seasonality:** In the post-vaccine US, rotavirus peaks in March\u2013May. Onset begins in the South around December and in the Midwest around January. By late December concentrations are typically rising, but they are well below the spring peak.\n- **The 365-day tertile window favors Low.** The window for a Jan 1, 2027 check covers roughly January\u2013December 2026. It includes the high spring 2026 peak (HIGH in March and May) and a long low summer and fall. Late-December values would need to exceed the lower-third cutoff to register as Medium. That is plausible if the onset is underway, since early-January 2026 levels were presumably in that intermediate range.\n- **The category is noisy.** It flipped from LOW in July to MEDIUM in August and back to LOW in September. So even without strong seasonal growth, there is meaningful chance of landing on Medium.\n- **Weighing it up:** The status quo is Low, but seasonality pushes upward, so Medium is a strong second. High is unlikely this early in the season. Other is a small tail risk from Not Calculated or reporting quirks.\n\nOption_A: 0.09\nOption_B: 0.36\nOption_C: 0.49\nOption_D: 0.06",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "High",
+      "probability": 0.11
+     },
+     {
+      "option_name": "Medium",
+      "probability": 0.34
+     },
+     {
+      "option_name": "Low",
+      "probability": 0.48
+     },
+     {
+      "option_name": "Other",
+      "probability": 0.07
+     }
+    ]
+   },
+   "question_id": 46887,
+   "reasoning": "(a) **Time left:** About 6 weeks. The dashboard will be checked on or after January 1, 2027, and will probably reflect samples through late December 2026.\n\n(b) **Status quo outcome:** LOW. The last confirmed national category is LOW (September 2026: low concentrations, no trend). The October category is unconfirmed, and October detection was about 68% with a slight rise in the South.\n\n(c) **Unexpected-outcome scenario:** The winter\u2013spring season starts early and strongly. In the 2023\u201324 season, onset began in the South around December 10. A December rise from the South spreading nationally, combined with an upward 21-day trend, could push the national category to MEDIUM or even HIGH by the check date. A less likely alternative is that a methodology or display change, or a data gap over the holidays, produces \"Not Calculated\", which resolves as Other.\n\n**Rationale**\n- **Thresholds favour a low reading.** The thresholds are national tertiles over the trailing 365 days. For a check in early January 2027, that window covers roughly January to December 2026.\n  - It includes the February\u2013May 2026 peak, which alone is about a third of the year and anchors the HIGH cutoff.\n  - The June\u2013December trough is about half the year, so it fills the LOW tertile and pushes part of the MEDIUM band down too.\n- **What January levels would need to do.** A typical early-season January level sits somewhere between the trough and the peak. That makes it plausibly MEDIUM if the rise has clearly started, and LOW if it hasn't.\n- **The series is noisy.** August came in MEDIUM between July LOW and September LOW, so the category can flip on modest fluctuations.\n- **Overall.** The status quo and the high-anchored thresholds favour LOW. Seasonality gives MEDIUM a substantial chance. HIGH would need an unusually early and strong season. \"Other\" is a small tail risk for not-calculated or display issues.\n\nOption_A: 0.11\nOption_B: 0.34\nOption_C: 0.48\nOption_D: 0.07",
+   "research": "both",
+   "role": "boost"
+  }
+ ],
+ "research": "**Rundown: WastewaterSCAN national rotavirus category (question closes Jan 1, 2027)**\n\n**Current state**\n- **Latest category I could confirm:** The September 2026 update (samples through Sept 30, published Oct 2) put rotavirus nationally in the LOW category, with low concentrations and no trend over the prior 21 days. Nationally, Rotavirus is in the 'LOW' Wastewater Category with aggregated measurements showing low concentrations and no trend in the last 21 days.\n- **October 2026 update (samples through Oct 31):** The snippets I could retrieve give rotavirus detection and trend notes but not an explicit national category. Detection was about 68% of samples in October, and the update says rotavirus peaked in April 2026 and have been remained though the summer months. It also says Rota concentrations are slowly starting to increase in the South. I could not confirm whether the October category moved from LOW. I did not find the November 2026 update.\n- **Recent monthly sequence (national category):**\n  - March 2026: HIGH. Nationally, Rotavirus is in the 'HIGH' Wastewater Category with aggregated measurements showing high concentrations and no trend in the last 21 days.\n  - May 2026: HIGH, downward trend.\n  - June 2026: MEDIUM, downward trend. Median concentration was 53,470 copies/gram, down ~74% from May 2026.\n  - July 2026: LOW, downward trend. Median concentration was 12,670 copies/gram, down ~81% from June 2026.\n  - August 2026: MEDIUM, no trend.\n  - September 2026: LOW, no trend.\n- **Methodology:** Rotavirus was added to category calculation in March 2026, and Rota is now assigned to the 'Commonly detected' category logic. Levels are based on national tertiles over the last 365 days, and the trend uses the last 21 days. Levels tell us whether concentrations are relatively lower or higher (based on national tertiles over last 365 days). Because the tertiles are computed over a year that includes the April 2026 peak, a low January value could still be categorized as LOW.\n\n**Scheduled before close**\n- WastewaterSCAN publishes a monthly national update (early each month) and weekly dashboard updates. I did not find a specific date for the December 2026 or January 2027 updates.\n- No scheduled event directly affecting rotavirus was identified.\n\n**Base rate and seasonality**\n- The data history is short: about eight months of calculated categories since March 2026. That is too few to establish a reliable winter pattern.\n- In 2026, concentrations peaked in April and fell through the summer and early fall. The September update describes this as typical for the season, meaning the trough is expected in fall. A winter or early-spring rise is plausible but I did not find data showing the 2026\u201327 winter trajectory.\n- Older WastewaterSCAN posts on X also show rotavirus categories of MEDIUM and HIGH in past autumns. Their dates are unreliable in the search metadata, and the October 2025 update says rotavirus categories were not being calculated then, so I did not treat those posts as evidence for the current category logic.\n\n**If nothing changed**\n- The most recent confirmed category is LOW (September 2026). If the dashboard still shows LOW at the check, the question resolves to the Low category, which falls in the lower third.\n- Two gaps matter: I could not confirm the October 2026 category, and I found no November or December 2026 data. Both could change the baseline.\n- Category risk: the question resolves to \"Other\" if the dashboard shows Not Detected or Not Calculated. Since rotavirus has been calculated since March 2026, that outcome seems unlikely, but I did not verify the live dashboard.\n- Check timing: Metaculus checks on or after January 1, 2027, so the displayed value may reflect data from later than January 1.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Base rate (limited):** Rotavirus has historically followed a winter-spring pattern. Historically the season began in December\u2013January and ended in April\u2013May. A WastewaterSCAN-based study found that at least half of states in the region were in onset for 21 consecutive days beginning 10 December 2023 in the South, 1 January 2024 in the Midwest. That suggests a winter rise is typical, though I found no WastewaterSCAN category history for the 2025\u201326 winter because categories began in March 2026. The verified monthly national categories since then are: May HIGH (downward), June MEDIUM, August MEDIUM, and September LOW. That is one season of data, too short for a count-based base rate.\n\n**Primary source status:** The latest verified national statement is the September 2026 update, which says rotavirus is in the 'LOW' Wastewater Category with aggregated measurements showing low concentrations and no trend in the last 21 days. The October update (indexed as of Nov 2) reports that rotavirus (Rota) RNA was detected in ~68% of samples from all WWSCAN sites in October 2026. The retrieved text gives no national category for October. The dashboard itself shows a single-plant page with \"A category was not calculated for this pathogen\", with a 365-day window ending 10/06/2026. That looks like a site-level flag, not the national view, but it shows the Not Calculated message exists. The CDC wastewater dataset updated Nov 20, 2026 covers only SARS-CoV-2, influenza A and RSV, so it cannot cross-check rotavirus.\n\n**Strongest evidence against LOW:**\n- Seasonality points upward. Rotavirus typically rises from December into winter, so a January category above LOW is plausible.\n- The October detection rate of about 68% is substantial, and the first rundown's report of a slight rise in the South, which I could not verify, would fit a winter upturn.\n- Trend is part of the category, so a rising 21-day trend could move the category up even at low levels.\n\n**Evidence for LOW (for balance):** The 365-day tertile window still contains the April 2026 peak. That keeps the cutoffs high and makes LOW more likely unless concentrations rise well above their summer-fall levels.\n\n**Already decided?** No. The question is still open, and the outcome depends on the live dashboard at the check date.\n\n**What I could not find:**\n- The October 2026 national category, stated explicitly.\n- Any November 2026 update.\n- Dated winter 2026\u201327 rotavirus data.\n- Any scheduled December or January update date.\n- Whether the national dashboard view can display Not Calculated.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-21T21:11:00.633999+00:00",
+ "scheduled_resolution_time": "2027-01-01T00:00:00+00:00",
+ "status": "forecast",
+ "title": "What will be the nationwide wastewater detection category of rotavirus on January 1, 2027?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "MultipleChoiceQuestion",
+ "url": "https://www.metaculus.com/questions/46627"
+}
