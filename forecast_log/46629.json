@@ -1,0 +1,214 @@
+{
+ "accessed_at": "2026-11-23T06:14:14.396017+00:00",
+ "close_time": "2026-11-23T09:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.196263,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.065384,
+   "in": 5756,
+   "out": 2118,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000844,
+   "in": 3334,
+   "out": 1021,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.009476,
+   "in": 1993,
+   "out": 549,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.022732,
+   "in": 5756,
+   "out": 1122,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.002392,
+   "in": 19032,
+   "out": 975,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.03782,
+   "in": 63609,
+   "out": 2919,
+   "searches": 3,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024015,
+   "in": 25901,
+   "out": 2850,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.032832,
+   "in": 2878,
+   "out": 1066,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000768,
+   "in": 2237,
+   "out": 1088,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-23T09:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-23T06:15:16.810827+00:00",
+ "num_forecasters": 254,
+ "open_time": "2026-11-23T06:00:00+00:00",
+ "post_id": 46629,
+ "prediction": 0.27908552744415654,
+ "quality": {
+  "boost": [
+   "boost_2",
+   "boost_1"
+  ],
+  "check": [
+   {
+    "kind": "UNITS",
+    "why": "The forecast appears as 0.279 (27.9%) in one place and as 22% in the reasoning, so the submitted value is unclear."
+   }
+  ],
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46889,
+ "rationales": [
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.22,
+   "question_id": 46889,
+   "reasoning": "(a) About 5.5 weeks remain until the end of December 2026, which is 38 days from Nov 23. TracXn may also update after that date, but the question is likely checked shortly after.\n\n(b) The status quo is No. No December 2026 round has been reported for any of the three companies, and none is scheduled.\n\n(c) A No scenario: Lovable stays on its August Series C. Perplexity's Nvidia deal stays unannounced, or it closes with a date outside December. DeepSeek's second round is dated October on TracXn, and any STAR Market IPO filing is not counted as a funding round. Nothing new is dated December.\n\n(d) A Yes scenario: Perplexity announces the Nvidia-backed round, or another raise, in December. Or DeepSeek's second round, or a pre-IPO round, is dated December on TracXn. Lovable could also raise again quickly, as AI startups often do. TracXn sometimes lists smaller or unusual entries, such as debt, secondary sales or employee tender offers, which widens the paths to Yes.\n\nProbability reasoning: each company has a modest chance of a round dated in a specific month. Perplexity raises roughly every 3 to 5 months, so a given month is about 12\u201315%, and the pending Nvidia deal pushes that a little higher. Lovable is about 8%, since it raises quickly but its last round was only in August. DeepSeek is about 7%, given the unclear status of its second round and the possible pre-IPO activity. Combined, that is about 25%. The unknown TracXn dating conventions and the possibility of extra entries add uncertainty in both directions, so I settle slightly below that.\n\nProbability: 22%",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.22,
+   "question_id": 46889,
+   "reasoning": "(a) About 5.5 weeks remain until the end of December 2026 (today is Nov 23). TracXn updates can lag, but the question presumably resolves soon after Dec 31.\n\n(b) The status quo is No. None of the three has a known December 2026 round. DeepSeek's second round was dated October or November. Lovable's last round was in August. Perplexity's Nvidia talks have been open since August with no close.\n\n(c) No scenario: Lovable stays quiet after its August round. DeepSeek's round is dated October or November on TracXn, and its STAR Market filing is not a funding round. Perplexity's Nvidia deal stays unclosed or is dated outside December. TracXn lists nothing dated December.\n\n(d) Yes scenario: Perplexity announces a round in December, for example the Nvidia-led one at over $30B or a new raise. Alternatively, Lovable raises quickly, as AI startups often do, and it has done a December round before. Or TracXn dates DeepSeek's registered round, or a pre-IPO round, in December. Perplexity and Lovable also commonly have smaller or strategic investments that TracXn logs.\n\nThe pace of AI fundraising is very high, and three companies each have a chance of roughly 8\u201315% in any given month. Perplexity raises often, and its Nvidia talks are still pending. Lovable is growing quickly, and its Dec 2025 round shows it can raise at year-end. DeepSeek could add a listing-related or strategic round. TracXn also sometimes lists odd entries, such as a secondary or a convertible, with loose dating. Combined, I estimate about 22\u201325%.\n\nProbability: 22%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.25,
+   "question_id": 46889,
+   "reasoning": "(a) About 5.5 weeks remain until the question closes (today is Nov 23, and the window ends Dec 31, 2026). TracXn updates could also lag, but the outcome should be mostly known by early January.\n\n(b) The status quo is No. None of the three companies has a December 2026 round announced, and TracXn would need to list one dated in December.\n\n(c) No scenario: Lovable stays quiet after its August round. DeepSeek's second round is dated October or November. Perplexity's Nvidia-linked round either stays unclosed or is dated in another month. TracXn lists nothing in December for any of the three.\n\n(d) Yes scenario: Perplexity announces a new round in December (Nvidia-led, or another raise at $30B+). Alternatively, Lovable announces a new round, since it raised in December 2025 and AI funding is moving fast. TracXn might also add a DeepSeek entry dated in December, for example a registration-based date or a pre-IPO round, or a minor round with a December date.\n\nThe probability that any one of three fast-raising AI companies has a round dated in a given month is meaningful. Perplexity raises often, and the Nvidia round has been pending since August. Perplexity has historically raised about every 3 to 5 months, so a given month has about a 15\u201320% chance, and the pending talks raise that a little. Lovable's chance is about 7%, since it raised four months ago but is growing fast and the funding environment is hot. DeepSeek's chance is about 5\u20138%, from an odd TracXn dating or a pre-IPO round. Combined, that is roughly 28%.\n\nTracXn also sometimes lists rounds with odd dates, including small or unannounced ones, which adds slight upside. The status quo still favors No.\n\nProbability: 25%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.32,
+   "question_id": 46889,
+   "reasoning": "(a) **Time left:** The window is December 1\u201331, 2026, about 5\u00bd weeks from today (Nov 23). TracXn may add entries with a lag, so the answer could be confirmed a few weeks after December ends.\n\n(b) **Status quo:** No round for any of the three is scheduled or reported for December. If nothing changes, the question resolves **No**.\n\n(c) **No scenario:**\n- The Perplexity\u2013Nvidia talks keep dragging or close in January 2027.\n- Lovable stays on its usual 6\u20138 month spacing, so its next round lands in 2027.\n- DeepSeek's second round stays dated October/November on TracXn, and its STAR Market filing is not logged as a funding round.\n- TracXn shows nothing dated December 2026.\n\n(d) **Yes scenario:**\n- Perplexity announces its Nvidia-backed round, or another raise, at over $30B in December. Perplexity has historically announced many rounds in December/January.\n- Or Lovable announces an early pre-emptive round, given how hot AI coding tools are.\n- Or TracXn logs a DeepSeek tranche, a pre-IPO round or a registration-dated entry in December.\n\n**Rationale:**\n- **Perplexity** has historically raised about 4\u20135 times a year, which implies roughly 25\u201335% for any given month. Its 2026 pace looks slower, but the Nvidia talks have been open since August and could close anytime. I put it at about 20%.\n- **Lovable** would be raising only 4 months after its August round, earlier than its usual spacing. Pre-emptive rounds do happen in this market, so about 8%.\n- **DeepSeek's** second round is settled and dated before December. A pre-IPO round or a December-dated TracXn entry is possible but unlikely, so about 7%.\n- **TracXn's own listings** add a small extra chance: it sometimes logs minor, secondary or debt entries.\n\nCombining these gives roughly 30\u201335%. Weighting toward the status quo of No, I settle near the low 30s.\n\nProbability: 32%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.27,
+   "question_id": 46889,
+   "reasoning": "**(a) Time left:** About five weeks. December 2026 runs to the 31st, and TracXn may add or backdate entries some time after that.\n\n**(b) Status quo:** No. None of the three has a known December 2026 round scheduled or reported.\n\n**(c) No scenario:** December passes quietly.\n- The Nvidia\u2013Perplexity talks stay unresolved or close in January.\n- Lovable, having raised in August, waits until 2027.\n- DeepSeek's second round is already registered (November 17) and TracXn dates it October or November.\n- DeepSeek's STAR Market IPO filing is not logged as a funding round.\n\n**(d) Yes scenario:** Any one of these would do it:\n- Perplexity announces the Nvidia-backed round at over $30B, or some other strategic round, in December.\n- Lovable announces a pre-emptive round. Hot AI companies often raise every four to six months.\n- TracXn logs a DeepSeek tranche or strategic investment with a December date.\n\n**Rationale:**\nThe status quo favors No. Nothing is scheduled, and the one live DeepSeek item is settled as dated before December.\n\nStill, these are three of the most aggressively funded private AI companies, and the funding climate is record-breaking.\n- **Perplexity** has historically raised several times a year, including a December round in 2024, and has a strategic deal that has been pending since August. I put it at roughly 15% for any single month.\n- **Lovable's** raise in December would come sooner than its usual six-to-eight-month spacing. Rounds in this market often get pre-empted, so I give it about 8\u201310%.\n- **DeepSeek** I put at about 5%. That covers a December-dated TracXn entry from late tranches, strategic additions or the dating convention.\n\nTracXn also records smaller entries, such as corporate or strategic investments, which slightly widens the paths to Yes. Combining these as roughly independent chances gives about 25\u201330%.\n\nProbability: 27%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.33,
+   "question_id": 46889,
+   "reasoning": "**(a) Time left:** The window is December 1\u201331, 2026, about 5\u20136 weeks from today (Nov 23). TracXn may add entries with a lag, so the outcome may not be checkable until early 2027.\n\n**(b) Status quo:** No. No December round is announced or scheduled for any of the three. DeepSeek's second round was reported in October and registered on November 17, so TracXn will most likely date it before December.\n\n**(c) No scenario:** Perplexity's Nvidia talks stay open or close in January or later. Lovable waits its usual 5\u20138 months after its August Series C. DeepSeek's activity in December is limited to a STAR Market IPO filing, which TracXn does not record as a funding round. Nothing on TracXn carries a December 2026 date.\n\n**(d) Yes scenario:** One of these lands with a December date on TracXn:\n- The Nvidia-backed Perplexity round at over $30B closes or is announced in December.\n- Lovable raises a quick follow-on round, as hot AI companies often do.\n- TracXn logs a small or strategic tranche, such as a secondary sale or a corporate investor joining an existing round.\n\n**Rationale:** These are three very active fundraisers in a record funding environment.\n- **Perplexity:** It has historically raised several times a year, and a deal has been pending for about three months. That gives perhaps a 20\u201325% chance of a December-dated entry.\n- **Lovable:** A new round only four months after August would be faster than its usual spacing, but it is growing quickly. I put it at roughly 10\u201315%.\n- **DeepSeek:** Its round is effectively closed and an IPO filing is not a funding round. I put it at about 5%.\n\nCombined, that is around 35\u201340%. I discount slightly because the status quo is No, the window is short, and there is no concrete signal of a December close. TracXn's tendency to log minor entries pulls modestly the other way.\n\nProbability: 33%",
+   "research": "both",
+   "role": "member"
+  }
+ ],
+ "research": "**Rundown: Will Lovable, DeepSeek, or Perplexity have a TracXn-listed funding round dated December 2026?**\n\nI could not access the TracXn pages themselves, so I don't know how TracXn dates each entry (announcement, report, or close). I also couldn't find any reporting of a December 2026 round for any of the three. Search results were current to roughly late November 2026.\n\n**Lovable**\n- Its most recent round is reported as a $400M Series C at a $13.3B valuation, confirmed in August 2026 per TechCrunch. A directory lists the same round as August 2026 and sourced as primary.\n- Earlier rounds: a $200M Series A in February 2025, and a $330M Series B announced in December 2025. That is roughly one round every 6 to 8 months.\n- I found no reports of talks for a further round after August 2026.\n\n**DeepSeek**\n- Its first external round closed in June 2026, raising about 50 billion yuan.\n- A second round was reported as about $15B at a $74B pre-money valuation, led again by CATL and Tencent, with reporting from Oct. 26-27 saying it had not formally closed.\n- Conflicting status: one later secondary write-up says the round closed, with reports landing between October 22 and October 30, 2026, and cites a final tally of 105.5 billion yuan. I could not confirm this from a primary or major outlet, and DeepSeek has not confirmed either number.\n- Listing plans: reporting says DeepSeek is expected to file a listing application with the STAR Market as early as the end of this year and to go public sometime next year. An IPO may or may not appear on TracXn as a funding round.\n\n**Perplexity**\n- Last confirmed valuation is $20B from a September 2025 round. Sources disagree on the early-2026 round: one says it closed a $23 billion round in January 2026, while another source lists a $500M Series C on February 5, 2026 at a $9.0B valuation. The second source looks inconsistent with the rest of the reporting, so I would treat it cautiously.\n- The main pending item is Nvidia's reported investment. In August 2026, Nvidia was reported to be in talks to invest in Perplexity at over $30B. As of the latest reviews I found (around October 21 and November 1, 2026), no closed round above $20 billion had been announced. Perplexity declined to comment.\n- Perplexity has raised rounds frequently (2024 through early 2026), so a long gap since January 2026 is notable but not unusual for this company.\n\n**Scheduled before the question closes**\n- I found no scheduled closing dates or announcements for any of the three in December 2026.\n- The most likely candidates are the Nvidia-led Perplexity round (unclosed since August), any formal close or registration of DeepSeek's second round, and a possible STAR Market filing for DeepSeek, which is expected by year-end but is not itself a funding round.\n\n**Base rates**\n- Lovable: about 3 rounds in roughly 18 months, so a new round four months after August would be earlier than its typical spacing.\n- DeepSeek: two external rounds within about four months in 2026, showing a fast pace, but the second round's close is unconfirmed.\n- Perplexity: several rounds per year in 2024\u20132026, but the pending Nvidia deal has been open for about three months.\n\n**Resolution if nothing changes**\n- If no new round is announced or closed and dated in December 2026, the question resolves No. The only plausible December path I found is the Perplexity/Nvidia round or a formal dating of DeepSeek's second round on TracXn. Both are unconfirmed, and TracXn's dating convention is unknown to me.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Search limit:** I used both searches. Gap 2 (the TracXn dating convention) is still unresolved.\n\n**1. Base rate.** I found no historical TracXn-dated counts for these companies. The counts below come from the first rundown and I could not verify them.\n- Lovable: three rounds in about 18 months (Feb 2025, Dec 2025, Aug 2026).\n- DeepSeek: two external rounds in 2026, June and the second round in October to November.\n- Perplexity: I could not verify the \"several rounds per year\" claim.\n\n**2. Primary source.** I could not open the TracXn pages. Tracxn's own profile shows a generic \"Date of Funding\" column, but I found no definition of whether that date is an announcement, report, or close. That means the resolution date rule is unknown to me.\n\nThe first rundown said DeepSeek's second round had not formally closed. That is now outdated. Caixin reported that business registration changes were finalized on November 17, 2026, showing about 100 billion yuan raised and a roughly 17.3% stake for the new partnership. November 17, 2026: Business registration changes completed, showing a partnership took a roughly 17.3% stake in DeepSeek, completing a second external funding round of about 100 billion yuan. Reports of the round date back to October. On 22 October 2026, Chinese artificial intelligence start\u2011up DeepSeek was reported to have raised around 100 billion yuan, citing Bloomberg.\n\nThe \"105.5 billion yuan\" figure in the first rundown appears only in one secondary table (shattered.io), and I could not confirm it elsewhere.\n\n**3. Strongest evidence against a December outcome.**\n- DeepSeek: the second round was reported in October and registered by November 17. Any TracXn entry for it would most likely carry an earlier date. A December date would need TracXn to date a late entry or a formal filing, and a STAR Market filing is not a funding round.\n- Perplexity: I found no December close. The Nvidia-linked talks at over $30B were reported in August, and I found no later close.\n- Lovable: I found no talks reported after its August 2026 round.\n\n**Has it effectively been decided?** Not for December as a whole, but the DeepSeek second round is effectively settled as dated before December. The first rundown's \"pending\" framing for DeepSeek should be corrected. The live question is only whether TracXn dates anything in December, and I could not check that.\n\n**Could not find:** TracXn's dating convention and its current entries for all three companies; verified Perplexity round history (the $23B vs. $500M conflict is unresolved); and historical counts for Perplexity.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 3,
+ "research_second": true,
+ "research_time": "2026-11-23T06:14:45.593503+00:00",
+ "scheduled_resolution_time": "2027-01-01T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Will any of these AI companies (Lovable, DeepSeek, or Perplexity) have a funding round in December 2026?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "BinaryQuestion",
+ "url": "https://www.metaculus.com/questions/46629"
+}
