@@ -1,0 +1,370 @@
+{
+ "accessed_at": "2026-11-23T15:08:14.455652+00:00",
+ "close_time": "2026-11-23T18:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.206249,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.066208,
+   "in": 5802,
+   "out": 2150,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000889,
+   "in": 3272,
+   "out": 1123,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.014534,
+   "in": 2072,
+   "out": 1039,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.034614,
+   "in": 5802,
+   "out": 2301,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.004621,
+   "in": 21832,
+   "out": 4871,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024861,
+   "in": 34974,
+   "out": 2728,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024619,
+   "in": 23099,
+   "out": 4619,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.035244,
+   "in": 2901,
+   "out": 1182,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000659,
+   "in": 2004,
+   "out": 918,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-23T18:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-23T15:09:29.588509+00:00",
+ "num_forecasters": 149,
+ "open_time": "2026-11-23T15:00:00+00:00",
+ "post_id": 46630,
+ "prediction": {
+  "predicted_options": [
+   {
+    "option_name": "Under 210",
+    "probability": 0.33599999999999997
+   },
+   {
+    "option_name": "210-245",
+    "probability": 0.21200000000000002
+   },
+   {
+    "option_name": "246-295",
+    "probability": 0.21400000000000002
+   },
+   {
+    "option_name": "296-370",
+    "probability": 0.15000000000000002
+   },
+   {
+    "option_name": "Greater than 370",
+    "probability": 0.08800000000000001
+   }
+  ]
+ },
+ "quality": {
+  "boost": [
+   "boost_2",
+   "boost_1"
+  ],
+  "check": [],
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46890,
+ "rationales": [
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Under 210",
+      "probability": 0.39
+     },
+     {
+      "option_name": "210-245",
+      "probability": 0.13
+     },
+     {
+      "option_name": "246-295",
+      "probability": 0.19
+     },
+     {
+      "option_name": "296-370",
+      "probability": 0.17
+     },
+     {
+      "option_name": "Greater than 370",
+      "probability": 0.12
+     }
+    ]
+   },
+   "question_id": 46890,
+   "reasoning": "**(a) Time left:** About 5 weeks. The question resolves on the latest CDC report published before January 1, 2027, and today is November 23, 2026.\n\n**(b) Status quo outcome:** The CDC page currently reads \"more than 200\" laboratory-confirmed clade I cases, dated \"October 2026.\" Under the \"more than X = X+1\" rule, that resolves as 201, which is **Under 210**. A Colorado release on November 18 still cited the October figure, so no November update had appeared by then.\n\n**(c) Unexpected outcome scenario:** The CDC publishes a December update that reflects fast continued growth. The count went from 11 in February to about 60 in early September, about 80 on October 5, and over 200 later in October. If that is real growth rather than a change in counting basis, cases could be accumulating at roughly 100 or more per month. Domestic transmission is rising (16 jurisdictions, more non-travel cases since August), so a December figure of \"more than 300\" or even \"more than 400\" is plausible. In the other direction, the October jump may be a reconciliation or basis change. In that case the true trend is slower, and an update might only read \"more than 225\" or \"more than 250.\"\n\n**Rationale:**\n- **Status quo weight.** The CDC page seems to update roughly monthly, but the October figure has persisted at least into late November. There is a real chance, which I put around 35\u201340%, that no new figure appears before January 1, especially with the holiday period. That keeps **Under 210** the single most likely bucket.\n- **If the page is updated.** The CDC uses round \"more than X\" figures, so the resolved value would likely be 226, 251, 301 or 401. Given the recent pace, the probability mass shifts toward the 246\u2013295 and 296\u2013370 buckets, with a meaningful tail above 370.\n- **Spread across options.** I leave moderate weight on every bucket to cover both the stall scenario and the acceleration scenario.\n\nOption_A: 0.39\nOption_B: 0.13\nOption_C: 0.19\nOption_D: 0.17\nOption_E: 0.12",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Under 210",
+      "probability": 0.5800000000000001
+     },
+     {
+      "option_name": "210-245",
+      "probability": 0.21
+     },
+     {
+      "option_name": "246-295",
+      "probability": 0.1
+     },
+     {
+      "option_name": "296-370",
+      "probability": 0.07
+     },
+     {
+      "option_name": "Greater than 370",
+      "probability": 0.04
+     }
+    ]
+   },
+   "question_id": 46890,
+   "reasoning": "**(a) Time left:** About 5.5 weeks remain, until the last CDC report published before January 1, 2027.\n\n**(b) Status quo:** The CDC page says \"more than 200\" laboratory-confirmed clade I cases as of October 2026. Under the question's convention, that resolves as 201, which falls in \"Under 210\". The CDC appears to update this page infrequently, and it seems to use rounded \"more than X\" wording. The background figure of 190 also sits just below this, so the count looks to be rising only slowly in the CDC's published numbers. The research assistant's trajectory is internally inconsistent: 23 cases in May 2026 against 190 in the background. I therefore don't trust its claim of a sharp acceleration.\n\n**(c) Unexpected outcome:** Domestic transmission, especially among gay men as in Western Europe, accelerates in late 2026. The CDC then publishes an exact count or a new rounded figure such as \"more than 250\" or \"more than 300\". Reporting could also catch up on a backlog of state-reported cases. That would put the final number in the 210\u2013295 range, or higher if the surge is large.\n\nBecause the status quo is a rounded \"more than 200\" and updates are rare, I put most weight on \"Under 210\". I leave meaningful probability on a one-step update into 210\u2013245, and smaller amounts on the higher bins.\n\nOption_A: 0.58\nOption_B: 0.21\nOption_C: 0.1\nOption_D: 0.07\nOption_E: 0.04",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Under 210",
+      "probability": 0.3699999999999999
+     },
+     {
+      "option_name": "210-245",
+      "probability": 0.25
+     },
+     {
+      "option_name": "246-295",
+      "probability": 0.19
+     },
+     {
+      "option_name": "296-370",
+      "probability": 0.12
+     },
+     {
+      "option_name": "Greater than 370",
+      "probability": 0.07
+     }
+    ]
+   },
+   "question_id": 46890,
+   "reasoning": "**(a) Time left:** about 5.5 weeks. The outcome is known when the last CDC report before January 1, 2027 is published, so it is effectively known on December 31, 2026.\n\n**(b) Status quo:** The CDC page still reads \"more than 200\" cases as of October 2026. Under the question's convention that resolves as 201, which falls in \"Under 210\". A Colorado release on November 18 still cited the October figure, which suggests no newer CDC count was public then. The CDC page also appears to be updated only occasionally.\n\n**(c) Unexpected outcome:** Domestic transmission keeps growing, with new local clusters such as the three Anchorage cases and the Denver-area case. The CDC then publishes an exact count, or a new \"more than 250/300\" figure, in December. That could put the total anywhere from 250 to 350 or more.\n\nThe counts in the research are hard to reconcile. They went from 11 in February to 50 in late August, then 80 on October 5, then over 200 in October. The jump from 80 to over 200 within weeks may reflect a change in how cases are counted rather than real growth. The background figure of 190 versus \"more than 200\" suggests the count was just crossing 200 in October. A pace of even 30\u201350 cases a month would put a December report at roughly 230\u2013300. But the CDC may not update at all, and it may keep rounding to \"more than 200\".\n\nI give the status quo about 35\u201340% and spread the rest across higher bins, with the most weight just above 210.\n\nOption_A: 0.37\nOption_B: 0.25\nOption_C: 0.19\nOption_D: 0.12\nOption_E: 0.07",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Under 210",
+      "probability": 0.35
+     },
+     {
+      "option_name": "210-245",
+      "probability": 0.17
+     },
+     {
+      "option_name": "246-295",
+      "probability": 0.22
+     },
+     {
+      "option_name": "296-370",
+      "probability": 0.16
+     },
+     {
+      "option_name": "Greater than 370",
+      "probability": 0.1
+     }
+    ]
+   },
+   "question_id": 46890,
+   "reasoning": "(a) **Time left:** About 5.5 weeks. The question resolves on the last CDC situation-summary report published before January 1, 2027.\n\n(b) **Status quo:** The CDC page reads \"more than 200\" (dated October 2026). A Colorado release on November 18 still cited that figure, so no newer count appears to be public. If the page is not updated, the question resolves as 201, which falls in \"Under 210.\"\n\n(c) **Unexpected outcome:** Domestic transmission keeps accelerating, as the CDC itself describes. The CDC then publishes a November or December update showing \"more than 300,\" or an exact count near 350\u2013400, which would land in the upper bins. In the other direction, the October jump from 80 to over 200 may have been a one-time change in counting basis. In that case real growth is slow, and even an updated page might read only about 220\u2013240.\n\n**Rationale**\n- **Update cadence:** The CDC updated the page several times in fall 2026 (early September, October 5, then later in October). That suggests roughly monthly revisions, so an update before January 1 is more likely than not, perhaps 60\u201365%. Still, by November 23 the October figure had stood for about six weeks, so a stalled page remains plausible. That supports heavy weight on the status quo bin.\n- **Size of any update:** The CDC tends to report round \"more than X\" figures.\n  - If the recent pace (tens to 100+ cases a month) continues, the next headline could be \"more than 250\" (246\u2013295) or \"more than 300\" (296\u2013370).\n  - If the October jump reflected a basis change, slower growth would point to 210\u2013245.\n  - A sustained surge could push the count past 370, but that needs both fast growth and a timely update.\n\nOption_A: 0.35\nOption_B: 0.17\nOption_C: 0.22\nOption_D: 0.16\nOption_E: 0.10",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Under 210",
+      "probability": 0.25
+     },
+     {
+      "option_name": "210-245",
+      "probability": 0.26
+     },
+     {
+      "option_name": "246-295",
+      "probability": 0.25
+     },
+     {
+      "option_name": "296-370",
+      "probability": 0.16
+     },
+     {
+      "option_name": "Greater than 370",
+      "probability": 0.08
+     }
+    ]
+   },
+   "question_id": 46890,
+   "reasoning": "**(a) Time left:** About 5.5 weeks, until the latest CDC report published before January 1, 2027.\n\n**(b) Status quo:** The CDC page still reads \"more than 200\" (as of October 2026), which resolves as 201 and falls in \"Under 210.\" The background's exact figure of 190 suggests the CDC sometimes publishes exact counts, so a more precise number may appear. A Colorado release on November 18 still cited the October figure, which suggests no newer count was public then.\n\n**(c) Unexpected outcome:** Domestic transmission, especially among gay men as in Western Europe, accelerates in the fall and winter. The CDC then posts monthly updates in November and December showing large jumps. The count went from about 60 in early September to 80 on October 5 to over 200 later in October, which is a very fast pace. Continuing even half that pace would push the total to 300 or more, and one bulk-reconciliation update could take it above 370.\n\nAlternatively, the 80-to-200 jump was a basis change, the underlying trend is slower, and the page stays near 200 to 240.\n\n**Weighing the evidence:**\n- The reporting cadence is unknown and the figures are inconsistent, so the spread of outcomes is wide.\n- The CDC has said clade I cases are increasing and local cases are still being announced, such as the three in Anchorage on October 29, so some growth before year-end is likely.\n- Growth of 30 to 100 cases by the final report would land in the 210-245 or 246-295 ranges.\n- Because of the status quo weight, \"Under 210\" keeps a substantial share.\n\nOption_A: 0.25\nOption_B: 0.26\nOption_C: 0.25\nOption_D: 0.16\nOption_E: 0.08",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Under 210",
+      "probability": 0.32000000000000006
+     },
+     {
+      "option_name": "210-245",
+      "probability": 0.25
+     },
+     {
+      "option_name": "246-295",
+      "probability": 0.22
+     },
+     {
+      "option_name": "296-370",
+      "probability": 0.14
+     },
+     {
+      "option_name": "Greater than 370",
+      "probability": 0.07
+     }
+    ]
+   },
+   "question_id": 46890,
+   "reasoning": "**(a) Time left:** About 5 weeks. The question resolves on the latest CDC report published before January 1, 2027, so there is room for one or two more CDC updates.\n\n**(b) Status quo:** The CDC page reads \"more than 200 \u2026 as of October 2026.\" If it is not updated, the question resolves as 201, which falls in \"Under 210.\" A Colorado release dated November 18 still cited the October figure, so the page may be updated slowly or irregularly.\n\n**(c) Unexpected scenario:** Domestic transmission among MSM networks speeds up, as is happening in Western Europe. The CDC then publishes a December update with a large jump, such as \"more than 350\" or an exact figure near 400. That would push the result into \"Greater than 370.\" The reverse surprise is also possible: the CDC reconciles the 80 (Oct 5) and 200+ (October) figures by tightening the confirmed-case basis, and the count stays low.\n\n**Rationale:**\n- The trajectory is uncertain. The count was 11 in February, 50\u201360 in late summer, 80 on Oct 5, and more than 200 in October.\n- The question background says 190 at creation. That suggests the cumulative figure was already near 200, with recent growth of perhaps a few dozen cases per month rather than 100+.\n- The CDC appears to update roughly monthly and uses rounded \"more than X\" language.\n- A November or December update would plausibly read \"more than 225,\" \"more than 250,\" or \"more than 300.\" These resolve as 226, 251 and 301, landing in different bins.\n- There is a meaningful chance (around 30%) that no update appears before January 1, which keeps the answer at 201.\n- Weighting the status quo and moderate growth, while leaving tail mass for acceleration, gives the probabilities below.\n\nOption_A: 0.32\nOption_B: 0.25\nOption_C: 0.22\nOption_D: 0.14\nOption_E: 0.07",
+   "research": "both",
+   "role": "member"
+  }
+ ],
+ "research": "**Rundown: US clade I mpox case count (as of 2026-11-23)**\n\n**Current state**\n- The CDC situation summary says that since November 2024, there have been more than 200 laboratory-confirmed cases of clade I monkeypox in at least 31 states plus Puerto Rico. The page is dated only to \"October 2026,\" and I could not find a more precise cumulative figure or a November update.\n- A Colorado state release dated November 18, 2026 repeats the CDC figure: as of Oct. 2026, the CDC had reported more than 200 cases of clade I mpox in at least 31 states and Puerto Rico. Colorado's case is a new Denver-area case, which may or may not be in the CDC's October count.\n- CDC says presumed domestic transmission has been seen in 16 jurisdictions, and that since August 2026, an increasing proportion of clade I cases in the United States have been reported in individuals with no recent international travel.\n- CDC's outbreak page also says clade I cases in the United States have increased in frequency since March 2026.\n\n**Trajectory (sparse data points, mostly from secondary sources)**\n- November 2024: the first US case was confirmed in California, and CDC noted one case of clade I monkeypox has been detected in the United States as of November 16, 2024.\n- Early 2025: Georgia reported a case in January 2025, and New Hampshire and New York reported cases in February 2025.\n- Around early April 2026: a news report says the CDC had counted 15 cases of clade I mpox before a San Francisco case, and that over a quarter of these cases were diagnosed in March 2026 alone.\n- Late May 2026: a secondary source reports 23 cases of clade I mpox have been confirmed in the U.S. I could not verify this against a CDC release.\n- October 2026: CDC reports more than 200. I found no data between late May and October, so the pace over that stretch is unknown. The jump from about 23 to over 200 implies a sharp acceleration, but the exact figures are uncertain.\n\n**Scheduled before the question closes**\n- I found no scheduled CDC release date or update cadence for this page. The question closes January 1, 2027, so the relevant figure is the latest CDC report before then. The CDC page has been updated recently, but I could not confirm how often it changes.\n- The World Cup and summer travel peak, which CDC cited as a driver of expected cases, have already passed.\n\n**Base rate of reporting**\n- Cases have accumulated over about two years, with the count rising faster from March 2026 onward. Growth has shifted toward domestically acquired cases, which CDC says are increasing.\n- The main uncertainty is reporting lag: the CDC's current headline figure is dated October 2026, about a month and a half before today. I could not determine how far behind the CDC's published count typically runs.\n\n**Resolution if nothing changes**\n- If CDC's page still reads \"more than 200\" in its latest report before January 1, 2027, the question resolves as 201, per the stated convention for \"more than X.\"\n- If CDC publishes an exact number, that number resolves the question instead. Only laboratory-confirmed cases count if CDC begins separating suspected from confirmed.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Base rate (counts over time)**\n- Feb 10, 2026: a CDC partner email reported 11 reported cases of clade I, including 3 with no recent travel reported. That is about 15 months after the first case in November 2024.\n- Aug 27, 2026: PAHO, citing CDC data, listed 50 cases had been characterized and reported as clade I. It notes the US stopped assigning subclades in February 2026, so the basis may differ from earlier counts.\n- Early September: the CDC reported more than 60 cases of clade I mpox across at least 20 states. The CDC's October 5 update showed 80.\n- October 2026: the CDC reports more than 200 cases since November 2024 in at least 31 states plus Puerto Rico.\n\nSo the count went from 11 to over 200 in about eight months. The 80-to-200+ step within October is hard to read. Either the cumulative figure includes earlier cases, or the October figure reflects a late surge. I could not confirm which.\n\n**Primary source**\n- The CDC situation summary gives the >200 figure, but its only date is As of October 2026. I found no dated figure from November.\n- A Colorado release dated November 18 still cites the October figure, which suggests no newer CDC count was public at that point.\n- The CDC's definition of confirmed includes those that are laboratory confirmed as monkeypox virus and may include cases only confirmed as orthopoxvirus. This matters only if the CDC later splits suspected from confirmed cases.\n\n**Evidence against the first rundown's implied path**\n- Its default outcome (201) requires the CDC to publish nothing new before January 1, 2027. The evidence that the page stalls is weak: the CDC's clade I cases in the United States have increased in frequency since March 2026, and new local cases are still being announced, such as three cases in Anchorage on Oct. 29.\n- Against a sharp rise, the 80-to-200 jump may be a basis change rather than real growth. If so, the underlying trend is slower than the headline suggests.\n- Nothing I found shows the question has already been decided. The only fixed point is that any CDC report still reading \"more than 200\" resolves as 201.\n\n**Could not find**\n- The CDC's update schedule or the date of its latest page revision.\n- Any CDC figure dated after October 2026.\n- Typical reporting lag between case confirmation and CDC publication.\n- A reconciliation of the 80 (October 5) and over-200 (October) figures.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-23T15:08:53.240519+00:00",
+ "scheduled_resolution_time": "2027-01-01T00:00:00+00:00",
+ "status": "forecast",
+ "title": "How many Clade I Mpox cases will have been reported in the US before 2027?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "MultipleChoiceQuestion",
+ "url": "https://www.metaculus.com/questions/46630"
+}
