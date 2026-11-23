@@ -1,0 +1,209 @@
+{
+ "accessed_at": "2026-11-23T14:07:28.320728+00:00",
+ "close_time": "2026-11-23T17:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.232406,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.077844,
+   "in": 8086,
+   "out": 2275,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001152,
+   "in": 4016,
+   "out": 1500,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.015988,
+   "in": 2969,
+   "out": 1005,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.029292,
+   "in": 8086,
+   "out": 1312,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.002565,
+   "in": 20116,
+   "out": 1107,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024968,
+   "in": 37040,
+   "out": 2527,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.036853,
+   "in": 51946,
+   "out": 3316,
+   "searches": 3,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.042752,
+   "in": 4043,
+   "out": 1329,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000992,
+   "in": 2546,
+   "out": 1475,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-23T17:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-23T14:08:35.608225+00:00",
+ "num_forecasters": 143,
+ "open_time": "2026-11-23T14:00:00+00:00",
+ "post_id": 46717,
+ "prediction": 0.2986943400660417,
+ "quality": {
+  "boost": [
+   "boost_2",
+   "boost_1"
+  ],
+  "check": null,
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46982,
+ "rationales": [
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.25,
+   "question_id": 46982,
+   "reasoning": "(a) About 38 days remain, from Nov 23 to Dec 31, 2026. The question window runs from Nov 16, so about 7 of its 46 days have already passed with no qualifying event known.\n\n(b) The status quo is No. No listed official has announced a departure, and no exit date or confirmation falls in the window.\n\n(c) No scenario: Trump keeps his cabinet through the lame-duck period. The Wiles shake-up was the post-midterm reshuffle. Lutnick survives the chip-export criticism. Officials stay on until the new Democratic Senate arrives, because replacements are hard to confirm after that. Nobody on the list leaves or announces a dated exit before Jan 1.\n\n(d) Yes scenario: Trump fires or reshuffles someone under pressure. Lutnick is the most likely candidate, and Blanche, Hegseth, Gabbard, Kennedy and others are also possible. Alternatively, a cabinet member resigns after the midterms to take a private-sector job or run for office, and the departure is dated before Jan 1. A resignation takes effect immediately, or an announcement carries a date before year-end. Trump's second term has shown more turnover in 2026, and the 24 listed positions give many chances.\n\nBase rates: in comparable post-midterm windows, 2 of 4 had a qualifying departure (1994 and 2006), and the 2014 case, an announcement without a departure, would have resolved No under these rules. The 2026 rate is about 0.36 exits per month, which implies about a 35\u201340% chance over 46 days under a Poisson model. Wiles has already left, so some of the reshuffle is probably done. Once the new Senate arrives, confirmations get harder, which favors leaving before then, but this Senate is still Republican until January 3, which also makes the lame-duck period a convenient time for departures. Trump is also reluctant to bow to pressure. Seven days have passed with no event.\n\nI estimate about 25%.\n\nProbability: 25%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.22,
+   "question_id": 46982,
+   "reasoning": "(a) About 38 days remain, from Nov 23 to Dec 31, 2026. The question window is Nov 16 to Dec 31, so 8 days of it have already passed with no qualifying departure found.\n\n(b) The status quo is No. No listed official has announced or begun a departure inside the window.\n\n(c) A No scenario: the post-midterm reshuffle is already finished (Wiles left), and Trump keeps Lutnick and the rest. A Republican Senate with a 6-vote majority could confirm replacements before January 3, but a nominee is unlikely to be named and confirmed by then. Officials who want to leave may wait until early 2027, since announcements need an exit date before Jan 1 to count. Departures announced \"upon confirmation of a successor\" count only if the successor is confirmed in time, which makes late-December exits harder.\n\n(d) A Yes scenario: Trump fires or reshuffles someone under pressure, such as Lutnick over the AI chip export controversy, or Hegseth, Gabbard, or Patel (Patel is not listed). Or a cabinet member resigns with immediate effect or a December date, for example to run for office or return to the private sector after the midterms. Past midterm-loss years show 2 of 4 had a listed departure in the window (Bentsen in 1994, Rumsfeld in 2006). Rumsfeld's departure was announced right after the election, though, and Bentsen's was a planned exit.\n\nBase rate: the second Trump term has had about 4 listed exits in 11 months, roughly 0.36 per month. Over about 38 remaining days that implies an expected 0.45 exits, or about a 35% chance of at least one. Some of that mass has already been used up by the Wiles reshuffle, and exits cluster. The list has 24 positions, which gives many chances, and the turnover in this term has been high. Announcements with no immediate effect must have a date before Jan 1, which cuts the probability somewhat.\n\nI estimate about 22%.\n\nProbability: 22%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.3,
+   "question_id": 46982,
+   "reasoning": "(a) About 38 days remain until the outcome is known (Nov 23 to Dec 31, 2026). The first week of the window appears to have passed with no qualifying exit.\n\n(b) The status quo is No. No listed official has announced a departure with an effective date before Jan 1, 2027. The Wiles exit and the Chavez-DeRemer resignation both fall before the window.\n\n(c) A No scenario: Trump keeps his remaining cabinet in place through the lame-duck period. Lutnick survives the AI chip controversy, and nobody resigns or is fired. Any announced exits take effect after Jan 1, or are tied to a successor's confirmation that does not happen in time. The incoming Democratic Senate makes replacements hard to confirm, which gives Trump a reason to hold people in place. The Wiles-to-Miller change may also have already absorbed the post-midterm shake-up.\n\n(d) A Yes scenario: Trump fires or reshuffles someone after the loss, for example Lutnick, the acting Attorney General or the Director of National Intelligence. Alternatively, an official resigns immediately, as Rumsfeld and Bentsen did in earlier post-midterm periods. This administration has had heavy turnover in 2026 (Noem, Bondi, Chavez-DeRemer, Wiles), and there are 24 positions that could produce an exit. There is also a chance that a resignation to run for office or take a private-sector job is announced with a date before year-end.\n\nHistorically, 2 of 4 comparable post-midterm periods had a qualifying departure. Turnover in this administration looks higher than usual, but the window is short, the effective date must fall before Jan 1, and the research found nothing pending. I land somewhat below the historical rate.\n\nProbability: 30%",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.33,
+   "question_id": 46982,
+   "reasoning": "**(a) Time left:** About 38 days, from Nov 23 to Dec 31, 2026.\n\n**(b) Status quo:** No. No listed official has announced or begun a departure inside the window. The exits by Wiles, Chavez-DeRemer, Noem and Bondi all came before Nov 16.\n\n**(c) No scenario:** The post-midterm shake-up stops with Wiles. Trump keeps backing Lutnick and the rest of the cabinet through the holidays. Any reshuffle waits until 2027, or is announced as \"upon confirmation of a successor,\" which would not finish before Jan 1.\n\n**(d) Yes scenario:** Trump fires or reshuffles someone in December. Lutnick is the most exposed, given the chip-export criticism; Hegseth, Gabbard or others are also possible. A second route is a resignation with immediate effect. A third is Trump using the lame-duck Republican Senate to confirm a replacement, for example a permanent AG if Blanche is only acting, before Democrats take control on Jan 3.\n\n**Rationale:**\n- **Historical base rate:** 2 of the 4 comparable post-midterm-loss periods had a qualifying departure (1994 and 2006). That suggests roughly 30\u201350% for a full 46-day window.\n- **Turnover in this term:** Four listed exits in about 11 months implies roughly 0.4 expected exits over the remaining 38 days. That converts to about a 30\u201335% chance of at least one.\n- **Push toward Yes:** A Democratic Senate from January makes future confirmations much harder. That gives Trump a real reason to move any planned changes into the lame-duck period, while Republicans can still confirm replacements quickly. Trump is also volatile in firing people, and an AG confirmation could create an exit if Blanche is acting.\n- **Push toward No:**\n  - A week of the window has already passed without an exit.\n  - Trump has publicly backed Lutnick, though that report is unverified.\n  - The obvious post-election move, Wiles, has already happened.\n  - Holiday timing tends to slow changes.\n  - The resolution rules exclude \"upon successor confirmation\" announcements unless the confirmation also happens before Jan 1.\n\nWeighing these against the status quo, I land a bit below the historical base rate.\n\nProbability: 33%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.32,
+   "question_id": 46982,
+   "reasoning": "**(a) Time left:** About 38 days, from Nov 23 to Dec 31, 2026. The outcome will be known by January 1, 2027.\n\n**(b) Status quo:** No. No listed official has left or announced a dated departure inside the window so far. Wiles (Nov 6) and Chavez-DeRemer (April) predate it, and Labor was filled by Sonderling's confirmation on Sept 30.\n\n**(c) No scenario:** The post-midterm reshuffle was front-loaded with Wiles's exit. Trump publicly backs Lutnick despite the AI chip export-control criticism. The holidays pass quietly, and any further changes are pushed into 2027, possibly with \"until a successor is confirmed\" language, as with Hagel in 2014.\n\n**(d) Yes scenario:** Trump fires or pushes out a cabinet member before year's end, with an acting official taking over. Candidates include Lutnick, or someone else at risk such as the DNI or Secretary of Defense. There is a possible incentive to act while Republicans still hold the Senate, though confirmations before Jan 3 are unlikely. Alternatively, an official announces a departure effective in December.\n\n**Rationale:**\n- **Historical base rate:** In comparable midterm losses, 2 of 4 had a qualifying departure in this window (1994 and 2006). However, that window started Nov 16 and ran its full length, while about a week has already passed here with nothing.\n- **This administration's pace:** Four listed-post exits in 2026, about 0.36 per month, implies roughly 0.45 expected exits over the remaining ~38 days. That is about a 35% chance of at least one.\n- **Upward pressure:** A wave loss, and an administration that tends to fire people abruptly, with immediate effect.\n- **Downward pressure:**\n  - The chief-of-staff change already absorbed some of the shake-up energy.\n  - Trump is publicly backing Lutnick.\n  - December holidays tend to be quiet.\n  - The rule requiring a dated or immediate exit before Jan 1 screens out \"until a successor is confirmed\" announcements.\n\nWeighting the status quo, I land a bit below the naive rate.\n\nProbability: 32%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.38,
+   "question_id": 46982,
+   "reasoning": "**(a) Time left:** About 38 days, from today (Nov 23, 2026) to the end of the window on Dec 31, 2026.\n\n**(b) Status quo:** No. No listed official has announced or begun a departure inside the window. The Wiles, Chavez-DeRemer, Noem and Bondi exits all predate November 16, and Labor is now filled by a confirmed secretary (Sonderling).\n\n**(c) No scenario:** Trump keeps backing Lutnick despite the export-control criticism, and the post-midterm shake-up stays limited to Wiles and sub-cabinet DOJ resignations. The holidays pass quietly, and any reshuffle Trump wants is pushed into 2027, or is announced with exit dates after January 1.\n\n**(d) Yes scenario:** Trump fires or pushes out a vulnerable official, effective immediately, and names an acting replacement. Lutnick is the most likely candidate, with Hegseth, Gabbard or Kennedy as others. A second route: Trump wants a replacement confirmed by the Republican lame-duck Senate before Democrats take control on January 3, so he moves someone (possibly between listed posts) in December.\n\n**Rationale:**\n- **Historical base rate:** In comparable post-midterm windows, departures happened 2 of 4 times (1994, 2006).\n- **This administration's pace:** Trump's second term has run about 0.36 listed-post exits per month in 2026. Over the remaining ~1.25 months, that implies roughly 0.45 expected exits, or about a 35% chance of at least one.\n- **Factors pushing up:**\n  - The wave loss creates pressure to find scapegoats.\n  - Lutnick is under public fire, including from a Republican senator (Cotton).\n  - The closing Republican Senate majority gives a strong reason to act before January 3.\n  - Trump tends to fire officials abruptly, which counts immediately under the criteria.\n- **Factors pushing down:**\n  - The obvious post-election move (Wiles) is already done.\n  - Trump publicly said he has confidence in Lutnick, though I could not verify that statement.\n  - Holiday-season inertia.\n  - Announcements of departures dated after January 1, or effective on a successor's confirmation in 2027, don't count.\n  - The status quo is No.\n\nWeighing these, I land a bit below even odds.\n\nProbability: 38%",
+   "research": "both",
+   "role": "member"
+  }
+ ],
+ "research": "**Rundown: U.S. high-ranking official departures, as of Nov 23, 2026**\n\n**Current state**\n\n- **White House Chief of Staff (already happened, before the window):** Susie Wiles resigned, and Stephen Miller replaced her. President Donald Trump announced on Truth Social that Chief of Staff Susie Wiles is leaving the White House on Nov. 6, 2026. Reports differ on the start date: Wiles submitted her resignation on Thursday night, November 5, and Stephen Miller will replace Wiles, effective Nov. 9. Either way, the departure and announcement both fall before the Nov. 16 window opens, so this does not count toward a Yes. Wiles is moving to the Trump Political Operation.\n- **Labor Secretary (before the window):** Labor Secretary Lori Chavez-DeRemer has resigned, as of April 20, 2026. Deputy Labor Secretary Keith Sonderling will take over the department in an acting capacity. I did not find whether a permanent Labor Secretary has been nominated or confirmed.\n- **Attorney General:** Earlier in 2026, Trump fired Pam Bondi as attorney general and Kristi Noem as secretary of homeland security. A Nov. 6 report on a Justice Department resignation attributes the statement to Attorney General Todd Blanche, which suggests Blanche currently holds the post. I did not confirm whether he is acting or confirmed.\n- **Commerce Secretary Howard Lutnick (at risk, no announced exit):** Commerce Secretary Howard Lutnick is staying put, per people briefed on the matter. A source reports President Trump said on Nov. 20 that Cotton \"is right\" but voiced confidence in Lutnick and no plans to replace him. Lutnick has spent weeks under fire over the handling of advanced AI chip export controls.\n- **Other recent lower-level exits (not on the list):** An Assistant AG for National Security, John Eisenberg, resigned Nov. 6, and an Assistant AG for Civil Rights, Harmeet Dhillon, resigned Nov. 5. Neither position is listed in the question.\n- **Context:** Wiles submitted her resignation... two days after Republicans lost control of the House and Senate. Post-midterm turnover is the backdrop.\n\n**Scheduled before Jan 1, 2027**\n\nI did not find any scheduled departure, announced effective date, or Senate confirmation vote for any listed position that falls inside the window. I also did not find any announced nomination pending for a listed post. The Maryland state cabinet departures in the search results do not count, since the question concerns federal officials.\n\n**Base rate**\n\nIn the second Trump administration, listed-position departures in 2026 include Noem and Bondi (both fired, timing not confirmed in my results), Chavez-DeRemer (April 20), and Wiles (Nov. 6). That is roughly four listed-level exits in about 10 months, or about one every 2\u20133 months, with clustering after the midterms. I did not find a systematic count of all listed-position turnover across administrations, so this estimate rests on a small sample.\n\n**How it resolves if nothing changes**\n\nIf no listed official announces or begins a departure between Nov. 16 and Dec. 31, 2026, the question resolves No. The Wiles departure and the Chavez-DeRemer resignation both predate the window and would not count. Two ambiguities could matter: (a) whether an acting official (such as Sonderling or possibly Blanche) leaving a post counts, and (b) whether a formal exit date set after Jan 1 would count if the announcement itself falls inside the window (it would not, because the date must end before Jan 1, 2027).\n\n**Limits of this search**\n\nI ran two searches. I did not verify the current Labor Secretary nomination status, whether Blanche is acting or confirmed, the exact dates of the Noem and Bondi firings, or the status of the other 20+ listed positions. My sources also include a Wikipedia list whose details I could only partly read.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Corrections to the first rundown**\n\n- **Labor is not vacant.** The Senate confirmed Keith Sonderling 47\u201341 on Sept. 30, 2026, officially installing the nominee who has been leading in an acting capacity since Lori Chavez-DeRemer's exit in April. Sonderling's acting status can no longer produce a Labor exit.\n- **Wiles's exit is dated.** Trump's Truth Social post said Miller would take over starting Monday, November 9, 2026, and Wiles's own X post said \"Today is my last day as White House Chief of Staff\" (Nov. 6). Both dates fall before the Nov. 16 window, so this is settled, not a pending exit.\n- **Noem and Bondi:** Noem was removed on March 5, 2026, and Bondi was fired on April 2, 2026. One explainer names Todd Blanche as the replacement, which fits the rundown's reading that he now leads DOJ, but I could not confirm whether he is acting or confirmed.\n\n**Base rate**\n\n- Partnership for Public Service counted 27 Senate-confirmed officials in Cabinet departments departed as of late July 2026, versus 11 in the first 18 months of the first term. That count is broader than this question's list.\n- For listed posts only, the second term had no exits in its first year: Trump's cabinet has lost four members in 2026, and the listed-post exits were Noem (March), Bondi (April), Chavez-DeRemer (April) and Wiles (November).\n- Four exits in roughly 11 months gives about 0.36 per month. Over the roughly 46 days from Nov. 16 to Dec. 31, that implies about 0.5 expected exits, but four events is a very small sample and the exits cluster.\n\n**Strongest evidence against a Yes**\n\n- The first rundown's main Yes candidate, Lutnick, has no announced exit. I did not verify the Nov. 20 Trump statement it cites, so treat that as unconfirmed.\n- Post-midterm shake-ups have already happened (Wiles), which may mean the reshuffle is done. Mulvaney had expected Wiles to leave after the midterms, so the turnover may have been front-loaded. This is an inference, not a source claim.\n- Last year's cabinet was stable for about 14 months, so the 2026 cluster may not be the baseline.\n\n**Already decided?**\n\nNo listed exit is known to be pending in the window. The Wiles and Chavez-DeRemer departures both predate it, and the Labor confirmation removes that vacancy. The only open matter I found is Blanche's status at DOJ.\n\n**Primary source**\n\nThe criteria name no single page. The relevant sources are presidential Truth Social posts and official statements. For Wiles, the Nov. 6 Truth Social post and her X post are the primary sources. I did not find a primary source for any Lutnick statement.\n\n**Not found**\n\nI did not verify Blanche's acting or confirmed status, the Lutnick Nov. 20 statement, or the status of the other listed posts (EPA, OMB, DNI, CIA, USTR, SBA, and others). I also did not find a systematic count of listed-post turnover across administrations.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-23T14:07:59.365812+00:00",
+ "scheduled_resolution_time": "2026-12-16T15:39:45+00:00",
+ "status": "forecast",
+ "title": "Will any of these high-ranking U.S. officials leave office before January 1, 2027?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "BinaryQuestion",
+ "url": "https://www.metaculus.com/questions/46717"
+}
