@@ -1,0 +1,214 @@
+{
+ "accessed_at": "2026-11-24T06:06:51.922630+00:00",
+ "close_time": "2026-11-24T09:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.193471,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.069308,
+   "in": 5662,
+   "out": 2333,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000803,
+   "in": 3504,
+   "out": 906,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.011318,
+   "in": 1794,
+   "out": 773,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.025684,
+   "in": 5662,
+   "out": 1436,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.002535,
+   "in": 20880,
+   "out": 895,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024329,
+   "in": 31666,
+   "out": 2325,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.023954,
+   "in": 25173,
+   "out": 2874,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.034744,
+   "in": 2831,
+   "out": 1171,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000796,
+   "in": 2368,
+   "out": 1119,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-24T09:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-24T06:07:48.718729+00:00",
+ "num_forecasters": 134,
+ "open_time": "2026-11-24T06:00:00+00:00",
+ "post_id": 46631,
+ "prediction": 0.4588567601688634,
+ "quality": {
+  "boost": [
+   "boost_2",
+   "boost_1"
+  ],
+  "check": [
+   {
+    "kind": "UNITS",
+    "why": "The submitted forecast is 0.459 (about 46%), but the forecaster's reasoning concludes \"Probability: 33%,\" so the stated number and the submitted value disagree in scale."
+   }
+  ],
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46891,
+ "rationales": [
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.33,
+   "question_id": 46891,
+   "reasoning": "(a) About 5.5 weeks remain until the outcome is known. The summit is Dec 14\u201315 and the window closes Dec 31.\n\n(b) The status quo is No. Lavrov has no reported Florida trip, and Russia has not named its delegation head.\n\n(c) No scenario: Putin skips Miami, citing the ICC warrant, European objections, or domestic matters. Russia then sends a lower-level delegation, such as Deputy PM Overchuk, Ryabkov, or the ambassador. Alternatively Russia participates virtually. Or Lavrov skips a leaders' summit because he already made the Atlanta trip in October.\n\n(d) Yes scenario: Putin declines to travel, but Russia sends Lavrov to lead the delegation, as in India 2023 and Bali 2022. Alternatively, Putin attends after a deal with Trump, and Lavrov accompanies him.\n\nConsiderations:\n- Lavrov led Russia's delegation at the 2022 and 2023 G20 summits, and in 2024 in Rio, where he attended in Putin's place. In 2025 in Johannesburg, Russia was represented by Deputy Chief of Staff Maxim Oreshkin, not Lavrov. So Lavrov is not automatic.\n- Lavrov did go to Atlanta for the ministerial, which shows Russia is willing to send senior people to the US.\n- Trump invited Putin, and Putin's talks with Trump were recent. A Putin trip is possible but unlikely, perhaps 15%. If he goes, Lavrov very likely comes along, at about 85%.\n- If Putin doesn't go, Lavrov might lead the delegation at about 30%. For a Trump-hosted summit with high-level US-Russia engagement, Russia might prefer a senior figure such as Lavrov, or possibly Ushakov or Oreshkin.\n\nCombining: 0.15\u00d70.85 \u2248 0.13, plus 0.85\u00d70.3 \u2248 0.25, for a total of about 0.38. That seems a bit high given the status quo and the visa and sanctions friction, so I shade it down to about 0.33.\n\nProbability: 33%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.45,
+   "question_id": 46891,
+   "reasoning": "(a) About 5 weeks remain. The G20 summit is Dec 14\u201315, and the window closes Dec 31, 2026.\n\n(b) The status quo is No. No Lavrov trip to Florida has been reported, and the Russian delegation head has not been named.\n\n(c) No scenario: Putin skips Miami, as he has since 2019, and Russia sends a lower-level delegation. That could be Deputy PM Overchuk, Maxim Oreshkin, or Russia's ambassador. Lavrov could also have just made the Atlanta trip in October and decline to repeat it. The G20 is a leaders' summit, so ministers usually go only if they accompany the leader or substitute for him. Domestic and congressional opposition and visa friction make a second trip harder. Alternatively, Putin might attend, but then Lavrov would still need to be in the party. He usually is, though not always.\n\n(d) Yes scenario: Putin declines but Russia sends Lavrov to lead the delegation, as in 2022 (Bali) and 2023 (New Delhi) and 2024? (Rio: Lavrov led). In 2025 Johannesburg, Russia sent Oreshkin, because Lavrov was not there. Alternatively, a Trump\u2013Putin rapprochement leads Putin to attend, with Lavrov accompanying him.\n\nConsiderations: Lavrov led the delegation at the 2024 Rio summit and at Bali and Delhi in 2022\u201323. In 2025 Russia sent Oreshkin to Johannesburg, because the US boycotted that summit. For a US-hosted summit, Russia would likely send high-level people. Lavrov was just in Atlanta, and Trump-era diplomacy is warm enough that Russia would want a strong presence. If Putin attends, the chance Lavrov comes is about 90%. The chance Putin attends is maybe 20%. If Putin doesn't attend, the chance Lavrov leads is perhaps 45%, since Lavrov usually represents Russia at G20 summits and Russia has taken the US-hosted event seriously, though Oreshkin and Overchuk are alternatives. That gives about 0.2\u00d70.9 + 0.8\u00d70.45 \u2248 0.54. Discounting for uncertainty and the status quo gives roughly 0.45.\n\nProbability: 45%",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.36,
+   "question_id": 46891,
+   "reasoning": "(a) About 5 weeks remain until the outcome is known. The G20 summit is Dec 14\u201315, and the window closes Dec 31.\n\n(b) The status quo is No. No Lavrov trip to Florida is scheduled or reported.\n\n(c) A No scenario: Putin skips Miami, as he has since 2019 and most recently via video. Russia sends a lower-level delegate such as Deputy FM Ryabkov, the ambassador, or Deputy PM Overchuk, or Lavrov stays home. Or the visa and sanctions friction, plus European objections, leads Russia to downgrade its delegation. A Putin visit that excludes Lavrov would also resolve No.\n\n(d) A Yes scenario: Putin declines but Russia sends Lavrov to lead its delegation. This is plausible given that Lavrov went to the G20 in Bali and Delhi, and to Atlanta in October. Or Putin attends after a Trump-Putin rapprochement and Lavrov accompanies him, which is very likely if Putin goes.\n\nWeighing the paths:\n- Lavrov attended the G20 summits in Bali (2022) and New Delhi (2023). In 2024 Lavrov went to Rio, and in 2025 Russia sent Maxim Oreshkin to Johannesburg.\n- The US-hosted event is friendlier to Russia than usual, given the Trump-Putin relationship, and Lavrov already traveled to Atlanta. That makes a Lavrov trip more plausible than a typical case.\n- Putin probably attends with perhaps 15% probability. If he does, Lavrov goes with about 85% probability.\n- If Putin doesn't attend (about 85%), Lavrov leads the delegation with about 35% probability. The alternatives include Oreshkin, Overchuk, or Medvedev-level figures, and Russia said only that the delegation would be \"high level.\"\n- Combined: 0.15\u00d70.85 \u2248 0.13, plus 0.85\u00d70.35 \u2248 0.30, for roughly 0.42.\n\nWeighting the status quo and the friction, I'll shade that down a bit.\n\nProbability: 36%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.47,
+   "question_id": 46891,
+   "reasoning": "(a) **Time left:** The summit is December 14\u201315, about three weeks away, and the window closes December 31. We will probably know Russia's delegation within one to two weeks and the outcome by mid-December.\n\n(b) **Status quo:** No Florida trip by Lavrov is announced or scheduled. Russia has not named its delegation head, and Putin is undecided. If nothing changes, this resolves No.\n\n(c) **No scenario:** Putin declines to attend, citing domestic matters. Russia sends a \"high-level\" delegation led by someone other than Lavrov, such as Maxim Oreshkin, who led the delegation to Johannesburg in 2025. Alternatively, visa or sanctions friction keeps Lavrov home.\n\n(d) **Yes scenario:** Either Putin accepts Trump's invitation and travels to Miami with Lavrov, as Lavrov accompanied him to Alaska in 2025. Or Putin stays home and Lavrov leads the delegation, as he did at Bali in 2022, New Delhi in 2023 and Rio in 2024.\n\n**Rationale:**\n\nThe case for Yes:\n- Russia has confirmed it will take part at a high level.\n- Lavrov is the default stand-in for Putin at G20 summits; he led the delegation in three of the last four years.\n- He has already obtained a US visa this autumn for the Atlanta ministerial (Oct 30\u201331), so the visa route is proven.\n- Trump personally invited Putin, and the US is not an ICC member, so the arrest-warrant concern does not apply. That makes a Putin trip plausible, and a Putin trip would almost certainly include Lavrov.\n\nThe case for No:\n- The 2025 precedent was Oreshkin, not Lavrov.\n- Putin's undecided stance, tied to \"the situation in Russia,\" hints he may stay away.\n- Lavrov is under US sanctions, and his Atlanta trip drew political objections.\n- Nothing has been announced yet, and the status quo deserves weight.\n\nMy rough paths:\n- Putin attends, with Lavrov alongside: about 20\u201325%.\n- Putin skips and Lavrov leads the delegation: about 30\u201335% of the remaining probability.\n\nTogether these put the outcome near a coin flip, shaded slightly down for the status quo and the risk of a lower-level delegation.\n\nProbability: 47%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.55,
+   "question_id": 46891,
+   "reasoning": "(a) **Time left:** The decisive event is the G20 leaders' summit in Miami on Dec 14\u201315, about three weeks away. The window runs Dec 1\u201331, so the answer should be clear by mid-December and certain by Jan 1, 2027.\n\n(b) **Status quo:** No Lavrov trip to Florida is announced. Putin is undecided, and Russia has not named who will lead its delegation. If nothing changes, the question resolves No. But Russia has committed to a \"high level\" presence at a summit inside the window, so the default course of events could easily bring Lavrov to Miami.\n\n(c) **No scenario:** Putin skips Miami, and Russia sends someone else to lead the delegation. In 2025 Russia sent Maxim Oreshkin, a deputy head of the presidential administration, to Johannesburg instead of Lavrov. Alternatively, visa or sanctions problems, or a breakdown after the Shenzhen talks, lead Russia to downgrade or skip the summit.\n\n(d) **Yes scenario:** Either Putin accepts Trump's invitation and travels to Doral with Lavrov alongside, as Lavrov was in Alaska in 2025, or Putin stays home and Lavrov leads the delegation, as he did in Bali, New Delhi and Rio.\n\n**Rationale:**\n- **Russia will show up.** It has said it will participate at a high level.\n- **Lavrov can get into the US.** He was admitted to the US for the Atlanta ministerial a month ago, so a visa is feasible despite friction and political objections.\n- **A Putin trip is plausible.** The US is not an ICC member, Putin went to Alaska in 2025, and Trump has personally invited him. I put a Putin visit at about 30%. If he goes, Lavrov very likely comes too (about 85%).\n- **If Putin stays home, Lavrov leading is roughly a coin flip.** Lavrov is the usual stand-in, but the 2025 Oreshkin precedent shows the role does not always fall to him.\n\nCombining these: 0.3 \u00d7 0.85 + 0.7 \u00d7 0.5 \u2248 0.6. I shade that down slightly for summit disruption, visa problems, and the weight of the status quo.\n\nProbability: 55%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.6,
+   "question_id": 46891,
+   "reasoning": "(a) **Time left:** The window opens December 1, 2026 and closes January 1, 2027. The deciding event is the G20 leaders' summit in Miami on December 14\u201315, so the outcome will likely be clear in about three weeks.\n\n(b) **Status quo:** No Lavrov trip to Florida is currently announced. However, Russia has said it will take part in the Miami summit \"at a high level,\" and Lavrov has led Russia's G20 delegation in most years since 2022. The status quo is ambiguous: nothing is scheduled, but the default institutional path leans toward Lavrov attending.\n\n(c) **No scenario:** Putin decides not to go, and Russia sends someone other than Lavrov to lead the delegation. In 2025 in Johannesburg, Kremlin deputy chief of staff Maxim Oreshkin led it. Alternatively, visa or sanctions friction, US political backlash, or a breakdown after the Shenzhen talks leads Russia to downgrade or skip in-person attendance.\n\n(d) **Yes scenario:** Putin attends at Trump's invitation, and Lavrov accompanies him, as he did in Alaska in 2025. Or Putin stays home and Lavrov leads the delegation to Doral, as he did in Bali (2022), New Delhi (2023) and Rio (2024).\n\n**Rationale:**\n- **Recent US access.** Lavrov just traveled to the US in October 2026 for the G20 foreign ministers' meeting in Atlanta. The visa and sanctions hurdles were cleared there, albeit at the last minute, so access is demonstrably possible.\n- **Both main paths lead to Lavrov.** If Putin goes, Lavrov is almost certainly with him. If Putin doesn't, Lavrov is the most likely delegation head, though the 2025 Oreshkin precedent shows Russia sometimes chooses someone else.\n- **The ministerial trip cuts both ways.** Having just done the ministerial, Russia might send someone else to the leaders' summit. But Lavrov attending both a ministerial and a leaders' meeting is common.\n- **Residual risks.** These include a downgraded delegation, a visa denial, collapse of the US\u2013Russia thaw, and Lavrov's health or age.\n\nPutting this together, I estimate roughly 75\u201380% that Putin attends or a Lavrov-led delegation is chosen, and then some discount for the risks above.\n\nProbability: 60%",
+   "research": "both",
+   "role": "member"
+  }
+ ],
+ "research": "**Rundown: Will Lavrov visit Florida between Nov 30, 2026 and Jan 1, 2027?**\n\n**Current state (as of Nov 24, 2026)**\n\n- **The Florida event:** The G20 leaders' summit is set for Dec. 14\u201315 at Trump National Doral Golf Club in Miami.\n- **Putin's attendance is undecided.** On Nov 24, the Kremlin said a decision on whether Russian President Vladimir Putin will attend the G20 summit in Miami has yet to be made. Peskov said on Nov 18 that the decision would depend on the outcome of Putin's talks with US President Donald Trump in Shenzhen. I did not find the outcome of that meeting.\n- **Russia's delegation is not yet set.** A Russian diplomat said Russia yet to choose head of G20 delegation, while confirming Russia will take part at a high level. I found no report naming who will lead it.\n- **Lavrov's most recent US trip was a different event.** He arrived Friday in the city of Atlanta in the US state of Georgia for the G20 foreign ministers' meeting on Oct 30\u201331. That trip is outside the question window and was not in Florida.\n- **Visa friction was reported.** Russia's foreign ministry said issues securing visas for its delegation were only resolved at the last minute.\n- **Political opposition in the US.** Some Republicans and European allies objected to the Atlanta trip. One congressman said Lavrov should not be allowed in the country.\n\n**Scheduled before close**\n\n- The only known scheduled Florida event in the window is the Dec 14\u201315 leaders' summit. I found no confirmed Florida-specific ministerial or bilateral meeting involving Lavrov in December.\n\n**Base rates and precedent**\n\n- **Putin's absence has been the norm.** Putin last attended a G20 summit in person in 2019, and he participated virtually in the 2023 summit hosted by India, while Foreign Minister Sergey Lavrov attended in person on Russia's behalf. The same pattern held in 2022 and 2023, when Lavrov represented Russia.\n- **Lavrov has been to the US several times.** He has traveled to the United States several times to attend sessions of the UN General Assembly. He also did not attend this year's UNGA? No: the source says Putin did not attend and Lavrov represented Russia instead. Lavrov was in New York for UNGA in September 2026.\n- **Travel to NATO states is rare.** Lavrov has traveled very infrequently to NATO member states since Russia invaded Ukraine in February 2022. Florida is in the US, which is a NATO member.\n\n**How it resolves if nothing changes**\n\n- If Putin does not attend and Russia sends a lower-level delegation, or Lavrov is not named to lead it, the question resolves **No**. No Florida trip by Lavrov is currently reported.\n- If Putin attends, Lavrov would likely accompany him. Historically, however, Lavrov has not always been the accompanying official at summits, so this is an inference rather than a confirmed plan.\n- If Russia sends Lavrov to lead the delegation to the Miami summit without Putin, the question resolves **Yes**. This is the main path to a Yes outcome and is not yet confirmed.\n- The Atlanta trip and any later Washington or New York trips do not count, since they are not in Florida.\n\n**What I could not find**\n\n- The outcome of the Putin\u2013Trump talks in Shenzhen.\n- Russia's named delegation head for Miami.\n- Any official confirmation of Lavrov's role in the December summit.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Already decided?** No. Nothing I found shows the outcome is settled.\n\n**Primary-source status (dated)**\n- **Kremlin, Nov 24, 2026 (TASS):** No decision yet on whether Putin attends the Miami G20. Peskov had tied it to the Shenzhen talks. A decision on whether Russian President Vladimir Putin will attend the G20 summit in Miami has yet to be made.\n- **Shenzhen, Nov 19:** The first rundown said the outcome was missing. Putin's own account is that Russia will send a high-level delegation to the December summit, but he said the situation in Russia would guide his decision on Miami.\n- **Invitation:** Trump, however, has invited Putin to attend the Miami G20.\n- **Summit dates:** The United States holds the G20 presidency and will host the leaders' summit in Miami on December 14 and 15. Those dates fall inside the window. I did not check g20.org directly.\n\n**Base rate**\n- Putin's pattern is absence. President Putin has skipped recent summits of the grouping because of an International Criminal Court warrant against him, and European members have said they do not want to share a room with him.\n- Lavrov's US trips are few. He has nevertheless visited the United States several times since then to attend U.N. General Assembly sessions. The Atlanta trip (Oct 30\u201331, 2026) was a G20 ministerial. I found no count of his Florida visits, and I found no record of any.\n- Wider context: Putin's 2025 Alaska summit was Putin's first visit to the United States since 2015.\n\n**Strongest evidence against a Yes**\n- Putin is still undecided, and his stated condition is domestic. A Putin visit is the main route to Lavrov in Florida. Without it, Russia would need to choose Lavrov to lead a Miami delegation, and nothing reported says it will.\n- Russia's wording is \"high level,\" not \"foreign minister.\" Russia's Miami delegation head has not been named.\n- Lavrov is under US sanctions, and the Atlanta trip drew objections from some Republicans and European allies. The State Department did not say whether a waiver was needed for Atlanta, so a second trip carries similar friction.\n- Lavrov's Atlanta role was a ministerial. A leaders' summit is usually led by the leader, so a Lavrov-led delegation is less likely than a Putin visit with Lavrov attending.\n\n**Errors in the first rundown**\n- The UNGA line is garbled. Its own note of uncertainty should not be taken as a finding. A Sept 2026 UNGA meeting with Rubio is reported, which does not bear on Florida.\n- The Wikipedia summit page lists Putin as Russia's leader. That is a template entry, not evidence of attendance.\n\n**Could not find**\n- The outcome of the Shenzhen talks beyond the statements above.\n- Russia's Miami delegation head.\n- Any official Florida-specific Lavrov event in December.\n- A precise count of Lavrov's US visits since 2022.\n- The g20.org official participant list.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-24T06:07:17.888616+00:00",
+ "scheduled_resolution_time": "2027-01-01T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Will Russian Foreign Minister Sergey Lavrov visit Florida in December 2026?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "BinaryQuestion",
+ "url": "https://www.metaculus.com/questions/46631"
+}
