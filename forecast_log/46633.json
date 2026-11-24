@@ -1,0 +1,214 @@
+{
+ "accessed_at": "2026-11-24T15:00:50.688206+00:00",
+ "close_time": "2026-11-24T18:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.207656,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.07996,
+   "in": 5240,
+   "out": 2950,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000995,
+   "in": 3249,
+   "out": 1340,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.015492,
+   "in": 1836,
+   "out": 1182,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.02369,
+   "in": 5240,
+   "out": 1321,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.002491,
+   "in": 20164,
+   "out": 948,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024867,
+   "in": 36451,
+   "out": 2444,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024448,
+   "in": 25289,
+   "out": 3838,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.03492,
+   "in": 2620,
+   "out": 1222,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000793,
+   "in": 2227,
+   "out": 1140,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-24T18:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-24T15:02:00.825777+00:00",
+ "num_forecasters": 1,
+ "open_time": "2026-11-24T15:00:00+00:00",
+ "post_id": 46633,
+ "prediction": 0.3475380571918916,
+ "quality": {
+  "boost": [
+   "boost_1",
+   "boost_2"
+  ],
+  "check": [
+   {
+    "kind": "UNITS",
+    "why": "The submitted forecast is 0.3475 (34.75%), but the reasoning and the stated probability give 27% (within 25\u201330%), so the number on the scale does not match the reasoning."
+   }
+  ],
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46893,
+ "rationales": [
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.27,
+   "question_id": 46893,
+   "reasoning": "(a) About 5 weeks remain (Nov 24 to Dec 31, 2026). The constitutional bar on dissolution lifts around Dec 2, which leaves about 4 weeks in which a decree could be issued.\n\n(b) Status quo: no dissolution decree is issued, the Assembly stays in place under Sonko's presidency, and the question resolves No.\n\n(c) No scenario: Faye avoids dissolving. He has the budget-by-decree route and may prefer to keep fighting Sonko through other means. He may want to set the local election date first, or pair dissolution with the local elections later in 2027. Risks such as losing a snap election to PASTEF, which holds 130 of 165 seats and controls the party machinery, could deter him. His last official statement (Sept 24) said no date was set. A decree after Dec 31 also resolves No.\n\n(d) Yes scenario: The budget standoff continues, with the Assembly rejecting the 2027 budget and possibly a censure motion. Once the two-year bar lifts on Dec 2, Faye consults the Assembly president and others and signs a decree in December, setting elections for February\u2013March 2027. He would do this to break PASTEF's control of the Assembly, and he could argue that the deadlock makes governing impossible.\n\nAssessment: The conflict is severe. The Assembly has rejected the budget and PASTEF has expelled Faye, so dissolution is a live option. Faye also dissolved the Assembly in 2024 as soon as it was legally possible. However, a dissolution would put him in a head-to-head election against Sonko, who has a strong base. He has other tools, including budget decrees. Timing is tight, and the legal analysis that he must set the local election date first adds friction. Faye might also prefer to wait for a stronger moment, or might not have a party apparatus ready, since he has just been expelled from PASTEF. Because the Assembly can obstruct him heavily, I put the chance of a decree in December at roughly 25\u201330%.\n\nProbability: 27%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.27,
+   "question_id": 46893,
+   "reasoning": "(a) About 5 weeks remain (Nov 24 to Dec 31, 2026). The legal bar on dissolution lifts around Dec 2, so the effective window is about 4 weeks.\n\n(b) Status quo: no dissolution decree is issued, and the Assembly stays in place under PASTEF and Sonko with Faye governing the budget by decree. This resolves No.\n\n(c) No scenario: Faye weighs the political costs. A snap election would pit him against Sonko's PASTEF machine, which holds 130 of 165 seats and could win again, leaving him weaker. He may prefer to keep governing by decree, align legislative elections with local elections, or wait for a clearer trigger such as a censure motion or the 2027 budget deadlock. He said in September that no date was set. Minister Camara said Faye is not obliged to dissolve. A commentator argues he must first set the local election date. A decree could also slip into January 2027 or later. Article 52 may be an obstacle too.\n\n(d) Yes scenario: Right after Dec 2, Faye decides the standoff is unworkable. The Assembly rejected the budget and PASTEF expelled him from the party, so he issues a dissolution decree in December and sets elections for Feb\u2013Mar 2027. He would hope to build a new majority, as he did in 2024. The openly discussed December option and opposition calls for it support this.\n\nWeighing the two: the crisis is severe, and Faye has a clear motive and a legal opening. Dissolving in 2024 worked for him, but then he had Sonko's party behind him, and now PASTEF is hostile and likely to win again. The dissolution would also need to come quickly, within the first 4 weeks after the bar lifts. Governing by decree is working for now, and a possible 2027 budget deadlock gives him an alternative trigger. The Assembly already rejected the first part of the 2027 budget, so further deadlock could come in December, which might push him to act. I put this at roughly 25\u201330%.\n\nProbability: 27%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.42,
+   "question_id": 46893,
+   "reasoning": "(a) About 5 weeks remain until the outcome is known, from Nov 24 to Dec 31, 2026. The legal bar on dissolution lifts around Dec 2, so the effective window is about 4 weeks.\n\n(b) The status quo is No. The Assembly stays in place, under PASTEF control and led by Sonko. No decree exists today, and the president is legally barred until about Dec 2.\n\n(c) **No scenario:** Faye is wary of a proxy election against Sonko, whose party holds 130 of 165 seats and has a strong base. He keeps governing by decree on the budget, negotiates, or waits into 2027 for a more favorable moment, perhaps pairing legislative and local elections. The Article 52 emergency-powers question and the political costs also push him toward delay. The Assembly's stance on the budget would not by itself force a decision before year-end.\n\n(d) **Yes scenario:** Faye is locked in open conflict with a hostile supermajority. It has rejected his budgets, expelled him from PASTEF, and could threaten censure or impeachment. He decides dissolution is the only way to break the deadlock and regain a governing majority. He issues a decree in early or mid December, after consulting the Assembly president and the Prime Minister, and sets elections for Feb\u2013Mar 2027. His September 2024 dissolution came within days of the bar lifting, which shows he will act fast when he has an incentive.\n\nWeighing the two, the conflict and the defensive value of dissolution are strong. The short window and the status quo bias favor waiting. I put the chance slightly below even.\n\nProbability: 42%",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.4,
+   "question_id": 46893,
+   "reasoning": "(a) **Time left:** About 5 weeks, until December 31, 2026. Dissolution is legally possible only from about December 2, so the effective window is roughly 4 weeks.\n\n(b) **Status quo:** No dissolution. No decree exists, Faye is legally barred until about December 2, and his last official word (September 24) was that no date had been set.\n\n(c) **No scenario:** Faye waits. He might handle the 2027 budget by decree or ordinance, as he did with the revised 2026 budget, while he builds a coalition able to compete with Sonko's PASTEF. He might also wait to set the local-election calendar first, or simply judge that a snap vote now would hand Sonko a renewed majority. Dissolution then slips into 2027 or never happens.\n\n(d) **Yes scenario:** The conflict is acute. The Assembly rejected the revised 2026 budget and the first part of the 2027 budget, PASTEF expelled Faye on November 17, and Sonko presides over a 130-seat bloc. Faye signs a dissolution decree soon after December 2, setting legislative elections for February or March 2027, possibly alongside the overdue local elections he has already floated pairing them with. An escalation by the Assembly, such as an impeachment move or blocking all legislation, would speed this up.\n\n**Rationale:**\n\nArguments for Yes:\n- This is a direct executive\u2013legislative war with a hostile supermajority.\n- The constitutional bar lifts inside the window.\n- Dissolution is openly discussed in Dakar.\n- Faye has already shown willingness to dissolve (September 2024) and to bypass the Assembly by decree.\n- The 60\u201390 day election rule fits an early-2027 vote, which could be paired with local elections.\n\nArguments for No:\n- Dissolving risks a proxy election that Sonko could win, leaving Faye worse off.\n- Faye can keep governing by decree on the budget, which reduces the urgency.\n- A minister has said December 2 is not binding and the president is not obliged to dissolve.\n- One legal analysis argues the local-election date must be set first, and none has been set.\n- Only about four weeks remain, and status-quo inertia is strong.\n- The Article 52 emergency-powers question is unverified.\n\nWeighing these, I put the odds slightly below even.\n\nProbability: 40%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.38,
+   "question_id": 46893,
+   "reasoning": "(a) **Time left:** About 5 weeks, from November 24 to December 31, 2026. Dissolution is legally barred until about December 2, so the real window is roughly December 2\u201331, about four weeks.\n\n(b) **Status quo:** No dissolution. No decree exists, and Faye's last official statement (September 24) said no date had been set. If nothing changes, the question resolves No.\n\n(c) **No scenario:** Faye keeps governing around the PASTEF-controlled Assembly. He enacts budgets by decree or ordinance, as he did with the revised 2026 budget, and absorbs any censure motions. He delays dissolution into 2027, perhaps so that it lines up with a local-election date that has not yet been fixed. Or he avoids it entirely, fearing that a snap election would return a Sonko-led majority and strengthen his rival.\n\n(d) **Yes scenario:** Soon after December 2, with the 2027 budget rejected and governing deadlocked, Faye consults Sonko (as Assembly president) and the prime minister. He then signs a dissolution decree setting legislative elections for February\u2013March 2027, possibly paired with local elections.\n\n**Rationale:**\n- **Pressure toward Yes:**\n  - The conflict between the presidency and the Assembly is severe. The Assembly rejected the revised finance law 109\u201320 and threw out the first part of the 2027 budget. Faye bypassed it by decree, and PASTEF expelled him.\n  - Dissolution is openly discussed in Dakar as soon as the bar lifts, and opposition figures are urging it.\n  - Faye has already shown he is willing to dissolve as soon as he legally can (September 2024).\n  - His referral in July on pairing legislative and local elections suggests he is planning for this. Local mandates expire around January 2027, which fits a December decree and a vote in early 2027.\n- **Reasons for restraint:**\n  - PASTEF and Sonko are likely more popular than Faye's new, unformed political base, so a snap election could backfire.\n  - Faye can keep governing by decree on budget matters.\n  - His ministers say December 2 is not binding.\n  - There may be legal sequencing issues, such as setting the local election date first, and an unverified possible Article 52 constraint.\n  - The window is short. Holiday timing and procedural steps could easily push a decision into January.\n- **Weighing:** The base rate, the status quo and Faye's caution push toward No. The intensity of the crisis and the timing alignment make December a live possibility. I put it somewhat below even odds.\n\nProbability: 38%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.42,
+   "question_id": 46893,
+   "reasoning": "**(a) Time left:** About 5 weeks, until December 31, 2026. The real window is about 4 weeks, because Article 87 bars dissolution until roughly December 2, 2026.\n\n**(b) Status quo:** No. No dissolution decree exists, the legal bar is still in force, and Faye's last official word (September 24) was that no date has been set.\n\n**(c) No scenario:** Faye keeps governing around the hostile Assembly by decree, as he did with the revised 2026 budget. He may also use constitutional provisions to put the 2027 budget into force if the Assembly fails to act. He delays dissolution to line legislative elections up with postponed local elections later in 2027. He may also hold back because a snap election could hand Sonko's PASTEF a fresh mandate and a cohabitation, which would leave him weaker. Faye's ally, Minister Boubacar Camara, has already signaled that December 2 is \"not binding.\"\n\n**(d) Yes scenario:** Once the bar lifts on December 2, Faye signs a dissolution decree within weeks, setting elections for February\u2013March 2027. Several pressures push him this way:\n- The budget standoff is escalating, with the Assembly having rejected both the revised 2026 budget and the first part of the 2027 budget.\n- PASTEF has expelled Faye from the party.\n- The Assembly could escalate further. PASTEF's 130 seats exceed the 3/5 threshold (99 seats) needed to indict the president for high treason.\n- Faye acted at the earliest legal opportunity in September 2024, which suggests he is willing to move fast again.\n\n**Rationale:** The conflict is severe, and dissolution is openly discussed in Dakar. Opposition figures are urging it, and the Presidency's spokesman has explicitly framed December 2 as the date the option opens. Faye's September 2024 dissolution came right at the first permissible moment, which is the most relevant precedent. Against this:\n- Dissolution carries a real risk of strengthening Sonko.\n- Faye has workarounds through budget decrees.\n- One legal analysis argues the local election date must be set first.\n- The window is short, and the status quo deserves weight.\n\nI put the probability somewhat below even.\n\nProbability: 42%",
+   "research": "both",
+   "role": "boost"
+  }
+ ],
+ "research": "**Rundown: Senegal National Assembly dissolution before January 1, 2027**\n\n**Current state (as of Nov 24, 2026)**\n- The Assembly has 165 seats. PASTEF holds 130 of them, and Ousmane Sonko has presided over the Assembly since May 2026.\n- The split began when President Faye dismissed Prime Minister Ousmane Sonko and dissolved his cabinet on May 22. Sonko was elected president of the Assembly on 26 May with 132 of the 133 votes cast, in a vote boycotted by the opposition.\n- Budget standoff: Deputies rejected the revised finance law on November 3 by 109 votes to 20. Faye then put the revised 2026 budget into force by decree, bypassing the Assembly. The decree was signed November 19 and announced around November 20\u201321. The Assembly had also thrown out the first part of the 2027 budget a day earlier.\n- On November 17, PASTEF struck Faye and 31 others off its membership rolls.\n- Dissolution talk: Multiple outlets say the power opens in early December. One says from December 2 the president will hold the constitutional power to dissolve the Assembly, an option now openly discussed in Dakar. Earlier, in July, President Faye referred to the Constitutional Council the possibility of pairing legislative and local elections. Opposition figure Talla Sylla has publicly urged dissolution in December 2026.\n- I found no official announcement or decree of dissolution as of today.\n\n**Legal constraint and timing**\n- Article 87 is the dissolution clause. The president may dissolve the Assembly by decree after hearing the prime minister and the Assembly's president, but dissolution cannot happen during the first two years of a legislature.\n- The current legislature opened on December 2, 2024, so the bar lifts on about December 2, 2026. The Presidency's spokesman has said dissolution stays barred until around that date. Sources differ slightly on the exact day: Carnegie says \"until at least December 2026,\" and Brookings says \"November 2026.\" The most specific sources point to December 2.\n- The Constitution also bars dissolution while emergency powers are in use, under Article 52. The Presidency spokesman argues Article 52 does not block dissolution. I did not verify whether any emergency powers are currently in force, so this is an open point.\n- Election timing: a dissolution decree must set the election between 60 and 90 days after its publication. A decree in December would therefore put elections roughly in February\u2013March 2027. Deputies keep their mandates until the new Assembly's election is proclaimed.\n- The 2-year bar ends December 2, which leaves about four weeks (December 2\u201331) in the window. Any dissolution before year-end would need to happen in that span.\n\n**Scheduled events before the window closes**\n- I did not find a confirmed date for the dissolution decision or for the local elections. One source says local elections are \"looming,\" but I found no date.\n- I did not find the 2027 budget timetable. This matters because a budget deadlock is the main stated driver of dissolution talk.\n\n**Base rates**\n- Faye dissolved the Assembly once before, on September 12, 2024, calling snap elections for November 17, 2024. That dissolution came after the required waiting period and was tied to a push for a stronger mandate. A move that pairs dissolution with local elections would be rare, if not unprecedented, in Senegal.\n- Commentators also note the political costs. One analysis argues that an election that follows dissolution would pit Faye against Sonko in a proxy battle.\n\n**Resolution if nothing changes**\n- If no dissolution decree is issued by December 31, 2026, the question resolves No. Faye is legally barred until about December 2, and nothing I found shows a decision has been made.\n- A Yes would need a formal decree (signed and published, or otherwise formally issued) between about December 2 and December 31. Credible sources would need to report it. Some ambiguity could arise if a decree is signed in late December but published in January.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Base rate.** Since the 2001 constitution, I found two dissolutions. Wade dissolved the assembly after the new constitution was approved, before the April 2001 election (President Wade dissolved the assembly and, following new elections, his coalition controlled 89 of 120 seats.). Faye's dissolution came on 12 September 2024. That is two in about 25 years, or under 1% per month on this record. I did not verify the Sall-era record, and the current crisis makes the conditional rate much higher than the unconditional one.\n\n**Primary source.** I did not reach the Journal officiel or the Presidency site, so I have no first-hand decree check. The latest decree I found is No. 2026-2416 of 19 November, which put the revised budget into force. Pastef's resolution against it was filed on 20 November and was examined on Tuesday 24 November by the Finance and Laws committees. Faye's latest dissolution statement dates from 24 September, when he said there is no date set for dissolving the National Assembly or for holding elections on any particular date.\n\n**Already decided?** Nothing I found indicates this. The legal bar runs until 2 December, and the Presidency's stance is that nothing has been fixed. No dissolution decree has been reported.\n\n**Strongest evidence against a Yes:**\n- Faye's September statement above, which is the last official word I found.\n- Minister Boubacar Camara said 2 December is not binding on Diomaye Faye, and that the president is not obliged to dissolve.\n- One legal analysis argues Faye must first set the local election date before signing a dissolution decree (a legal analysis considers he must first set the date of the local elections before signing a dissolution decree). This is a single commentator, and I could not confirm it against the text.\n- The timing is tight. Article 87 requires voting 60 to 90 days after publication (the ballot takes place at least sixty days and at most ninety days after publication). A decree signed in December therefore points to a vote in early 2027, and only about four weeks of the window remain.\n- Article 52 bars dissolution while exceptional powers are in use (The National Assembly may not be dissolved during the exercise of the exceptional powers.). I did not check whether any such powers are in force.\n\n**Not found:** any decree, any local election date, the 2027 budget timetable, and the Sall-era dissolution record.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-24T15:01:23.496736+00:00",
+ "scheduled_resolution_time": "2027-01-01T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Will Senegal's National Assembly be dissolved before January 1, 2027?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "BinaryQuestion",
+ "url": "https://www.metaculus.com/questions/46633"
+}
