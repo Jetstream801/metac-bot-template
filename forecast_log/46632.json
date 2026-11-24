@@ -1,0 +1,209 @@
+{
+ "accessed_at": "2026-11-24T12:12:58.635329+00:00",
+ "close_time": "2026-11-24T15:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.211928,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.0777,
+   "in": 5960,
+   "out": 2693,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001108,
+   "in": 3584,
+   "out": 1500,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.009476,
+   "in": 1998,
+   "out": 548,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.02551,
+   "in": 5960,
+   "out": 1359,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.00253,
+   "in": 20032,
+   "out": 1054,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.02577,
+   "in": 35176,
+   "out": 4505,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.025126,
+   "in": 23790,
+   "out": 5495,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.04364,
+   "in": 2980,
+   "out": 1586,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001068,
+   "in": 2520,
+   "out": 1631,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-24T15:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-24T12:14:27.764464+00:00",
+ "num_forecasters": 242,
+ "open_time": "2026-11-24T12:00:00+00:00",
+ "post_id": 46632,
+ "prediction": 0.07238485350906186,
+ "quality": {
+  "boost": [
+   "boost_1",
+   "boost_2"
+  ],
+  "check": null,
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46892,
+ "rationales": [
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.04,
+   "question_id": 46892,
+   "reasoning": "(a) About 5 weeks remain (Nov 24 to Dec 31, 2026).\n\n(b) The status quo is No. No sitting governor, senator, House member, or cabinet member has declared or filed a 2028 Form 2, and none has a scheduled announcement.\n\n(c) A No scenario: the major contenders wait until 2027 or later, as is typical. Newsom, Shapiro, Pritzker and others focus on reelection, on governing, or on their post-midterm book tours. Any launches come in the spring or summer of 2027 or later, and the Form 2 filings fall in 2027.\n\n(d) A Yes scenario has two paths:\n- A little-known sitting House member files a Form 2 quietly. Some fringe members of Congress have filed in odd ways, and a Form 2 filed by a sitting member could go unnoticed by the press.\n- A major figure launches early in December. This is unlikely, since the earliest major launches in recent cycles came after the midterms, such as Delaney in July 2017 and Trump in Nov 2022, and Trump has already served two terms.\n\nTrump is not a sitting governor, senator, house member, or cabinet member, so he does not count. The FEC records also include many frivolous filers. Among sitting members of Congress, a filing this early is rare. Even Delaney (a sitting House member) launched in July 2017, which was 2.5 years before the 2020 election. Launching in Dec 2026 would be 2 years before the Iowa caucuses, so it is conceivable but unlikely. Some Democrats might feel pressure to move early, but the DNC calendar is not yet set. The probability is about 4%.\n\nProbability: 4%",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.05,
+   "question_id": 46892,
+   "reasoning": "(a) About 5 weeks remain, until Dec 31, 2026.\n\n(b) The status quo is No. No major candidate has declared, and no sitting governor, member of Congress, or cabinet member has filed a 2028 Form 2 that anyone has found.\n\n(c) A No scenario: potential candidates wait until early-to-mid 2027, after the holidays and after the midterm fallout settles. Anyone who does announce in late December files the Form 2 in January, or only forms an exploratory committee. The most-cited figures (Kennedy, Hawley) say they plan to run for reelection or have ruled out a run. The Dec 31 window passes with no qualifying filing.\n\n(d) A Yes scenario: a lesser-known sitting House member or senator quietly files a Form 2 for 2028. This could be a gadfly in the mold of a member who wants attention, or a long-shot Democrat looking to build early name recognition. A sitting governor or senator could also launch early after the midterms. Any member of Congress could file, and with 535 members plus 50 governors plus the cabinet, a fringe filing is possible. Such a filing could go unnoticed by the press. The research assistant's third-party tracker showed none among 446 filers as of September, which suggests that this is rare.\n\nHistorically, sitting officials rarely file a formal Form 2 before the year after the midterm. Even in 2006, Vilsack and Bayh were announcements and exploratory committees, and exploratory committees generally don't require a Form 2. Vilsack, then a sitting governor, did formally declare in November 2006, but that cycle was unusually early and he was a lame duck. In 2026 there is no comparable early mover so far. The Trump-era dynamics and the 2028 open field could accelerate things, but the major names have mostly signaled they will wait. The risk of an obscure filing is perhaps 4-5%, plus a small chance of an early formal launch.\n\nProbability: 5%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.06,
+   "question_id": 46892,
+   "reasoning": "(a) About 5 weeks remain, until Dec 31, 2026.\n\n(b) The status quo is No. No sitting governor, member of Congress, or cabinet member has filed a 2028 presidential Form 2, and no major candidate has declared.\n\n(c) A No scenario: potential candidates wait until after the holidays and into 2027, as is typical. Announcements come in January through spring 2027 or later. Anyone who declares in December files within 15 days, which would fall in January. Sitting officials such as Kennedy and Raskin stay noncommittal or focus on reelection.\n\n(d) A Yes scenario: a lesser-known sitting House member or senator quietly files a Form 2, or a sitting official announces in December and files immediately. This is unlikely given the historical pattern. Exploratory committees also do not require a Form 2. One caveat is that a sitting member could file a Form 2 as a stunt or for a long-shot run. Some House members with few prospects, or a fringe member, could do so. The third-party tracker reportedly showed none among 446 filers as of September.\n\nThe base rate for candidates formally declaring in the midterm year is under 6%. For sitting officials filing a Form 2 specifically by Dec 31, it is lower still. The first major candidate in the 2020 cycle was John Delaney, a former House member, who declared in 2017. Andrew Yang filed in 2017 but was not in office. In 2020, Warren formed an exploratory committee on Dec 31, 2018, but that was not a Form 2. In 2006, Vilsack formally declared in November 2006, and Vilsack was a sitting governor then. So precedent exists, though it is rare.\n\nFor 2028, the field is large, but most of the major figures are waiting. Newsom's term ends in January 2027, so he would have been a sitting governor until then, but he has said he'd decide after the midterms. He could possibly announce in December, but most likely he will wait until 2027. The chance of a quiet Form 2 from someone odd is small but real, and resolution depends on checking the FEC list. The chance of an unnoticed filing is maybe 3\u20134%, and the chance of a major early declaration is about 3%.\n\nProbability: 6%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.09,
+   "question_id": 46892,
+   "reasoning": "(a) **Time left:** About five weeks. The question resolves on December 31, 2026, and today is November 24, 2026.\n\n(b) **Status quo:** No. Through late November, no sitting governor, senator, House member or cabinet member has filed a 2028 presidential Form 2. The last officeholder count I have (September 2026) found none among roughly 446 filers, and trackers still say no major-party candidate has declared.\n\n(c) **No scenario:** Prospective candidates such as Newsom, Shapiro, Pritzker, Moore, Booker, Gallego and AOC follow the modern pattern. They wait until after the holidays, typically January to spring 2027, to set up exploratory committees or declare. Anyone who announces late in December files Form 2 in January, which doesn't count.\n\n(d) **Yes scenario:** A lower-profile sitting member files Form 2 in December to get ahead of a crowded, wide-open Democratic field. Possible examples are a House member like Ro Khanna, or a governor term-limited out in January. Precedents for this kind of move:\n- John Delaney filed in July 2017 as a sitting congressman.\n- Gov. Tom Vilsack filed in November 2006.\n- Sen. Elizabeth Warren formed her committee on December 31, 2018.\n\n**Rationale:**\n- **Base rate:** Looking at the post-midterm window in recent cycles, a sitting officeholder filed early in 2006 and 2018. None did in 2010, 2014 or 2022, and 2002 is unclear. That puts the rough per-cycle base rate at 30\u201340%.\n- **Trend:** The two most recent comparable cycles were split, and early movers usually show signals well before filing. None are visible here.\n- **No signals so far:** Three weeks after the midterms, there are no leaks, no scheduled announcements and no exploratory moves among eligible officials.\n- **Timing:** The remaining window is short and covers the holidays.\n- **Form 2 mechanics:** The filing lag means a December announcement could easily slip into January.\n- **Residual risk:** There is a small chance a quiet filing has already happened, since my officeholder check is stale and third-party.\n\nWeighting the status quo heavily, I land well below the historical base rate.\n\nProbability: 9%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.07,
+   "question_id": 46892,
+   "reasoning": "(a) **Time left:** About 5 weeks. The window closes December 31, 2026, and it spans the holiday season.\n\n(b) **Status quo outcome:** No. As of November 23, no major-party candidate has formally declared. A September snapshot of the roughly 446 FEC presidential filers showed no sitting governor, member of Congress, or cabinet member. The most-discussed sitting officials are either seeking reelection or have ruled out a run.\n\n(c) **No scenario:** The post-midterm period passes with only \"listening tours,\" book promotion and positioning. Serious contenders such as Newsom, Shapiro, Pritzker, Moore, AOC and Booker wait until early-to-mid 2027, as is typical now. A late-December announcement or exploratory committee would trigger a Form 2 only in January, outside the window.\n\n(d) **Yes scenario:** A lesser-known sitting House member or long-shot governor tries to get ahead of the field, as Vilsack did in November 2006 or Delaney did in 2017. They announce in December and file Form 2 right away to make it official.\n\n**Rationale:**\n- **Historical precedent:** Sitting officials have occasionally moved early.\n  - In 2006, Vilsack filed papers within days of the midterm.\n  - In 2017, Delaney filed while still a sitting House member.\n  - Warren's exploratory committee dates to December 31, 2018, but exploratory, \"testing the waters\" committees often don't involve a Form 2.\n  - The 2010, 2014 and 2022 cycles produced no such filing in the comparable window.\n- **Conditional base rate:** These early movers usually acted right after the midterms or much earlier. This cycle, three weeks have already passed since the midterm with no move. Conditional on that, the chance of a filing in the remaining five holiday-heavy weeks is small.\n- **Field dynamics:** Being first offers some incentive in an open Democratic field, and a fringe House member could file quietly. But no reporting suggests one is imminent.\n- **Resolution risk:** Third parties sometimes file Form 2s in politicians' names without their consent. Those shouldn't count, but they add a little uncertainty about how the question gets resolved.\n\nProbability: 7%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.13,
+   "question_id": 46892,
+   "reasoning": "**(a) Time left:** About five weeks, from November 24 to December 31, 2026. Any Form 2 filed after that does not count.\n\n**(b) Status quo:** No. As of November 23, no major-party candidate has declared. A September tracker found no sitting governor, member of Congress or cabinet member among the 446 presidential filers.\n\n**(c) No scenario:** Prospects such as Newsom, Shapiro, Pritzker, AOC, Booker and Gallego follow the modern norm. They wait until after the holidays, mostly into spring 2027. Some may announce in late December, but the 15-day FEC window pushes their Form 2 into January.\n\n**(d) Yes scenario:** A sitting official moves before year-end and files a Form 2 by December 31. Precedents:\n- Warren formed her exploratory committee on December 31, 2018.\n- Kucinich announced in December 2006, and Vilsack moved as a sitting governor in November 2006.\n- Kerry formed an exploratory committee in December 2002.\n\nAlternatively, a lesser-known House member or a lame-duck governor files quietly to get attention early.\n\n**Rationale:**\n- **Historical rate:** In open, competitive cycles, roughly 2002, 2006 and 2018 each saw a sitting official move in the post-midterm December window. 2010, 2014 and 2022 did not, though those cycles each had an incumbent president running for reelection. That suggests a base rate of about 30\u201340% for an open Democratic field.\n- **Discounts:** Several of those moves were exploratory or announcement-stage, and I couldn't confirm a qualifying Form 2 before December 31 for each. Recent cycles also show a trend toward later launches. Smart Politics finds fewer than 6% of candidates announce in the midterm year. With three weeks of the window already gone, there are no public signals of an imminent filing. The frequently mentioned officials are deflecting or say they plan to seek reelection.\n- **Upside:** The Democratic field is large and many lower-profile House members could seek attention, so a quiet filing is plausible. The officeholder count is also stale (September), so a filing could have been missed.\n\nWeighting the status quo heavily, I land around 13%.\n\nProbability: 13%",
+   "research": "both",
+   "role": "member"
+  }
+ ],
+ "research": "**Rundown: Will a sitting US governor, senator, House member, or cabinet member file an FEC Form 2 for 2028 before 2027?**\n\n**Current state (as of Nov 24, 2026)**\n- No major candidate has formally declared. One source says as of November 8, 2026, no major candidate has formally declared for the 2028 presidential election. A later tracker says as of November 23, 2026, no major-party candidate has formally declared a 2028 presidential campaign.\n- Minor declared candidates exist. One is a TV writer, Dan Greaney, who announced his intention to run for president in 2028 on his Instagram account on May 26, 2026 and filed paperwork to run on September 21. He does not meet the question's criteria. A separate tracker lists a long-shot candidate who formally announced and filed paperwork, also not a sitting official as far as I can tell.\n- Sara Duterte announced a 2028 run on February 18, 2026, but she is Philippine, so she is irrelevant here.\n- Among eligible officials, I found only speculation, not filings:\n  - Sen. John Kennedy (R-La.) said Nov. 2026 that \"My plan, right now, is to run for reelection.\" He added that if he gets \"really fed up\" he could run, but \"it's not likely.\"\n  - Rep. Jamie Raskin (D-Md.) did not rule out a run. He said he would \"do whatever it takes\" if his party wanted him to.\n  - Sen. Josh Hawley explicitly ruled out a presidential campaign in 2028 in September 2026, though he has since reappeared in discussions.\n  - Many others are described as likely or possible (e.g., Newsom, Shapiro, AOC, Whitmer, Booker, Pritzker, Moore, Gallego), but I found no evidence that any has filed.\n- I could not confirm whether any sitting member has already filed a 2028 Form 2. One source says 502 people have filed with the FEC so far for president, but I could not check that list for sitting officials. The 2028tracker candidate page also appears garbled, with some office labels attached to the wrong names, so I would not rely on it for officeholder status.\n\n**Scheduled before the window closes**\n- The window effectively runs from now to Dec 31, 2026, about five weeks. I found no scheduled declaration event, announcement, or deadline in that window.\n- The midterms were on November 3, and the earliest DNC milestone I found is a January 16 deadline for states applying to the early window, which falls outside the window.\n\n**Base rates and timing**\n- Timing: In the last three cycles the first big campaigns launched one week to four and a half months after the midterms. That suggests the first major launches could fall in this window, but those were typically not sitting officials filing Form 2 at year-end.\n- Year-end precedent: Sen. Elizabeth Warren's exploratory committee dates to December 31, 2018, which shows a sitting senator has organized right at year-end. I did not verify whether that was a Form 2 filing, and an exploratory committee is not automatically a candidacy filing.\n- Other precedents (e.g., sitting senators announcing in 2015 for the 2016 race) come from my own memory, not from sources I retrieved, so treat them as unverified.\n- The FEC rule matters for timing: a candidate must file Form 2 within 15 days after an individual becomes a candidate, meaning after raising or spending over $5,000. A declaration announced in December could therefore produce a Form 2 filed in January 2027, which would not count.\n- Senators up in 2028 who file for their Senate seat do not count. The question requires a 2028 presidential filing.\n\n**Resolution if nothing changes**\n- With no eligible sitting official filing a 2028 presidential Form 2 by Dec 31, 2026, the question resolves No. The status quo points that way: no major candidate has declared, the most cited sitting figures say they plan to seek reelection or have ruled out a run, and I found no scheduled event that would trigger a filing before year-end.\n- The main way to get a Yes is a quiet early Form 2 from a lesser-known sitting member, which news coverage might miss. Verifying that would require checking the FEC's Form 2 records for filings dated on or before Dec 31, 2026.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Base rate**\n- Less than six percent of presidential candidates announced their campaigns during the year of the preceding midterm or earlier, per Smart Politics (Nov. 15, 2026).\n- The closest analogue is 2006. Iowa Gov. Tom Vilsack, then sitting, announced his intention to run the week of the 2006 midterms and made it official by the end of November. Sen. Evan Bayh announced the formation of an exploratory committee on December 1, then withdrew on December 16. Rep. Dennis Kucinich announced plans to run in a report by the Associated Press on Dec. 11.\n- In 2002, Sen. John Kerry declared he was creating an exploratory committee in early December.\n- Warren's Dec. 31, 2018 exploratory committee comes from the first rundown and I did not verify it.\n- So in at least three cycles (2002, 2006, 2018), a sitting official moved within roughly the post-midterm window. I did not check 2010 or 2014 systematically.\n- Caveat: these were mostly announcements or exploratory committees. I did not confirm that any was a Form 2 filing.\n\n**Primary source**\n- Resolution rests on FEC Form 2 filings. I could not access the FEC's live list.\n- A third-party tracker says 446 people had filed 2028 presidential committees as of Sept. 22, 2026, and none is a sitting member of Congress, a governor, or a current or former cabinet official. That snapshot is two months old and not a primary source.\n- A 2028 presidential Form 2 from a non-officeholder is dated Nov. 25, 2025, so the FEC is recording 2028 filings.\n- The 2028tracker page, dated Nov. 23, 2026, says no major-party candidate has formally declared a 2028 presidential campaign.\n\n**Strongest evidence against a Yes**\n- The base rate is low: under 6% of candidates announced by the midterm year. Most launches fall after the window.\n- The window is about five weeks and spans the holidays.\n- Form 2 is due within 15 days after an individual becomes a candidate, meaning once they exceed $5,000. A late-December declaration could therefore produce a January filing, which would not count.\n- The 2006 sitting-official moves were mostly exploratory or announcement-stage. Even analogous events may not produce a qualifying Form 2 by Dec. 31.\n\n**Already decided?**\n- Nothing I found shows a qualifying filing has already occurred. But the only officeholder count is stale and third-party, so a quiet filing cannot be ruled out.\n\n**Could not find**\n- The live FEC list of 2028 filers, checked directly.\n- Whether Warren, Vilsack, Kucinich, Bayh or Kerry filed Form 2s, and when.\n- Sitting-official records for 2010 and 2014.\n- Any officeholder filing count after Sept. 22, 2026.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-24T12:13:46.716246+00:00",
+ "scheduled_resolution_time": "2027-01-01T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Will a US governor, congressperson or cabinet member formally declare a 2028 presidential run before 2027?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "BinaryQuestion",
+ "url": "https://www.metaculus.com/questions/46632"
+}
