@@ -1,0 +1,1417 @@
+{
+ "accessed_at": "2026-11-24T18:03:39.497483+00:00",
+ "close_time": "2026-11-24T21:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.268226,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.086704,
+   "in": 7286,
+   "out": 2878,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001139,
+   "in": 3887,
+   "out": 1500,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.03225,
+   "in": 2720,
+   "out": 2681,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.055852,
+   "in": 7286,
+   "out": 4128,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024381,
+   "in": 30664,
+   "out": 2630,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024088,
+   "in": 23898,
+   "out": 3397,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.043032,
+   "in": 3643,
+   "out": 1423,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.00078,
+   "in": 2374,
+   "out": 1085,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-24T21:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-24T18:04:48.504356+00:00",
+ "num_forecasters": 51,
+ "open_time": "2026-11-24T18:00:00+00:00",
+ "post_id": 46634,
+ "prediction": {
+  "cdf_size": 32,
+  "declared_percentiles": [
+   {
+    "percentile": 0.00513134108,
+    "value": 4187.95
+   },
+   {
+    "percentile": 0.008417921679999999,
+    "value": 4188.05
+   },
+   {
+    "percentile": 0.01170450234,
+    "value": 4188.15
+   },
+   {
+    "percentile": 0.01499108298,
+    "value": 4188.25
+   },
+   {
+    "percentile": 0.01827766364,
+    "value": 4188.349999999999
+   },
+   {
+    "percentile": 0.02156424428,
+    "value": 4188.45
+   },
+   {
+    "percentile": 0.02485082494,
+    "value": 4188.55
+   },
+   {
+    "percentile": 0.028137405580000004,
+    "value": 4188.65
+   },
+   {
+    "percentile": 0.03142398624,
+    "value": 4188.75
+   },
+   {
+    "percentile": 0.03471056688,
+    "value": 4188.85
+   },
+   {
+    "percentile": 0.03799714752,
+    "value": 4188.95
+   },
+   {
+    "percentile": 0.041478891159999996,
+    "value": 4189.05
+   },
+   {
+    "percentile": 0.04496063478,
+    "value": 4189.15
+   },
+   {
+    "percentile": 0.049022399040000005,
+    "value": 4189.25
+   },
+   {
+    "percentile": 0.05347632454000001,
+    "value": 4189.35
+   },
+   {
+    "percentile": 0.05871699826,
+    "value": 4189.45
+   },
+   {
+    "percentile": 0.06533418138,
+    "value": 4189.55
+   },
+   {
+    "percentile": 0.073901146,
+    "value": 4189.65
+   },
+   {
+    "percentile": 0.08580234714,
+    "value": 4189.75
+   },
+   {
+    "percentile": 0.10418048764000001,
+    "value": 4189.85
+   },
+   {
+    "percentile": 0.13137933791999998,
+    "value": 4189.95
+   },
+   {
+    "percentile": 0.17679042122,
+    "value": 4190.05
+   },
+   {
+    "percentile": 0.24568335896,
+    "value": 4190.15
+   },
+   {
+    "percentile": 0.3419995616,
+    "value": 4190.25
+   },
+   {
+    "percentile": 0.46085692209999995,
+    "value": 4190.35
+   },
+   {
+    "percentile": 0.5920040630000001,
+    "value": 4190.45
+   },
+   {
+    "percentile": 0.7157799674599999,
+    "value": 4190.55
+   },
+   {
+    "percentile": 0.81893880054,
+    "value": 4190.650000000001
+   },
+   {
+    "percentile": 0.8927044801400001,
+    "value": 4190.75
+   },
+   {
+    "percentile": 0.94002887756,
+    "value": 4190.85
+   },
+   {
+    "percentile": 0.96893094744,
+    "value": 4190.95
+   },
+   {
+    "percentile": 0.9856851587200002,
+    "value": 4191.05
+   }
+  ],
+  "is_date": false,
+  "lower_bound": 4187.95,
+  "open_lower_bound": true,
+  "open_upper_bound": true,
+  "standardize_cdf": true,
+  "strict_validation": true,
+  "upper_bound": 4191.05,
+  "zero_point": null
+ },
+ "prediction_cdf": [
+  0.00607,
+  0.009639,
+  0.013209,
+  0.016779,
+  0.020349,
+  0.023918,
+  0.027488,
+  0.031058,
+  0.034628,
+  0.038197,
+  0.041767,
+  0.04553,
+  0.049292,
+  0.053628,
+  0.058351,
+  0.063851,
+  0.070711,
+  0.079498,
+  0.091579,
+  0.110059,
+  0.137254,
+  0.182443,
+  0.250832,
+  0.346315,
+  0.464069,
+  0.593965,
+  0.716578,
+  0.818821,
+  0.892024,
+  0.939103,
+  0.967981,
+  0.984857
+ ],
+ "quality": {
+  "boost": [
+   "boost_2",
+   "boost_1"
+  ],
+  "check": null,
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46894,
+ "rationales": [
+  {
+   "cdf": [
+    0.003964,
+    0.007251,
+    0.010537,
+    0.013824,
+    0.01711,
+    0.020397,
+    0.023683,
+    0.02697,
+    0.030257,
+    0.033543,
+    0.03683,
+    0.040116,
+    0.043403,
+    0.04669,
+    0.049976,
+    0.054251,
+    0.060501,
+    0.068728,
+    0.080906,
+    0.100989,
+    0.130952,
+    0.180674,
+    0.260037,
+    0.369039,
+    0.497802,
+    0.636445,
+    0.755327,
+    0.84457,
+    0.904172,
+    0.944015,
+    0.969037,
+    0.98418
+   ],
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "cdf_size": 32,
+    "declared_percentiles": [
+     {
+      "percentile": 0.003,
+      "value": 4187.95
+     },
+     {
+      "percentile": 0.006,
+      "value": 4188.05
+     },
+     {
+      "percentile": 0.009000000000000001,
+      "value": 4188.15
+     },
+     {
+      "percentile": 0.012,
+      "value": 4188.25
+     },
+     {
+      "percentile": 0.015,
+      "value": 4188.349999999999
+     },
+     {
+      "percentile": 0.018,
+      "value": 4188.45
+     },
+     {
+      "percentile": 0.020999999999999998,
+      "value": 4188.55
+     },
+     {
+      "percentile": 0.023999999999999997,
+      "value": 4188.65
+     },
+     {
+      "percentile": 0.026999999999999996,
+      "value": 4188.75
+     },
+     {
+      "percentile": 0.029999999999999995,
+      "value": 4188.85
+     },
+     {
+      "percentile": 0.032999999999999995,
+      "value": 4188.95
+     },
+     {
+      "percentile": 0.036,
+      "value": 4189.05
+     },
+     {
+      "percentile": 0.039,
+      "value": 4189.15
+     },
+     {
+      "percentile": 0.042,
+      "value": 4189.25
+     },
+     {
+      "percentile": 0.045000000000000005,
+      "value": 4189.35
+     },
+     {
+      "percentile": 0.049,
+      "value": 4189.45
+     },
+     {
+      "percentile": 0.055,
+      "value": 4189.55
+     },
+     {
+      "percentile": 0.063,
+      "value": 4189.65
+     },
+     {
+      "percentile": 0.075,
+      "value": 4189.75
+     },
+     {
+      "percentile": 0.095,
+      "value": 4189.85
+     },
+     {
+      "percentile": 0.125,
+      "value": 4189.95
+     },
+     {
+      "percentile": 0.175,
+      "value": 4190.05
+     },
+     {
+      "percentile": 0.255,
+      "value": 4190.15
+     },
+     {
+      "percentile": 0.365,
+      "value": 4190.25
+     },
+     {
+      "percentile": 0.495,
+      "value": 4190.35
+     },
+     {
+      "percentile": 0.635,
+      "value": 4190.45
+     },
+     {
+      "percentile": 0.755,
+      "value": 4190.55
+     },
+     {
+      "percentile": 0.845,
+      "value": 4190.650000000001
+     },
+     {
+      "percentile": 0.905,
+      "value": 4190.75
+     },
+     {
+      "percentile": 0.9450000000000001,
+      "value": 4190.85
+     },
+     {
+      "percentile": 0.9700000000000001,
+      "value": 4190.95
+     },
+     {
+      "percentile": 0.9850000000000001,
+      "value": 4191.05
+     }
+    ],
+    "is_date": false,
+    "lower_bound": 4187.95,
+    "open_lower_bound": true,
+    "open_upper_bound": true,
+    "standardize_cdf": true,
+    "strict_validation": true,
+    "upper_bound": 4191.05,
+    "zero_point": null
+   },
+   "question_id": 46894,
+   "reasoning": "**(a) Time left:** About 37 days remain until the outcome is known (Nov 24 to Dec 31, 2026).\n\n**(b) If nothing changed:** The USGS value of 4190.2 ft (Nov 23, provisional) would hold, so the outcome would be about 4190.2 ft.\n\n**(c) If the current trend continued:** The lake has risen slowly, about +0.2 ft in 17 days. The fall trough usually ends around the start of December, and winter evaporation is low. That points to a December 31 reading of about 4190.3 to 4190.6 ft.\n\n**(d) Experts and markets:** No markets were found. The KSL article and Utah Geological Survey material say the lake bottoms out between September and December and rebounds from winter into spring. The 2026 snowpack was poor, but the lake did not set a new record low. Experts therefore expect a level near 4190, with no new record low.\n\n**(e) Low scenario:** A dry, warm December with minimal inflow could reverse the small recent rise. Gauge or provisional-data revisions, or the third-party figure of about 4189.9 ft being the accurate one, could also pull the reading back to about 4189.5 ft or lower.\n\n**(f) High scenario:** A wet early winter with strong river inflow and storms could add a few tenths of a foot. A reading above 4191 would require an unusually large December rise.\n\nOutcome below 4188: 0.1%\nOutcome 4188: 0.25%\nOutcome 4188.1: 0.25%\nOutcome 4188.2: 0.25%\nOutcome 4188.3: 0.25%\nOutcome 4188.4: 0.25%\nOutcome 4188.5: 0.25%\nOutcome 4188.6: 0.25%\nOutcome 4188.7: 0.25%\nOutcome 4188.8: 0.25%\nOutcome 4188.9: 0.25%\nOutcome 4189: 0.2%\nOutcome 4189.1: 0.2%\nOutcome 4189.2: 0.2%\nOutcome 4189.3: 0.3%\nOutcome 4189.4: 0.4%\nOutcome 4189.5: 0.6%\nOutcome 4189.6: 0.8%\nOutcome 4189.7: 1.2%\nOutcome 4189.8: 2%\nOutcome 4189.9: 3%\nOutcome 4190: 5%\nOutcome 4190.1: 8%\nOutcome 4190.2: 11%\nOutcome 4190.3: 13%\nOutcome 4190.4: 14%\nOutcome 4190.5: 12%\nOutcome 4190.6: 9%\nOutcome 4190.7: 6%\nOutcome 4190.8: 4%\nOutcome 4190.9: 2.5%\nOutcome 4191: 1.5%\nOutcome above 4191: 1.5%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "cdf": [
+    0.005879,
+    0.009166,
+    0.012452,
+    0.015739,
+    0.019026,
+    0.022312,
+    0.025599,
+    0.028885,
+    0.032172,
+    0.035458,
+    0.038745,
+    0.042032,
+    0.045318,
+    0.049544,
+    0.054746,
+    0.060924,
+    0.069053,
+    0.079134,
+    0.094095,
+    0.115886,
+    0.147436,
+    0.196551,
+    0.265183,
+    0.363091,
+    0.485395,
+    0.617458,
+    0.739762,
+    0.83767,
+    0.906302,
+    0.950538,
+    0.975257,
+    0.989241
+   ],
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "cdf_size": 32,
+    "declared_percentiles": [
+     {
+      "percentile": 0.004938524590163936,
+      "value": 4187.95
+     },
+     {
+      "percentile": 0.007938524590163936,
+      "value": 4188.05
+     },
+     {
+      "percentile": 0.010938524590163937,
+      "value": 4188.15
+     },
+     {
+      "percentile": 0.013938524590163938,
+      "value": 4188.25
+     },
+     {
+      "percentile": 0.01693852459016394,
+      "value": 4188.349999999999
+     },
+     {
+      "percentile": 0.019938524590163938,
+      "value": 4188.45
+     },
+     {
+      "percentile": 0.022938524590163937,
+      "value": 4188.55
+     },
+     {
+      "percentile": 0.025938524590163936,
+      "value": 4188.65
+     },
+     {
+      "percentile": 0.028938524590163935,
+      "value": 4188.75
+     },
+     {
+      "percentile": 0.031938524590163934,
+      "value": 4188.85
+     },
+     {
+      "percentile": 0.03493852459016394,
+      "value": 4188.95
+     },
+     {
+      "percentile": 0.03793852459016394,
+      "value": 4189.05
+     },
+     {
+      "percentile": 0.04093852459016394,
+      "value": 4189.15
+     },
+     {
+      "percentile": 0.04488934426229509,
+      "value": 4189.25
+     },
+     {
+      "percentile": 0.04982786885245903,
+      "value": 4189.35
+     },
+     {
+      "percentile": 0.05575409836065576,
+      "value": 4189.45
+     },
+     {
+      "percentile": 0.06365573770491806,
+      "value": 4189.55
+     },
+     {
+      "percentile": 0.07353278688524593,
+      "value": 4189.65
+     },
+     {
+      "percentile": 0.08834836065573774,
+      "value": 4189.75
+     },
+     {
+      "percentile": 0.11007786885245906,
+      "value": 4189.85
+     },
+     {
+      "percentile": 0.14168442622950825,
+      "value": 4189.95
+     },
+     {
+      "percentile": 0.19106967213114762,
+      "value": 4190.05
+     },
+     {
+      "percentile": 0.26020901639344274,
+      "value": 4190.15
+     },
+     {
+      "percentile": 0.3589795081967214,
+      "value": 4190.25
+     },
+     {
+      "percentile": 0.4824426229508198,
+      "value": 4190.35
+     },
+     {
+      "percentile": 0.6157827868852461,
+      "value": 4190.45
+     },
+     {
+      "percentile": 0.7392459016393444,
+      "value": 4190.55
+     },
+     {
+      "percentile": 0.8380163934426231,
+      "value": 4190.650000000001
+     },
+     {
+      "percentile": 0.9071557377049182,
+      "value": 4190.75
+     },
+     {
+      "percentile": 0.9516024590163936,
+      "value": 4190.85
+     },
+     {
+      "percentile": 0.9762950819672133,
+      "value": 4190.95
+     },
+     {
+      "percentile": 0.9901229508196723,
+      "value": 4191.05
+     }
+    ],
+    "is_date": false,
+    "lower_bound": 4187.95,
+    "open_lower_bound": true,
+    "open_upper_bound": true,
+    "standardize_cdf": true,
+    "strict_validation": true,
+    "upper_bound": 4191.05,
+    "zero_point": null
+   },
+   "question_id": 46894,
+   "reasoning": "(a) **Time left:** About 37 days. The question resolves on the last USGS 10010000 reading on December 31, 2026, around 4:45 PM MST.\n\n(b) **If nothing changed:** The level would stay near 4190.2 ft, the latest provisional USGS value from Nov 23.\n\n(c) **If the current trend continued:** USGS readings went from 4190.0 on Nov 6 to 4190.2 on Nov 23. That is about +0.012 ft per day. Over 37 days this gives roughly +0.4 ft, or about 4190.6 ft. The seasonal pattern points the same way. The lake bottoms out between September and December and usually begins its winter rebound around early December. In recent years the gain from late November to the end of December was typically about 0.3\u20130.6 ft.\n\n(d) **Experts and markets:**\n- Reporting (KSL) expects no new record low in 2026.\n- The question creator's range is 4188\u20134191.\n- Expert consensus implies a slow winter rise from about 4190.2.\n\n(e) **Low scenario:**\n- A very dry, cold December with little inflow could stall the rise.\n- Strong wind events could push water away from the Saltair gauge, and wind setup can shift readings by several tenths of a foot.\n- Ice effects on the sensor could do the same.\n- Together these could leave the reading near 4189.8\u20134190.0.\n\n(f) **High scenario:**\n- An atmospheric river in December could bring heavy rain and low-elevation melt, increasing direct inflow.\n- Wind setup toward the south shore could add to this.\n- The reading could then reach about 4191 or more.\n\nMy median is about 4190.5 ft, with most of the probability between 4190.2 and 4190.8.\n\nOutcome below 4188: 0.5%\nOutcome 4188: 0.2%\nOutcome 4188.1: 0.2%\nOutcome 4188.2: 0.2%\nOutcome 4188.3: 0.2%\nOutcome 4188.4: 0.2%\nOutcome 4188.5: 0.2%\nOutcome 4188.6: 0.2%\nOutcome 4188.7: 0.2%\nOutcome 4188.8: 0.2%\nOutcome 4188.9: 0.3%\nOutcome 4189: 0.3%\nOutcome 4189.1: 0.3%\nOutcome 4189.2: 0.4%\nOutcome 4189.3: 0.5%\nOutcome 4189.4: 0.6%\nOutcome 4189.5: 0.8%\nOutcome 4189.6: 1%\nOutcome 4189.7: 1.5%\nOutcome 4189.8: 2.2%\nOutcome 4189.9: 3.2%\nOutcome 4190: 5%\nOutcome 4190.1: 7%\nOutcome 4190.2: 10%\nOutcome 4190.3: 12.5%\nOutcome 4190.4: 13.5%\nOutcome 4190.5: 12.5%\nOutcome 4190.6: 10%\nOutcome 4190.7: 7%\nOutcome 4190.8: 4.5%\nOutcome 4190.9: 2.5%\nOutcome 4191: 1.4%\nOutcome above 4191: 1%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "cdf": [
+    0.005925,
+    0.009211,
+    0.012498,
+    0.015785,
+    0.019071,
+    0.022358,
+    0.025644,
+    0.028931,
+    0.032217,
+    0.035504,
+    0.038791,
+    0.043053,
+    0.047315,
+    0.052563,
+    0.058795,
+    0.066012,
+    0.075199,
+    0.087341,
+    0.103423,
+    0.12837,
+    0.163166,
+    0.217661,
+    0.291855,
+    0.390673,
+    0.50919,
+    0.637556,
+    0.756073,
+    0.849967,
+    0.914311,
+    0.954032,
+    0.977008,
+    0.98915
+   ],
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "cdf_size": 32,
+    "declared_percentiles": [
+     {
+      "percentile": 0.0049845837615621795,
+      "value": 4187.95
+     },
+     {
+      "percentile": 0.007984583761562178,
+      "value": 4188.05
+     },
+     {
+      "percentile": 0.010984583761562177,
+      "value": 4188.15
+     },
+     {
+      "percentile": 0.013984583761562176,
+      "value": 4188.25
+     },
+     {
+      "percentile": 0.016984583761562175,
+      "value": 4188.349999999999
+     },
+     {
+      "percentile": 0.019984583761562175,
+      "value": 4188.45
+     },
+     {
+      "percentile": 0.022984583761562174,
+      "value": 4188.55
+     },
+     {
+      "percentile": 0.025984583761562173,
+      "value": 4188.65
+     },
+     {
+      "percentile": 0.028984583761562172,
+      "value": 4188.75
+     },
+     {
+      "percentile": 0.03198458376156217,
+      "value": 4188.85
+     },
+     {
+      "percentile": 0.034984583761562174,
+      "value": 4188.95
+     },
+     {
+      "percentile": 0.038972250770811914,
+      "value": 4189.05
+     },
+     {
+      "percentile": 0.042959917780061654,
+      "value": 4189.15
+     },
+     {
+      "percentile": 0.04794450154162384,
+      "value": 4189.25
+     },
+     {
+      "percentile": 0.053926002055498454,
+      "value": 4189.35
+     },
+     {
+      "percentile": 0.0609044193216855,
+      "value": 4189.45
+     },
+     {
+      "percentile": 0.06987667009249743,
+      "value": 4189.55
+     },
+     {
+      "percentile": 0.08183967112024665,
+      "value": 4189.65
+     },
+     {
+      "percentile": 0.09779033915724562,
+      "value": 4189.75
+     },
+     {
+      "percentile": 0.12271325796505651,
+      "value": 4189.85
+     },
+     {
+      "percentile": 0.15760534429599177,
+      "value": 4189.95
+     },
+     {
+      "percentile": 0.21243576567317574,
+      "value": 4190.05
+     },
+     {
+      "percentile": 0.2872045220966084,
+      "value": 4190.15
+     },
+     {
+      "percentile": 0.38689619732785197,
+      "value": 4190.25
+     },
+     {
+      "percentile": 0.5065262076053443,
+      "value": 4190.35
+     },
+     {
+      "percentile": 0.636125385405961,
+      "value": 4190.45
+     },
+     {
+      "percentile": 0.7557553956834533,
+      "value": 4190.55
+     },
+     {
+      "percentile": 0.8504624871531347,
+      "value": 4190.650000000001
+     },
+     {
+      "percentile": 0.915262076053443,
+      "value": 4190.75
+     },
+     {
+      "percentile": 0.9551387461459404,
+      "value": 4190.85
+     },
+     {
+      "percentile": 0.9780678314491265,
+      "value": 4190.95
+     },
+     {
+      "percentile": 0.9900308324768757,
+      "value": 4191.05
+     }
+    ],
+    "is_date": false,
+    "lower_bound": 4187.95,
+    "open_lower_bound": true,
+    "open_upper_bound": true,
+    "standardize_cdf": true,
+    "strict_validation": true,
+    "upper_bound": 4191.05,
+    "zero_point": null
+   },
+   "question_id": 46894,
+   "reasoning": "(a) **Time left:** About 37 days. The question resolves on the last USGS reading on December 31, 2026, around 23:45 GMT (about 4:45 PM MST).\n\n(b) **If nothing changed:** About 4190.2 ft, the latest provisional USGS value from Nov 23.\n\n(c) **If the current trend continued:** The gauge rose about +0.2 ft from Nov 6 to Nov 23. That suggests roughly +0.3 to +0.5 ft more by Dec 31, which gives about 4190.5\u20134190.7 ft. The rate may slow if early winter is dry.\n\n(d) **Expert expectations:** The Utah Geological Survey says the seasonal low falls between September and December, and NWS/USGS notes say the rebound usually starts in early December. Recent seasons with similar timing, such as 2022 and 2024, rose a few tenths of a foot between late November and year-end. Experts (per KSL) do not expect a new record low in 2026. No market exists.\n\n(e) **Low scenario:** A dry, warm December with little precipitation stalls the rise, and the reading may be revised down. A strong southerly wind event could also push water away from the Saltair gauge on the afternoon of Dec 31. Either could give a reading near 4189.8\u20134190.0.\n\n(f) **High scenario:** Big early-winter storms with rain and low-elevation melt could raise inflows. A northerly wind setup at the gauge could add to this. Together they could give 4190.9\u20134191+.\n\nMy median is about 4190.5 ft, with a fairly wide spread to allow for gauge noise from wind and the unverified, conflicting third-party data.\n\nOutcome below 4188: 0.5%\nOutcome 4188: 0.2%\nOutcome 4188.1: 0.2%\nOutcome 4188.2: 0.2%\nOutcome 4188.3: 0.2%\nOutcome 4188.4: 0.2%\nOutcome 4188.5: 0.2%\nOutcome 4188.6: 0.2%\nOutcome 4188.7: 0.2%\nOutcome 4188.8: 0.3%\nOutcome 4188.9: 0.3%\nOutcome 4189: 0.4%\nOutcome 4189.1: 0.4%\nOutcome 4189.2: 0.5%\nOutcome 4189.3: 0.6%\nOutcome 4189.4: 0.7%\nOutcome 4189.5: 0.9%\nOutcome 4189.6: 1.2%\nOutcome 4189.7: 1.6%\nOutcome 4189.8: 2.5%\nOutcome 4189.9: 3.5%\nOutcome 4190: 5.5%\nOutcome 4190.1: 7.5%\nOutcome 4190.2: 10%\nOutcome 4190.3: 12%\nOutcome 4190.4: 13%\nOutcome 4190.5: 12%\nOutcome 4190.6: 9.5%\nOutcome 4190.7: 6.5%\nOutcome 4190.8: 4%\nOutcome 4190.9: 2.3%\nOutcome 4191: 1.2%\nOutcome above 4191: 1%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "cdf": [
+    0.005925,
+    0.009211,
+    0.012498,
+    0.015784,
+    0.019071,
+    0.022358,
+    0.025644,
+    0.028931,
+    0.032217,
+    0.035504,
+    0.03879,
+    0.042077,
+    0.045364,
+    0.049626,
+    0.053888,
+    0.059136,
+    0.065368,
+    0.07357,
+    0.083742,
+    0.098838,
+    0.120829,
+    0.155625,
+    0.205194,
+    0.279387,
+    0.383128,
+    0.516416,
+    0.65463,
+    0.778069,
+    0.871961,
+    0.931379,
+    0.966175,
+    0.984226
+   ],
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "cdf_size": 32,
+    "declared_percentiles": [
+     {
+      "percentile": 0.004984488107549122,
+      "value": 4187.95
+     },
+     {
+      "percentile": 0.007984488107549124,
+      "value": 4188.05
+     },
+     {
+      "percentile": 0.010984488107549125,
+      "value": 4188.15
+     },
+     {
+      "percentile": 0.013984488107549126,
+      "value": 4188.25
+     },
+     {
+      "percentile": 0.01698448810754913,
+      "value": 4188.349999999999
+     },
+     {
+      "percentile": 0.01998448810754913,
+      "value": 4188.45
+     },
+     {
+      "percentile": 0.022984488107549134,
+      "value": 4188.55
+     },
+     {
+      "percentile": 0.025984488107549136,
+      "value": 4188.65
+     },
+     {
+      "percentile": 0.02898448810754914,
+      "value": 4188.75
+     },
+     {
+      "percentile": 0.03198448810754914,
+      "value": 4188.85
+     },
+     {
+      "percentile": 0.034984488107549144,
+      "value": 4188.95
+     },
+     {
+      "percentile": 0.03798448810754915,
+      "value": 4189.05
+     },
+     {
+      "percentile": 0.04098448810754915,
+      "value": 4189.15
+     },
+     {
+      "percentile": 0.04497207859358845,
+      "value": 4189.25
+     },
+     {
+      "percentile": 0.048959669079627746,
+      "value": 4189.35
+     },
+     {
+      "percentile": 0.05394415718717687,
+      "value": 4189.45
+     },
+     {
+      "percentile": 0.059925542916235815,
+      "value": 4189.55
+     },
+     {
+      "percentile": 0.0679007238883144,
+      "value": 4189.65
+     },
+     {
+      "percentile": 0.07786970010341265,
+      "value": 4189.75
+     },
+     {
+      "percentile": 0.09282316442606002,
+      "value": 4189.85
+     },
+     {
+      "percentile": 0.11475491209927616,
+      "value": 4189.95
+     },
+     {
+      "percentile": 0.14964632885212,
+      "value": 4190.05
+     },
+     {
+      "percentile": 0.1994912099276112,
+      "value": 4190.15
+     },
+     {
+      "percentile": 0.274258531540848,
+      "value": 4190.25
+     },
+     {
+      "percentile": 0.37893278179937956,
+      "value": 4190.35
+     },
+     {
+      "percentile": 0.5135139607032059,
+      "value": 4190.45
+     },
+     {
+      "percentile": 0.6530796277145813,
+      "value": 4190.55
+     },
+     {
+      "percentile": 0.7776918304033094,
+      "value": 4190.650000000001
+     },
+     {
+      "percentile": 0.8723971044467427,
+      "value": 4190.75
+     },
+     {
+      "percentile": 0.9322109617373321,
+      "value": 4190.85
+     },
+     {
+      "percentile": 0.967102378490176,
+      "value": 4190.95
+     },
+     {
+      "percentile": 0.9850465356773528,
+      "value": 4191.05
+     }
+    ],
+    "is_date": false,
+    "lower_bound": 4187.95,
+    "open_lower_bound": true,
+    "open_upper_bound": true,
+    "standardize_cdf": true,
+    "strict_validation": true,
+    "upper_bound": 4191.05,
+    "zero_point": null
+   },
+   "question_id": 46894,
+   "reasoning": "**Forecast for the Great Salt Lake level (USGS 10010000) on December 31, 2026**\n\n**(a) Time left:** About 37 days. The question resolves on the last USGS reading on December 31, 2026, around 4:45 PM MST.\n\n**(b) If nothing changed:** The level would stay near 4190.2 ft, the latest provisional USGS value from November 23.\n\n**(c) If the current trend continued:** The lake rose about 0.2 ft over 17 days in November. That pace would add roughly 0.3\u20130.5 ft by year end, giving about 4190.5 ft. This fits the typical pattern of a slow rebound that begins in late fall or early December. From memory, recent November-to-December rises have been a few tenths of a foot. That includes 2022, after the record low, but I have not verified this against the gauge record.\n\n**(d) Experts and markets:** Experts do not expect a new record low in 2026. The winter rebound is expected but likely modest, because more than 85% of Utah is still in severe or extreme drought. No market data was found. The question creator's range is 4188\u20134191 ft.\n\n**(e) Unexpected low scenario:** A dry, cold December with very little precipitation keeps the lake from rising. Strong winds also push water away from the south-arm Saltair gauge in the late-afternoon reading. Revisions to the provisional data could add to this. The reading could land near 4189.9\u20134190.1 ft.\n\n**(f) Unexpected high scenario:** A series of wet, warm atmospheric-river storms brings rain and low-elevation melt in December. Wind piles water onto the gauge as well. The reading could exceed 4191 ft.\n\nI centered the distribution near 4190.5 ft. I spread it about \u00b10.3 ft to allow for weather, wind noise at a single reading, and unreconciled discrepancies between the USGS and third-party figures.\n\nOutcome below 4188: 0.5%\nOutcome 4188: 0.2%\nOutcome 4188.1: 0.2%\nOutcome 4188.2: 0.2%\nOutcome 4188.3: 0.2%\nOutcome 4188.4: 0.2%\nOutcome 4188.5: 0.2%\nOutcome 4188.6: 0.2%\nOutcome 4188.7: 0.2%\nOutcome 4188.8: 0.3%\nOutcome 4188.9: 0.3%\nOutcome 4189: 0.3%\nOutcome 4189.1: 0.3%\nOutcome 4189.2: 0.4%\nOutcome 4189.3: 0.4%\nOutcome 4189.4: 0.5%\nOutcome 4189.5: 0.6%\nOutcome 4189.6: 0.8%\nOutcome 4189.7: 1%\nOutcome 4189.8: 1.5%\nOutcome 4189.9: 2.2%\nOutcome 4190: 3.5%\nOutcome 4190.1: 5%\nOutcome 4190.2: 7.5%\nOutcome 4190.3: 10.5%\nOutcome 4190.4: 13.5%\nOutcome 4190.5: 14%\nOutcome 4190.6: 12.5%\nOutcome 4190.7: 9.5%\nOutcome 4190.8: 6%\nOutcome 4190.9: 3.5%\nOutcome 4191: 1.8%\nOutcome above 4191: 1.5%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "cdf": [
+    0.003964,
+    0.007251,
+    0.010537,
+    0.013824,
+    0.01711,
+    0.020397,
+    0.023683,
+    0.02697,
+    0.030257,
+    0.033543,
+    0.03683,
+    0.040116,
+    0.043403,
+    0.04669,
+    0.049976,
+    0.053263,
+    0.056549,
+    0.060732,
+    0.066846,
+    0.076819,
+    0.094514,
+    0.133441,
+    0.206148,
+    0.307808,
+    0.42877,
+    0.552145,
+    0.673107,
+    0.784419,
+    0.866776,
+    0.92018,
+    0.957177,
+    0.981628
+   ],
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "cdf_size": 32,
+    "declared_percentiles": [
+     {
+      "percentile": 0.003000000000000001,
+      "value": 4187.95
+     },
+     {
+      "percentile": 0.006000000000000002,
+      "value": 4188.05
+     },
+     {
+      "percentile": 0.009000000000000003,
+      "value": 4188.15
+     },
+     {
+      "percentile": 0.012000000000000004,
+      "value": 4188.25
+     },
+     {
+      "percentile": 0.015000000000000005,
+      "value": 4188.349999999999
+     },
+     {
+      "percentile": 0.018000000000000006,
+      "value": 4188.45
+     },
+     {
+      "percentile": 0.021000000000000005,
+      "value": 4188.55
+     },
+     {
+      "percentile": 0.024000000000000007,
+      "value": 4188.65
+     },
+     {
+      "percentile": 0.02700000000000001,
+      "value": 4188.75
+     },
+     {
+      "percentile": 0.030000000000000013,
+      "value": 4188.85
+     },
+     {
+      "percentile": 0.033000000000000015,
+      "value": 4188.95
+     },
+     {
+      "percentile": 0.03600000000000002,
+      "value": 4189.05
+     },
+     {
+      "percentile": 0.03900000000000002,
+      "value": 4189.15
+     },
+     {
+      "percentile": 0.04200000000000002,
+      "value": 4189.25
+     },
+     {
+      "percentile": 0.045000000000000026,
+      "value": 4189.35
+     },
+     {
+      "percentile": 0.04800000000000003,
+      "value": 4189.45
+     },
+     {
+      "percentile": 0.05100000000000003,
+      "value": 4189.55
+     },
+     {
+      "percentile": 0.05490735975295937,
+      "value": 4189.65
+     },
+     {
+      "percentile": 0.060768399382398385,
+      "value": 4189.75
+     },
+     {
+      "percentile": 0.07053679876479674,
+      "value": 4189.85
+     },
+     {
+      "percentile": 0.08811991765311378,
+      "value": 4189.95
+     },
+     {
+      "percentile": 0.1271935151827072,
+      "value": 4190.05
+     },
+     {
+      "percentile": 0.20045651055069486,
+      "value": 4190.15
+     },
+     {
+      "percentile": 0.30302470406587756,
+      "value": 4190.25
+     },
+     {
+      "percentile": 0.42512969634585696,
+      "value": 4190.35
+     },
+     {
+      "percentile": 0.549676788471436,
+      "value": 4190.45
+     },
+     {
+      "percentile": 0.6717817807514154,
+      "value": 4190.55
+     },
+     {
+      "percentile": 0.7841183736489964,
+      "value": 4190.650000000001
+     },
+     {
+      "percentile": 0.8671497683993824,
+      "value": 4190.75
+     },
+     {
+      "percentile": 0.9208759650025734,
+      "value": 4190.85
+     },
+     {
+      "percentile": 0.9579958826556871,
+      "value": 4190.95
+     },
+     {
+      "percentile": 0.982416881111683,
+      "value": 4191.05
+     }
+    ],
+    "is_date": false,
+    "lower_bound": 4187.95,
+    "open_lower_bound": true,
+    "open_upper_bound": true,
+    "standardize_cdf": true,
+    "strict_validation": true,
+    "upper_bound": 4191.05,
+    "zero_point": null
+   },
+   "question_id": 46894,
+   "reasoning": "(a) The outcome becomes known on December 31, 2026, about 37 days from now.\n\n(b) If nothing changed, the lake would stay near the current USGS reading of about 4190.2 ft.\n\n(c) If the current trend continued, the lake would rise slowly. It has gained about 0.2 ft in 17 days, and the seasonal rebound usually starts around December. That points to roughly 4190.3\u20134190.6 ft.\n\n(d) I found no markets. The Utah Geological Survey says the lake bottoms out between September and December and then rebounds. KSL says a new record low is not expected in 2026. The question creator's range is 4188.0\u20134191.0 ft.\n\n(e) Low scenario: a dry, warm, inversion-heavy December with little inflow, plus a gauge dip from wind or ice effects or a data revision, would hold the lake flat or push it down to about 4189.7\u20134190.0 ft. A drop to the record low of 4188.5 ft is very unlikely.\n\n(f) High scenario: a wet, stormy December with strong valley rain and early snowmelt would raise inflows, and a wind-driven seiche at the gauge could add to the reading. Together these could push the lake to 4190.9 ft or more.\n\nOutcome below 4188: 0.1%\nOutcome 4188: 0.1%\nOutcome 4188.1: 0.1%\nOutcome 4188.2: 0.1%\nOutcome 4188.3: 0.1%\nOutcome 4188.4: 0.1%\nOutcome 4188.5: 0.1%\nOutcome 4188.6: 0.1%\nOutcome 4188.7: 0.1%\nOutcome 4188.8: 0.1%\nOutcome 4188.9: 0.1%\nOutcome 4189: 0.15%\nOutcome 4189.1: 0.15%\nOutcome 4189.2: 0.2%\nOutcome 4189.3: 0.2%\nOutcome 4189.4: 0.25%\nOutcome 4189.5: 0.3%\nOutcome 4189.6: 0.4%\nOutcome 4189.7: 0.6%\nOutcome 4189.8: 1%\nOutcome 4189.9: 1.8%\nOutcome 4190: 4%\nOutcome 4190.1: 7.5%\nOutcome 4190.2: 10.5%\nOutcome 4190.3: 12.5%\nOutcome 4190.4: 12.75%\nOutcome 4190.5: 12.5%\nOutcome 4190.6: 11.5%\nOutcome 4190.7: 8.5%\nOutcome 4190.8: 5.5%\nOutcome 4190.9: 3.8%\nOutcome 4191: 2.5%\nOutcome above 4191: 1.8%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "cdf": [
+    0.00594,
+    0.009227,
+    0.012513,
+    0.0158,
+    0.019086,
+    0.022373,
+    0.025659,
+    0.028946,
+    0.032233,
+    0.036507,
+    0.040782,
+    0.050984,
+    0.061187,
+    0.07633,
+    0.096412,
+    0.121435,
+    0.151397,
+    0.1863,
+    0.231082,
+    0.285745,
+    0.350288,
+    0.43459,
+    0.535689,
+    0.639751,
+    0.733934,
+    0.813297,
+    0.867959,
+    0.907802,
+    0.937764,
+    0.957847,
+    0.971013,
+    0.97924
+   ],
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "cdf_size": 32,
+    "declared_percentiles": [
+     {
+      "percentile": 0.005,
+      "value": 4187.95
+     },
+     {
+      "percentile": 0.008,
+      "value": 4188.05
+     },
+     {
+      "percentile": 0.011,
+      "value": 4188.15
+     },
+     {
+      "percentile": 0.013999999999999999,
+      "value": 4188.25
+     },
+     {
+      "percentile": 0.016999999999999998,
+      "value": 4188.349999999999
+     },
+     {
+      "percentile": 0.019999999999999997,
+      "value": 4188.45
+     },
+     {
+      "percentile": 0.022999999999999996,
+      "value": 4188.55
+     },
+     {
+      "percentile": 0.025999999999999995,
+      "value": 4188.65
+     },
+     {
+      "percentile": 0.028999999999999995,
+      "value": 4188.75
+     },
+     {
+      "percentile": 0.032999999999999995,
+      "value": 4188.85
+     },
+     {
+      "percentile": 0.03699999999999999,
+      "value": 4188.95
+     },
+     {
+      "percentile": 0.04699999999999999,
+      "value": 4189.05
+     },
+     {
+      "percentile": 0.056999999999999995,
+      "value": 4189.15
+     },
+     {
+      "percentile": 0.072,
+      "value": 4189.25
+     },
+     {
+      "percentile": 0.092,
+      "value": 4189.35
+     },
+     {
+      "percentile": 0.11699999999999999,
+      "value": 4189.45
+     },
+     {
+      "percentile": 0.147,
+      "value": 4189.55
+     },
+     {
+      "percentile": 0.182,
+      "value": 4189.65
+     },
+     {
+      "percentile": 0.22699999999999998,
+      "value": 4189.75
+     },
+     {
+      "percentile": 0.282,
+      "value": 4189.85
+     },
+     {
+      "percentile": 0.347,
+      "value": 4189.95
+     },
+     {
+      "percentile": 0.432,
+      "value": 4190.05
+     },
+     {
+      "percentile": 0.534,
+      "value": 4190.15
+     },
+     {
+      "percentile": 0.639,
+      "value": 4190.25
+     },
+     {
+      "percentile": 0.734,
+      "value": 4190.35
+     },
+     {
+      "percentile": 0.814,
+      "value": 4190.45
+     },
+     {
+      "percentile": 0.869,
+      "value": 4190.55
+     },
+     {
+      "percentile": 0.909,
+      "value": 4190.650000000001
+     },
+     {
+      "percentile": 0.9390000000000001,
+      "value": 4190.75
+     },
+     {
+      "percentile": 0.9590000000000001,
+      "value": 4190.85
+     },
+     {
+      "percentile": 0.9720000000000001,
+      "value": 4190.95
+     },
+     {
+      "percentile": 0.9800000000000001,
+      "value": 4191.05
+     }
+    ],
+    "is_date": false,
+    "lower_bound": 4187.95,
+    "open_lower_bound": true,
+    "open_upper_bound": true,
+    "standardize_cdf": true,
+    "strict_validation": true,
+    "upper_bound": 4191.05,
+    "zero_point": null
+   },
+   "question_id": 46894,
+   "reasoning": "(a) About 37 days remain until the outcome is known (Nov 24 to Dec 31, 2026).\n\n(b) If nothing changed, the lake would stay near the latest USGS value of about 4190.2 ft. Third-party trackers give lower readings (4189.94 and 4189.5), so there is some source disagreement.\n\n(c) If the current trend continued, the lake would keep drifting up slowly, about +0.1 to +0.4 ft per month. That points to roughly 4190.2 to 4190.5 ft. Late autumn and early winter are usually near the seasonal minimum, with a slow rise and little evaporation. Wind and seiche effects add roughly 0.1 to 0.2 ft of noise to the gauge.\n\n(d) The question creator's bounds are 4188 to 4191 ft. The KSL article says the lake is not expected to hit a new record low in 2026. No market exists for this.\n\n(e) A low outcome could come from a gauge recalibration or a provisional-data revision toward the lower third-party readings, around 4189.5 ft. A prolonged dry and warm December with continued upstream diversions could also push it lower. Reaching the record low of 4188.5 ft is very unlikely.\n\n(f) A high outcome could come from a strong atmospheric-river storm in December that raises inflows. Early-winter rises from the winter seasonal turnaround, plus reduced diversions, could also add 0.5 ft or more and push the level above 4191 ft.\n\nOutcome below 4188: 0.5%\nOutcome 4188: 0.3%\nOutcome 4188.1: 0.3%\nOutcome 4188.2: 0.3%\nOutcome 4188.3: 0.3%\nOutcome 4188.4: 0.3%\nOutcome 4188.5: 0.3%\nOutcome 4188.6: 0.3%\nOutcome 4188.7: 0.3%\nOutcome 4188.8: 0.4%\nOutcome 4188.9: 0.4%\nOutcome 4189: 1%\nOutcome 4189.1: 1%\nOutcome 4189.2: 1.5%\nOutcome 4189.3: 2%\nOutcome 4189.4: 2.5%\nOutcome 4189.5: 3%\nOutcome 4189.6: 3.5%\nOutcome 4189.7: 4.5%\nOutcome 4189.8: 5.5%\nOutcome 4189.9: 6.5%\nOutcome 4190: 8.5%\nOutcome 4190.1: 10.2%\nOutcome 4190.2: 10.5%\nOutcome 4190.3: 9.5%\nOutcome 4190.4: 8%\nOutcome 4190.5: 5.5%\nOutcome 4190.6: 4%\nOutcome 4190.7: 3%\nOutcome 4190.8: 2%\nOutcome 4190.9: 1.3%\nOutcome 4191: 0.8%\nOutcome above 4191: 2%",
+   "research": "first",
+   "role": "control"
+  }
+ ],
+ "research": "**Rundown: Great Salt Lake level, USGS 10010000 (for December 31, 2026)**\n\n**Current state (as of Nov 23\u201324, 2026)**\n- The USGS monitoring page shows a latest value of 4190.2 ft for Nov 23, 2026, marked provisional. Its continuous record runs through Nov 22, so the most recent point is about a day old. Nov 23, 2026 ... Latest value 4190.2 ft Provisional\n- Third-party trackers report slightly different numbers, which I could not reconcile with USGS. One gives 4190.3 ft for Nov 23 and says the 7-day change is +0.2 ft and the 30-day change is +0.4 ft. Great Salt Lake is at 4,190.3 ft as of 2026-11-23 \u2014 1.8 ft above the all-time record low of 4,188.5 ft (2022-11). Another gives 4,189.94 ft for Nov 24 at 9:15 AM, and a third gives 4,189.5 ft for mid-November. I'd treat these as unverified; the USGS page is the resolution source.\n- The all-time record low is 4,188.5 ft, set in November 2022. In 2022, the lake then hit an all-time record low of 4,188.5 feet in November.\n- The lake has been below the state's healthy minimum of 4,198 ft since 2012. The Great Salt Lake's water levels haven't reached the minimum healthy mark of 4,198 feet since 2012.\n\n**Recent context**\n- The 2026 spring runoff was very poor. This has been Utah's worst winter for snowpack going back to at least 1930, per the NRCS May 2026 report. Snowpack in the Great Salt Lake basin was about 24% of median at that time.\n- The lake did not drop to a new record low this year, but it did fall to what was described as its second-lowest point on record. The Great Salt Lake fell to its second-lowest point on record this year.\n- Late-season conditions have been slightly better. A winter outlook from November 20 says the Great Salt Lake will likely benefit from a strong snowpack if one develops, and it notes that Over 85% of Utah remains in severe or extreme drought as of the start of the 2027 water year.\n- Water-supply forecasts for the Great Salt Lake inflows made earlier in the year were poor. One from midwinter put them at just 55 to 60 percent of average.\n\n**Scheduled before the question closes**\n- No specific lake-management actions or USGS releases scheduled for late December were found. The main known milestones are seasonal: winter snowpack accumulation through the winter, and spring runoff in 2027, which falls after the question closes.\n- I did not find a confirmed date for any state action tied to the lake level before Dec 31.\n\n**Base rates and seasonal behavior**\n- I could not find historical December-specific change figures for this gauge, so I cannot give a verified typical December change. The general pattern is that the lake rises during spring runoff and falls through summer evaporation, with winter typically a slower period. Verify this against the USGS daily record before relying on it.\n- The lake is about 37 days from the question date. Recent 30-day changes reported by third-party sites range from roughly +0.1 to +0.4 ft, but those figures are not from the USGS page directly.\n\n**How the question resolves if nothing changes**\n- The question uses the last reported USGS value on December 31, 2026. If the lake holds its current slight upward drift, the reading would likely sit a few tenths of a foot above 4190 ft. If it stays flat, it would stay near 4190.2 ft. The lake would need to drop about 1.7 ft to reach the record low, which is not a plausible move over five weeks at this time of year.\n- Provisional USGS values can be revised later, but the question will resolve on the value available at resolution time. Since the reported time is about 11:45 PM GMT, which is roughly 4:45 PM Mountain Standard Time, the final reading that day may come from a few hours earlier.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Base rate (what I could and could not find)**\n\n- The Utah Geological Survey says lake level typically drops 1.5 to 2.5 feet annually, dipping to its lowest level September to December, and peaking from March to July. December is therefore the trough-to-rebound transition, not a clear up or down month.\n- A NWS-cited USGS-era note says the rebound usually starts near the beginning of December.\n- I found no year-by-year count of December-to-December changes for this gauge. The only winter rises I found are general: about 2 feet or so every winter (a 2025 UPR article), which describes the whole winter, not the last five weeks of December. Over a 37-day window, a move of a few tenths of a foot is what the recent data suggest, but I have not verified its frequency.\n\n**Primary source (USGS 10010000)**\n\n- The page shows latest value 4190.2 ft, Provisional, Nov 23, 2026, with continuous data 2007-10-01 - 2026-11-22. So the first rundown's figure is confirmed first-hand.\n- An earlier snapshot of the same page showed 4190.0 11-06-2026 09:45 MST. That is about +0.2 ft in 17 days, consistent with a slow rise.\n- Third-party figures (4190.3 on Nov 23, 4189.5 to 4189.7 in October) differ, and I could not reconcile them with USGS. Treat them as unverified.\n\n**Strongest evidence against an upward or flat outcome**\n\n- The rise is small and recent. The gauge was lower than 97% of the 37 Octobers on record per a third-party page, and that page's 30-day trend was negative in September. A short rise can reverse.\n- A third-party tracker reports a 7-day change of falling about 0.03 ft, which contradicts the rise. Treat that as noise, but it shows the sign is not settled.\n- Winter inflow is the key driver. The first rundown's snowpack and forecast claims (poor 2026 runoff, 55\u201360% forecasts) are not verified by my searches.\n- The UGS page also gives an older record low of 4,190.2 ft in October 2021, which conflicts with the 4,188.5 ft 2022 low used elsewhere. I could not resolve the discrepancy.\n\n**Already decided?**\n\nNo. Resolution depends on the last reading on Dec 31. 23:45 GMT is about 4:45 PM MST, so the final value will be a late-afternoon reading. Provisional values may be revised, but that is not a large risk here.\n\n**Not found**\n\n- Historical December-to-December change counts for this gauge.\n- Current NRCS snowpack or 2026 runoff figures beyond what the first rundown reported.\n- Any scheduled management action before Dec 31.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-24T18:04:10.361464+00:00",
+ "scheduled_resolution_time": "2027-01-01T00:00:00+00:00",
+ "status": "forecast",
+ "title": "What will be the water level of the Great Salt Lake on December 31, 2026?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "DiscreteQuestion",
+ "url": "https://www.metaculus.com/questions/46634"
+}
