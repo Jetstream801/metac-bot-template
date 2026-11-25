@@ -1,0 +1,214 @@
+{
+ "accessed_at": "2026-11-25T18:11:08.463225+00:00",
+ "close_time": "2026-11-25T21:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.208508,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.065864,
+   "in": 5436,
+   "out": 2206,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001069,
+   "in": 3186,
+   "out": 1500,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.01326,
+   "in": 1765,
+   "out": 973,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.029422,
+   "in": 5436,
+   "out": 1855,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.002381,
+   "in": 19526,
+   "out": 856,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024526,
+   "in": 34396,
+   "out": 2172,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.037997,
+   "in": 54215,
+   "out": 5152,
+   "searches": 3,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.032812,
+   "in": 2718,
+   "out": 1097,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001177,
+   "in": 2187,
+   "out": 1916,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-25T21:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-25T18:12:20.615774+00:00",
+ "num_forecasters": 231,
+ "open_time": "2026-11-25T18:00:00+00:00",
+ "post_id": 46751,
+ "prediction": 0.5301614634940305,
+ "quality": {
+  "boost": [
+   "boost_2",
+   "boost_1"
+  ],
+  "check": [
+   {
+    "kind": "UNITS",
+    "why": "The submitted forecast is 0.53 (53%), but the reasoning ends with \"Probability: 38%\", so the stated value does not match the number submit"
+   }
+  ],
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 47008,
+ "rationales": [
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.38,
+   "question_id": 47008,
+   "reasoning": "(a) About 36 days remain, from today (Nov 25) to December 31, 2026.\n\n(b) The status quo is No. No call or meeting is scheduled inside the window, and the assistant could not confirm that Putin will attend the Miami G20 on December 14\u201315. The Shenzhen meeting on November 19 falls before the window and does not count.\n\n(c) A No scenario: the Shenzhen meeting just before the window reduces the need for another contact soon. Russia declines or ignores the G20 invitation, and the trilateral talks with Ukraine slip into 2027. Contacts cluster around events or diplomatic pushes, and the next gap runs past 40 days, as several gaps of two months or more already have.\n\n(d) A Yes scenario: Putin attends the Miami G20, or a trilateral meeting is arranged. More likely, a phone call happens as talks on Ukraine move forward. Calls have come every 4 to 9 weeks in 2026, and a year-end or holiday call is plausible. Putin and Trump spoke in late December 2025, so there is a precedent for one. Putin might also call to coordinate before or after a trilateral round.\n\nAt roughly one contact every 4 to 9 weeks, a 36-day window gives about even odds before adjusting. A contact just before the window and the unconfirmed G20 pull the estimate down. The year-end precedent and the active diplomacy pull it up slightly. Some of the assistant's reporting is uncertain, so I stay near the status quo.\n\nProbability: 38%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.47,
+   "question_id": 47008,
+   "reasoning": "(a) About 5 weeks remain, from today (Nov 25) to Dec 31, 2026.\n\n(b) Status quo: nothing is scheduled, so the question resolves No. The Shenzhen meeting on Nov 19 falls before the Nov 22 start and doesn't count. The Miami G20 on Dec 14\u201315 is unconfirmed as a venue for Putin.\n\n(c) No scenario: Contact bunches around events. After the Shenzhen meeting, both sides wait for the trilateral talks, which have no date. Putin skips the Miami G20, since he is wary of the optics or of logistics. The Kremlin's \"near future\" talk stays vague, and the window passes with no call, as in earlier two-month gaps.\n\n(d) Yes scenario: Several routes lead to a Yes.\n- Putin attends the G20 in Miami, or joins a trilateral meeting there.\n- Trump and Putin hold a call to follow up on the Shenzhen talks, or to arrange the trilateral talks.\n- Putin phones Trump with holiday greetings. He did this on Trump's birthday, and there was a late-December 2025 call.\n- A crisis, such as a major strike, or a deal milestone prompts a call.\n\nCalls have come roughly every 4\u20139 weeks in 2026. That gives about a 40\u201350% chance of one in a 5-week window. The G20 invitation and the holiday season add some upside. Against that, a contact just occurred, which may reduce the near-term need for another, and nothing is confirmed. I put the probability slightly below even.\n\nProbability: 47%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.42,
+   "question_id": 47008,
+   "reasoning": "**(a) Time left:** about 5 weeks, from today (Nov 25) to Dec 31, 2026.\n\n**(b) Status quo outcome:** No. No Trump\u2013Putin call or meeting is confirmed inside the window, so the status quo resolves No.\n\n**(c) No scenario:** Putin declines the G20 invitation to Miami (Dec 14\u201315), which is likely given his travel constraints and the optics. Trilateral Russia\u2013US\u2013Ukraine talks stay at the envoy level (Witkoff, Kushner, Dmitriev, Ushakov). The leaders' contact stays with aides and no call happens before year-end. A recent in-person meeting, if it did happen on Nov 19 as the research assistant says, would also reduce the need for another call soon.\n\n**(d) Yes scenario:** The G20 invitation prompts a Trump\u2013Putin call to discuss attendance or a trilateral meeting. Alternatively, a diplomatic push produces a call, as with the roughly every-1\u20132-months pattern in 2025, or a holiday-season call such as the late-December 2025 one. Putin could also join the Miami summit, though that is unlikely.\n\n**Reasoning:** Trump and Putin have spoken at irregular intervals, often every 1\u20132 months in active phases, so a five-week window gives roughly a 35\u201350% chance of a call by base rate alone. The G20 invitation and the active negotiation track push the probability up somewhat. The research assistant's claims are partly unverified, and Kremlin \"near future\" statements often don't produce contact quickly, which argues for staying below 50%.\n\nProbability: 42%",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.6,
+   "question_id": 47008,
+   "reasoning": "**(a) Time left:** About 5 weeks. The window runs from today, November 25, 2026, through December 31, 2026.\n\n**(b) Status quo outcome:** No. No Trump\u2013Putin call or meeting is confirmed between November 22 and December 31. The November 18\u201319 Shenzhen contacts happened before the window opens, so they don't count.\n\n**(c) No scenario:** Putin skips the Miami G20 (December 14\u201315) or sends a deputy such as Lavrov. Trilateral Russia\u2013US\u2013Ukraine talks stay at envoy level with no fixed dates. Relations cool after Russia's large strike following the summit. With the leaders having just met on November 19, neither sees a need to call before year-end, and the next contact slips into January 2027.\n\n**(d) Yes scenario:** Putin accepts the US invitation to the Miami G20 at Trump's Doral resort, which Rubio confirmed per the WSJ, and meets Trump there. Alternatively, Putin doesn't attend but a call happens anyway. That could be a pre-summit call to discuss attendance or Ukraine. It could be a follow-up on the trilateral process. It could be a year-end call like the one in late December 2025.\n\n**Rationale:**\n- **Base rate:** In 2026 the two leaders have had contact roughly every 4 to 9 weeks, at least six or seven times in about 11 months. A 40-day window at that rate gives roughly even odds of a contact.\n- **Factors pushing up:**\n  - Diplomacy is in an active phase: a call on October 9, then meetings on November 18\u201319.\n  - There is an explicit US invitation to a US-hosted G20 inside the window.\n  - Ukraine peace efforts are ongoing, and Trump has been describing Putin as ready for a deal.\n  - Last year there was a precedent of a late-December call.\n- **Factors pushing down:**\n  - The leaders met very recently, which can lower the need for another contact soon.\n  - Putin's attendance in Miami is uncertain, and past announced plans (such as the October 2025 summit) have fallen through.\n  - Contacts tend to cluster around events, and there are gaps of two months or more in the record.\n  - The status quo (nothing scheduled) favors No.\n\nWeighing these, the G20 invitation and the active diplomacy push the estimate somewhat above the base rate.\n\nProbability: 60%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.55,
+   "question_id": 47008,
+   "reasoning": "**(a) Time left:** About 5 weeks. The window runs from November 22 to December 31, 2026, and today is November 25.\n\n**(b) Status quo outcome:** No call or meeting is scheduled or confirmed for the window. If nothing changes, the question resolves **No**.\n\n**(c) No scenario:** Trump and Putin just met in Shenzhen on November 19, which lowers the immediate need for another contact. Lower-level trilateral Russia\u2013US\u2013Ukraine talks drift without set dates. Putin declines or skips the G20 in Miami on December 14\u201315. The holidays pass with contact handled by envoys such as Witkoff, Ushakov and Dmitriev, and no leader-level call happens before January 1.\n\n**(d) Yes scenario:** Either of two paths would resolve Yes:\n- Putin accepts the invitation to the G20 at Trump's Doral resort (the WSJ background) and meets Trump there. The Alaska 2025 visit shows he will travel to US soil.\n- More likely, a phone call happens. Triggers could include a peace-process development, an escalation such as a major strike, or pre-meeting coordination. Late December 2025 had such a call, as did several stretches in 2026 at 4\u20136 week intervals.\n\n**Rationale:**\n- **Status quo:** It points to No, since nothing is scheduled.\n- **Base rate:** Contacts in 2026 have come roughly every 4\u20139 weeks, and the recent stretch has been active (September 8 and October 9 calls, the November 18\u201319 meetings). A 40-day window at that rate gives roughly even odds of a contact.\n- **Factors pushing up:**\n  - Peace diplomacy is ongoing.\n  - Trump says Putin is \"ready for a deal.\"\n  - There is a concrete invitation to the G20, a high-salience venue inside the window.\n  - Last year's precedent of late-December calls.\n- **Factors pushing down:**\n  - The two leaders just met, so the clock partly resets.\n  - Plans announced in the past have often fallen through.\n  - Putin attending a G20 in Florida is far from certain.\n  - Russia's major strike after the summit may cool things.\n\nWeighing these, I put it slightly above even.\n\nProbability: 55%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.57,
+   "question_id": 47008,
+   "reasoning": "**(a) Time left:** About five weeks. The window runs from November 22 to December 31, 2026, and today is November 25.\n\n**(b) Status quo outcome:** No. No Trump\u2013Putin call or meeting is confirmed in the window. Their Shenzhen meeting on November 19 falls just before the window opens, so it does not count.\n\n**(c) Scenario for No:** Peace talks stall after the Shenzhen summit, and Russia's large strike on Ukraine sours the mood. Putin skips the December 14\u201315 G20 in Miami or sends a deputy. Any Russia\u2013US\u2013Ukraine talks happen at the envoy level, such as Witkoff with Dmitriev or Ushakov. New Year greetings go by telegram, and the next leader call slips into January.\n\n**(d) Scenario for Yes:** One of two things happens:\n- Putin accepts the U.S. invitation to the G20 at Trump's Doral resort and meets Trump there, possibly in a trilateral with Zelensky.\n- More likely, the leaders hold a follow-up call in December on the Ukraine framework or before the G20. A December call would match the late-December 2025 call and the recent pace of contact (September 8, October 9, November 19).\n\n**Rationale:**\n- **Base rate:** In 2026, contacts have come roughly every 4 to 9 weeks. A window of about 5.5 weeks, starting right after a contact, gives somewhat under even odds from frequency alone.\n- **Factors pushing up:**\n  - The diplomatic period is active: two November contacts plus a stated agreement to keep talking.\n  - Talks are ongoing on a three-way Russia\u2013US\u2013Ukraine format.\n  - The U.S. has formally invited Putin to a summit Trump is hosting. If Putin attends, a meeting is almost certain. I put his attendance at roughly 25\u201330%; the Alaska summit shows he will travel to U.S. soil.\n  - There is a precedent of a call in late December.\n- **Factors pushing down:**\n  - Leader contacts tend to come in clusters around events, followed by quiet stretches.\n  - Announced plans have fallen through before, such as the cancelled October 2025 summit.\n  - Nothing is scheduled.\n\n**Combined estimate:** About a 28% chance of a G20 meeting, plus about a 40% chance of a call in the remaining scenarios. That gives a little under 60%.\n\nProbability: 57%",
+   "research": "both",
+   "role": "member"
+  }
+ ],
+ "research": "**Rundown: Trump\u2013Putin contact before January 1, 2027**\n\n**Current state (as of Nov 25, 2026)**\n- **In-person meeting just before the window:** Trump met Putin on Thursday on the sidelines of the summit in Shenzhen, on November 19, 2026, as part of a trilateral with Xi Jinping. That meeting falls before the question's November 22 start, so it does not count.\n- **Phone contact just before the window:** Trump's call on November 19 was to European leaders, not to Putin, so it does not count. A reported Trump\u2013Putin call on Oct. 9 lasted 1.5 hours, according to the Kremlin aide.\n- **Follow-up signals:** Peskov said on about November 23 that \"The meeting will take place soon, but there is no certainty regarding the dates as yet.\" This refers to trilateral Russia\u2013US\u2013Ukraine talks, not necessarily a leader-level contact. Another report said the dates for the next round of trilateral talks between Russia, the U.S., and Ukraine have not yet been set.\n- **Possible December event:** Zelensky said a trilateral meeting with Trump and Putin could take place during the G20 summit in Miami on December 14\u201315, while he told journalists on November 21 that Ukraine had yet to receive an official invitation from Washington. I found no confirmation of this since then.\n- **Context:** Trump has been describing Putin as ready for a deal. Ukraine's president called Putin \"a killer\" in response, and Russia launched a major strike on Ukraine the night after the summit.\n\n**Scheduled before the question closes**\n- No Trump\u2013Putin call or meeting is confirmed for November 22 \u2013 December 31, 2026.\n- The G20 Miami summit (December 14\u201315) is the only possible leader-level venue I found, and it is unconfirmed.\n- Russia\u2013US\u2013Ukraine trilateral talks have no set date. These are not automatically leader-level contacts.\n\n**Base rate**\n- Contacts in 2025\u20132026 were irregular. Known examples include a February 12, 2025 call, an August 15, 2025 Alaska meeting, an October 16, 2025 call, a July 2026 weekend call (the Kremlin said they agreed to talk again in the near future), the October 9, 2026 call, and the November 19, 2026 meeting.\n- Gaps between contacts have ranged from weeks to months. Some announced plans fell through: an October 2025 summit was cancelled, and Kremlin statements about \"near future\" talks have not always produced contact quickly.\n- I could not find a complete list of 2026 Trump\u2013Putin calls, so the exact frequency is uncertain.\n\n**Resolution if nothing changes**\n- With no call or meeting scheduled, the question resolves No. The window is about five weeks (November 22 \u2013 December 31).\n- Contacts in the last few months (October 9 call, November 19 meeting) suggest a relatively active period. Recent contact is a sign that more may follow, but nothing confirmed points to a specific date inside the window.\n\n**Gaps I could not fill**\n- A complete count of 2026 Trump\u2013Putin calls.\n- Whether the G20 Miami summit will include Putin, or whether Trump has issued an invitation.\n- Whether any call occurred after the November 19 meeting and before November 22.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Base rate (2026 and late 2025)**\n- Trump\u2013Putin contacts have been roughly every 4 to 9 weeks in 2026. Dated contacts I found: a call that Ushakov said followed an end-December 2025 call, which points to about early March 2026 (They had not spoken by telephone for quite some time; their previous conversation took place at the end of December 2025.). A birthday call on Trump's 80th, which implies June 14, 2026 (President Putin telephoned the US President today to extend birthday greetings on his 80th birthday.). A weekend call around July 4 (On the night of Saturday, July 4, Kremlin aide Yury Ushakov announced the details of the call.). A call on September 8 (The presidents agreed to stay in touch, and will call each other promptly as needed). The October 9 call, which lasted an hour and a half. Then the November 18\u201319 Shenzhen contacts.\n- That makes at least six or seven contacts in about 11 months. A 40-day window at that rate gives roughly even odds of one contact. This is my arithmetic, not a forecast. Gaps of two months or more have occurred.\n- In 2025, the rundown's examples plus the late-December call suggest about nine contacts. I did not verify that list.\n\n**Primary source**\nThe criteria name no official page, so resolution depends on actual contact. The best confirmation would be Kremlin readouts (en.kremlin.ru) or White House statements. The latest value I found is that the Shenzhen meeting lasted 42 minutes. Peskov said the date for the next trilateral meeting between Russian, US, and Chinese representatives is currently unknown. I could not verify the rundown's November 23 \"soon\" quote.\n\n**Strongest evidence against a Yes**\n- Peskov said the Shenzhen talks were unlikely to allow \"full-scale negotiations\", and Putin handed over no Ukraine documents (Putin did not hand over any documents regarding the end of the war in Ukraine).\n- Ushakov said in October that a separate Putin\u2013Trump bilateral had not been agreed for the summit (Russia and the US had not agreed on a separate bilateral meeting).\n- The December G20 venue remains unconfirmed. I did not search it, so I cannot say whether Putin attends.\n- Contacts cluster around events. With the summit just over, the next natural venue is unclear.\n\n**Already decided?**\nNo. Both November meetings (the informal one on November 18 and the trilateral on November 19) fall before the November 22 start. Nothing I found settles the outcome.\n\n**Could not find**\n- Confirmation of the G20 Miami invitation or Putin's attendance.\n- A complete list of 2026 calls. Some dates above are inferred from \"age\" metadata or anniversaries.\n- The November 23 Peskov \"soon\" statement.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-25T18:11:42.727916+00:00",
+ "scheduled_resolution_time": "2027-01-01T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Will Donald Trump and Vladimir Putin meet in person or talk on the phone before January 1, 2027?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "BinaryQuestion",
+ "url": "https://www.metaculus.com/questions/46751"
+}
