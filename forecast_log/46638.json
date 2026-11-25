@@ -1,0 +1,403 @@
+{
+ "accessed_at": "2026-11-25T06:15:03.135999+00:00",
+ "close_time": "2026-11-25T09:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.21495,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.079528,
+   "in": 6192,
+   "out": 2738,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001075,
+   "in": 3526,
+   "out": 1445,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.011912,
+   "in": 2216,
+   "out": 748,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.026134,
+   "in": 6192,
+   "out": 1375,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.005307,
+   "in": 23714,
+   "out": 5872,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.025042,
+   "in": 34056,
+   "out": 3272,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024693,
+   "in": 25368,
+   "out": 4313,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.040504,
+   "in": 3096,
+   "out": 1406,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000755,
+   "in": 2034,
+   "out": 1103,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-25T09:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-25T06:16:23.784167+00:00",
+ "num_forecasters": 260,
+ "open_time": "2026-11-25T06:00:00+00:00",
+ "post_id": 46638,
+ "prediction": {
+  "predicted_options": [
+   {
+    "option_name": "45",
+    "probability": 0.014000000000000002
+   },
+   {
+    "option_name": "46",
+    "probability": 0.134
+   },
+   {
+    "option_name": "47",
+    "probability": 0.22400000000000003
+   },
+   {
+    "option_name": "48",
+    "probability": 0.186
+   },
+   {
+    "option_name": "49",
+    "probability": 0.152
+   },
+   {
+    "option_name": "\u226550",
+    "probability": 0.2899999999999999
+   }
+  ]
+ },
+ "quality": {
+  "boost": [
+   "boost_2",
+   "boost_1"
+  ],
+  "check": [
+   {
+    "kind": "DATE",
+    "why": "The reasoning says week 51 data is available \"around Dec 24 or later,\" but week 51 ends Dec 26, 2026, so its data cannot be out by Dec 24."
+   }
+  ],
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46898,
+ "rationales": [
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "45",
+      "probability": 0.01
+     },
+     {
+      "option_name": "46",
+      "probability": 0.08
+     },
+     {
+      "option_name": "47",
+      "probability": 0.14
+     },
+     {
+      "option_name": "48",
+      "probability": 0.17
+     },
+     {
+      "option_name": "49",
+      "probability": 0.18
+     },
+     {
+      "option_name": "\u226550",
+      "probability": 0.41999999999999993
+     }
+    ]
+   },
+   "question_id": 46898,
+   "reasoning": "(a) The outcome is known once the week 49 and later data are published. Week 49 ends Dec 12, and the confirming weeks 50 and 51 would be reported in late December. The question resolves \"when first accessed,\" which may be earlier, so roughly 1\u20135 weeks remain.\n\n(b) Region 7 was below baseline at week 45, so the status quo is no onset yet. If nothing changed, the question would resolve \u226550.\n\n(c) Unexpected scenario: the early H1N1 wave spreads from the West Coast into the Midwest, and Thanksgiving gatherings push ILI over baseline in weeks 47\u201348. It stays there for the following two weeks, giving an onset of 47\u201349. Alternatively, onset could be 46 if the region is already close to baseline. Option 45 is effectively ruled out because week 45 was reported below baseline.\n\nConsiderations:\n- Region 7 (Iowa, Kansas, Missouri, Nebraska) historically has its onset in December. In recent seasons it was often around weeks 47\u201351. In some seasons, such as 2022-23, onset came very early, around week 42\u201343. In others it came in January.\n- Region 7's baseline is around 2.0%, and it is rising, with an increase in week 45 and rising positivity. This season is early, which shifts probability toward earlier weeks.\n- Onset in week 46 requires weeks 46, 47 and 48 all at or above baseline. Region 7 is below baseline at week 45, so it would need to be close, and the gap is unknown. Thanksgiving can depress ILI visits in week 47 because of reduced healthcare-seeking, which could break a streak. That pushes onset later, to weeks 48\u201349.\n- The upward trend, the early season and the uncertain gap suggest a moderate probability of onset in weeks 47\u201349. Still, \u226550 carries substantial weight as the status quo, and it also covers the case of a very late onset.\n\nOption_A: 0.01\nOption_B: 0.08\nOption_C: 0.14\nOption_D: 0.17\nOption_E: 0.18\nOption_F: 0.42\n\nFinal probabilities:\n45: 0.01\n46: 0.08\n47: 0.14\n48: 0.17\n49: 0.18\n\u226550: 0.42",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "45",
+      "probability": 0.01
+     },
+     {
+      "option_name": "46",
+      "probability": 0.07
+     },
+     {
+      "option_name": "47",
+      "probability": 0.12
+     },
+     {
+      "option_name": "48",
+      "probability": 0.18
+     },
+     {
+      "option_name": "49",
+      "probability": 0.19
+     },
+     {
+      "option_name": "\u226550",
+      "probability": 0.42999999999999994
+     }
+    ]
+   },
+   "question_id": 46898,
+   "reasoning": "(a) Today is Nov 25, 2026. Week 45 data is out and Region 7 is below baseline. The outcome is known when week 51 data is available, around Dec 24 or later, since onset in week 49 needs weeks 50 and 51 to confirm. If the question resolves earlier, it may be on partial data. That leaves roughly 4 weeks.\n\n(b) Status quo: Region 7 is below baseline at week 45, so option 45 is ruled out. The region is rising slowly, but its hospital admission rate is the lowest of all regions and state-level ILI is under 2%. The default is a late onset, week 50 or later.\n\n(c) Unexpected scenario: the early H1N1 wave spreads from the West Coast into the Plains and Midwest. Thanksgiving gatherings (Nov 26) combine with the surge, and ILI crosses baseline in week 47 or 48 and stays above it. Another route is that the 2026-27 baseline is lower than 2.0%, so Region 7 is already close. Regional ILI also gets a boost from other respiratory viruses.\n\nHistorically, Region 7 onset is often in December, around weeks 49\u201352. In early seasons (2022-23) it was around week 44\u201345, and in 2024-25 around week 47\u201348. This season is early and nationally above baseline since week 44, and Region 7 is rising. Week 46 onset would need week 46 to be at or above baseline, with weeks 47 and 48 also at or above it. Thanksgiving week (47) often depresses ILI visits, which can create a dip and break the streak. That pushes onset later, to 48 or 49, or to 50 or later.\n\nProbabilities: 45 is 0, but I leave a tiny amount for a data revision. Week 46 gets about 8%, week 47 about 12%, week 48 about 17%, week 49 about 18%, and week 50 or later about 45%.\n\nOption_A: 0.01\nOption_B: 0.07\nOption_C: 0.12\nOption_D: 0.18\nOption_E: 0.19\nOption_F: 0.43",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "45",
+      "probability": 0.01
+     },
+     {
+      "option_name": "46",
+      "probability": 0.05
+     },
+     {
+      "option_name": "47",
+      "probability": 0.1
+     },
+     {
+      "option_name": "48",
+      "probability": 0.15
+     },
+     {
+      "option_name": "49",
+      "probability": 0.2
+     },
+     {
+      "option_name": "\u226550",
+      "probability": 0.49
+     }
+    ]
+   },
+   "question_id": 46898,
+   "reasoning": "(a) Time left: weeks 46\u201349 end on Dec 12, and the confirming weeks run through about Dec 26. Data would be fully known in early January 2027. The question resolves when Metaculus first accesses it, so the exact timing is unclear.\n\n(b) Status quo: Region 7 was below baseline in week 45 and rising slowly. The status quo is that it has not yet reached baseline, so onset would fall in week 46 or later. Week 45 as the onset week would need the region to have been above baseline already, and it was below, so that option is effectively ruled out.\n\n(c) Unexpected scenario: the early H1N1 wave spreads into the Midwest, and Thanksgiving gatherings plus the school-return bump push ILI above baseline in week 47 or 48 and keep it there. Alternatively, Thanksgiving depresses outpatient visits and ILI dips back below baseline, which delays onset past week 50.\n\nHistorically, Region 7's ILI onset is often late, in December or January. In early seasons such as 2022-23 it came around week 44\u201346, and in 2024-25 around week 51\u201352. The baseline is about 2.0% (possibly different this year). State-level values of roughly 1.5\u20131.9% suggest the region is near but below baseline. National ILI is already above baseline and the season is early, which raises the chance of an earlier onset. However, Region 7 has the lowest hospitalization rates, and the onset needs three consecutive weeks at or above baseline. The Thanksgiving week 47 dip in visits can also muddy the pattern. An onset in 46\u201349 is plausible, but \u226550 remains the most likely single outcome.\n\nRuling out 45 leaves 46 as unlikely, since it requires being at baseline in weeks 46, 47 and 48, including the Thanksgiving week. Weeks 47 and 48 are possible with the early wave. Week 49 is moderately likely.\n\nOption_A: 0.01\nOption_B: 0.05\nOption_C: 0.1\nOption_D: 0.15\nOption_E: 0.2\nOption_F: 0.49",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "45",
+      "probability": 0.02
+     },
+     {
+      "option_name": "46",
+      "probability": 0.2
+     },
+     {
+      "option_name": "47",
+      "probability": 0.29000000000000004
+     },
+     {
+      "option_name": "48",
+      "probability": 0.18
+     },
+     {
+      "option_name": "49",
+      "probability": 0.13
+     },
+     {
+      "option_name": "\u226550",
+      "probability": 0.18
+     }
+    ]
+   },
+   "question_id": 46898,
+   "reasoning": "**(a) Time until the outcome is known.** Today is November 25, 2026. The week 46 report comes out on November 30. If onset happens in week 47, 48 or 49, it can only be confirmed once the two following weeks are reported. For a week 49 onset, that means week 51 data, published around late December or early January. So the answer will most likely be known in 1\u20135 weeks.\n\n**(b) Status quo outcome.** In week 45 Region 7 was below its baseline, but rising. Rough state figures for that week:\n- Missouri 1.9%\n- Nebraska 1.9%\n- Kansas 1.5%\n- Iowa 0.4%\n\nThe weighted regional value is probably around 1.6\u20131.8%. Last season's baseline was 2.0%, so the gap may be only about 0.2\u20130.4 points. If nothing changed and the region stayed below baseline, the answer would be \"\u226550.\" But conditions are not static:\n- National ILI is 3.8%, well above the 2.9% national baseline.\n- The season is early and driven by an antibody-evading H1N1 strain.\n- Test positivity in Region 7 rose in week 45.\n- The Thanksgiving week (week 47) usually brings an ILI bump, partly because fewer routine visits raise the ILI share.\n\nThe most likely path is a crossing in week 46 or 47.\n\n**(c) Unexpected scenarios.**\n- Region 7 stays oddly quiet, as its low hospitalization rate suggests.\n- The 2026-27 baseline is recalculated higher.\n- A Thanksgiving-week spike crosses the baseline, but the post-holiday dip in week 48 falls back below it. That breaks the three-week requirement and pushes onset to week 49 or \u226550.\n- Alternatively, a surge already underway shows week 46 well above baseline.\n- Week 45 is very unlikely to qualify, since it was reported below baseline; only a data revision could change that.\n\n**Rationale.** There is no Region 7 base rate. Nationally, onset typically falls around mid-December, but this season is clearly early. Region 7 lags the coasts, though it is close to baseline and rising. The three-consecutive-week rule and the post-Thanksgiving dip add risk to a week 47 onset. I am spreading probability across weeks 46\u201349 and keeping a meaningful share on \u226550.\n\nOption_A: 2\nOption_B: 20\nOption_C: 29\nOption_D: 18\nOption_E: 13\nOption_F: 18",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "45",
+      "probability": 0.01
+     },
+     {
+      "option_name": "46",
+      "probability": 0.19
+     },
+     {
+      "option_name": "47",
+      "probability": 0.31000000000000005
+     },
+     {
+      "option_name": "48",
+      "probability": 0.2
+     },
+     {
+      "option_name": "49",
+      "probability": 0.11
+     },
+     {
+      "option_name": "\u226550",
+      "probability": 0.18
+     }
+    ]
+   },
+   "question_id": 46898,
+   "reasoning": "**(a) Time left:** Week 46 data comes out November 30, 2026. Each later week follows roughly weekly. An onset in week 46 would be confirmed around mid-December. Later onsets, or a \u226550 outcome, would be confirmed by late December or early January.\n\n**(b) Status quo:** As of week 45, Region 7 is below its baseline, but ILI is rising and the share of positive flu tests is increasing. If nothing changed, it would stay below baseline and resolve \u226550. In practice, the \"world changes slowly\" logic here means the current upward trend continues.\n\n**(c) Unexpected scenario:** Region 7 crosses baseline in week 47 because of the usual Thanksgiving bump in ILI share. Routine visits drop that week, which inflates the percentage. Then it dips back below in week 48, which breaks the required three-week run. The true sustained onset is pushed to week 49 or 50 or later. Alternatively, the H1N1 wave surges hard enough that week 46 already reaches baseline.\n\n**Rationale:**\n- **Week 45 is effectively ruled out.** The CDC report says Region 7 was below baseline that week.\n- **The gap to baseline looks small.** Nationally, ILI is 3.8% against a 2.9% baseline, so the season is clearly early and growing. State-level ILI is about 1.9% in Missouri and Nebraska, 1.5% in Kansas, and 0.4% in Iowa. That suggests a regional value of roughly 1.6\u20131.8%, against a likely baseline around 2.0%. Closing that gap within 1\u20132 weeks is plausible in a growing epidemic.\n- **Thanksgiving makes week 47 the most likely crossing.** The ILI percentage usually jumps in Thanksgiving week. The risk is a post-holiday dip in week 48 that breaks the three-week requirement. That risk shifts some probability toward week 48 or 49, or to \u226550 if the regional rise stalls.\n- **Region 7's indicators are lagging.** It has the lowest hospitalization rate of any region, so I keep meaningful weight on a late onset.\n\nOption_A: 1\nOption_B: 19\nOption_C: 31\nOption_D: 20\nOption_E: 11\nOption_F: 18",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "45",
+      "probability": 0.02
+     },
+     {
+      "option_name": "46",
+      "probability": 0.16
+     },
+     {
+      "option_name": "47",
+      "probability": 0.29999999999999993
+     },
+     {
+      "option_name": "48",
+      "probability": 0.22
+     },
+     {
+      "option_name": "49",
+      "probability": 0.13
+     },
+     {
+      "option_name": "\u226550",
+      "probability": 0.17
+     }
+    ]
+   },
+   "question_id": 46898,
+   "reasoning": "**(a) Time until the outcome is known.** Today is Nov 25, 2026. The week 46 FluView report comes out Nov 30. An onset in weeks 46\u201349 needs two more confirming weeks of data, so the answer will be clear by roughly late December 2026, when weeks 49\u201351 are published.\n\n**(b) Status quo outcome.** Region 7 was below its baseline in weeks 44 and 45. If it stayed below, or only crossed in week 50 or later, the answer would be **\u226550**. Week 45 is effectively ruled out, since the CDC reported Region 7 below baseline that week.\n\n**(c) Scenario for an unexpected outcome.**\n- *Faster than expected:* the drifted H1N1 spreads quickly into the Plains states and pushes Region 7 above baseline as early as week 46.\n- *Slower than expected:* Thanksgiving lifts ILI in week 47, but visits fall back afterward in week 48. That breaks the three-week streak and pushes a qualifying onset to week 50 or later.\n\n**Rationale**\n- **The national picture favours an early onset.** National ILI was 3.8% in week 45, clearly above its 2.9% baseline and for a second week. Region 7's ILI and its share of positive flu tests were both rising.\n- **Region 7 still has a gap to close.** State figures were about 1.9% (Missouri, Nebraska), 1.5% (Kansas) and 0.4% (Iowa). That suggests a regional value of roughly 1.6\u20131.8%, against a baseline probably near 2.0\u20132.3%. The gap is about 0.3\u20130.6 percentage points.\n- **The rise is plausible in time.** In an early, growing H1N1 season, closing that gap in 2\u20133 weeks is realistic.\n- **Thanksgiving helps a week 47 crossing.** The holiday falls in week 47 (Nov 26). ILI percentages usually jump that week, partly because routine visits drop and partly because transmission rises.\n- **Week 47 is therefore the most likely single answer.** Weeks 48 and 49 have substantial weight. A late-season or broken-streak outcome (\u226550) stays meaningful, because Region 7 has historically been late and had the lowest hospitalisation rates in the country.\n\nOption_A: 2\nOption_B: 16\nOption_C: 30\nOption_D: 22\nOption_E: 13\nOption_F: 17",
+   "research": "both",
+   "role": "boost"
+  }
+ ],
+ "research": "**Rundown: HHS Region 7 ILI onset, 2026-27 season**\n\n**Current state (latest data is MMWR week 45, ending Nov. 14, 2026)**\n- Region 7 is below its baseline. The week 45 report says regions 3, 5, and 7 are below their respective baselines. Week 44 also had Region 7 below their baselines.\n- Region 7's ILI trend has been rising slowly. In week 44, activity was stable but trending upwards in regions 5 and 7. In week 45, Region 7 increased compared to week 44.\n- I did not find Region 7's numeric ILI percentage for weeks 43\u201345, or its 2026-27 baseline value. The only Region 7 baseline I found is 2.0%, which is from the 2025-2026 season page. Baselines are recalculated each season, so the 2026-27 figure may differ. The question resolves against whatever baseline the dashboard shows.\n- National context: week 45 was 3.8% of patient visits, and it is above the national baseline of 2.9% for the second consecutive week.\n- Virologic context: in week 45, the percentage of positive specimens increased in regions 4, 5, 6, and 7. Region 7 also had a decrease in hospital admission rates in week 44, which the CDC said could reflect incomplete reporting.\n\n**Scheduled before the question closes**\n- The week 46 FluView report (covering Nov. 15\u201321) will be posted on November 30, 2026 because of the Thanksgiving holiday.\n- Weekly reports after that should follow normally on Fridays, but I did not confirm dates for weeks 47\u201350.\n\n**Base rates**\n- I did not find a historical onset week for Region 7 specifically, so I have no base rate for this measure. Other sources give national or other-region context only. For example, a Michigan report notes that Michigan's 2025-26 ILI peaked during Week 52. That is a single state in a different region, not a Region 7 onset.\n\n**Resolution mechanics**\n- Week-number windows (from the question's dates): week 46 = Nov. 15\u201321; week 47 = Nov. 22\u201328; week 48 = Nov. 29\u2013Dec. 5; week 49 = Dec. 6\u201312; week 50 = Dec. 13\u201319.\n- Because any onset in week 50 or later resolves as \u226550, the question effectively depends on whether Region 7 reaches its baseline in weeks 46\u201349 and stays at or above it for the following two weeks.\n- The \"two following weeks\" requirement creates an ambiguity. If an onset occurs in week 48 or 49, the confirming weeks may not be reported until after the question's resolution date. The question says it resolves when first accessed by Metaculus, but it does not say how to handle confirmation weeks that are not yet published at that point.\n- If nothing changes, Region 7 would need to rise from below its baseline to at or above it within the next four MMWR weeks. As of week 45 the region was still below, but the trend was upward. I could not find the size of the gap to the baseline, so I cannot say how far it has to move.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Base rate (thin).** I found no historical onset-week counts for Region 7, so I can't give a base rate for this measure. Two partial reference points:\n- In 2025-26, all regions except Region 9 were above baseline by Week 50, ending December 13, 2025. That is a late-season snapshot, not an onset week.\n- Nationally, across the 10 seasons from 2015 to 2016 to 2025 to 2026, leaving out 2020 to 2021, the national ILI share crossed its threshold around mid-December at the median. Region 7 would need to cross earlier than the national median to resolve before week 50. That is a national, not regional, comparison.\n- An undated Infection Control Today item has Region 7 as one of 10 regions at or above its region-specific baseline in week 45. Its national baseline of 2.2% matches neither 2025-26 (3.1%) nor 2026-27 (2.9%), so it is from another season and should be discarded for this question.\n\n**Primary source.** The first rundown's week 45 status is confirmed. The CDC report says regions 3, 5, and 7 are below their respective baselines, and Region 7 increased compared to Week 44. I could not find Region 7's numeric week 45 value or its 2026-27 baseline. The only Region 7 baseline I found is 2.0%, from the 2025-2026 season. Third-party state figures for the week ending Nov. 14 are Missouri 1.9%, Nebraska 1.9%, Kansas 1.5%, and Iowa 0.4% (Local Health Signal). These are state-level, not dashboard regional values, so treat them as rough only.\n\n**Strongest evidence against an early onset:**\n- Region 7 had the lowest hospital admission rate in week 45, at 1.1 per 100,000 against 4.5 in Region 4 (Medical Daily). It also had the lowest in week 42, at 0.7 per 100,000 (Natureworld News).\n- Region 7 ILI was stable (change of \u2264 0.1 percentage points) in an early-October report, so its rise since then is recent and small.\n- The state-level figures above sit below 2.0%, which suggests the region is still some distance from baseline, though I could not measure the gap.\n\n**Already decided?** Nothing I found suggests this. No week 46 or later data exists yet. The week 46 report is due November 30, per the first rundown.\n\n**Not found:** Region 7's numeric ILI for weeks 43\u201345; its 2026-27 baseline; any Region 7 onset history; a count of past seasons in which Region 7 crossed baseline by week 49.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-25T06:15:40.029843+00:00",
+ "scheduled_resolution_time": "2027-01-05T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Which epidemiological week will be the onset week for the flu in HHS Region 7 in 2026-27?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "MultipleChoiceQuestion",
+ "url": "https://www.metaculus.com/questions/46638"
+}
