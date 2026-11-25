@@ -1,0 +1,398 @@
+{
+ "accessed_at": "2026-11-25T03:12:09.600877+00:00",
+ "close_time": "2026-11-25T06:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.213579,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.066988,
+   "in": 7042,
+   "out": 1941,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001138,
+   "in": 3884,
+   "out": 1500,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.018338,
+   "in": 2594,
+   "out": 1315,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.035044,
+   "in": 7042,
+   "out": 2096,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 15,
+   "cost": 0.006725,
+   "in": 27587,
+   "out": 7936,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.025042,
+   "in": 33897,
+   "out": 3305,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.02446,
+   "in": 27599,
+   "out": 3400,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.035004,
+   "in": 3521,
+   "out": 1046,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.00084,
+   "in": 2461,
+   "out": 1187,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-25T06:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-25T03:13:30.301911+00:00",
+ "num_forecasters": 243,
+ "open_time": "2026-11-25T03:00:00+00:00",
+ "post_id": 46637,
+ "prediction": {
+  "predicted_options": [
+   {
+    "option_name": "45",
+    "probability": 0.5700000000000001
+   },
+   {
+    "option_name": "46",
+    "probability": 0.16999999999999998
+   },
+   {
+    "option_name": "47",
+    "probability": 0.092
+   },
+   {
+    "option_name": "48",
+    "probability": 0.059999999999999984
+   },
+   {
+    "option_name": "49",
+    "probability": 0.038
+   },
+   {
+    "option_name": "\u226550",
+    "probability": 0.06999999999999999
+   }
+  ]
+ },
+ "quality": {
+  "boost": [
+   "boost_2",
+   "boost_1"
+  ],
+  "check": null,
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46897,
+ "rationales": [
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "45",
+      "probability": 0.56
+     },
+     {
+      "option_name": "46",
+      "probability": 0.21
+     },
+     {
+      "option_name": "47",
+      "probability": 0.1
+     },
+     {
+      "option_name": "48",
+      "probability": 0.05
+     },
+     {
+      "option_name": "49",
+      "probability": 0.03
+     },
+     {
+      "option_name": "\u226550",
+      "probability": 0.05
+     }
+    ]
+   },
+   "question_id": 46897,
+   "reasoning": "**(a) Time left:** Week 46 data (ending Nov 21) comes out around Nov 30. Week 47 (ending Nov 28) should follow about a week later, in early December. The outcome should therefore be known within roughly 1\u20132 weeks. That holds unless Region 8 dips and the onset moves later, in which case resolution could take until mid-to-late December.\n\n**(b) Status quo outcome:** The week 45 narrative says Region 8 moved above its baseline. The season is early and fast-rising, driven by a partly antibody-evasive H1N1. National ILI is 3.8% against a 2.9% baseline and climbing, and Thanksgiving falls in week 47. A sustained rise is therefore the default, which makes the onset week 45.\n\n**(c) Unexpected scenario:** Several things could push the answer away from 45:\n- The week 45 value may be only marginally above baseline. The second research pass could not confirm Region 8 was above baseline, and the regional baseline may have changed from 2.7%.\n- Backfilled data revisions, or a holiday-related dip in reporting or visits, could push week 45 or 46 below baseline on the dashboard Metaculus first accesses. That would move the onset to week 46 or 47.\n- Less likely, Region 8, which tends to lag, could stall below baseline for a while. That would push the onset to week 48 or later, or to \u226550.\n\n**Rationale:** The narrative evidence supports 45, and momentum is strong both nationally and in the neighboring regions. Most of the remaining mass goes to 46, since a near-threshold week 45 is the most likely failure mode. I leave small tails on later weeks.\n\nOption_A: 0.56\nOption_B: 0.21\nOption_C: 0.1\nOption_D: 0.05\nOption_E: 0.03\nOption_F: 0.05",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "45",
+      "probability": 0.6200000000000001
+     },
+     {
+      "option_name": "46",
+      "probability": 0.17
+     },
+     {
+      "option_name": "47",
+      "probability": 0.08
+     },
+     {
+      "option_name": "48",
+      "probability": 0.05
+     },
+     {
+      "option_name": "49",
+      "probability": 0.03
+     },
+     {
+      "option_name": "\u226550",
+      "probability": 0.05
+     }
+    ]
+   },
+   "question_id": 46897,
+   "reasoning": "**(a) Time until the outcome is known:** About 2\u20133 weeks. The week 46 data arrives around Nov 30. Week 47 ends Nov 28 (not Dec 5, as the assistant wrote) and should appear in the following weekly update, around Dec 4\u20137. A week-45 onset can only be confirmed once week 47 is published. Later outcomes would take until mid or late December.\n\n**(b) Status quo outcome:** Week 45. The first research pass reports that the week 45 FluView lists Region 8 among the regions above baseline (1, 2, 4, 6, 8, 9, 10). National ILI is 3.8% against a 2.9% baseline and still rising. An H1N1 drift variant is driving an early season, and the Thanksgiving week (week 47) usually lifts ILI percentages. If Region 8 just stays at or above baseline for two more weeks, the answer is 45.\n\n**(c) Unexpected-outcome scenario:**\n- The second pass could not confirm the Region 8 statement in the week 45 text. Region 8 may have been only marginally above its baseline, which is unconfirmed and possibly about 2.7%, or the reading may be revised down.\n- A small dip in week 46 would then reset the onset to 46 or 47.\n- Region 8 (the Mountain states) has historically lagged the coasts. If the West Coast wave reaches the interior slowly, or ILI dips after the holiday, the onset could slip to 48\u201349.\n- A slip to \u226550 is possible but unlikely given the strong national trajectory.\n\n**Rationale:** The main evidence is the reported week-45 crossing of the baseline during an accelerating, early national season. That makes 45 the clear favourite. The main risks are that the region's status is unverified and the margin over baseline is unknown, so weeks 46 and 47 get the most of the remaining probability. Later weeks keep a modest tail.\n\nOption_A: 0.62\nOption_B: 0.17\nOption_C: 0.08\nOption_D: 0.05\nOption_E: 0.03\nOption_F: 0.05",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "45",
+      "probability": 0.6200000000000001
+     },
+     {
+      "option_name": "46",
+      "probability": 0.17
+     },
+     {
+      "option_name": "47",
+      "probability": 0.08
+     },
+     {
+      "option_name": "48",
+      "probability": 0.05
+     },
+     {
+      "option_name": "49",
+      "probability": 0.03
+     },
+     {
+      "option_name": "\u226550",
+      "probability": 0.05
+     }
+    ]
+   },
+   "question_id": 46897,
+   "reasoning": "**(a) Time until the outcome is known:** About two weeks. The Week 46 FluView should come out around Nov 30, and Week 47 (ending Nov 28; the research note's \"Dec 5\" is wrong) around Dec 4\u20137. If Region 8 stays above baseline through both weeks, the answer will be clear by early December. If it does not, the answer could take until late December.\n\n**(b) Status quo outcome:** **45.** The latest CDC narrative for Week 45 lists Region 8 among the regions above baseline, after it was below in Week 44. Several things point to Region 8 staying above baseline through Weeks 46 and 47:\n- The season is early and H1N1-driven, and the strain may partly evade existing antibodies.\n- National ILI is rising fast: 3.8% against a 2.9% baseline.\n- Laboratory percent-positive is increasing earlier than usual.\n- Thanksgiving gatherings fall in Week 47.\n\nOnce ILI crosses baseline in a season like this, it rarely drops back below within the next two weeks.\n\n**(c) Scenario for an unexpected outcome:**\n- **Week 45 was not really above baseline.** The second research pass could not confirm the Region 8 claim. The Week 45 reading may have been marginal, may be revised downward before Metaculus accesses the data, or the 2026-27 regional baseline may be higher than assumed. In any of these cases the onset shifts to 46 or 47.\n- **A dip below baseline.** Region 8 tends to have short, variable periods of elevated ILI. A dip in Week 46, such as a reporting artifact from a small number of reporting sites, would reset the count, and onset would likely land at 47\u201348.\n- **A data glitch or an unexpectedly flat Mountain region.** This could push onset to \u226550, which is unlikely given the trajectory.\n\n**Final probabilities:**\nOption_A: 0.62\nOption_B: 0.17\nOption_C: 0.08\nOption_D: 0.05\nOption_E: 0.03\nOption_F: 0.05",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "45",
+      "probability": 0.52
+     },
+     {
+      "option_name": "46",
+      "probability": 0.15
+     },
+     {
+      "option_name": "47",
+      "probability": 0.08
+     },
+     {
+      "option_name": "48",
+      "probability": 0.07
+     },
+     {
+      "option_name": "49",
+      "probability": 0.05
+     },
+     {
+      "option_name": "\u226550",
+      "probability": 0.13
+     }
+    ]
+   },
+   "question_id": 46897,
+   "reasoning": "**(a) Time left:** Week 47 ends Dec 5, and its data should appear in the FluView update around Dec 4\u201311. The outcome should be known in about 2 weeks, and the question resolves at first access. If onset is later than 47, it could take up to about 3\u20134 weeks.\n\n**(b) Status quo:** Per the research assistant, Region 8 was below baseline in week 44 and above it in week 45, with ILI rising. If it stays at or above baseline through weeks 46 and 47, onset is week 45.\n\n**(c) Unexpected scenario:** Region 8 is only marginally above baseline in week 45, and that value is revised down or dips back below in week 46 or 47. Thanksgiving-week reporting changes and noisy data in a smaller region could cause this. The qualifying run would then restart at week 46\u201349, or fail to form before week 50. Alternatively, the assistant's narrative may be wrong, for example by mixing up seasons or baselines, and the true onset could be much later.\n\n**Reasoning:** The season is early, driven by a mutated H1N1 strain. West Coast and national activity are well above baseline (national 3.8% against a 2.9% baseline), and Region 8 was rising. Thanksgiving usually lowers non-ILI outpatient visits, which tends to push the ILI percentage up rather than down. That supports persistence above baseline. I put extra weight on the status quo (week 45). The remaining probability goes mostly to week 46 and the later options. I leave a fat tail on \u226550 because I could not verify Region 8's weekly values or baseline.\n\nOption_A: 0.52\nOption_B: 0.15\nOption_C: 0.08\nOption_D: 0.07\nOption_E: 0.05\nOption_F: 0.13",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "45",
+      "probability": 0.55
+     },
+     {
+      "option_name": "46",
+      "probability": 0.14999999999999997
+     },
+     {
+      "option_name": "47",
+      "probability": 0.09999999999999998
+     },
+     {
+      "option_name": "48",
+      "probability": 0.06999999999999999
+     },
+     {
+      "option_name": "49",
+      "probability": 0.04999999999999999
+     },
+     {
+      "option_name": "\u226550",
+      "probability": 0.07999999999999999
+     }
+    ]
+   },
+   "question_id": 46897,
+   "reasoning": "**(a) Time left:** The outcome depends on MMWR weeks 46 and 47. Week 46 data is due around Nov 30 and week 47 around Dec 4\u201311. Later onset weeks would be known by about late December, so the answer is probably settled in 1\u20132 weeks and at most about 4 weeks.\n\n**(b) Status quo:** The CDC narrative for week 45 (ending Nov 14) lists Region 8 as above its baseline, after it was below in week 44, with ILI rising. The national figure is 3.8% against a 2.9% baseline, and the season is running much earlier than last year. If Region 8 stays at or above baseline through weeks 46 and 47, onset is week 45.\n\n**(c) Unexpected scenario:** The week 45 reading is a marginal crossing that gets revised down, or it was misreported, since the second research pass could not confirm it. Region 8 then dips below baseline in week 46 or 47 (for example, because the Thanksgiving week on Nov 22\u201328 distorts visit patterns). The onset shifts to 48 or 49, or later if the rise stalls.\n\n**Reasoning:** The week 45 crossing came with a rising trend and a strong early national season, which favors persistence. Against that, the crossing is only one week old, the regional baseline is unconfirmed, and the Region 8 value in the report is not directly verified. A single sub-baseline week in 46 or 47 would reset the onset. I put about 55% on week 45 and spread the rest over later weeks.\n\nOption_A: 0.55\nOption_B: 0.15\nOption_C: 0.10\nOption_D: 0.07\nOption_E: 0.05\nOption_F: 0.08",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "45",
+      "probability": 0.5
+     },
+     {
+      "option_name": "46",
+      "probability": 0.15
+     },
+     {
+      "option_name": "47",
+      "probability": 0.1
+     },
+     {
+      "option_name": "48",
+      "probability": 0.08
+     },
+     {
+      "option_name": "49",
+      "probability": 0.05
+     },
+     {
+      "option_name": "\u226550",
+      "probability": 0.12
+     }
+    ]
+   },
+   "question_id": 46897,
+   "reasoning": "**(a) Time left:** The outcome depends on weeks 45\u201347, which means data through the week ending Dec 5. That data should be published by about Dec 11, so roughly 2\u20132.5 weeks remain. Later onset weeks (48 and 49) would take until about Dec 18\u2013Jan 1 to confirm, and the question resolves when Metaculus first accesses it.\n\n**(b) Status quo:** One research pass reports that Region 8 moved above its baseline in week 45. Week 44 was below baseline, and national ILI has been above baseline for two consecutive weeks. The other pass could not confirm the Region 8 claim from the text it saw. If Region 8 stays at or above baseline in weeks 46 and 47, the answer is 45. The season is early, driven by the H1N1 mutation, and activity is rising across regions. Thanksgiving (week 47) typically pushes ILI up rather than down.\n\n**(c) Unexpected outcome:** Region 8's week 45 reading was only marginally above baseline, or the baseline is different from what the assistants assumed. In that case week 45 could be revised down, or week 46 or 47 could dip below baseline. Fewer outpatient visits and reporting noise around Thanksgiving make a dip plausible. The qualifying run would then restart at week 46\u201349, or later if activity stalls.\n\nI put about 80% on the week 45 above-baseline claim being true, and about 70% on it persisting through weeks 46\u201347 if so. That gives roughly 55% for week 45 before allowing for other paths. I trim it to about 50% to leave room for the unconfirmed claim and the unconfirmed baseline.\n\nOption_A: 0.50\nOption_B: 0.15\nOption_C: 0.10\nOption_D: 0.08\nOption_E: 0.05\nOption_F: 0.12",
+   "research": "both",
+   "role": "member"
+  }
+ ],
+ "research": "**Rundown: Region 8 ILI onset, 2026-27 season**\n\n**Current state (as of Nov 25, 2026)**\n- **Week 40 (ending Oct 10):** All regions were below their ILI baselines, and Region 8 was among those where ILI rose that week. ILI activity increased in HHS regions 1, 2, 3, 4, 6, 8, and 9 and remained stable in regions 5, 7, and 10 compared to Week 39. All regions are below their respective baselines.\n- **Week 43 (ending Oct 31):** Region 8 was still below baseline. Nationally, during Week 43, 2.8% of patient visits reported through ILINet were due to ILI. This week's national percentage increased compared to Week 42 but remains below the national baseline of 2.9%.\n- **Week 44 (ending Nov 7):** ILI activity increased in all other HHS regions (1, 3, 4, 6, 8, 9, 10) compared to Week 43. Region 1 is at its baseline, regions 4, 6, 9, and 10 are above their respective baselines, and all other regions (2, 3, 5, 7, and 8) are below their baselines. So Region 8 was below baseline in week 44.\n- **Week 45 (ending Nov 14), the latest report:** Regions 1, 2, 4, 6, 8, 9, and 10 are above their respective baselines, while regions 3, 5, and 7 are below their respective baselines. Region 8 therefore moved above its baseline this week, and its ILI rose compared with week 44. The national figure was 3.8% of patient visits reported through ILINet, against a national baseline of 2.9%.\n- **Context:** CDC's November outlook says the percent of specimens testing positive for influenza as reported to CDC by clinical laboratories is increasing earlier than usual.\n\n**Candidate onset:** Week 45 is the first week in the sources where Region 8 is at or above baseline. The question needs weeks 46 and 47 to stay at or above baseline as well. If they do, the answer is 45. If Region 8 falls back below baseline in week 46 or 47, the candidate resets to a later week, and the answer would likely be 48 or later, subject to the \u226550 rule.\n\n**Scheduled before the question closes**\n- The next FluView update is scheduled for November 30. That report should cover week 46 (ending Nov 21).\n- Week 47 (ending Dec 5) would normally appear in the following Friday update, around Dec 4\u201311. I did not confirm that date from a source.\n- Week 50 ends Dec 19. Any onset on or after that week resolves as \u226550.\n\n**Base rates and history**\n- The 2025-26 season was early and intense in Region 8. The week 3 report said ILI activity ... remained stable (change of \u2264 0.1 percentage points) in Region 8 this week compared to Week 2, and the week 4 report said Region 8 was above their respective baselines in late January. That season's onset is not a clean comparison, so I did not use it as a base rate.\n- **Not found:** I did not find historical Region 8 onset weeks for prior seasons, so I have no formal base rate for this measure.\n\n**Gaps and caveats**\n- **Baseline:** I did not confirm Region 8's 2026-27 baseline. The only figure I found is 2.7%, which comes from the 2025-26 methodology page. The national baseline changed from 3.1% in 2025-26 to 2.9% in 2026-27, so the regional figure may also have changed.\n- **Numbers:** I did not find Region 8's exact weekly ILI percentage for weeks 44 or 45. My statements about Region 8 rely on CDC narrative text, not on the dashboard values.\n- **Revisions:** The question resolves on first access, so the week 45 value could be revised. This matters only if it is close to the baseline.\n\n**If nothing changed:** The question resolves at the first access by Metaculus. Based on current data, if Region 8 stays at or above baseline for weeks 46 and 47, the answer is 45. If week 46 or 47 drops below baseline, the onset moves later, and the answer is \u226550 if no later qualifying run appears before week 50.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Base rate (not found for onset).** I found no historical Region 8 onset weeks, so there is no formal base rate. Peak timing is only a loose proxy. In 2022\u201323, ILI activity peaked in all 10 HHS Regions during the week ending November 26, 2022 (week 47). In 2023\u201324, Regions 2, 3, 4, and 8 peaked in late December. In 2024\u201325, region 8 (Mountain) had the shortest period of elevated ILI activity, lasting 12 weeks.\n\nA closer comparison is the same week last season. In the 2025 Week 45 report, all 10 HHS regions are below their respective baselines. This year, national ILI is above baseline, so 2026 is running earlier than 2025.\n\n**Primary source (first-hand).** I checked the 2026 Week 45 FluView report (week ending Nov 14, published about Nov 20). Nationally, 3.8% of patient visits reported through ILINet were due to ILI. It says that figure is above the national baseline of 2.9% for the second consecutive week. For Region 8, the report says ILI increased in all other HHS regions (2, 3, 4, 5, 6, 7, 8, 9, and 10) compared to Week 44. The snippet I retrieved did not give Region 8's weekly percentage or its baseline. The first rundown's claim that Region 8 is above baseline in Week 45 is therefore not confirmed by the text I saw.\n\n**Strongest evidence against a week-45 onset:**\n- Region 8 was flat and below baseline earlier. In Week 42, ILI activity remained stable in region 8, and all other regions are below their respective baselines except Region 10.\n- The rise is one week old. The answer needs Weeks 46 and 47 to stay at or above baseline.\n- The baseline is unconfirmed. The only Region 8 figure I found is 2.7%, from the 2025\u201326 methods page. The national baseline moved from 3.1% to 2.9%, so the regional figure may have moved too.\n- Weeks 46 and 47 are not yet published. The Week 46 update is due around Nov 30.\n\n**Correction to the first rundown.** Its Week 40 line says all regions were below baseline. The Week 40 report says Region 10 is above its baseline, while all other regions are below their respective baselines.\n\n**Already decided?** No. Week 45 is the only data point, and the outcome depends on Weeks 46 and 47, which are not yet out. A sub-baseline reading in either week would move the answer. Week 45 values can still be revised, but the question resolves on first access.\n\n**Could not find:** Region 8 weekly values and 2026\u201327 baseline; Region 8 onset history for prior seasons; the Week 47 publication date.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-25T03:12:42.394407+00:00",
+ "scheduled_resolution_time": "2027-01-05T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Which epidemiological week will be the onset week for the flu in HHS Region 8 in 2026-27?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "MultipleChoiceQuestion",
+ "url": "https://www.metaculus.com/questions/46637"
+}
