@@ -1,0 +1,209 @@
+{
+ "accessed_at": "2026-11-25T00:08:54.307356+00:00",
+ "close_time": "2026-11-25T03:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.206287,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.068028,
+   "in": 5372,
+   "out": 2327,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001077,
+   "in": 3272,
+   "out": 1500,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.013818,
+   "in": 1729,
+   "out": 1036,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.023374,
+   "in": 5372,
+   "out": 1263,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.002586,
+   "in": 20388,
+   "out": 1096,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024709,
+   "in": 34365,
+   "out": 2545,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.036949,
+   "in": 51074,
+   "out": 3684,
+   "searches": 3,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.034564,
+   "in": 2686,
+   "out": 1191,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001182,
+   "in": 2293,
+   "out": 1905,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-25T03:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-25T00:10:04.441356+00:00",
+ "num_forecasters": 180,
+ "open_time": "2026-11-25T00:00:00+00:00",
+ "post_id": 46636,
+ "prediction": 0.18405931883713855,
+ "quality": {
+  "boost": [
+   "boost_1",
+   "boost_2"
+  ],
+  "check": null,
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 46896,
+ "rationales": [
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.14,
+   "question_id": 46896,
+   "reasoning": "(a) About 5 weeks remain until 31 December 2026. The 26\u201327 November special summit comes first, and the regular December European Council (probably 17\u201318 December) is the last scheduled chance.\n\n(b) The status quo is No. There is no overall agreement, and the October box failed to win endorsement. Germany, France, Sweden and Parliament have all objected to the revised box. Revenue and own resources are unresolved, and Germany has threatened a veto over Ukraine funding.\n\n(c) A No scenario: the 26\u201327 November summit ends without a deal and leaders ask for further work. The December Council then cannot reconcile the frugal states, the cohesion and agriculture camps, the Ukraine financing question and the own-resources dispute. The talks slip into 2027, perhaps under the Cypriot presidency, as in 2012\u201313, when a failed November summit was followed by a February deal.\n\n(d) A Yes scenario: Costa's box is adjusted at the November summit, or at the December Council, with side deals on rebates, Ukraine financing and agriculture and cohesion envelopes. Leaders then reach unanimity on the overall ceiling and the whole framework by mid-December. Pressure to start funding in January 2028 and the political cost of delay would push toward this outcome.\n\nHistorical base rates favor slippage. MFF deals usually come after at least one failed summit, and often several. A deal about 17 months after the proposal would be fast. Parliament's rejection does not block a European Council political agreement, but it adds friction. The November summit could produce a surprise deal, but it looks more like a negotiating round, and December is possible but has to overcome large gaps. Many past deals did come at the second or third attempt, though, and Costa has framed this as the push toward a final agreement. I put the chance of a deal before year-end at about 15%.\n\nProbability: 14%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.11,
+   "question_id": 46896,
+   "reasoning": "(a) The question closes on 31 December 2026, so there are about 5 weeks left. The special summit on 26\u201327 November comes first, and a December European Council (usually mid-December) is the other main chance.\n\n(b) The status quo is No. No agreement exists, the October box failed, and Germany, France, Sweden and the Parliament's negotiator have all objected to the new one. The revenue side is unresolved, and Germany has threatened a veto over Ukraine funding.\n\n(c) No scenario: the 26\u201327 November summit ends without consensus and is described as a \"stocktaking\". Leaders disagree over the ceiling, rebates, the size of the cohesion and agriculture envelopes, new own resources and Ukraine funding. The Commission and the Presidency then try to bridge the gaps, but the December Council either does not take it up or fails. The talks run into 2027, as the 2012 talks did before the February 2013 deal. This is the historical pattern.\n\n(d) Yes scenario: Costa's \"negotiating box with figures\" is a deliberate push toward a deal. At the November summit or a follow-up in December, leaders trade concessions. Germany gets Ukraine assurances, France gets agriculture funding, and the frugal states get a lower ceiling. The deal is then labeled a political agreement that includes the overall ceiling. Strong pressure comes from the need to have legislation in place for 2028, but that deadline is still more than a year away, so it is not binding.\n\nHistorically, first or second summits on a box rarely produce deals. The 2021\u20132027 deal took a long time and came under crisis pressure. The 2014\u20132020 deal failed at its first summit and was agreed about 3 months later. Here the timeline is tighter and the proposal is only 17 months old. The Parliament's objections do not block a European Council agreement, but the unresolved issues and the vetoes suggest slippage into 2027. Leaders often say they want a deal by the end of the year and then miss it. I estimate about 12%.\n\nProbability: 11%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.09,
+   "question_id": 46896,
+   "reasoning": "**(a) Time left:** About 36 days, until 31 December 2026. The window contains the 26\u201327 November special summit and the regular December European Council, whose date I could not confirm.\n\n**(b) Status quo:** No political agreement on the whole 2028\u20132034 MFF, including the overall ceiling, by 1 January 2027. The question then resolves No.\n\n**(c) No scenario:** Costa's revised box is discussed on 26\u201327 November, and France, Germany, Sweden and others stay opposed. The disputes over the ceiling, own resources, rebates, the Ukraine funding gap and the cohesion/agriculture split remain unresolved. The December summit ends with \"work will continue\" conclusions, and the talks move into 2027 under the Lithuanian presidency. This fits the pattern of past MFFs: the 2014\u20132020 deal failed at a November 2012 summit and came in February 2013, and the 2021\u20132027 deal took about two years from the Commission's proposal.\n\n**(d) Yes scenario:** The pressure to adopt legislation in 2027 so funds can flow from January 2028 pushes leaders to a package deal at the December summit. Costa cuts the ceiling further and adds concessions on rebates, the Ukraine envelope and farm and cohesion funding. Germany lifts its veto threat and France accepts a compromise. The leaders agree the whole framework, including the overall ceiling.\n\n**Weighing:** A deal about 17 months after the Commission's July 2025 proposal would be fast by historical standards. Deals rarely come at the first summit after a box fails to win endorsement. The 15\u201316 October summit did not endorse the Irish box, and the reaction to Costa's revision was negative. The European Parliament also opposes it, though its consent is not needed for the European Council's political agreement. The status quo and the base rate both point strongly to No. A small chance remains that deadline pressure produces a surprise deal.\n\nProbability: 9%",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.2,
+   "question_id": 46896,
+   "reasoning": "**(a) Time left:** About five weeks, until 31 December 2026. Two decision points remain: the special European Council on 26\u201327 November and the December European Council (date not yet confirmed, likely mid-December).\n\n**(b) Status quo:** No agreement. Leaders did not endorse the October box. Costa's revised box of 21 November has drawn negative reactions from France, Germany and Sweden, and the revenue side is unresolved.\n\n**(c) No scenario:** The November summit ends without a deal. Germany holds to its veto threat over Ukraine's 2027 funding gap, France rejects the compromise, and frugal states such as Sweden object. The December summit then makes only \"progress,\" and the deal slips into 2027 under the Cypriot or Lithuanian presidencies. This matches the 2012\u201313 and 2020 patterns, where the first special summit failed and agreement came months later.\n\n**(d) Yes scenario:** Costa secures a package at the November special summit or, more plausibly, at the December summit. It would combine a side arrangement covering Ukraine's 2027 shortfall with revenue-side concessions. Leaders adopt conclusions with an overall ceiling, citing the need to legislate in 2027 so funds can flow from January 2028. Parliament's objections don't block this, because its consent comes later in the legislative phase.\n\n**Rationale:**\n- The base rate is against a quick deal. Initial special summits on the MFF usually fail, as in 2012 and February 2020.\n- A deal by end-2026 would take about 17 months from the Commission's proposal, at the fast end of the historical range.\n- The December summit gives a second chance within the window. The 2005 precedent shows that a failed summit can be followed by a December deal, so this is not negligible.\n- Timing pressure is real, and Costa is pushing hard.\n- Still, the blockers are several and serious: Germany's veto threat, French rejection, and the open revenue question. All 27 leaders must agree.\n\nWeighting the status quo, I estimate roughly 20%.\n\nProbability: 20%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.27,
+   "question_id": 46896,
+   "reasoning": "**(a) Time left:** About five weeks. There is a special European Council on 26\u201327 November 2026 and a probable regular European Council in mid-December (date unconfirmed). The question closes 1 January 2027.\n\n**(b) Status quo:** No agreement. The October box was not endorsed, and Costa's revised box of 21 November has drawn objections from France, Germany, Sweden and the European Parliament's chief negotiator. If nothing changes, the question resolves No.\n\n**(c) No scenario:** The November special summit ends without a deal, as first dedicated MFF summits usually do (November 2012, February 2020). The main blockers are:\n- Net payers want a lower ceiling.\n- Cohesion and agriculture countries want more money.\n- The revenue side (own resources) is unresolved.\n- Germany threatens a veto unless Ukraine's 2027 shortfall is covered.\n\nThe December European Council is then taken up with other business, or makes progress without closing. Agreement slips to early or mid-2027, matching the 2013 and 2020 pattern of deals coming months after the first failed special summit.\n\n**(d) Yes scenario:** Costa runs the summit late into the night with side-deals: rebates or corrections for net payers, cohesion and farm top-ups, and a parallel arrangement on Ukraine funding. Leaders unanimously agree a ceiling of around \u20ac1.78 trillion in current prices. Alternatively, the November summit narrows the gaps and the December summit closes the deal, as happened in December 2005. Parliament's consent comes later and is not needed for this question.\n\n**Rationale:**\n- **Timing is fast by historical standards.** A deal by end-2026 would come about 17 months after the Commission's July 2025 proposal, against roughly 20\u201324 months in past cycles.\n- **Opposition is broad.** Several major states and Parliament have objected, and Germany's veto threat over Ukraine is a separate blocker.\n- **The revenue side is open,** and the ceiling cannot be finalised without it.\n- **There is some real pressure to close.** The Council wants 2027 for legislation so funds can flow from January 2028. Costa explicitly says \"the time has come,\" and there are two chances, November and December.\n- **The bar is fairly reachable.** Only the European Council's political agreement is needed, not Parliament's consent.\n\nWeighting the status quo, I put the chance of agreement in 2026 at roughly one in four to one in three.\n\nProbability: 27%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.22,
+   "question_id": 46896,
+   "reasoning": "**(a) Time until the outcome is known:** About 5 weeks, to 31 December 2026. The decisive events are the special European Council on 26\u201327 November and the regular December European Council, probably mid-December though the date is unconfirmed.\n\n**(b) Status quo outcome:** No. Leaders did not endorse the October box. The revised Costa box of 21 November drew immediate pushback from France, Germany and Sweden. Germany has issued a veto threat tied to Ukraine's 2027 funding shortfall. The revenue side, which the ceiling depends on, is unresolved. Sectoral Council mandates do not count.\n\n**(c) No scenario:** The 26\u201327 November summit ends without a deal. Each of these blocks agreement:\n- The frugal states want a lower ceiling.\n- France objects to the CAP and cohesion figures.\n- Germany ties its consent to Ukraine financing.\n- Others resist the own-resources package.\n\nCosta then revises the box again. The December Council either discusses it inconclusively or puts it off amid other business, and a deal slips into 2027. That matches the historical pattern, where the first dedicated MFF summit failed in 2005, 2012 and 2020.\n\n**(d) Yes scenario:** Costa, who has said \"the time has come,\" pushes leaders through a marathon session in late November or at the December Council. The likely trades are:\n- **Ukraine:** a side arrangement on the 2027 shortfall satisfies Germany.\n- **Rebates and corrections:** these buy off the frugal states.\n- **Agriculture:** a CAP top-up placates France.\n- **Own resources:** a vague formula leaves details for later.\n\nLeaders then announce a political agreement that includes the overall ceiling. Parliament's consent is not required for this question, so its opposition does not block a Yes.\n\n**Rationale:**\n- **Historical pattern:** Dedicated MFF summits have historically failed the first time. Deals followed months later: December 2005 after June 2005, February 2013 after November 2012, July 2020 after February 2020.\n- **Time available:** Here the second shot comes only about 3 weeks after the first, which leaves little time for positions to shift.\n- **Pace:** A deal by year-end would be about 17 months after the Commission's July 2025 proposal. That is at the fast end of the historical range.\n- **What could speed it up:** Political pressure is real. Funding must flow from January 2028, the Ukraine financing problem is urgent, and Costa has a reputation for efficient summitry.\n- **What holds it back:** The breadth of open disputes points against an agreement on the whole framework, including the ceiling, within 5 weeks. Those disputes span the ceiling, revenue, Ukraine, CAP and cohesion.\n\nProbability: 22%",
+   "research": "both",
+   "role": "boost"
+  }
+ ],
+ "research": "**Rundown: EU 2028\u20132034 MFF political agreement before 1 January 2027**\n\n**Current state (as of 25 Nov 2026)**\n- **Costa's proposal:** European Council President Ant\u00f3nio Costa presented a revised negotiating box on 21 November 2026. He said it is \"a good basis for moving forward towards a final agreement\". All figures are in constant 2025 prices unless noted.\n- **Ceiling figures conflict across sources.** One report puts it at \u20ac1.781 trillion, a cut of about 10.2% from the Commission's initial draft. Another puts it at \u20ac1.582 trillion in constant prices, a cut of \u20ac180.6 billion from the Commission's July 2025 proposal. The Commission's July 2025 proposal was about \u20ac1.985 trillion in nominal terms (\u20ac1.985 trillion). I could not resolve which figures are official, so check the Council's document directly before forecasting on a threshold.\n- **Pushback:** France, Germany, and Sweden reacted negatively. Germany's Chancellor threatened in a November 6 letter to veto the MFF unless Ukraine's projected 2027 funding shortfall is covered. The European Parliament's chief negotiator rejected the proposal as a step backwards. Parliament must consent to the MFF regulation and has pushed for a higher ceiling and genuine new own resources.\n- **Revenue issue:** Without agreement on the revenue side, the expenditure ceiling cannot be finalized.\n- **Prior attempt:** The Irish Presidency tabled a box on 10 October 2026, and at the 15\u201316 October 2026 meeting EU leaders did not endorse it.\n- **Sectoral mandates don't count:** The Council has adopted many partial negotiating positions (cohesion, agriculture, fisheries, Horizon Europe, and others). Each one states that its financial allocation depends on the overall MFF agreement, so none of them satisfies the question.\n\n**Scheduled before the question closes**\n- **Special European Council, 26\u201327 November 2026:** Multiple sources date this summit to 26\u201327 November, and it is where Costa's box will be discussed. One source describes the aim as reaching an agreement by the end of the year.\n- **December European Council:** One source refers to a December European Council as the next step. I did not confirm its date, so treat it as unverified.\n- **Timing pressure:** The Council says an EU agreement on the overall MFF before the end of 2026 would allow for the adoption of legislative acts in 2027, which is needed for funding to flow from January 2028.\n\n**Base rate (from background knowledge, not from my searches)**\n- Past MFFs were usually settled at summits after lengthy deadlock. The 2014\u20132020 framework failed at a November 2012 special summit and was agreed in February 2013. The 2021\u20132027 framework was agreed in July 2020, about two years after the Commission's proposal. Deals rarely come on the first summit after a failed box, and a deal in December 2026 would be fast by historical standards.\n\n**Resolution if nothing changes**\n- If the 26\u201327 November summit and the December European Council end without agreement on both the overall ceiling and the MFF as a whole, the question resolves No. Partial Council mandates and a leaders' \"political agreement\" limited to some headings would not count, because the question requires the whole framework including the overall ceiling.\n\n**What I could not find**\n- The official Council text of Costa's proposal (only press summaries).\n- The confirmed date of the December 2026 European Council.\n- Any reporting on the outcome of the 26\u201327 November summit, which had not happened as of the latest results.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Base rate.** The European Parliament counts six MFFs to date, including 2021\u20132027 (There have been six multiannual financial frameworks (MFFs) to date, including 2021-2027.). Agreements came in 1988, 1992 (Edinburgh), 1999, 2005\u201306 and 2013 (from background knowledge, not verified in my searches), and 2020. The 2021\u20132027 talks started in August 2020 and were concluded on 10 November 2020. The Commission's proposal for that cycle came in May 2018 (On 2 May 2018, the Commission presented its legislative proposals.), so the gap was roughly two years. From memory, the 2014\u20132020 deal followed a June 2011 proposal by about 20 months, and the 2007\u20132013 deal followed a 2004 proposal by about 22 months. The 1992 Delors II deal was faster, at about ten months. The current cycle's proposal was July 2025, so a deal by 31 December 2026 would take about 17 months. That is at the fast end of the historical range.\n\n**Primary source.** The Council's policy page is the relevant official source. It says On 21 November 2026, the President Ant\u00f3nio Costa presented a proposal for an agreement on the next MFF revised negotiating box. Costa's invitation letter of 24 November says the time has come to reach an agreement. I could not retrieve the Council's full text of the box, so the ceiling figures rest on press coverage. Costa is quoted as saying the proposal is 10 percent lower than the Commission's initial proposal \u2013 a reduction of \u20ac204 billion in current prices. That implies about \u20ac1.78 trillion in current prices. The \u20ac1.582 trillion figure is in constant prices and is a different basis, so the two figures do not truly conflict. Both are consistent with the July 2025 proposal. One outlet's \"\u20ac40 billion\" cut is inconsistent with this and should be discarded.\n\n**Has it been decided?** No. The summit begins 26 November, and I found no outcome reporting. Costa expects the proceedings to conclude on Friday, 27 November.\n\n**Strongest evidence against Yes:**\n- The October box failed to win endorsement, and the new box has drawn pushback. One report says it require[s] unanimity among all 27 national leaders plus European Parliament consent.\n- The revenue side is unresolved, and the ceiling cannot be finalised without it (first rundown).\n- Germany's veto threat over Ukraine's 2027 shortfall is a separate blocker.\n- Parliament's chief negotiator has rejected the proposal, and Parliament must consent.\n- Costa calls the goal challenging, and the Council's stated timing is that a 2026 deal \"would allow\" 2027 legislation, not a hard deadline.\n\n**Could not find:** the Council's full text of the box, the December European Council date, and any outcome of the 26\u201327 November summit.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-25T00:09:26.127814+00:00",
+ "scheduled_resolution_time": "2027-01-01T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Will the European Council reach a political agreement on the overall 2028-2034 Multiannual Financial Framework before January 1, 2027?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "BinaryQuestion",
+ "url": "https://www.metaculus.com/questions/46636"
+}
