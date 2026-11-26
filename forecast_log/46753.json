@@ -1,0 +1,214 @@
+{
+ "accessed_at": "2026-11-26T03:05:42.130680+00:00",
+ "close_time": "2026-11-26T06:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.20068,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.062552,
+   "in": 4738,
+   "out": 2180,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000878,
+   "in": 2965,
+   "out": 1162,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.008832,
+   "in": 1571,
+   "out": 569,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.021436,
+   "in": 4738,
+   "out": 1196,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.002403,
+   "in": 19350,
+   "out": 936,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.037563,
+   "in": 63364,
+   "out": 2453,
+   "searches": 3,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.036409,
+   "in": 50396,
+   "out": 2738,
+   "searches": 3,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.029856,
+   "in": 2369,
+   "out": 1019,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000751,
+   "in": 2021,
+   "out": 1098,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-26T06:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-26T03:06:42.961941+00:00",
+ "num_forecasters": 105,
+ "open_time": "2026-11-26T03:00:00+00:00",
+ "post_id": 46753,
+ "prediction": 0.5572658587641501,
+ "quality": {
+  "boost": [
+   "boost_1",
+   "boost_2"
+  ],
+  "check": [
+   {
+    "kind": "UNITS",
+    "why": "The final forecast is given as 0.557 (about 55.7%), but the reasoning concludes \"Probability: 50%\" and \"about 50%,\" so the stated and reported values disagree."
+   }
+  ],
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 47010,
+ "rationales": [
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.5,
+   "question_id": 47010,
+   "reasoning": "(a) About 20 days remain (Nov 26 to Dec 16, 2026).\n\n(b) The status quo is No. Loading began Aug 30 and was paused. The tipped assembly was retrieved Oct 21, and Holtec said loading could resume. No credible source I found confirms all 204 assemblies are in. If nothing changes, no completion announcement appears by Dec 16.\n\n(c) No scenario: Loading resumed in October but proceeds slowly because of workforce cuts, other technical problems, or NRC and Holtec checks. Alternatively, loading finished quietly and was never clearly announced, or the resolver sees no explicit completion statement. Either way, nothing credible says \"fuel load complete\" before Dec 16.\n\n(d) Yes scenario: Loading resumed in late October and finished in November. Holtec or the NRC confirms that all 204 assemblies are in the core, perhaps as part of a restart-progress update. Secretary Wright's remarks about running before year-end and the Michigan Public report of reloading in October both point toward this. Because loading took only a few weeks before the pause, it could be done already, and the resolver may find confirmation.\n\nWeighing the two: Reloading began in October, and the fuel-loading operation itself should take days to weeks, so it is plausible it has been completed. Still, a large share of the core was probably already loaded before the pause. The remaining work was small, so completion by late November is quite likely physically. The main uncertainty is whether it has been documented. Holtec generally posts updates, so completion likely would be announced. The Axios report of delays and the March 2027 target concern the restart, not loading. The research found no completion report as of Nov 26, which is a bit surprising if loading had resumed in early October. That suggests continued holdups or a lack of coverage. I estimate about 50%.\n\nProbability: 50%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.45,
+   "question_id": 47010,
+   "reasoning": "(a) About 20 days remain, from November 26 to December 16, 2026.\n\n(b) The status quo is No, because no credible source confirms that all 204 assemblies are loaded. Loading resumed in October according to Michigan Public, but nothing since then reports completion.\n\n(c) No scenario: loading resumed in October but went slowly or paused again, perhaps because of further problems or the workforce cuts and delays that Axios reported. Holtec announces nothing before December 16, or announces completion only afterward.\n\n(d) Yes scenario: Loading restarted around late October and finished in November. Holtec or the NRC then announces or documents that the core is fully loaded, either before December 16 or retroactively with a completion date before it. Energy Secretary Wright's talk of a restart by year-end, possibly November 30, would fit this scenario.\n\nWeighing these: loading 204 assemblies normally takes only days to a couple of weeks, and about 5 weeks have passed since the October 21 retrieval. Michigan Public reported on October 29 that assemblies were reloaded \"earlier this month\", which suggests loading may well be done or nearly done. Holtec would likely announce completion, since it is a major milestone. The research assistant found no such announcement through November 26, which is notable given the time elapsed, though search coverage is imperfect. The Axios report of a year-behind schedule and the March 2027 target point toward slower progress. Wright's remarks suggest the core could be loaded by late November.\n\nThe question was created from a Nation article, and the question set likely expects uncertainty. Given the time elapsed and how short a loading campaign normally is, I put the probability at roughly 45%. The absence of any completion news after 5 weeks pulls it down, but resolution can rely on documents showing completion before the deadline.\n\nProbability: 45%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": 0.45,
+   "question_id": 47010,
+   "reasoning": "(a) About 20 days remain, from November 26 to December 16, 2026.\n\n(b) The status quo is No. The research assistant found no report that fuel loading resumed or finished after the October 21 recovery of the tilted assembly. Holtec has given no timeline.\n\n(c) A No scenario: loading resumed slowly or stayed paused for further NRC review or other technical issues. Another case is that loading finished but nothing credible reported it before December 16, or it finishes after that date. Holtec's restart schedule has slipped repeatedly, so a further delay is plausible.\n\n(d) A Yes scenario: loading resumed in late October or November, and the remaining assemblies (the core holds 204) were placed in a few weeks. Holtec then announces completion, or the NRC documents it. Loading 204 assemblies normally takes only days to a couple of weeks, so a restart in November would plausibly finish before mid-December. It is also possible that loading already finished in November without turning up in the assistant's search.\n\nI weigh the evidence this way. About five weeks passed between the October 21 recovery and today, which is plenty of time to finish loading if it had resumed promptly. The assistant found no news, though, and a completion announcement would probably have been widely covered. That suggests loading had not finished by November 26, or that the search missed it. Holtec has a March 2027 power-sale commitment and wants to move on, which favors resuming and finishing soon. Against that, the assistant found no report of a restart at all, and there may be post-recovery inspections or fuel-handling reviews first.\n\nIf loading resumed in early December, it would likely finish before December 16. Resumption could still take longer, and the 20-day window is short. I estimate about a 45% chance.\n\nProbability: 45%",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.64,
+   "question_id": 47010,
+   "reasoning": "(a) **Time left:** About 20 days, until December 16, 2026. The outcome is known once Holtec or the NRC confirms that loading is complete, or the date passes without confirmation.\n\n(b) **Status quo:** No source confirms all 204 assemblies are loaded. If nothing new is reported, the question resolves No. However, the status quo here is an active process that has already resumed, not a frozen state.\n\n(c) **No scenario:** Loading resumes slowly, or hits another snag. That could be another tilted or damaged assembly, NRC questions, or inspections of the core internals and remaining fuel. Workforce cuts and leadership turnover slow the work. Holtec, now targeting March 2027 for power sales, has no urgency to rush loading or to publicize it before mid-December.\n\n(d) **Yes scenario:** Loading resumed in October, as Michigan Public reported on October 29. Placing 204 assemblies normally takes one to two weeks of continuous work. The core is completed in November or early December, and Holtec issues a press release or the NRC documents it. Energy Secretary Wright's talk of a year-end restart is consistent with this.\n\n**Rationale:**\n- The time math favors Yes. A typical full-core load takes days to a couple of weeks. Loading apparently resumed in October, leaving about seven weeks before the deadline.\n- If no new problems arose, completion has likely already happened or will soon. Holtec has publicized each milestone so far (the start, the pause, the retrieval), so it would probably announce completion too.\n- The case against:\n  - No confirmation exists more than a month after the retrieval, which is somewhat surprising if loading went smoothly.\n  - The project has slipped repeatedly.\n  - Holtec has cut staff.\n  - There may be extra inspections after the tipping incident.\n  - Resolution requires a credible source to document completion. A quiet completion that is only disclosed later is a risk.\n- Weighing the strong physical feasibility against the lack of confirmation and Holtec's track record of delays, I land moderately above even.\n\nProbability: 64%",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.62,
+   "question_id": 47010,
+   "reasoning": "(a) **Time left:** About 20 days, until December 16, 2026. The outcome will be clear by then, or soon after through Holtec or NRC statements.\n\n(b) **Status quo:** No credible source has confirmed that all 204 assemblies are loaded. If nothing new is reported, the question resolves No. But the physical status quo points the other way. The blocking problem, the tipped assembly, was cleared on October 21, and Michigan Public reported on October 29 that assemblies were being reloaded. Loading is probably underway or already finished, just not announced.\n\n(c) **No scenario:** Loading is slow or hits another problem, such as a second assembly mishap, an equipment issue, or an NRC hold. Holtec's workforce cuts and leadership reshuffle could also slow the work. Holtec's stated restart target is March 2027 and it gives no timelines, so it could complete loading quietly or announce it only after December 16. Either way, no credible confirmation appears in time.\n\n(d) **Yes scenario:** Loading resumed in October, as Michigan Public reported. A full 204-assembly core normally takes days to a couple of weeks, so loading finished in November or finishes in early December. Holtec or the NRC then confirms it, through a press release, an NRC inspection report or daily status, or local media. Energy Secretary Wright's remark that the plant could be \"back running\" around November 30 suggests loading is complete or close. That timeline is optimistic, but it is consistent with loading finishing well before mid-December.\n\n**Rationale:** A normal fuel load takes about a week or two, and loading reportedly resumed more than a month ago. On the mechanics alone, completion before December 16 is more likely than not. The main risks are:\n- another technical setback;\n- Holtec's slow, cautious pace after the incident;\n- a lack of public confirmation before the deadline.\n\nThe silence since late October is the biggest worry. Holtec tends to announce milestones, and a completion would likely have been covered, so it may not have happened yet. However, the research assistant did not check Holtec's news page or NRC reports directly. Weighing the status quo of no confirmation against the strong mechanical likelihood, I land moderately above even.\n\nProbability: 62%",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": 0.55,
+   "question_id": 47010,
+   "reasoning": "(a) **Time left:** About 20 days, from November 26 to December 16, 2026.\n\n(b) **Status quo:** No credible source has confirmed that all 204 assemblies are loaded. If nothing new is reported, the question resolves No.\n\n(c) **No scenario:** After the tipped assembly was retrieved, Holtec finds more problems. These could be other assemblies, core components, or regulatory follow-ups. Or, with layoffs and a restart roughly a year behind, Holtec slows or holds loading because there is no rush. Either way, no completion announcement comes before December 16.\n\n(d) **Yes scenario:** Loading resumed in late October, as Michigan Public's report suggests. Loading 204 assemblies normally takes about a week of crane moves. Holtec or the NRC confirms completion, through a press release, an NRC inspection report or reactor reassembly news, before December 16. It is possible loading already finished quietly and only needs to be documented.\n\n**Rationale:**\n- **Status quo favours No.** No completion report exists, and the restart has a long record of slips. Axios reported layoffs and a delay of about a year, and Holtec's own target is March 2027. Both reduce the pressure to finish loading quickly.\n- **The physics favours Yes.** Once the problem assembly was cleared, a full core load is a matter of days, not months. Nearly seven weeks separate the October 21 retrieval from the deadline.\n- **Other signals lean Yes.** The Michigan Public report of reloading in October and the Energy Secretary's talk of running \"before year-end\" both suggest loading resumed and may be far along or finished.\n- **Resolution risk cuts against Yes.** Holtec has been quiet and gives no timeline, so even if loading finishes, it may not be credibly documented in time.\n\nWeighing these, I put it at slightly better than even.\n\nProbability: 55%",
+   "research": "both",
+   "role": "boost"
+  }
+ ],
+ "research": "**Bottom line:** Fuel loading began on August 30, 2026 and was paused in September. A tilted assembly was retrieved on October 21, and Holtec said loading could resume. I found no report, from October 22 through today (November 26), confirming that loading resumed or finished. Treat completion status as unverified.\n\n**Current state (with dates)**\n- **Start:** Holtec announced that Palisades began the process for loading nuclear fuel into the plant's reactor vessel on Aug. 30, 2026. The core has 204 fuel assemblies.\n- **Pause:** One previously used fuel assembly tilted from its upright position after it had been placed in the vessel. Holtec's September 21 update said fuel loading remains paused while Holtec addresses the affected fuel assembly.\n- **Recovery:** Regulators approved the plan last week (per an October 22 report). Workers safely retrieved the fuel assembly that tipped after being installed in the reactor cavity, and Holtec announced Wednesday night the process was complete. Holtec said, with the tipped assembly removed, workers can now resume the fuel-loading process. The Nuclear News Network tracker dates the recovery to 2026-10-21, when the assembly was moved to the spent fuel pool.\n- **Missing since then:** Holtec is not providing a timeline. I found no article after the October 22 report that states loading restarted, how many assemblies are in the core, or that all 204 are in. One tracker (goingcritical.org) lists the status as \"Fuel loaded,\" but it is low-confidence and appears to treat the August 30 start as completion, so I would not rely on it.\n- **Regulatory:** As of October 12, the NRC had not ruled on the retrieval LAR per that tracker. I did not confirm a later ruling, though the October 22 report says regulators had already approved the removal plan.\n\n**Scheduled or deadline items before December 16**\n- No public date for completing fuel loading has been announced. Holtec says Palisades will resume operations when all required work is complete and all applicable federal requirements and industry standards are met.\n- Commercial pressure: Holtec does have a contract that includes a commitment to sell power by March 1, 2027. That deadline is after the question closes but shapes the schedule.\n- After loading, the plant must reassemble the reactor vessel and then prepare to transition to Mode 5, or Cold Shutdown. Those steps are not expected to be complete by December 16 on the available information.\n\n**How often this has happened before**\n- Holtec's restart has slipped repeatedly. One tracker notes that prior end-2025 and February 2026 targets were missed and no firm date is set.\n- The fuel-loading process itself stopped once, about three weeks after it started, and took roughly seven weeks to resolve. No comparable U.S. restart exists to set a base rate.\n\n**Resolution if nothing changes**\n- The question resolves Yes only if completion is announced or documented by a credible source before December 16. Based on what I found, nothing new has been reported since October 22, so the default outcome is No.\n- Ambiguity to check: if loading was finished in late October or November without coverage in my results, the wording \"completed before December 16\" could still be read as Yes. Check Holtec's news page and NRC event reports to confirm.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Bottom line:** I found no source confirming that all 204 assemblies are loaded. One secondary report says loading resumed in October, and that changes the picture from the first rundown.\n\n**1. Base rate**\n- I found no comparable U.S. restart, so there is no base rate for a restart of this kind.\n- The restart's own targets have slipped. The first rundown's tracker reports missed late-2025 and February 2026 targets. Holtec said on July 2, 2026, that more than 5,000 individual work activities remain.\n- The loading pause ran from August 30 to about October 21, roughly seven weeks.\n\n**2. Primary source**\n- Holtec's latest statement I could confirm is its October retrieval announcement. It said that, with the tipped assembly removed, workers can now resume the fuel-loading process. I found no later Holtec update on loading.\n- The NRC's Amendment 283 authorized the one-time move. Per a tracker, it does not report that it occurred.\n- Michigan Public (October 29) reported that fuel assemblies were reloaded into the reactor earlier this month. This is a secondary report, not a Holtec or NRC statement, and it gives no count.\n\n**3. Strongest evidence against Yes**\n- No credible source I found says the core is full. Completion is needed before the next steps, and the first rundown already found no completion report.\n- Schedule pressure cuts against speed. Axios reported on November 3 that Holtec cut hundreds of workers and reshuffled leadership as Palisades nuclear restart fell roughly a year behind schedule, citing unnamed industry sources.\n- Holtec's own October statement described a March 2027 restart target, which is later than the December 16 window.\n- Energy Secretary Chris Wright's November remarks point the other way. He said the plant \"would be back running\" before year-end, possibly as early as Nov. 30. A restart that early would require loading to finish first, so his remarks are weak evidence for Yes.\n\n**Already decided?** Not clearly. The question's start-to-completion wording is ambiguous. If a tracker treats the August 30 start as completion, that would be a misreading, not a decision.\n\n**What I could not find:** a Holtec or NRC statement giving the number of assemblies loaded, a completion date, or a post-October Holtec update on loading. I did not check the NRC event reports or Holtec's news page directly.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 3,
+ "research_second": true,
+ "research_time": "2026-11-26T03:06:10.740225+00:00",
+ "scheduled_resolution_time": "2026-12-16T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Will the fuel loading of the Palisades Nuclear Generating Station's reactor core be completed before December 16, 2026?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "BinaryQuestion",
+ "url": "https://www.metaculus.com/questions/46753"
+}
