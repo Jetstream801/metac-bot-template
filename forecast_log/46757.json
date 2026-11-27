@@ -1,0 +1,361 @@
+{
+ "accessed_at": "2026-11-27T09:02:45.037911+00:00",
+ "close_time": "2026-11-27T12:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.194768,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.063212,
+   "in": 5808,
+   "out": 1999,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000949,
+   "in": 3522,
+   "out": 1194,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.009298,
+   "in": 2044,
+   "out": 521,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 3,
+   "cost": 0.034364,
+   "in": 8712,
+   "out": 1694,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 15,
+   "cost": 0.007167,
+   "in": 28625,
+   "out": 8612,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.025127,
+   "in": 37514,
+   "out": 2751,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024686,
+   "in": 27499,
+   "out": 3873,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.029196,
+   "in": 2904,
+   "out": 879,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000769,
+   "in": 2424,
+   "out": 1053,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-27T12:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-27T09:04:06.635517+00:00",
+ "num_forecasters": 49,
+ "open_time": "2026-11-27T09:00:00+00:00",
+ "post_id": 46757,
+ "prediction": {
+  "predicted_options": [
+   {
+    "option_name": "Google (incl. Google DeepMind)",
+    "probability": 0.645
+   },
+   {
+    "option_name": "Anthropic",
+    "probability": 0.14500000000000002
+   },
+   {
+    "option_name": "Meta",
+    "probability": 0.09250000000000001
+   },
+   {
+    "option_name": "OpenAI",
+    "probability": 0.052500000000000005
+   },
+   {
+    "option_name": "xAI",
+    "probability": 0.05
+   },
+   {
+    "option_name": "Someone else",
+    "probability": 0.015
+   }
+  ]
+ },
+ "quality": {
+  "boost": [
+   "boost_1"
+  ],
+  "check": [],
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 47014,
+ "rationales": [
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Google (incl. Google DeepMind)",
+      "probability": 0.7
+     },
+     {
+      "option_name": "Anthropic",
+      "probability": 0.13
+     },
+     {
+      "option_name": "Meta",
+      "probability": 0.09
+     },
+     {
+      "option_name": "OpenAI",
+      "probability": 0.03
+     },
+     {
+      "option_name": "xAI",
+      "probability": 0.04
+     },
+     {
+      "option_name": "Someone else",
+      "probability": 0.01
+     }
+    ]
+   },
+   "question_id": 47014,
+   "reasoning": "(a) About 30 days remain, from Nov 27 to Dec 27, 2026.\n\n(b) Status quo: Google is first in the Lab Rank table. Gemini 4 Carbon (High) sits at about 1526, Meta's Muse Wonder is at 1511, and Anthropic's Opus 5.5 is at 1507. Google has held #1 since early October.\n\n(c) Unexpected outcome: Anthropic ships Claude Opus 5.6 in mid-December and scores above Google's top model, or Meta releases a new Muse model that passes Gemini. A new Gemini 4.1 would only reinforce Google. Preliminary Carbon scores could also drift down as votes accumulate. xAI's Grok 4.8 could land around Dec 7 and top the board, since Grok has done that before. OpenAI looks less likely to take #1 given its recent positioning.\n\nGoogle's lead over Meta is about 15 points and within the error bars. Several rivals are expected to release in December, but a new model has to beat Google's roughly 1526\u20131534 range. Google also has its own releases planned, such as Gemini 4.1 and Krypton, which would extend its lead. Leaderboard turnover has been modest, with about two changes in two months, and only one of those was a change of lab. I give Google about 70%, and spread the rest mainly across Anthropic and Meta.\n\nGoogle (incl. Google DeepMind): 0.70\nAnthropic: 0.13\nMeta: 0.09\nOpenAI: 0.03\nxAI: 0.04\nSomeone else: 0.01",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Google (incl. Google DeepMind)",
+      "probability": 0.6499999999999999
+     },
+     {
+      "option_name": "Anthropic",
+      "probability": 0.14
+     },
+     {
+      "option_name": "Meta",
+      "probability": 0.1
+     },
+     {
+      "option_name": "OpenAI",
+      "probability": 0.04
+     },
+     {
+      "option_name": "xAI",
+      "probability": 0.05
+     },
+     {
+      "option_name": "Someone else",
+      "probability": 0.02
+     }
+    ]
+   },
+   "question_id": 47014,
+   "reasoning": "(a) Time left: about 30 days, from Nov 27 to Dec 27, 2026.\n\n(b) Status quo: Google holds the #1 lab rank, with Gemini 4 Carbon at about 1526\u20131527. Meta is second at about 1511 and Anthropic third at about 1507. Google has led since late September or early October, and it holds the top three models. Its lead is roughly 15 points, though the error bars are wide.\n\n(c) Unexpected outcome: Anthropic ships Claude Opus 5.6 or a similar model in December and scores above 1530. Alternatively, Meta releases a new Muse Spark or Wonder model that overtakes Google, or xAI releases Grok 4.8 and takes #1. Google may also be displaced if Carbon's preliminary score drifts down as votes accumulate. A Gemini 4.1 release in December would likely strengthen Google's position instead.\n\nSeveral rivals reportedly have releases due in December, so the chance of a change is real. Still, new frontier models need to beat Google by a clear margin to take the lead, and Google's own releases can answer them. Over 30 days, I put the chance that Google is still #1 at about 62\u201368%. Anthropic has the strongest history of taking #1 and is the most likely challenger. Meta is close behind in score. xAI has a smaller chance, and OpenAI a smaller one still.\n\nGoogle (incl. Google DeepMind): 0.65\nAnthropic: 0.14\nMeta: 0.1\nOpenAI: 0.04\nxAI: 0.05\nSomeone else: 0.02",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Google (incl. Google DeepMind)",
+      "probability": 0.6499999999999999
+     },
+     {
+      "option_name": "Anthropic",
+      "probability": 0.14
+     },
+     {
+      "option_name": "Meta",
+      "probability": 0.1
+     },
+     {
+      "option_name": "OpenAI",
+      "probability": 0.05
+     },
+     {
+      "option_name": "xAI",
+      "probability": 0.05
+     },
+     {
+      "option_name": "Someone else",
+      "probability": 0.01
+     }
+    ]
+   },
+   "question_id": 47014,
+   "reasoning": "(a) Time left: about 30 days, from Nov 27 to Dec 27, 2026.\n\n(b) Status quo: Google holds the #1 lab rank, with Gemini 4 Carbon at about 1526\u20131527. Google has led since Sept 30, and its top three models are all Gemini 4 variants. Its lead over Meta is about 15 points, though the error bars overlap.\n\n(c) Unexpected outcome: Anthropic ships Claude Opus 5.6 in mid-December and scores above Google's ~1527. Alternatively, Meta releases a Muse Spark or Wonder update that passes Google. xAI's Grok 4.8 is another possible challenger. A Google model could also lose points as votes accumulate on the preliminary Carbon score. Google is itself expected to release Gemini 4.1 or Krypton in December, which would strengthen its position.\n\nReasoning: With 30 days left, the status quo should carry heavy weight. Google leads by about 15 points over Meta and 20 over Anthropic. The #1 model has changed about 1.3 times a month in 2026, but lab-level changes are rarer. Several rivals are expected to release in December, and each new frontier release has maybe a 25\u201335% chance of taking #1. Google is also likely to release something itself. I put the chance that Google is still first at about 65%. Anthropic is the most likely challenger, then Meta. OpenAI and xAI are less likely since they are not near the top. \"Someone else\" is a small tail.\n\nOption_A: 0.65\nOption_B: 0.14\nOption_C: 0.1\nOption_D: 0.05\nOption_E: 0.05\nOption_F: 0.01\n\nGoogle (incl. Google DeepMind): 0.65\nAnthropic: 0.14\nMeta: 0.1\nOpenAI: 0.05\nxAI: 0.05\nSomeone else: 0.01",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Google (incl. Google DeepMind)",
+      "probability": 0.62
+     },
+     {
+      "option_name": "Anthropic",
+      "probability": 0.15
+     },
+     {
+      "option_name": "Meta",
+      "probability": 0.08
+     },
+     {
+      "option_name": "OpenAI",
+      "probability": 0.07
+     },
+     {
+      "option_name": "xAI",
+      "probability": 0.06
+     },
+     {
+      "option_name": "Someone else",
+      "probability": 0.02
+     }
+    ]
+   },
+   "question_id": 47014,
+   "reasoning": "**(a) Time left:** About 30 days, from Nov 27 to Dec 27, 2026, when Metaculus first accesses the leaderboard.\n\n**(b) Status quo:** Google is #1. Gemini 4 variants held the top three model spots as of the latest snapshot (~Nov 22). Gemini 4 Carbon (High) scored about 1526\u20131527, ahead of Meta's Muse Wonder at about 1511 and Anthropic's Opus 5.5 at about 1507. Google has held the lab #1 spot continuously since about Sept 30 / early October.\n\n**(c) Unexpected scenario:** Anthropic ships Claude Opus 5.6 in mid or late December (trackers suggest Dec 11\u201321). It debuts at around 1535 and takes row 1 before Dec 27. Variants of the same idea:\n- Meta's next Muse release or xAI's Grok 4.8 (said to be likely by early December) lands above Google's best model.\n- An OpenAI release surprises at the top.\n- Carbon's preliminary score sinks as votes accumulate. Even then, Argon at about 1522 probably keeps Google first, so this matters less.\n\n**Rationale:**\n- **The status quo is resilient.** Google holds the top three models, so a rival must beat roughly 1527, not just Carbon's shaky preliminary score. Google may also ship Gemini 4.1 or \"Krypton\" in December, which would strengthen its position.\n- **Rivals are close.** Meta and Anthropic are 15\u201320 points back, and a new frontier generation typically adds 10\u201330 Arena points.\n- **There are several shots on goal.** Multiple rival releases are expected in December, but some may slip past Dec 27. New models also need time to be posted on the board.\n- **The base rate cuts both ways.** Model-level #1 changes about 1.3 times a month, but lab-level changes are rarer. Google has held the lab #1 spot for about two months.\n- **Rival-by-rival view:**\n  - Anthropic is the most likely challenger, given its history at #1 and an Opus release expected in December.\n  - Meta is a plausible challenger: it is currently second with a scheduled release.\n  - xAI's Grok 4.8 may arrive, but xAI has rarely held #1.\n  - OpenAI is absent from the top three, but a surprise release is possible.\n\nOption_A: 0.62\nOption_B: 0.15\nOption_C: 0.08\nOption_D: 0.07\nOption_E: 0.06\nOption_F: 0.02",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "strong_1_fallback",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Google (incl. Google DeepMind)",
+      "probability": 0.66
+     },
+     {
+      "option_name": "Anthropic",
+      "probability": 0.15
+     },
+     {
+      "option_name": "Meta",
+      "probability": 0.09
+     },
+     {
+      "option_name": "OpenAI",
+      "probability": 0.05
+     },
+     {
+      "option_name": "xAI",
+      "probability": 0.04
+     },
+     {
+      "option_name": "Someone else",
+      "probability": 0.01
+     }
+    ]
+   },
+   "question_id": 47014,
+   "reasoning": "(a) About 30 days remain until the outcome is known (Nov 27 to Dec 27, 2026).\n\n(b) Status quo: Google is first in the Lab Rank table. Gemini 4 Carbon (High) scored 1526 against Meta at 1511 and Anthropic at 1507. Google has held #1 since about Sept 30.\n\n(c) Unexpected outcome: Anthropic ships Opus 5.6 or a new Mythos/Fable model in December and scores above Google's ~1527. Meta's Muse Spark update, or Grok 4.8 from xAI, could do the same. Google's preliminary Carbon score could also drift down as votes accumulate. A new OpenAI model could also jump to the top, though OpenAI is not currently near the top. Arena might also change its methodology or its default view, which could reorder the labs.\n\nReasoning: Google leads by about 15 points, though the error bars are wide. Rival releases are expected in December, but any one release only displaces Google if it beats a lead that has held for about two months. Google may also release its own Gemini 4.1 update, which would extend the lead. Of the challengers, Anthropic has the strongest history of holding #1, and Meta is the current runner-up. I put the chance that Google holds at about 66%.\n\nOption_A: 0.66\nOption_B: 0.15\nOption_C: 0.09\nOption_D: 0.05\nOption_E: 0.04\nOption_F: 0.01\n\nGoogle (incl. Google DeepMind): 0.66\nAnthropic: 0.15\nMeta: 0.09\nOpenAI: 0.05\nxAI: 0.04\nSomeone else: 0.01",
+   "research": "both",
+   "role": "member"
+  }
+ ],
+ "research": "**Rundown: Arena Text Arena overall, lab rank #1 (question closes Dec 27, 2026)**\n\n**Current state**\n- The most recent snapshot I found is the Text Arena overall page dated Nov 11, 2026. It shows 9,122,174 votes and 29 labs, with Google's Gemini 4 Carbon (High) at #1 with a score of 1526\u00b110. Meta's Muse Wonder (Max) was #2 at 1511\u00b16, and Anthropic's Claude Opus 5.5 (High) was #3 at 1507\u00b16.\n- A news piece dated Nov 22 says the top three models on the text board are all Gemini 4 variants (Carbon, Argon, Neon). It states that counting from the day Opus 5.5 topped the leaderboard on September 27, the top spot on the text leaderboard has changed hands twice in under two months.\n- Google has held #1 since early October. An Oct 2 snapshot had gemini-4-argon-high at #1 with 1525, twenty points clear of Anthropic's best at 1505. An Oct 8 snapshot listed Gemini 4 Argon at 1534\u00b19 with Anthropic's Opus 5.5 second at 1515\u00b18.\n- Caveat: Carbon's #1 spot is tagged preliminary with a \u00b110 margin and fewer votes. One source says the top spot is a statistical tie rather than a clear win. Google's lead over Meta is roughly 15 points on the Nov 11 snapshot, though the margin is within error bars.\n- I did not find a snapshot from after about Nov 22, so I cannot confirm the state as of today (Nov 27).\n\n**Scheduled or expected events before Dec 27**\n- I found no official confirmed release dates. Third-party trackers give estimates, and these should be treated as low-confidence:\n  - One tracker lists Next Muse Spark (1.4+) for Meta on Dec 12, 2026 and Next Claude Opus (5.6+) on Dec 11, 2026, with a \"Gemini Krypton\" from Google DeepMind on Dec 18 (25% within a week).\n  - Another tracker lists Claude Opus 5.6 on Dec 21 and several Gemini 4.1 variants on Dec 16.\n  - On xAI, one source says Musk stated on Nov 10 that pre-training is done for Grok 4.8, which was in RL with evals. That source puts a Grok 4.8 release by Dec 7 at 62%.\n- Sources conflict on Anthropic. One says Anthropic's release notes list no model launch since Haiku 5.5 (Oct 7). Another lists Claude Fable 5.2 and Mythos 5.2 released on Nov 9. I could not resolve this.\n- Google's Gemini 4 family is already at the top, so an upcoming Gemini release is less likely to change the lab leader than a rival frontier release (Anthropic, Meta, or xAI).\n- Arena's own published tables and the Hugging Face leaderboard dataset are the resolution-relevant sources. I found no confirmed Arena-specific event (such as a leaderboard methodology change) scheduled before Dec 27.\n\n**Base rate for changes at #1**\n- Since late September, the #1 lab has changed about twice in roughly two months (Anthropic to Google, then one intra-lab model change within Google). Earlier in 2026, Anthropic held #1 for extended periods, including the March snapshot where Anthropic's models were tied at #1 and #2.\n- Frontier releases come roughly monthly per major provider, according to one release tracker. Several labs are reportedly due in December, so the window contains multiple opportunities for a challenger to reach #1. Whether a new model actually displaces Google depends on its score relative to Google's ~1526 to 1534 range.\n\n**How it resolves if nothing changes**\n- If the current ordering holds through Dec 27, Google is the lab in the first row of the Lab Rank table, with Gemini 4 Carbon (High) at #1. The resolution would be Google.\n- The main risks to that outcome are a new frontier model from Anthropic, Meta, OpenAI, or xAI that scores above Google's top model, or a shift in Google's preliminary Carbon score as votes accumulate.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Bottom line:** Nothing I found shows the question is already decided. Google leads the latest snapshot I could find, but the margin is small and the lab order depends on the view setting.\n\n**1. Base rate**\n- One tracker counts 3 changes at #1 on the LMArena text board in late 2024, 9 in 2025, and 12 times in 2026 so far (as of its Oct 4 update). That is about 1.3 changes a month in 2026, by my arithmetic. This site's reliability is unclear, and it counts models, not labs.\n- Lab-level #1 has changed less often. Anthropic held it through September, and Google took it on Sept 30 with Gemini 4 Argon.\n- Sources conflict on earlier periods. One says Claude Fable 5 was suspended and restored in June\u2013July 2026. Two others name Claude Mythos 5 at #1 at 1531 in Aug and Nov, but they conflict with the arena.ai snapshot and look unreliable.\n\n**2. Primary source (arena.ai, labs view)**\n- I could not load the live page. The most recent first-hand capture I found is dated Nov 11, 2026: 9,122,174 votes, 29 labs, Google's Gemini 4 Carbon (High) at 1526\u00b110 in row 1, Meta at 1511\u00b16, and Anthropic at 1507\u00b16.\n- A Nov 22 update, reported secondhand, shows Carbon at 1527 with Google holding the top three models. I found nothing dated after Nov 22.\n\n**3. Strongest evidence against Google staying #1**\n- Carbon's top spot is tagged preliminary. On Nov 11 it had 4,273 votes, against 20,779 for Argon, which is second at 1522 on the same board.\n- Carbon has drifted down: 1528 in the Oct 28 result, 1526 on Nov 11, then 1527 on Nov 22. Its lead over Meta is about 15 points, within stacked error bars.\n- Lab order is sensitive to view settings. On Oct 20, Meta's Muse Wonder was second with style control on but sixth with it off. Google led both ways.\n- The first rundown's Oct 8 figure (Argon at 1534) is not corroborated. The nearest data points I found are 1525 on Oct 2 and 1532 on Oct 20.\n\n**Could not find:** a live or post-Nov 22 leaderboard capture; official release dates for any rival model; any Arena methodology notice before Dec 27; and a resolution of the Anthropic release conflict.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-27T09:03:19.601038+00:00",
+ "scheduled_resolution_time": "2026-12-27T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Who will have the #1 lab rank on Arena AI's overall Text Arena leaderboard on December 27, 2026?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "MultipleChoiceQuestion",
+ "url": "https://www.metaculus.com/questions/46757"
+}
