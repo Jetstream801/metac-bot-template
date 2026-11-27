@@ -1,0 +1,337 @@
+{
+ "accessed_at": "2026-11-27T00:08:58.684338+00:00",
+ "close_time": "2026-11-27T03:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.227401,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.077152,
+   "in": 6738,
+   "out": 2510,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001174,
+   "in": 4236,
+   "out": 1500,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.011348,
+   "in": 2354,
+   "out": 664,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.028616,
+   "in": 6738,
+   "out": 1514,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 12,
+   "cost": 0.005273,
+   "in": 24404,
+   "out": 5666,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.026892,
+   "in": 38154,
+   "out": 6153,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.039028,
+   "in": 62353,
+   "out": 5585,
+   "searches": 3,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.037096,
+   "in": 3369,
+   "out": 1181,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000822,
+   "in": 2790,
+   "out": 1086,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-27T03:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-27T00:10:36.984792+00:00",
+ "num_forecasters": 184,
+ "open_time": "2026-11-27T00:00:00+00:00",
+ "post_id": 46756,
+ "prediction": {
+  "predicted_options": [
+   {
+    "option_name": "SpaceX",
+    "probability": 0.3649999999999999
+   },
+   {
+    "option_name": "Meta Platforms",
+    "probability": 0.305
+   },
+   {
+    "option_name": "Tesla",
+    "probability": 0.265
+   },
+   {
+    "option_name": "Anthropic",
+    "probability": 0.035
+   },
+   {
+    "option_name": "Berkshire Hathaway",
+    "probability": 0.03
+   }
+  ]
+ },
+ "quality": {
+  "boost": [
+   "boost_1"
+  ],
+  "check": null,
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 47013,
+ "rationales": [
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "SpaceX",
+      "probability": 0.41999999999999993
+     },
+     {
+      "option_name": "Meta Platforms",
+      "probability": 0.25
+     },
+     {
+      "option_name": "Tesla",
+      "probability": 0.27
+     },
+     {
+      "option_name": "Anthropic",
+      "probability": 0.04
+     },
+     {
+      "option_name": "Berkshire Hathaway",
+      "probability": 0.02
+     }
+    ]
+   },
+   "question_id": 47013,
+   "reasoning": "(a) About one month (Nov 27 to Dec 28, 2026), roughly 21 trading days.\n\n(b) Status quo: SpaceX is highest at about $1.73T, ahead of Meta at $1.56T, Tesla at $1.50T, Berkshire at $1.23T and Anthropic at $1.11T.\n\n(c) Unexpected outcome: SpaceX keeps falling after its IPO, toward its lows near $105, which is about $1.43T. Meta or Tesla would then pass it. A Tesla rally on a merger announcement could also lift Tesla to the top. Anthropic would need a very large rally, and Berkshire is unlikely to move up enough.\n\nSome caveats on the facts. The assistant's numbers are internally inconsistent. SpaceX at $127 was said to be $1.73T, but a Nov 25 price of $117 would be about $1.59T, a 6.8% drop that is already close to Meta. The Nov 25 price therefore matters more than the $127 snapshot, and SpaceX's lead is probably thinner than 11%. Monthly relative volatility between SpaceX and Meta or Tesla is probably 15-20%, since SpaceX is a recent IPO. Tesla is also volatile and has merger-related news flow.\n\nA merger complicates things. If SpaceX and Tesla merge, the combined entity could be listed under one name, but any deal would probably not close by Dec 28. Announcement effects are uncertain.\n\nMy estimates:\n- SpaceX: about 0.42, since it is the current leader but with a thin margin and a downward trend.\n- Meta: about 0.24.\n- Tesla: about 0.27.\n- Berkshire: about 0.03.\n- Anthropic: about 0.04, given its volatility and the possibility that a different share count lifts its figure.\n\nSpaceX: 0.42\nMeta Platforms: 0.25\nTesla: 0.27\nAnthropic: 0.04\nBerkshire Hathaway: 0.02",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "SpaceX",
+      "probability": 0.3799999999999999
+     },
+     {
+      "option_name": "Meta Platforms",
+      "probability": 0.3
+     },
+     {
+      "option_name": "Tesla",
+      "probability": 0.26
+     },
+     {
+      "option_name": "Anthropic",
+      "probability": 0.04
+     },
+     {
+      "option_name": "Berkshire Hathaway",
+      "probability": 0.02
+     }
+    ]
+   },
+   "question_id": 47013,
+   "reasoning": "(a) About one month (31 days) remains until Dec 28, 2026.\n\n(b) The status quo is SpaceX at about $1.73T, ahead of Meta at $1.56T, Tesla at $1.50T, Berkshire at $1.23T and Anthropic at $1.1T. SpaceX is currently the highest-ranked of the five.\n\n(c) An unexpected outcome would be SpaceX falling further. Gary Black suggests it could drop below $100 if it announces a Tesla merger offer. Its price has already slid to about $113\u2013117, which is roughly $1.55\u20131.6T on CompaniesMarketCap's share count. That puts it at or below Meta, so Meta would take the top spot. Tesla could instead rise on a merger premium, since HSBC cites a price above $500 a share. At $507, Tesla would be well above the others. Anthropic would need a 50\u201370% gain, which is unlikely in a month.\n\nThe research notes are internally inconsistent. The snapshot shows SpaceX at $127 and $1.73T, but later reports say it traded at $113\u2013117, which would be about $1.55\u20131.6T. That is nearly tied with Meta, and Tesla is only slightly below. I take SpaceX's current lead as thin or even nonexistent.\n\nMonthly relative volatility is large for SpaceX, perhaps 15\u201320%. Meta's is about 8%, and Tesla's is about 15%, with merger-premium upside. The lead of 0\u201310% over Meta means SpaceX is near a coin flip, perhaps slightly favored given the stale snapshot. The merger could hurt SpaceX's price and lift Tesla's. If a merger is announced, Tesla gains and SpaceX falls. That favors Tesla relative to SpaceX, though the deal might not come by Dec 28. Meta is the stable middle option and wins whenever both SpaceX and Tesla drift down.\n\nMy estimates: SpaceX 38%, Meta 30%, Tesla 26%, Berkshire 2%, Anthropic 4%.\n\nSpaceX: 0.38\nMeta Platforms: 0.30\nTesla: 0.26\nAnthropic: 0.04\nBerkshire Hathaway: 0.02\n\nOption_A: 0.38\nOption_B: 0.30\nOption_C: 0.26\nOption_D: 0.04\nOption_E: 0.02",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "SpaceX",
+      "probability": 0.3599999999999999
+     },
+     {
+      "option_name": "Meta Platforms",
+      "probability": 0.3
+     },
+     {
+      "option_name": "Tesla",
+      "probability": 0.28
+     },
+     {
+      "option_name": "Berkshire Hathaway",
+      "probability": 0.03
+     },
+     {
+      "option_name": "Anthropic",
+      "probability": 0.03
+     }
+    ]
+   },
+   "question_id": 47013,
+   "reasoning": "(a) The outcome is known on December 28, 2026, which is about 31 days away.\n\n(b) The status quo is SpaceX on top. The snapshot shows SpaceX at about $1.73T, Meta at $1.56T, Tesla at $1.50T, Berkshire at $1.23T and Anthropic at $1.1T. SpaceX has since fallen, and the research notes put it at about $113\u2013117 on Nov 25. That implies roughly $1.55\u20131.6T on CompaniesMarketCap's share count, which is basically tied with Meta and Tesla.\n\n(c) The main upset scenarios:\n- A SpaceX\u2013Tesla merger announcement pushes SpaceX below $100 and drops it below Meta and Tesla. Meta would then likely lead, or Tesla would if it jumps on the offer premium.\n- Continued post-IPO weakness, including a possible lockup unlock, drags SpaceX down while Meta holds steady.\n- Anthropic would need a very large rally to be first, so it is a long shot. Berkshire would also need a large relative move.\n\nThe uncertainty is substantial. The three leaders sit within about 10% of each other, and the monthly relative volatility of SpaceX against Meta is probably 15\u201320%. SpaceX has a slight edge on the snapshot but negative momentum and an overhang from the merger. Meta is the steadiest large-cap, so it is the natural beneficiary if SpaceX slips. Tesla would gain from a merger premium, since it is the target. A Tesla share price jump toward $500 would put Tesla at about $2T, ahead of everything else, so Tesla has real upside if a deal is announced in December. Even so, a deal being announced is not certain, and Tesla's price would reflect it only partly.\n\nMy rough split is SpaceX 36%, Meta 30%, Tesla 28%, Berkshire 2% and Anthropic 4%. Anthropic is more volatile than Berkshire but sits further behind than Berkshire does, so I give it the slightly larger tail.\n\nOption_A: 0.36\nOption_B: 0.30\nOption_C: 0.28\nOption_D: 0.03\nOption_E: 0.03",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "SpaceX",
+      "probability": 0.3599999999999999
+     },
+     {
+      "option_name": "Meta Platforms",
+      "probability": 0.3
+     },
+     {
+      "option_name": "Tesla",
+      "probability": 0.27
+     },
+     {
+      "option_name": "Anthropic",
+      "probability": 0.04
+     },
+     {
+      "option_name": "Berkshire Hathaway",
+      "probability": 0.03
+     }
+    ]
+   },
+   "question_id": 47013,
+   "reasoning": "**(a) Time left:** About one month. The question resolves at the close of regular US trading on December 28, 2026, which is 31 days from today (November 27, 2026).\n\n**(b) Status quo outcome:** SpaceX. The CompaniesMarketCap snapshot ranks it first of the five at about $1.73T. Next are Meta ($1.56T), Tesla ($1.50T), Berkshire ($1.23T) and Anthropic (about $1.1T on the site's share basis, likely lower at current prices).\n\nThe snapshot price may be stale, though. The research gives conflicting reports for November 25: one says SpaceX closed at $127.44, others say it traded around $113\u2013117. At $113\u2013117, with roughly 13.6B shares, SpaceX's market cap is about $1.54\u20131.59T. That is effectively tied with Meta and only slightly above Tesla. The status-quo lead is real but thin, perhaps 0\u201310%.\n\n**(c) Unexpected scenario:** SpaceX announces a merger offer for Tesla in December, as Bloomberg says could happen. The offer carries a large premium (HSBC suggests above $500 a share, versus about $380 now). SpaceX's stock drops below $100, as Gary Black warns, while Tesla jumps 20\u201330% toward $1.8\u20131.9T. Tesla then ranks first. Tesla would still be listed on December 28, since a deal needs a shareholder vote.\n\nA less likely surprise would be an Anthropic rebound. It would need roughly a 50\u201370% gain, which is hard, especially with a possible December 15 share unlock. Berkshire would only top the group if a broad selloff hit the high-beta names much harder than Berkshire, and its gap is still about 25%.\n\n**Rationale:**\n- **SpaceX** remains the slight favourite on the status quo. However, it is very volatile (52-week range $104.83\u2013$225.64, recent sharp declines), so a monthly standard deviation of around 20% easily overturns a lead of under 10%.\n- **Meta** is much less volatile and sits right at SpaceX's level if the lower November 25 prices are correct. It wins in any scenario where SpaceX keeps sliding and Tesla doesn't spike.\n- **Tesla** is within about 15% of the top, is volatile, and has a specific upside catalyst in the possible merger premium.\n- **Anthropic** and **Berkshire** need large relative moves, so I give each a small tail probability.\n\nSpaceX: 0.36\nMeta Platforms: 0.30\nTesla: 0.27\nAnthropic: 0.04\nBerkshire Hathaway: 0.03",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "SpaceX",
+      "probability": 0.3599999999999999
+     },
+     {
+      "option_name": "Meta Platforms",
+      "probability": 0.32
+     },
+     {
+      "option_name": "Tesla",
+      "probability": 0.25
+     },
+     {
+      "option_name": "Berkshire Hathaway",
+      "probability": 0.04
+     },
+     {
+      "option_name": "Anthropic",
+      "probability": 0.03
+     }
+    ]
+   },
+   "question_id": 47013,
+   "reasoning": "**(a) Time left:** About one month, from Nov 27 to the market close on Dec 28, 2026. That is roughly 20 trading days.\n\n**(b) Status quo outcome:** SpaceX. On the latest CompaniesMarketCap snapshot it leads at about $1.73T, ahead of Meta ($1.56T), Tesla ($1.50T), Berkshire ($1.23T) and Anthropic (about $1.1T, probably nearer $1.0T at current prices).\n\nThe lead is much thinner than it looks, and the reports conflict:\n- One report has SpaceX trading at $113\u2013117 on Nov 25. On CompaniesMarketCap's implied share count (about 13.6B), that is roughly $1.54\u20131.59T, essentially tied with Meta and only a few percent above Tesla.\n- Another report has it closing at $127.44 the same day.\n- The true gap is somewhere between near zero and about 10%.\n\n**(c) Unexpected-outcome scenarios:**\n- **SpaceX offers for Tesla.** Bloomberg says an announcement could come as soon as December. Acquirers usually sell off, and Gary Black suggests SPCX could fall below $100. Meanwhile Tesla could jump toward a $500+ implied deal price (HSBC). That would put Tesla at #1 and SpaceX third.\n- **SpaceX keeps sliding toward its $104.83 low.** Steady post-IPO selling would hand the top spot to Meta, the lowest-volatility of the three.\n- **Long shots.** Anthropic would need about a 50\u201370% rally, made harder by a possible Dec 15 share unlock. Berkshire would need its peers to fall 25\u201330% together. Both are very unlikely in one month but not impossible.\n- **Methodology quirks.** CompaniesMarketCap could change share counts or how it handles a merged entity, which adds some noise.\n\n**Rationale:**\n- This is effectively a three-way race among companies within a few percent of each other.\n- SpaceX keeps a slight edge because of the status quo. Against that, it has the highest volatility, negative momentum and merger-offer risk, all of which skew the risks against it.\n- Meta has the stability to inherit the top spot if SpaceX keeps fading.\n- Tesla has upside from a possible takeover premium, but it starts from the lowest of the three.\n\nOption_A: 0.36\nOption_B: 0.32\nOption_C: 0.25\nOption_D: 0.04\nOption_E: 0.03",
+   "research": "both",
+   "role": "member"
+  }
+ ],
+ "research": "**Rundown: highest-ranked company on CompaniesMarketCap among SpaceX, Meta, Tesla, Anthropic and Berkshire on Dec 28, 2026**\n\n**Current state (latest data I found, roughly Nov 23\u201325, 2026)**\n\n- **CompaniesMarketCap snapshot:** The site's US list shows SpaceX (SPCX) at $1.730 T at $127.44, ranked 6th among US companies. It lists Meta at $1.559 T at $609.89, Tesla at $1.502 T at $380.14, Berkshire Hathaway (BRK-B) at $1.230 T at $579.32, and Anthropic (ANT) at $1.106 T at $82.79. On the global list, SpaceX ranks 7th overall. The page's age label is unreliable, so I could not confirm the exact timestamp. The prices line up with late-November quotes, so treat them as approximate.\n- **Other sources:** Motley Fool's November table shows a similar order, with SpaceX at $1.7 trillion, Meta at $1.5 trillion, Tesla at $1.5 trillion, and Berkshire at $1.2 trillion. Anthropic does not appear in its top list.\n- **SpaceX:** It listed in June 2026. On the first trading day, the company reached a market capitalization of about $2.1 trillion. Since then it has fallen sharply. On Nov 25 it traded down 6.8% at $117.25, approaching its lowest recorded level of $104.83. Using CompaniesMarketCap's implied share count (about 13.6B), $117 is roughly $1.59T, close to Meta's $1.56T. The SpaceX/Meta/Tesla ordering is therefore tight.\n- **Anthropic:** It listed Nov 19 at a $83 IPO price and closed at $97.17 on its first day. Its fully diluted valuation that day was $1.76 trillion. Since then the stock has slid. Reports say it fell as low as $73.85 intraday on Wednesday, pulling the company's market value well below $1 trillion. This is a discrepancy: CompaniesMarketCap's ~$1.1T figure at $82.79 appears to use a smaller share count than the fully diluted basis. The resolution uses CompaniesMarketCap's method, so the fully diluted figure is not the one that matters. My rough estimate is that Anthropic is near $1T on that basis at ~$74.\n- **Tesla:** One report says HSBC priced a hypothetical Tesla deal at $507 per share. This is a hypothetical valuation, not a price.\n- **Berkshire:** I found no recent news beyond the snapshot figures.\n- **Meta:** I found no recent news beyond the snapshot figures.\n\n**Scheduled or possible events before Dec 28**\n\n- **SpaceX\u2013Tesla merger:** Reports say SpaceX and Tesla are reportedly progressing in merger discussions. One summary says a potential announcement in December is possible. I did not confirm a date. An announced deal could change the group's composition or how CompaniesMarketCap ranks the combined entity, and I could not check this.\n- **Earnings, lockups, index events:** I did not search for these. I found no confirmed dates for Anthropic's first public earnings or any IPO lockup expiry. Anthropic's lockup and SpaceX's quarterly reporting dates are therefore unknown to me.\n\n**Base rates and volatility**\n\n- Two of the five companies listed in the past six months, SpaceX and Anthropic, have high volatility. SpaceX fell approximately 50% from its post-IPO peak by late July, and Anthropic has already dropped below its IPO price within a week.\n- A Forbes analysis states that eight out of ten major IPOs posted declines in the three months following their launch, with an average drop of 13 percent.\n- Within this group, the top spot has changed hands recently, and the gap between #1 and #3 is only about 15%.\n\n**Resolution if nothing changes**\n\nIf the CompaniesMarketCap order stays as the snapshot shows (SpaceX, then Meta, Tesla, Berkshire, Anthropic), SpaceX would be the highest-ranked of the five on Dec 28. Its lead is thin, though. A roughly 8% fall in SpaceX relative to Meta or Tesla would flip the top spot, and Anthropic would need roughly a 50% gain to reach SpaceX's level.\n\n**What I could not find**\n\n- Exact timestamps for the CompaniesMarketCap snapshot, and closing prices for Nov 26\u201327.\n- Any news on Berkshire or Meta, aside from the snapshot figures.\n- Confirmed dates for the SpaceX\u2013Tesla announcement, earnings, or any lockup expirations.\n- Historical rank-change frequency for this specific five-company group. The base rates above are general IPO and volatility figures.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**Bottom line:** Nothing I found shows the question is already decided. Dec 28 is about a month away, and SpaceX's lead is thin.\n\n**1. Base rate: not found.** I found no historical count of rank changes among these five companies, so I cannot give counts or years. The usable volatility data is price history. SpaceX's 52-week range is $104.83 to $225.64. Anthropic dropped 36% from its IPO high of $115.10 to $73.85 on November 25, 2026. On the snapshot, SpaceX's market cap is about 10% above Meta's ($1.73T vs $1.56T), not the 8% the first rundown gives. That gap closes at roughly $115 a share if Meta holds still.\n\n**2. Primary source.** I did not open CompaniesMarketCap directly, so its figures remain unverified. SpaceX's snapshot price matches the Nov 25 close, which closed at $127.44. Anthropic's snapshot price of $82.79 looks stale. By Nov 25 the stock had traded as low as $73.85. At about $74, my rough estimate on the snapshot's implied share count is about $1.0T. Share counts also differ across sites: Google Finance lists shares outstanding at 8.09B, against the roughly 13.6B implied by CompaniesMarketCap's figures. This matters if the resolution source's basis differs from the snapshot's.\n\n**3. Strongest evidence against SpaceX staying on top:**\n- A Tesla deal could hit SpaceX's price. Analyst Gary Black says SPCX could fall below $100 if SpaceX makes a Tesla merger offer. At $100, SpaceX would fall to roughly $1.36T, below Meta and Tesla.\n- HSBC suggests a Tesla deal could cost more than $500 a share, closer to a 40% premium.\n- SpaceX is already weak. It fell 7.4% through 10:45 a.m. on Nov 25 to around $113.\n- Anthropic is not the main threat. It appears to be last of the five, and it would need roughly a 70% gain to pass SpaceX.\n\n**Could the question already be decided?** No. The Tesla merger is still unannounced. Bloomberg reports it could be announced as soon as December, with early 2027 also discussed. Tesla's Dec 3 meeting has no merger on its ballot. Any deal would also need a Tesla shareholder vote, so Tesla is unlikely to disappear from the list by Dec 28. Anthropic may face a share unlock on December 15, per one report that cites a potential 303 million share unlock, which I could not verify.\n\n**What I could not find:**\n- Historical rank-change counts for this five-company group.\n- Any news on Meta or Berkshire beyond the snapshot figures.\n- The CompaniesMarketCap page itself, with a verified timestamp.\n- Closing prices for Nov 26\u201327.\n- Confirmed dates for the merger, Anthropic's first earnings, or its lockup expiry.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-27T00:09:56.706322+00:00",
+ "scheduled_resolution_time": "2026-12-27T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Which of these companies will have the highest rank among their group on CompaniesMarketCap on December 28, 2026?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "MultipleChoiceQuestion",
+ "url": "https://www.metaculus.com/questions/46756"
+}
