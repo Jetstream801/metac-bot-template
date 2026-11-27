@@ -1,0 +1,361 @@
+{
+ "accessed_at": "2026-11-27T12:06:09.688347+00:00",
+ "close_time": "2026-11-27T15:00:00+00:00",
+ "community_prediction_at_access": null,
+ "cost": 0.200061,
+ "cost_by_stage": {
+  "boost": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.068164,
+   "in": 5996,
+   "out": 2209,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "check": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.001116,
+   "in": 3661,
+   "out": 1500,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "control": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.014856,
+   "in": 2103,
+   "out": 1065,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "forecast": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 2,
+   "cost": 0.024702,
+   "in": 5996,
+   "out": 1271,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "parse": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 13,
+   "cost": 0.006523,
+   "in": 25287,
+   "out": 7988,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "research": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.025219,
+   "in": 38551,
+   "out": 2728,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "research2": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.024905,
+   "in": 26415,
+   "out": 4527,
+   "searches": 2,
+   "timeouts": 0
+  },
+  "strong": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.033652,
+   "in": 2998,
+   "out": 1083,
+   "searches": 0,
+   "timeouts": 0
+  },
+  "summarise": {
+   "cache_read": 0,
+   "cache_write": 0,
+   "calls": 1,
+   "cost": 0.000924,
+   "in": 2315,
+   "out": 1385,
+   "searches": 0,
+   "timeouts": 0
+  }
+ },
+ "cp_reveal_time": "2026-11-27T15:00:00+00:00",
+ "errors": [],
+ "forecast_time": "2026-11-27T12:07:38.603605+00:00",
+ "num_forecasters": 111,
+ "open_time": "2026-11-27T12:00:00+00:00",
+ "post_id": 46758,
+ "prediction": {
+  "predicted_options": [
+   {
+    "option_name": "Apple",
+    "probability": 0.013750000000000004
+   },
+   {
+    "option_name": "Nvidia",
+    "probability": 0.3825000000000001
+   },
+   {
+    "option_name": "Microsoft",
+    "probability": 0.39249999999999985
+   },
+   {
+    "option_name": "Alphabet",
+    "probability": 0.19250000000000003
+   },
+   {
+    "option_name": "Someone else",
+    "probability": 0.010000000000000002
+   },
+   {
+    "option_name": "Amazon",
+    "probability": 0.008750000000000003
+   }
+  ]
+ },
+ "quality": {
+  "boost": [
+   "boost_2"
+  ],
+  "check": null,
+  "control": true,
+  "flags": [],
+  "members": [
+   "usual_1",
+   "usual_2",
+   "strong_1"
+  ],
+  "settings": {
+   "binary_aggregate": "trimmed_logodds",
+   "binary_max": 0.98,
+   "binary_min": 0.02,
+   "boost_strong_members": 2,
+   "control_member": true,
+   "discrete_outcome_probabilities": true,
+   "ensemble_members": 2,
+   "extremise": 1.0,
+   "numeric_aggregate": "mixture",
+   "option_floor": 0.005,
+   "personas": false,
+   "second_research": true,
+   "shadow_check": true,
+   "spare_boost": true,
+   "strong_members": 1,
+   "strong_model": "anthropic/claude-opus-5-5"
+  },
+  "tier": "full"
+ },
+ "question_id": 47015,
+ "rationales": [
+  {
+   "member": "usual_2",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Apple",
+      "probability": 0.02
+     },
+     {
+      "option_name": "Nvidia",
+      "probability": 0.38
+     },
+     {
+      "option_name": "Microsoft",
+      "probability": 0.37
+     },
+     {
+      "option_name": "Alphabet",
+      "probability": 0.21
+     },
+     {
+      "option_name": "Amazon",
+      "probability": 0.005
+     },
+     {
+      "option_name": "Someone else",
+      "probability": 0.015
+     }
+    ]
+   },
+   "question_id": 47015,
+   "reasoning": "(a) Time left: about 32 days, from Nov 27 to Dec 29, 2026, which is roughly 22 trading days.\n\n(b) Status quo: Apple is #1 and Microsoft is narrowly #2 at about $3.64T. Nvidia is at about $3.61\u20133.67T and Alphabet is at about $3.3\u20133.6T. The research materials contradict each other in places, and some of the details look unreliable, so I treat them with caution.\n\n(c) Unexpected outcome: Nvidia rebounds on AI momentum and takes #2, or Alphabet rallies on AI and cloud strength and passes both. Apple falling to #2 is also possible, but it would need a drop of about 30% relative to the others, so it is very unlikely. Amazon would need to gain about 30%, which is also very unlikely.\n\nThe race for #2 is essentially a three-way contest, with Microsoft and Nvidia close and Alphabet a few percent behind. Over 22 trading days, relative volatility between Nvidia and Microsoft is roughly 10\u201312%, so a 1% gap gives almost no edge. Nvidia is more volatile and has more upside variance, which gives it a slight edge over Microsoft in the tails. Microsoft holds the slight status quo lead. Alphabet is a real contender given the 5\u201310% gap and its momentum, so I give it about 20%.\n\nOption_A: 0.02\nOption_B: 0.38\nOption_C: 0.37\nOption_D: 0.21\nOption_E: 0.005\nOption_F: 0.015\n\nApple: 0.02\nNvidia: 0.38\nMicrosoft: 0.37\nAlphabet: 0.21\nAmazon: 0.005\nSomeone else: 0.015",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "control",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Apple",
+      "probability": 0.01
+     },
+     {
+      "option_name": "Nvidia",
+      "probability": 0.35
+     },
+     {
+      "option_name": "Microsoft",
+      "probability": 0.38
+     },
+     {
+      "option_name": "Alphabet",
+      "probability": 0.24
+     },
+     {
+      "option_name": "Amazon",
+      "probability": 0.01
+     },
+     {
+      "option_name": "Someone else",
+      "probability": 0.01
+     }
+    ]
+   },
+   "question_id": 47015,
+   "reasoning": "**(a) Time left:** About one month, until the close of trading on December 29, 2026.\n\n**(b) Status quo:** Apple stays #1 at about $5.1T. Microsoft holds #2 at about $3.64T on CompaniesMarketCap, ahead of Nvidia at about $3.6T and Alphabet at about $3.3\u20133.6T. This is a thin lead of roughly 1%.\n\n**(c) Unexpected outcome:** Nvidia's late-November earnings, or a renewed AI-trade rally, lifts it 5\u201310% and it retakes #2. Alternatively, Alphabet continues a run on Gemini and cloud strength and passes both. A sharp Microsoft selloff on AI capex worries would have the same effect. Apple dropping to #2 would need a roughly 30% fall in a month, which is very unlikely.\n\n**Reasoning:** The three contenders are within a few percent of each other. Relative volatility between any two of them over a month is about 8\u201310%, which swamps Microsoft's 1% lead. The status quo gives Microsoft a slight edge, but not much more than a coin flip between it and Nvidia. Alphabet is the least likely of the three because it is further behind, though it is still within reach. The conflicting Nvidia snapshots (Nov 23 vs Nov 25) add uncertainty about the true current ranking, which I could not resolve.\n\nOption_A: Apple: 0.01\nOption_B: Nvidia: 0.35\nOption_C: Microsoft: 0.38\nOption_D: Alphabet: 0.24\nOption_E: Amazon: 0.01\nOption_F: Someone else: 0.01\n\nFinal probabilities:\nApple: 0.01\nNvidia: 0.35\nMicrosoft: 0.38\nAlphabet: 0.24\nAmazon: 0.01\nSomeone else: 0.01",
+   "research": "first",
+   "role": "control"
+  },
+  {
+   "member": "usual_1",
+   "model": "anthropic/claude-sonnet-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Apple",
+      "probability": 0.015
+     },
+     {
+      "option_name": "Nvidia",
+      "probability": 0.39
+     },
+     {
+      "option_name": "Microsoft",
+      "probability": 0.4099999999999999
+     },
+     {
+      "option_name": "Alphabet",
+      "probability": 0.17
+     },
+     {
+      "option_name": "Someone else",
+      "probability": 0.005
+     },
+     {
+      "option_name": "Amazon",
+      "probability": 0.01
+     }
+    ]
+   },
+   "question_id": 47015,
+   "reasoning": "(a) About one month (32 days) remains until December 29, 2026, when the outcome is known.\n\n(b) The status quo is Microsoft at #2 with about $3.64T, narrowly ahead of Nvidia at about $3.61T. Apple stays at #1.\n\n(c) An unexpected outcome would be Nvidia rebounding past Microsoft. Nvidia is volatile and has rebounded sharply before, and a 1% gap is well within its normal daily moves. Alphabet could also pass both, since it sits at about $3.3\u20133.6T. That would take AI-related momentum, such as strong Gemini or TPU news. Apple could drop to #2 only with a roughly 30% fall relative to the others, which is very unlikely. Amazon would need a rise of about 30%.\n\nThe research notes are internally inconsistent. Nvidia reportedly reported earnings on Nov 17, yet the Nov 24 swings and the CEO-removal story look odd. I treat those details with caution. The core fact is that Microsoft and Nvidia are within about 1\u20132% of each other, with Alphabet 3\u201310% behind.\n\nNvidia's monthly volatility is about 12\u201315%, Microsoft's about 6%, and Alphabet's about 8%. The relative volatility between Nvidia and Microsoft is therefore large compared with the 1% gap. That makes it close to a coin flip, with Nvidia's higher variance giving it a slight edge on the upside. Microsoft has a small status-quo edge.\n\nAlphabet has a real chance because of its volatility and its closeness, perhaps 15\u201318%. Apple has about 1\u20132%, Amazon about 1%, and someone else (Broadcom, Meta, etc.) under 1%.\n\nOption_A: 0.015\nOption_B: 0.39\nOption_C: 0.41\nOption_D: 0.17\nOption_E: 0.005\nOption_F: 0.01\n\nOption_A: 0.015\nOption_B: 0.39\nOption_C: 0.41\nOption_D: 0.17\nOption_E: 0.005\nOption_F: 0.01",
+   "research": "both",
+   "role": "member"
+  },
+  {
+   "member": "boost_2",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Apple",
+      "probability": 0.01
+     },
+     {
+      "option_name": "Nvidia",
+      "probability": 0.37
+     },
+     {
+      "option_name": "Microsoft",
+      "probability": 0.39
+     },
+     {
+      "option_name": "Alphabet",
+      "probability": 0.21
+     },
+     {
+      "option_name": "Amazon",
+      "probability": 0.01
+     },
+     {
+      "option_name": "Someone else",
+      "probability": 0.01
+     }
+    ]
+   },
+   "question_id": 47015,
+   "reasoning": "**(a) Time left:** About 32 days. The question resolves at the US market close on Tuesday, December 29, 2026. That leaves roughly 21 trading days, with Christmas closed and December 24 shortened.\n\n**(b) Status quo:** On the latest CompaniesMarketCap figures (Nov 25\u201326), Microsoft is #2 at about $3.64T. Nvidia is #3 at about $3.61T and Alphabet is behind at about $3.3\u20133.6T. Apple is a clear #1 at about $5.1T. If nothing changed, Microsoft would resolve as #2.\n\n**(c) Unexpected scenario:** Nvidia keeps falling after its CEO turmoil, and Microsoft drifts lower on AI-capex worries. Meanwhile Alphabet rallies on Gemini or cloud news and gains the 5\u201310% it needs relative to both. Alphabet then finishes #2. A more extreme version is a crash in Apple of over 30%, which is very unlikely in one month. Apple would then drop out of #1, and the #2 slot would go to whoever ranks third today.\n\n**Rationale:**\n- **Microsoft vs Nvidia is close to a coin flip.** The gap is about 1%, and #2 has changed hands at least three times in the past three weeks.\n- **The relative move needed is small.** Nvidia's monthly volatility is roughly 12\u201315%, so a one-month move between the two stocks of around 10% or more is normal. A 1% status-quo lead is worth only a few points of probability.\n- **Microsoft gets a slight edge.** It is ahead on the resolution source, so I give it the status-quo tilt.\n- **Nvidia gets a modest rebound tilt.** It is recovering from a leadership shock and is far below its early-October peak of $5.77T, which could pull it back up.\n- **No scheduled earnings fall in the window.** Nvidia reported on Nov 17, and Microsoft reports in late January. Moves will come from macro conditions and sentiment.\n- **Alphabet is a real third contender.** It is only about 5\u201310% behind and some sources show it at $3.6T, so it deserves meaningful weight.\n- **Apple, Amazon and anyone else are tail risks.** Each would need a very large move in a month.\n\nOption_A: 0.01\nOption_B: 0.37\nOption_C: 0.39\nOption_D: 0.21\nOption_E: 0.01\nOption_F: 0.01",
+   "research": "both",
+   "role": "boost"
+  },
+  {
+   "member": "strong_1",
+   "model": "anthropic/claude-opus-5-5",
+   "prediction": {
+    "predicted_options": [
+     {
+      "option_name": "Apple",
+      "probability": 0.01
+     },
+     {
+      "option_name": "Nvidia",
+      "probability": 0.39
+     },
+     {
+      "option_name": "Microsoft",
+      "probability": 0.3999999999999999
+     },
+     {
+      "option_name": "Alphabet",
+      "probability": 0.18
+     },
+     {
+      "option_name": "Amazon",
+      "probability": 0.01
+     },
+     {
+      "option_name": "Someone else",
+      "probability": 0.01
+     }
+    ]
+   },
+   "question_id": 47015,
+   "reasoning": "**(a) Time left:** About 32 days, roughly 21 trading days, until the close on Tuesday, December 29, 2026.\n\n**(b) Status quo outcome:** Microsoft is #2 on CompaniesMarketCap at $3.638T. Nvidia is about 1% behind at $3.605T, on November 25 data. Alphabet trails at roughly $3.3\u20133.6T, and Apple is far ahead at #1 with about $5.1T.\n\n**(c) Unexpected outcome scenario:** The Microsoft\u2013Nvidia fight is close to a coin flip, so neither of them winning would not be surprising. A truly unexpected result would look like this:\n- Alphabet rallies on AI news, such as a Gemini launch, a TPU deal, or a favorable antitrust remedy.\n- At the same time, Nvidia slides on renewed governance turmoil after the CEO saga.\n- Microsoft drifts down on worries about AI capital spending.\n- Alphabet passes both by 5\u201310%.\n\nA sharp Apple-specific collapse of about 30% relative to the others would be needed to drop Apple to #2, and that is very unlikely.\n\n**Rationale:**\n- The #2 spot has changed hands at least three times in three weeks. The current gap of about 1% is well within a single day's move for Nvidia.\n- Nvidia's stock has been extremely volatile, after a near-30% drop and a 31% rebound around the leadership shock. Over 21 trading days, the expected relative move between Microsoft and Nvidia is likely 10\u201315%. That swamps today's 1% gap, so the status quo gives Microsoft only a slight edge.\n- The Robinhood data hints that Nvidia may already have retaken the lead on November 26, at about $3.67T. That offsets Microsoft's small edge on the resolution source.\n- Alphabet is close enough, within about 5\u201310% depending on the source, to have a real chance in a volatile tape.\n- Apple, Amazon and any other company are tail outcomes.\n\nOption_A: 1%\nOption_B: 39%\nOption_C: 40%\nOption_D: 18%\nOption_E: 1%\nOption_F: 1%",
+   "research": "both",
+   "role": "member"
+  }
+ ],
+ "research": "**Rundown: world's 2nd most valuable company on CompaniesMarketCap, resolving December 29, 2026**\n\n**Current state (late November 2026)**\n- Apple is clearly #1 in every source I found, at roughly $5.0\u20135.2T. Apple's ranking is not in doubt.\n- The #2 spot is effectively a tie between Microsoft and Nvidia. On CompaniesMarketCap's own pages, Microsoft has a market cap of $3.638 Trillion USD as of its Nov 26 data, and it is listed as the world's 2nd most valuable company by market cap. Nvidia's main page, with Nov 25 data, shows $3.605 Trillion USD and ranks it #3, with Microsoft shown at $3.638T. That is a gap of about 1%.\n- The Nvidia pages are inconsistent. A USD-specific Nvidia page with Nov 23 data shows $3.985 Trillion USD and ranks Nvidia #2, with Microsoft at $3.657T. I could not reconcile that snapshot with the Nov 25 figure. It may be a stale cache or a real swing, and I could not verify which.\n- Microsoft's lead is recent. Reuters reported that Microsoft's market value was reported above $4.03 trillion against roughly $4.02 trillion for Nvidia on November 10, 2026 (intraday), and that was the first time Microsoft had ranked above Nvidia since June 2025. The market moved sharply after that, so the Nov 10 level is outdated.\n- Alphabet is the next contender. Third-party data puts it below the other two, at about $3.3\u20133.6T depending on source and date. Its ranking varies by source. Amazon is at about $2.6\u20132.9T, so it is not a realistic #2 candidate.\n- Source conflicts: Motley Fool's November pages show Nvidia and Microsoft both at $3.6T, with Alphabet at $3.3T. The Visual Capitalist and World Data pages are older (June and earlier) and show Nvidia ahead. I weighted the CompaniesMarketCap snapshots most heavily because they are the resolution source.\n\n**Scheduled events before December 29**\n- I did not verify Nvidia's next earnings date. Nvidia typically reports in late November, and this could move the stock. I did not confirm the date.\n- Microsoft's fiscal Q2 earnings are usually in late January, which is after the resolution date. I did not confirm that date for 2027.\n- December 29, 2026 is a Tuesday and a regular trading day. Markets are closed December 25, and December 24 is typically a shortened session.\n- I found no other confirmed company-specific events in the window.\n\n**Base rate for flips**\n- The #2 spot has changed hands recently. Microsoft passed Nvidia in June 2025, and again on November 10, 2026. That suggests leadership changes between these two happen at a meaningful rate, especially when they are within a few percent of each other.\n- I did not find a systematic historical frequency for #2 changes among the top companies. This is my limit: I cannot give a reliable annual base rate from the sources I found.\n\n**Resolution if nothing changes**\n- If Microsoft stays ahead of Nvidia and Alphabet stays below both, Microsoft would be #2 on December 29. If Nvidia regains the lead, Nvidia would be #2. Alphabet is unlikely to reach #2 unless it gains roughly 5\u201310% relative to the others.\n- The margin between Microsoft and Nvidia is roughly 1% at the most recent figure I found. The outcome is close to a coin flip based on the latest data, and the Nov 23 Nvidia snapshot suggests the gap could be wider in either direction.\n- I could not confirm the live CompaniesMarketCap ranking as of today, November 27. Checking that page before forecasting would be useful.\n\n---\n## Second research pass (base rate, primary source, the case against)\n**1. Base rate.** I found no multi-year count of #2 changes, so I cannot give a historical frequency. The recent record shows heavy churn. The first rundown cites Microsoft passing Nvidia in June 2025 and again on November 10, 2026. Since then, Nvidia surpassed Microsoft and Google to become the world's second largest company by market capitalisation on Tuesday, November 24. By the close on November 25, Nvidia's market cap slid to $3.61 trillion, below Microsoft's $3.64 trillion. That is at least three leadership changes in about three weeks.\n\n**2. Primary source.** The CompaniesMarketCap home page I retrieved lists Microsoft at #2 with $3.638 T and Nvidia at #3 with $3.605 T. Its Nvidia page uses Nov 25th, 2026 data. I could not see the live page or its date as of November 27. A Robinhood snapshot dated November 26 shows Nvidia at $151.22, with a market capitalization of 3.67T. That is slightly above Microsoft's CompaniesMarketCap figure, though I could not confirm Microsoft's November 26 price.\n\n**3. Strongest evidence against Microsoft holding #2.**\n- Nvidia's earnings are already out. The first rundown expected a late-November report. Nvidia reported fiscal third-quarter 2027 results on Tuesday 17 November 2026, with a fourth-quarter revenue guide of $130 billion. The next report is estimated for Feb 24, 2027 (Not Confirmed), after the resolution date.\n- Nvidia's price is volatile. Its 52-week range runs from $124.50 to $243.37. A 1% gap is well within normal daily moves.\n- Nvidia is recovering from a leadership shock. After the CEO's removal, the stock fell nearly 30%, then ended 31.48% higher after Jensen Huang's reinstatement. Analysts still list a peak of $5.77 trillion in early October, which suggests room to recover.\n\n**Already decided?** No. Apple is clearly #1, at $5.17 trillion on November 25. The #2 race is open.\n\n**Source conflict.** BusinessToday's $165.05 Nvidia close on November 24 does not reconcile with the $149.30 price on November 25 after a 3.9% drop. Treat that snapshot with caution.\n\n**Could not find:** a multi-year #2 frequency; the live CompaniesMarketCap ranking for November 27; Microsoft's November 26 price; Microsoft's next earnings date; Alphabet's current CompaniesMarketCap figure.",
+ "research_retried": false,
+ "research_reused": false,
+ "research_searches": 2,
+ "research_second": true,
+ "research_time": "2026-11-27T12:06:54.046783+00:00",
+ "scheduled_resolution_time": "2026-12-29T00:00:00+00:00",
+ "status": "forecast",
+ "title": "Which company will be the world's 2nd most valuable by market cap on December 29, 2026?",
+ "tournaments": [
+  "fall-futureeval-2026"
+ ],
+ "type": "MultipleChoiceQuestion",
+ "url": "https://www.metaculus.com/questions/46758"
+}
